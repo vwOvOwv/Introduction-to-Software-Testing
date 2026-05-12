@@ -1,0 +1,54 @@
+{
+  "timestamp": "2026-05-12T05:35:29.991815+00:00",
+  "repo": "/home/netro/Documents/software-test/commons-lang",
+  "ref": "5904c573ffacaa5d8836ffc2b346f400c8901ed1",
+  "target_test_path": "src/test/java/org/apache/commons/lang3/math/NumberUtilsTest.java",
+  "replacement_test_file": "/home/netro/Documents/software-test/artifacts/sample_runs/sample5/generated_fixed.java",
+  "test_selector": "NumberUtilsTest",
+  "maven_args": [
+    "-q"
+  ],
+  "discard_all_tracked_changes": true,
+  "checkout": {
+    "command": [
+      "git",
+      "checkout",
+      "--detach",
+      "5904c573ffacaa5d8836ffc2b346f400c8901ed1"
+    ],
+    "cwd": "/home/netro/Documents/software-test/commons-lang",
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "HEAD 目前位于 5904c573f NumberUtils.createNumber(String): Float shortcut can bypass exact (#1635)\n"
+  },
+  "maven": {
+    "command": [
+      "mvn",
+      "-q",
+      "-Dtest=NumberUtilsTest",
+      "test"
+    ],
+    "cwd": "/home/netro/Documents/software-test/commons-lang",
+    "returncode": 1,
+    "stdout": "[ERROR] COMPILATION ERROR : \n[ERROR] /home/netro/Documents/software-test/commons-lang/src/test/java/org/apache/commons/lang3/math/NumberUtilsTest.java:[605,75] 未结束的字符串文字\n[ERROR] /home/netro/Documents/software-test/commons-lang/src/test/java/org/apache/commons/lang3/math/NumberUtilsTest.java:[605,80] 进行语法分析时已到达文件结尾\n[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.15.0:testCompile (default-testCompile) on project commons-lang3: Compilation failure: Compilation failure: \n[ERROR] /home/netro/Documents/software-test/commons-lang/src/test/java/org/apache/commons/lang3/math/NumberUtilsTest.java:[605,75] 未结束的字符串文字\n[ERROR] /home/netro/Documents/software-test/commons-lang/src/test/java/org/apache/commons/lang3/math/NumberUtilsTest.java:[605,80] 进行语法分析时已到达文件结尾\n[ERROR] -> [Help 1]\n[ERROR] \n[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.\n[ERROR] Re-run Maven using the -X switch to enable full debug logging.\n[ERROR] \n[ERROR] For more information about the errors and possible solutions, please read the following articles:\n[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException\n",
+    "stderr": ""
+  },
+  "restore": [
+    {
+      "command": [
+        "git",
+        "restore",
+        "--source=HEAD",
+        "--staged",
+        "--worktree",
+        "."
+      ],
+      "cwd": "/home/netro/Documents/software-test/commons-lang",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "failure_message": null,
+  "maven_command_shell": "mvn -q -Dtest=NumberUtilsTest test"
+}

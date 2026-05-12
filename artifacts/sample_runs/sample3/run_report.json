@@ -1,0 +1,55 @@
+{
+  "timestamp": "2026-05-12T05:33:24.588641+00:00",
+  "repo": "/home/netro/Documents/software-test/commons-lang",
+  "ref": "313d877d57abefdbb1ad0c42781bf719b83d5a35",
+  "target_test_path": "src/test/java/org/apache/commons/lang3/RandomStringUtilsTest.java",
+  "replacement_test_file": "/home/netro/Documents/software-test/artifacts/sample_runs/sample3/generated.java",
+  "test_selector": "RandomStringUtilsTest",
+  "maven_args": [
+    "-q"
+  ],
+  "discard_all_tracked_changes": false,
+  "checkout": {
+    "command": [
+      "git",
+      "checkout",
+      "--detach",
+      "313d877d57abefdbb1ad0c42781bf719b83d5a35"
+    ],
+    "cwd": "/home/netro/Documents/software-test/commons-lang",
+    "returncode": 0,
+    "stdout": "M\tsrc/test/java/org/apache/commons/lang3/RandomStringUtilsTest.java\n",
+    "stderr": "HEAD 目前位于 313d877d5 Two fixes in RandomStringUtils.random(int, int, int, boolean, boolean, (#1638)\n"
+  },
+  "maven": {
+    "command": [
+      "mvn",
+      "-q",
+      "-Dtest=RandomStringUtilsTest",
+      "test"
+    ],
+    "cwd": "/home/netro/Documents/software-test/commons-lang",
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "restore": [
+    {
+      "command": [
+        "git",
+        "restore",
+        "--source=HEAD",
+        "--staged",
+        "--worktree",
+        "--",
+        "src/test/java/org/apache/commons/lang3/RandomStringUtilsTest.java"
+      ],
+      "cwd": "/home/netro/Documents/software-test/commons-lang",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "failure_message": null,
+  "maven_command_shell": "mvn -q -Dtest=RandomStringUtilsTest test"
+}

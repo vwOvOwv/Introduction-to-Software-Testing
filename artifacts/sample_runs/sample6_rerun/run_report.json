@@ -1,0 +1,54 @@
+{
+  "timestamp": "2026-05-12T06:13:06.090208+00:00",
+  "repo": "/home/netro/Documents/software-test/commons-lang",
+  "ref": "bb675e1127adb7f7c8d8687667bc11779d8e75eb",
+  "target_test_path": "src/test/java/org/apache/commons/lang3/ArchUtilsTest.java",
+  "replacement_test_file": "/home/netro/Documents/software-test/artifacts/sample_runs/sample6_rerun/generated.java",
+  "test_selector": "ArchUtilsTest",
+  "maven_args": [
+    "-q"
+  ],
+  "discard_all_tracked_changes": true,
+  "checkout": {
+    "command": [
+      "git",
+      "checkout",
+      "--detach",
+      "bb675e1127adb7f7c8d8687667bc11779d8e75eb"
+    ],
+    "cwd": "/home/netro/Documents/software-test/commons-lang",
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "之前的 HEAD 位置是 3df7f4440 [LANG-1823] LocaleUtils.toLocale cannot parse valid JDK Locale string containing '#'  (#1630)\nHEAD 目前位于 bb675e112 Add \"ppc64le\" to ArchUtils (#1625)\n"
+  },
+  "maven": {
+    "command": [
+      "mvn",
+      "-q",
+      "-Dtest=ArchUtilsTest",
+      "test"
+    ],
+    "cwd": "/home/netro/Documents/software-test/commons-lang",
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "restore": [
+    {
+      "command": [
+        "git",
+        "restore",
+        "--source=HEAD",
+        "--staged",
+        "--worktree",
+        "."
+      ],
+      "cwd": "/home/netro/Documents/software-test/commons-lang",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "failure_message": null,
+  "maven_command_shell": "mvn -q -Dtest=ArchUtilsTest test"
+}

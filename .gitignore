@@ -1,0 +1,4 @@
+__pycache__
+.github
+commons-lang/
+artifacts/**/*.md
