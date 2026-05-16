@@ -1,54 +1,174 @@
 ## 项目说明
 
-使用前需安装 JDK 与 maven，并克隆仓库 `commons-lang`。
-```
+本仓库用于 **commons-lang** 上的实验：根据 PR 在 **A→B** 的生产代码与测试 diff，调用 **DeepSeek** 生成/更新 JUnit 测试，并在 **B** 提交上用 Maven 做聚焦验证。
+
+被测仓库默认路径：`../commons-lang`（即 `final_homework/commons-lang`，需为 git 克隆）。
+
+```bash
 git clone https://github.com/apache/commons-lang.git
 ```
 
-本仓库包含用于生成并验证 AI 提示产物（基于 DeepSeek/OpenAI）的实验脚本与样本数据。有关运行与结果请参见 `artifacts/sample_runs/` 与 `results.md`。
-
-Python 脚本汇总（功能 / 使用 / 已知缺陷）
-
-- `update_tests_deepseek.py`
-	- 功能：基于给定的仓库提交（A、B）与旧测试文件（来自 A），构建给 DeepSeek（OpenAI 兼容接口）的 prompt，调用 API 以生成针对 B 的更新后完整测试类源码；支持单样本或批量运行并把输出写为 `deepseek_output.md`。
-	- 使用：
-		- 干跑（只打印 prompt，不调 API）：`python update_tests_deepseek.py`
-		- 指定样本：`python update_tests_deepseek.py --sample 1`
-		- 指定仓库/提交/测试：参见脚本顶部示例，或使用 `--repo/--a/--b/--test/--prod` 参数。
-	- 已知缺陷/注意事项：
-		- 需设置环境变量 `DEEPSEEK_API_KEY` 才能实际调用 API；默认运行不调用时为 dry-run。
-		- 要求指定的测试文件必须在 A 提交中存在（`git show A:<path>`），否则会报错并跳过该样本。
-		- 对 API 返回的解析较为直接（基于围栏 ```java 提取或 marker 分割），若 DeepSeek 返回非预期格式（缺少围栏、包含额外注释）可能导致提取失败或生成不完整 Java 源码。
-		- 对 HTTP/JSON 错误有抛出但恢复能力有限（会终止当前样本）；对网络异常、超大返回、非 JSON 响应有明确错误信息但未实现重试策略。
-
-- `run_single_maven_test.py`
-	- 功能：切换至指定 git 版本、把本地替换测试文件覆盖到仓库中指定路径、仅运行聚焦的 Surefire 测试（`-Dtest=<selector>`），并将执行报告写入 JSON。
-	- 使用示例：
-		```bash
-		python run_single_maven_test.py --repo /path/to/commons-lang --ref <commit> \
-			--target-test-path src/test/java/…/FooTest.java \
-			--replacement-test-file /tmp/generated.java --test-selector FooTest --maven-arg -q
-		```
-	- 已知缺陷/注意事项：
-		- 要求 `--repo` 必须是一个 git 仓库根目录（检测 `.git`），否则抛出异常并退出。
-		- 依赖外部命令 `git` 与 `mvn` 存在于 PATH；脚本没有对 Maven 配置做容错（例如私服、环境差异）。
-		- 覆盖测试文件后会尽量恢复（`git restore`），但在异常情况下仍可能留下工作树改动；有 `--discard-all-tracked-changes` 选项来强制丢弃全部 tracked 改动。
-
-- `orchestrate_test_updates.py`
-	- 功能：辅助发现候选测试方法、从 A/B diff 中挑选变更的生产代码文件和相关旧测试，提取测试方法、将候选方法归约为单一测试、并提供运行外部脚本（如 `update_tests_deepseek.py` 与 `run_single_maven_test.py`）的编排工具函数。
-	- 使用：作为库/脚本被调用以进行更复杂的样本批量处理；包含对测试类方法抽取、差异文件识别等工具函数。
-	- 已知缺陷/注意事项：
-		- 对于解析 Java 源的正则和括号匹配存在启发式实现，复杂或非常规格式的测试类可能导致方法抽取失败或方法边界识别错误。
-		- 依赖 `git show` / `git diff` 输出，若仓库状态或路径不匹配会抛出错误并中断流程。
-		- 在查找外部脚本路径时，如果找不到会抛出 `ValueError`，上层调用需捕获并处理。
-
-- `run_sample_experiment.py`
-	- 功能：驱动 SAMPLES 列表（样本 1–6），调用 `update_tests_deepseek.py` 生成候选测试（写为 `artifacts/sample_runs/sampleN/deepseek_output.md`）、提取 Java 源写为 `generated.java`，随后调用 `run_single_maven_test.py` 在指定 B 提交上执行聚焦测试并收集报告，最终汇总 `artifacts/sample_runs/summary.json`。
-	- 使用：`DEEPSEEK_API_KEY` 必需用于实际调用 API；直接运行将依次处理样本并输出摘要路径。
-	- 已知缺陷/注意事项：
-		- 当 `update_tests_deepseek.py` 生成的 `deepseek_output.md` 格式不符合预期（如缺少代码围栏）时，`extract_java()` 的提取逻辑可能失败或产生不完整源码，导致后续 Maven 编译失败（样本 5 的情形）。
-		- 该脚本强制了一个固定 `PATH`（`FIXED_PATH`），可能影响用户环境中 `git`/`mvn` 等可执行文件的查找；在非标准环境下需注意该常量。
+实验结果见 **`results.md`**（135 条全量汇总）与 **`artifacts/sample_runs/`**（每条样本的 `deepseek_output.md`、`generated.java`、`run_report.json`）。
 
 ---
 
-若需我把这些内容拆成更详尽的用法示例（例如每个脚本的全部 CLI 参数说明与典型命令行案例），或为 `update_tests_deepseek.py` 增加更鲁棒的 Java 提取规则/重试策略，我可以继续实现并运行简单验证。
+## 环境准备
+
+| 依赖 | 说明 |
+| --- | --- |
+| **JDK** | 建议 17+（与 commons-lang 当前分支一致） |
+| **Maven** | 需在 PATH 中；Windows 请用 `where.exe mvn` 检查（PowerShell 里 `where mvn` 不是查 PATH） |
+| **git** | 用于 `checkout` / `show` / `diff` |
+| **Python 3** | 运行脚本，仅标准库（DeepSeek 调用除外） |
+| **`DEEPSEEK_API_KEY`** | 批量实验与单条生成时必需 |
+
+PowerShell 示例：
+
+```powershell
+cd Introduction-to-Software-Testing
+$env:DEEPSEEK_API_KEY = "sk-..."
+where.exe mvn
+where.exe git
+```
+
+---
+
+## 样本与数据流
+
+```
+scan_lang_samples.py          → artifacts/lang_sample_candidates.json
+filter_lang_candidates.py     → artifacts/lang_sample_candidates_filtered.json（135 条）
+verify_lang_candidates.py     → artifacts/lang_sample_verify_report.json
+run_sample_experiment.py      → artifacts/sample_runs/candNNN_<B前12位>/
+scripts/build_results_md.py   → results.md
+```
+
+- **A**：`B` 的第一父提交（`B~1`），旧测试必须存在于 A。
+- **B**：PR 合并后提交；Maven 在该版本上跑 `-Dtest=<TestClass> test`。
+- 候选列表：`artifacts/lang_sample_candidates_filtered.json`（`count_kept: 135`）。
+
+---
+
+## 快速开始（批量实验）
+
+```powershell
+cd Introduction-to-Software-Testing
+$env:DEEPSEEK_API_KEY = "sk-..."
+
+# 跑全部 135 条（耗时长、消耗 API）
+python run_sample_experiment.py
+
+# 中断后续跑（跳过已有 deepseek_output + generated + run_report）
+python run_sample_experiment.py --resume
+
+# 只重算 generated.java + Maven（不调 API，应用最新合并逻辑）
+python run_sample_experiment.py --resync-generated
+
+# 试跑前 N 条
+python run_sample_experiment.py --limit 5
+
+# 从第 N 条继续
+python run_sample_experiment.py --start 124 --resume
+
+# 根据各目录 run_report 重新生成 results.md
+python scripts/build_results_md.py
+```
+
+**注意：** `run_sample_experiment.py` **没有** `--run-all` 参数（该参数在 `update_tests_deepseek.py` 中）。不传 `--limit` 即处理 filtered JSON 中的全部候选。
+
+---
+
+## 流水线要点（与早期 6 条手工样本的区别）
+
+1. **Prompt**：向模型提供生产 diff、测试 diff、A 上相关 `@Test` 方法（非整份 B 生产文件）；要求只输出需修改的测试**方法**。
+2. **合并**：以 **A** 上完整测试类为底，将模型输出的方法替换/插入；再调用 `finalize_merged_test_class()`：
+   - 从 **B** 补齐缺失的 `import`；
+   - 若代码引用了某嵌套类型，用 **B** 上同名 `static class` 等定义**替换或插入**（一层嵌套；深层嵌套如 cand006 仍可能编译失败）。
+3. **验证**：`run_single_maven_test.py` 在 **B** 上执行 `mvn -q -Dtest=<TestClass> test`；Windows 下通过 `shutil.which("mvn")` 解析 `mvn.cmd` 完整路径。
+4. **容错**：单条合并/Maven 异常会写入 `summary.json` 的 `processing_error` 并**继续下一条**；每处理一条即刷新 `summary.json`。
+
+「通过」= `maven.returncode == 0`，**不**保证与 PR 金标准测试 diff 完全一致（见 `results.md` 结论）。
+
+---
+
+## Python 脚本
+
+### `run_sample_experiment.py`（主入口）
+
+- **功能**：读取 `lang_sample_candidates_filtered.json`，对每条候选调用 `update_tests_deepseek.py` → 合并为 `generated.java` → `run_single_maven_test.py`，汇总 `artifacts/sample_runs/summary.json`。
+- **产物目录**：`artifacts/sample_runs/cand001_07914b39281e/`（`NNN` 为 filtered 列表序号，`07914b39281e` 为 B 的 hash 前 12 位）。
+- **常用参数**：`--limit`、`--start`、`--resume`、`--resync-generated`、`--skip-maven`、`--only-verified-pass`。
+
+### `update_tests_deepseek.py`
+
+- **功能**：构造 compact prompt，调用 DeepSeek；单条 `--index N` 或批量 `--run-all`（输出到 `artifacts/deepseek_tests/` 或 `--out`）。
+- **示例**：
+  ```powershell
+  python update_tests_deepseek.py --index 1          # dry-run 第 1 条
+  python update_tests_deepseek.py --index 1 --out artifacts/sample_runs/...
+  python update_tests_deepseek.py --run-all --limit 5
+  ```
+- **环境变量**：`DEEPSEEK_API_KEY`；可选 `DEEPSEEK_MAX_OUTPUT_TOKENS`（默认 8192）。
+
+### `run_single_maven_test.py`
+
+- **功能**：`git checkout` 到 `--ref`，用本地文件覆盖仓库内测试类，运行聚焦 Surefire 测试，写 JSON 报告，并 `git restore` 测试文件。
+- **示例**：
+  ```powershell
+  python run_single_maven_test.py --repo ..\commons-lang --ref <B> `
+    --target-test-path src/test/java/.../FooTest.java `
+    --replacement-test-file artifacts\sample_runs\cand001_...\generated.java `
+    --test-selector FooTest --maven-arg=-q
+  ```
+
+### `scan_lang_samples.py` / `filter_lang_candidates.py` / `verify_lang_candidates.py`
+
+- **功能**：从 git 历史扫描 PR 候选 → 清洗（subject、Foo/FooTest 配对）→ 在 B 上 `mvn -Dtest=...` 预验证，生成 filtered 列表与 verify 报告。
+- **一般只需在扩充样本池时重跑**；日常实验直接用 `lang_sample_candidates_filtered.json`。
+
+### `orchestrate_test_updates.py`
+
+- **功能**：测试方法抽取、`merge_patch_into_test_class`、`finalize_merged_test_class` 等库函数；被 `update_tests_deepseek.py` 与 `run_sample_experiment.py` 引用。
+
+### `scripts/build_results_md.py`
+
+- **功能**：扫描 `artifacts/sample_runs/cand*/run_report.json`，统计通过/编译失败/测试失败/合并失败，生成 **`results.md`**。
+
+---
+
+## 结果解读（135 条实验概况）
+
+详见 **`results.md`**。约略分布（以 `run_report.json` 为准）：
+
+| 结果 | 约占比 |
+| --- | --- |
+| Maven 通过 | ~70% |
+| 编译失败（缺 import、深层嵌套类等） | ~19% |
+| 测试失败（能编译，断言未过） | ~6% |
+| 合并失败（模型未输出可解析 `@Test`） | ~2% |
+
+典型失败原因：
+
+- **合并失败**：cand124、cand128 等（`deepseek_output.md` 无 `@Test` 代码块）。
+- **编译失败**：仅合并了 `@Test`，B 上还有内部类/辅助方法/字段变更未带上（cand006 等）。
+- **测试失败**：已能编译，但生成断言与 B 上行为不一致。
+
+---
+
+## 已知限制
+
+- 模型默认只输出 `@Test` / `@ParameterizedTest` **方法**；大改测试结构（重命名内部辅助方法、大量新增嵌套类）时，即使补 import 也可能编译或语义失败。
+- `extract_test_methods` / 嵌套类同步均为启发式，复杂 Java 格式可能边界识别错误。
+- `summary.json` 若只跑了部分 `--start`/`--limit` 批次，可能只含该批次条目；全量统计请以各 `candNNN_*/run_report.json` 或运行 `build_results_md.py` 为准。
+- Maven 依赖本机 `~/.m2` 与网络；未配置私服镜像时首次构建较慢。
+
+---
+
+## 相关文件
+
+| 路径 | 说明 |
+| --- | --- |
+| `results.md` | 135 条实验汇总表与结论 |
+| `sample.md` | 早期 6 条手工样本说明（已被 135 条流水线替代，作参考） |
+| `artifacts/lang_sample_candidates_filtered.json` | 当前实验样本池 |
+| `artifacts/sample_runs/summary.json` | 最近一次批量运行的机器可读汇总 |

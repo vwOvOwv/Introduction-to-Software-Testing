@@ -1,0 +1,55 @@
+{
+  "timestamp": "2026-05-16T11:07:27.141369+00:00",
+  "repo": "D:\\软件测试导论\\final_homework\\commons-lang",
+  "ref": "8f8cc04e65506fbe79bbc5efa6f7d44d65f0dbf1",
+  "target_test_path": "src/test/java/org/apache/commons/lang3/reflect/TypeUtilsTest.java",
+  "replacement_test_file": "D:\\软件测试导论\\final_homework\\Introduction-to-Software-Testing\\artifacts\\sample_runs\\cand021_8f8cc04e6550\\generated.java",
+  "test_selector": "TypeUtilsTest",
+  "maven_args": [
+    "-q"
+  ],
+  "discard_all_tracked_changes": false,
+  "checkout": {
+    "command": [
+      "git",
+      "checkout",
+      "--detach",
+      "8f8cc04e65506fbe79bbc5efa6f7d44d65f0dbf1"
+    ],
+    "cwd": "D:\\软件测试导论\\final_homework\\commons-lang",
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "Previous HEAD position was 8089a0c2d [LANG-1806] NumberUtils.isParsable(\"1.f\") should return true (#1560)\nHEAD is now at 8f8cc04e6 [LANG-1700] Improve handling of parameterized types and variable unrolling (#1549)\n"
+  },
+  "maven": {
+    "command": [
+      "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+      "-q",
+      "-Dtest=TypeUtilsTest",
+      "test"
+    ],
+    "cwd": "D:\\软件测试导论\\final_homework\\commons-lang",
+    "returncode": 1,
+    "stdout": "[ERROR] COMPILATION ERROR : \n[ERROR] /D:/�������Ե���/final_homework/commons-lang/src/test/java/org/apache/commons/lang3/reflect/TypeUtilsTest.java:[1204,50] �Ҳ�������\n  ����:   �� MyException\n  λ��: �� org.apache.commons.lang3.reflect.TypeUtilsTest<B>\n[ERROR] /D:/�������Ե���/final_homework/commons-lang/src/test/java/org/apache/commons/lang3/reflect/TypeUtilsTest.java:[1209,41] �Ҳ�������\n  ����:   �� MyOrdering\n  λ��: �� org.apache.commons.lang3.reflect.TypeUtilsTest<B>\n[ERROR] /D:/�������Ե���/final_homework/commons-lang/src/test/java/org/apache/commons/lang3/reflect/TypeUtilsTest.java:[1194,61] �Ҳ�������\n  ����:   �� MyComparator\n  λ��: �� org.apache.commons.lang3.reflect.TypeUtilsTest<B>\n[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.14.1:testCompile (default-testCompile) on project commons-lang3: Compilation failure: Compilation failure: \n[ERROR] /D:/�������Ե���/final_homework/commons-lang/src/test/java/org/apache/commons/lang3/reflect/TypeUtilsTest.java:[1204,50] �Ҳ�������\n[ERROR]   ����:   �� MyException\n[ERROR]   λ��: �� org.apache.commons.lang3.reflect.TypeUtilsTest<B>\n[ERROR] /D:/�������Ե���/final_homework/commons-lang/src/test/java/org/apache/commons/lang3/reflect/TypeUtilsTest.java:[1209,41] �Ҳ�������\n[ERROR]   ����:   �� MyOrdering\n[ERROR]   λ��: �� org.apache.commons.lang3.reflect.TypeUtilsTest<B>\n[ERROR] /D:/�������Ե���/final_homework/commons-lang/src/test/java/org/apache/commons/lang3/reflect/TypeUtilsTest.java:[1194,61] �Ҳ�������\n[ERROR]   ����:   �� MyComparator\n[ERROR]   λ��: �� org.apache.commons.lang3.reflect.TypeUtilsTest<B>\n[ERROR] -> [Help 1]\n[ERROR] \n[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.\n[ERROR] Re-run Maven using the -X switch to enable full debug logging.\n[ERROR] \n[ERROR] For more information about the errors and possible solutions, please read the following articles:\n[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException\n",
+    "stderr": ""
+  },
+  "restore": [
+    {
+      "command": [
+        "git",
+        "restore",
+        "--source=HEAD",
+        "--staged",
+        "--worktree",
+        "--",
+        "src/test/java/org/apache/commons/lang3/reflect/TypeUtilsTest.java"
+      ],
+      "cwd": "D:\\软件测试导论\\final_homework\\commons-lang",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "failure_message": null,
+  "maven_command_shell": "'D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD' -q -Dtest=TypeUtilsTest test"
+}

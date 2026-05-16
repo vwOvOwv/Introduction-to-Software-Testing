@@ -83,8 +83,15 @@ def discard_changes(repo: Path, target_path: str | None) -> list[CommandResult]:
     return [run_command(command, cwd=repo) for command in commands]
 
 
+def resolve_mvn_executable() -> str:
+    path = shutil.which("mvn")
+    if not path:
+        raise RuntimeError("PATH 中找不到 mvn，请安装 Maven 或配置环境变量")
+    return path
+
+
 def build_maven_command(test_selector: str, extra_args: list[str]) -> list[str]:
-    command = ["mvn", *extra_args, f"-Dtest={test_selector}", "test"]
+    command = [resolve_mvn_executable(), *extra_args, f"-Dtest={test_selector}", "test"]
     return command
 
 
@@ -149,7 +156,7 @@ def main() -> int:
         require_git_repo(repo)
         require_existing_file(replacement_test_file, "replacement test file")
         ensure_tool_exists("git")
-        ensure_tool_exists("mvn")
+        resolve_mvn_executable()
 
         checkout_result = checkout_ref(repo, args.ref)
         if checkout_result.returncode != 0:

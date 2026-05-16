@@ -1,0 +1,55 @@
+{
+  "timestamp": "2026-05-16T11:22:45.749955+00:00",
+  "repo": "D:\\软件测试导论\\final_homework\\commons-lang",
+  "ref": "5bcedccec3ed93586947a5df0d49775aee7a37c7",
+  "target_test_path": "src/test/java/org/apache/commons/lang3/builder/ReflectionDiffBuilderTest.java",
+  "replacement_test_file": "D:\\软件测试导论\\final_homework\\Introduction-to-Software-Testing\\artifacts\\sample_runs\\cand059_5bcedccec3ed\\generated.java",
+  "test_selector": "ReflectionDiffBuilderTest",
+  "maven_args": [
+    "-q"
+  ],
+  "discard_all_tracked_changes": false,
+  "checkout": {
+    "command": [
+      "git",
+      "checkout",
+      "--detach",
+      "5bcedccec3ed93586947a5df0d49775aee7a37c7"
+    ],
+    "cwd": "D:\\软件测试导论\\final_homework\\commons-lang",
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "Previous HEAD position was 5035fdd78 Add SystemUtils.getJavaHomePath()\nHEAD is now at 5bcedccec Fix NullPointerException in ReflectionDiffBuilder.getExcludeFieldNames() when instance created with ReflectionDiffBuilder.ReflectionDiffBuilder(T, T, ToStringStyle)\n"
+  },
+  "maven": {
+    "command": [
+      "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+      "-q",
+      "-Dtest=ReflectionDiffBuilderTest",
+      "test"
+    ],
+    "cwd": "D:\\软件测试导论\\final_homework\\commons-lang",
+    "returncode": 1,
+    "stdout": "[ERROR] COMPILATION ERROR : \n[ERROR] /D:/�������Ե���/final_homework/commons-lang/src/test/java/org/apache/commons/lang3/builder/ReflectionDiffBuilderTest.java:[158,39] �Ҳ�������\n  ����:   ���� ArrayUtils\n  λ��: �� org.apache.commons.lang3.builder.ReflectionDiffBuilderTest\n[ERROR] /D:/�������Ե���/final_homework/commons-lang/src/test/java/org/apache/commons/lang3/builder/ReflectionDiffBuilderTest.java:[175,9] �Ҳ�������\n  ����:   ���� assertNull(java.lang.String[])\n  λ��: �� org.apache.commons.lang3.builder.ReflectionDiffBuilderTest\n[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.14.1:testCompile (default-testCompile) on project commons-lang3: Compilation failure: Compilation failure: \n[ERROR] /D:/�������Ե���/final_homework/commons-lang/src/test/java/org/apache/commons/lang3/builder/ReflectionDiffBuilderTest.java:[158,39] �Ҳ�������\n[ERROR]   ����:   ���� ArrayUtils\n[ERROR]   λ��: �� org.apache.commons.lang3.builder.ReflectionDiffBuilderTest\n[ERROR] /D:/�������Ե���/final_homework/commons-lang/src/test/java/org/apache/commons/lang3/builder/ReflectionDiffBuilderTest.java:[175,9] �Ҳ�������\n[ERROR]   ����:   ���� assertNull(java.lang.String[])\n[ERROR]   λ��: �� org.apache.commons.lang3.builder.ReflectionDiffBuilderTest\n[ERROR] -> [Help 1]\n[ERROR] \n[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.\n[ERROR] Re-run Maven using the -X switch to enable full debug logging.\n[ERROR] \n[ERROR] For more information about the errors and possible solutions, please read the following articles:\n[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException\n",
+    "stderr": ""
+  },
+  "restore": [
+    {
+      "command": [
+        "git",
+        "restore",
+        "--source=HEAD",
+        "--staged",
+        "--worktree",
+        "--",
+        "src/test/java/org/apache/commons/lang3/builder/ReflectionDiffBuilderTest.java"
+      ],
+      "cwd": "D:\\软件测试导论\\final_homework\\commons-lang",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "failure_message": null,
+  "maven_command_shell": "'D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD' -q -Dtest=ReflectionDiffBuilderTest test"
+}
