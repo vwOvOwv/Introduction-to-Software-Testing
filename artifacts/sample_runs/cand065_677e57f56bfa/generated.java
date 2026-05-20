@@ -16,14 +16,16 @@
  */
 package org.apache.commons.lang3.time;
 
+
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 import java.io.IOException;
 import java.time.Duration;
 import java.time.Instant;
@@ -31,12 +33,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
-
 import org.apache.commons.lang3.AbstractLangTest;
 import org.apache.commons.lang3.ThreadUtils;
 import org.apache.commons.lang3.reflect.FieldUtils;
 import org.junit.jupiter.api.RepeatedTest;
-import org.junit.jupiter.api.Test;
 
 /**
  * Tests {@link StopWatch}.
@@ -423,12 +423,11 @@ class StopWatchTest extends AbstractLangTest {
         assertThrows(IllegalStateException.class, watch::unsplit);
     }
 
-@Test
+    @Test
     void testSplitGetStopInstant() {
       final StopWatch watch = StopWatch.createStarted();
       watch.split();
-      final long stopTime = watch.getStopTime();
-      assertTrue(stopTime == 0 || stopTime > 0);
+      assertNotNull(watch.getStopTime());
       assertNotNull(watch.getStopInstant());
     }
 
@@ -436,8 +435,7 @@ class StopWatchTest extends AbstractLangTest {
     void testSplitWithLabelGetStopInstant() {
       final StopWatch watch = StopWatch.createStarted();
       watch.split("one");
-      final long stopTime = watch.getStopTime();
-      assertTrue(stopTime == 0 || stopTime > 0);
+      assertNotNull(watch.getStopTime());
       assertNotNull(watch.getStopInstant());
     }
 
@@ -573,5 +571,11 @@ class StopWatchTest extends AbstractLangTest {
 
     private int throwIOException() throws IOException {
         throw new IOException("A");
+    }
+
+    @Test
+    void testGetStopTime() throws InterruptedException {
+        final StopWatch watch = StopWatch.createStarted();
+        assertEquals(0, watch.getStopTime());
     }
 }

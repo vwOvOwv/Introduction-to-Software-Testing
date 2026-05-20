@@ -1,42 +1,53 @@
 {
-  "timestamp": "2026-05-16T11:22:10.456369+00:00",
-  "repo": "D:\\软件测试导论\\final_homework\\commons-lang",
-  "ref": "4e228a53509bd8cb01220939906a538dcd1baa40",
-  "target_test_path": "src/test/java/org/apache/commons/lang3/reflect/TypeUtilsTest.java",
-  "replacement_test_file": "D:\\软件测试导论\\final_homework\\Introduction-to-Software-Testing\\artifacts\\sample_runs\\cand057_4e228a53509b\\generated.java",
-  "test_selector": "TypeUtilsTest",
-  "maven_args": [
-    "-q"
-  ],
-  "discard_all_tracked_changes": false,
-  "checkout": {
-    "command": [
-      "git",
-      "checkout",
-      "--detach",
-      "4e228a53509bd8cb01220939906a538dcd1baa40"
-    ],
-    "cwd": "D:\\软件测试导论\\final_homework\\commons-lang",
-    "returncode": 0,
-    "stdout": "",
-    "stderr": "Previous HEAD position was 4c39aa2ca Add org.apache.commons.lang3.SystemUtils.IS_OS_NETWARE\nHEAD is now at 4e228a535 Fix StackOverflowError in TypeUtils.typeVariableToString(TypeVariable), TypeUtils.toString(Type)\n"
-  },
-  "maven": {
-    "command": [
-      "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
-      "-q",
-      "-Dtest=TypeUtilsTest",
-      "test"
-    ],
-    "cwd": "D:\\软件测试导论\\final_homework\\commons-lang",
-    "returncode": 1,
-    "stdout": "[ERROR] Tests run: 43, Failures: 0, Errors: 1, Skipped: 1, Time elapsed: 0.190 s <<< FAILURE! -- in org.apache.commons.lang3.reflect.TypeUtilsTest\n[ERROR] org.apache.commons.lang3.reflect.TypeUtilsTest.testTypeToString(Type) -- Time elapsed: 0.047 s <<< ERROR!\norg.junit.platform.commons.PreconditionViolationException: Could not find factory method [testTypeToString] in class [org.apache.commons.lang3.reflect.TypeUtilsTest]\n\tat java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)\n\tat java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:1024)\n\tat java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)\n\tat java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)\n\tat java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:151)\n\tat java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:174)\n\tat java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)\n\tat java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)\n\tat java.base/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)\n\tat java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1708)\n\tat java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)\n\tat java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)\n\tat java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:151)\n\tat java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:174)\n\tat java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)\n\tat java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)\n\tat java.base/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)\n\tat java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)\n\tat java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)\n\tat java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)\n\tat java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1708)\n\tat java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)\n\tat java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)\n\tat java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:151)\n\tat java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:174)\n\tat java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)\n\tat java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)\n\tat java.base/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)\n\tat java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1708)\n\tat java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)\n\tat java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)\n\tat java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:151)\n\tat java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:174)\n\tat java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)\n\tat java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)\n\tat java.base/java.util.ArrayList.forEach(ArrayList.java:1596)\n\tat java.base/java.util.ArrayList.forEach(ArrayList.java:1596)\n\tSuppressed: org.junit.platform.commons.PreconditionViolationException: Configuration error: You must configure at least one set of arguments for this @ParameterizedTest\n\t\tat java.base/java.util.stream.AbstractPipeline.close(AbstractPipeline.java:323)\n\t\tat java.base/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:273)\n\t\t... 9 more\n\n[ERROR] Errors: \n[ERROR]   TypeUtilsTest.testTypeToString(Type) ? PreconditionViolation Could not find factory method [testTypeToString] in class [org.apache.commons.lang3.reflect.TypeUtilsTest]\n[ERROR] Tests run: 43, Failures: 0, Errors: 1, Skipped: 1\n[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:3.5.1:test (default-test) on project commons-lang3: \n[ERROR] \n[ERROR] Please refer to D:\\�������Ե���\\final_homework\\commons-lang\\target\\surefire-reports for the individual test results.\n[ERROR] Please refer to dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.\n[ERROR] -> [Help 1]\n[ERROR] \n[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.\n[ERROR] Re-run Maven using the -X switch to enable full debug logging.\n[ERROR] \n[ERROR] For more information about the errors and possible solutions, please read the following articles:\n[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException\n",
-    "stderr": ""
-  },
-  "restore": [
+  "command_history": [
     {
+      "name": "checkout",
+      "cwd": "./.",
+      "env": {
+        "JAVA_HOME": "/usr/lib/jvm/java-21-openjdk",
+        "PATH": "/usr/lib/jvm/java-21-openjdk/bin:/usr/local/bin:/usr/bin:/bin",
+        "PWD": "./."
+      },
       "command": [
-        "git",
+        "/usr/bin/git",
+        "worktree",
+        "add",
+        "--detach",
+        "${tmp}/run-TypeUtilsTest-ulnw1rg6",
+        "4e228a53509bd8cb01220939906a538dcd1baa40"
+      ],
+      "returncode": 0,
+      "stdout": "HEAD is now at 4e228a535 Fix StackOverflowError in TypeUtils.typeVariableToString(TypeVariable), TypeUtils.toString(Type)\n",
+      "stderr": "Preparing worktree (detached HEAD 4e228a535)\n"
+    },
+    {
+      "name": "maven",
+      "cwd": "${tmp}/run-TypeUtilsTest-ulnw1rg6",
+      "env": {
+        "JAVA_HOME": "/usr/lib/jvm/java-21-openjdk",
+        "PATH": "/usr/lib/jvm/java-21-openjdk/bin:/usr/local/bin:/usr/bin:/bin",
+        "PWD": "${tmp}/run-TypeUtilsTest-ulnw1rg6"
+      },
+      "command": [
+        "/usr/bin/mvn",
+        "-q",
+        "-Dtest=TypeUtilsTest",
+        "test"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "name": "restore",
+      "cwd": "${tmp}/run-TypeUtilsTest-ulnw1rg6",
+      "env": {
+        "JAVA_HOME": "/usr/lib/jvm/java-21-openjdk",
+        "PATH": "/usr/lib/jvm/java-21-openjdk/bin:/usr/local/bin:/usr/bin:/bin",
+        "PWD": "${tmp}/run-TypeUtilsTest-ulnw1rg6"
+      },
+      "command": [
+        "/usr/bin/git",
         "restore",
         "--source=HEAD",
         "--staged",
@@ -44,12 +55,28 @@
         "--",
         "src/test/java/org/apache/commons/lang3/reflect/TypeUtilsTest.java"
       ],
-      "cwd": "D:\\软件测试导论\\final_homework\\commons-lang",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "name": "worktree_remove",
+      "cwd": "./.",
+      "env": {
+        "JAVA_HOME": "/usr/lib/jvm/java-21-openjdk",
+        "PATH": "/usr/lib/jvm/java-21-openjdk/bin:/usr/local/bin:/usr/bin:/bin",
+        "PWD": "./."
+      },
+      "command": [
+        "/usr/bin/git",
+        "worktree",
+        "remove",
+        "--force",
+        "${tmp}/run-TypeUtilsTest-ulnw1rg6"
+      ],
       "returncode": 0,
       "stdout": "",
       "stderr": ""
     }
-  ],
-  "failure_message": null,
-  "maven_command_shell": "'D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD' -q -Dtest=TypeUtilsTest test"
+  ]
 }

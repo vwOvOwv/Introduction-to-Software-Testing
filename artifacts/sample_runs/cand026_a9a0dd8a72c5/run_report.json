@@ -1,42 +1,53 @@
 {
-  "timestamp": "2026-05-16T11:09:38.985690+00:00",
-  "repo": "D:\\软件测试导论\\final_homework\\commons-lang",
-  "ref": "a9a0dd8a72c51b14f0e5ea4bddfbf228685ff977",
-  "target_test_path": "src/test/java/org/apache/commons/lang3/time/DateUtilsTest.java",
-  "replacement_test_file": "D:\\软件测试导论\\final_homework\\Introduction-to-Software-Testing\\artifacts\\sample_runs\\cand026_a9a0dd8a72c5\\generated.java",
-  "test_selector": "DateUtilsTest",
-  "maven_args": [
-    "-q"
-  ],
-  "discard_all_tracked_changes": false,
-  "checkout": {
-    "command": [
-      "git",
-      "checkout",
-      "--detach",
-      "a9a0dd8a72c51b14f0e5ea4bddfbf228685ff977"
-    ],
-    "cwd": "D:\\软件测试导论\\final_homework\\commons-lang",
-    "returncode": 0,
-    "stdout": "",
-    "stderr": "Previous HEAD position was 9d5ad9442 Add fill method for boolean arrays in ArrayFill utility class (#1386)\nHEAD is now at a9a0dd8a7 LANG-771 Fix DateUtils.ceiling increment on exact boundary (#1609)\n"
-  },
-  "maven": {
-    "command": [
-      "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
-      "-q",
-      "-Dtest=DateUtilsTest",
-      "test"
-    ],
-    "cwd": "D:\\软件测试导论\\final_homework\\commons-lang",
-    "returncode": 1,
-    "stdout": "[ERROR] COMPILATION ERROR : \n[ERROR] /D:/�������Ե���/final_homework/commons-lang/src/test/java/org/apache/commons/lang3/time/DateUtilsTest.java:[536,35] �Ҳ�������\n  ����:   ���� date9\n  λ��: �� org.apache.commons.lang3.time.DateUtilsTest\n[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.14.1:testCompile (default-testCompile) on project commons-lang3: Compilation failure\n[ERROR] /D:/�������Ե���/final_homework/commons-lang/src/test/java/org/apache/commons/lang3/time/DateUtilsTest.java:[536,35] �Ҳ�������\n[ERROR]   ����:   ���� date9\n[ERROR]   λ��: �� org.apache.commons.lang3.time.DateUtilsTest\n[ERROR] \n[ERROR] -> [Help 1]\n[ERROR] \n[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.\n[ERROR] Re-run Maven using the -X switch to enable full debug logging.\n[ERROR] \n[ERROR] For more information about the errors and possible solutions, please read the following articles:\n[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException\n",
-    "stderr": ""
-  },
-  "restore": [
+  "command_history": [
     {
+      "name": "checkout",
+      "cwd": "./.",
+      "env": {
+        "JAVA_HOME": "/usr/lib/jvm/java-21-openjdk",
+        "PATH": "/usr/lib/jvm/java-21-openjdk/bin:/usr/local/bin:/usr/bin:/bin",
+        "PWD": "./."
+      },
       "command": [
-        "git",
+        "/usr/bin/git",
+        "worktree",
+        "add",
+        "--detach",
+        "${tmp}/run-DateUtilsTest-2gi2j_28",
+        "a9a0dd8a72c51b14f0e5ea4bddfbf228685ff977"
+      ],
+      "returncode": 0,
+      "stdout": "HEAD is now at a9a0dd8a7 LANG-771 Fix DateUtils.ceiling increment on exact boundary (#1609)\n",
+      "stderr": "Preparing worktree (detached HEAD a9a0dd8a7)\n"
+    },
+    {
+      "name": "maven",
+      "cwd": "${tmp}/run-DateUtilsTest-2gi2j_28",
+      "env": {
+        "JAVA_HOME": "/usr/lib/jvm/java-21-openjdk",
+        "PATH": "/usr/lib/jvm/java-21-openjdk/bin:/usr/local/bin:/usr/bin:/bin",
+        "PWD": "${tmp}/run-DateUtilsTest-2gi2j_28"
+      },
+      "command": [
+        "/usr/bin/mvn",
+        "-q",
+        "-Dtest=DateUtilsTest",
+        "test"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "name": "restore",
+      "cwd": "${tmp}/run-DateUtilsTest-2gi2j_28",
+      "env": {
+        "JAVA_HOME": "/usr/lib/jvm/java-21-openjdk",
+        "PATH": "/usr/lib/jvm/java-21-openjdk/bin:/usr/local/bin:/usr/bin:/bin",
+        "PWD": "${tmp}/run-DateUtilsTest-2gi2j_28"
+      },
+      "command": [
+        "/usr/bin/git",
         "restore",
         "--source=HEAD",
         "--staged",
@@ -44,12 +55,28 @@
         "--",
         "src/test/java/org/apache/commons/lang3/time/DateUtilsTest.java"
       ],
-      "cwd": "D:\\软件测试导论\\final_homework\\commons-lang",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "name": "worktree_remove",
+      "cwd": "./.",
+      "env": {
+        "JAVA_HOME": "/usr/lib/jvm/java-21-openjdk",
+        "PATH": "/usr/lib/jvm/java-21-openjdk/bin:/usr/local/bin:/usr/bin:/bin",
+        "PWD": "./."
+      },
+      "command": [
+        "/usr/bin/git",
+        "worktree",
+        "remove",
+        "--force",
+        "${tmp}/run-DateUtilsTest-2gi2j_28"
+      ],
       "returncode": 0,
       "stdout": "",
       "stderr": ""
     }
-  ],
-  "failure_message": null,
-  "maven_command_shell": "'D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD' -q -Dtest=DateUtilsTest test"
+  ]
 }

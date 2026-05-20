@@ -16,18 +16,20 @@
  */
 package org.apache.commons.lang3;
 
+
+
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertInstanceOf;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNotSame;
-import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import java.lang.annotation.ElementType;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Modifier;
@@ -41,9 +43,7 @@ import java.util.Map;
 import java.util.Random;
 import java.util.function.Function;
 import java.util.function.Supplier;
-
 import org.apache.commons.lang3.function.Suppliers;
-import org.junit.jupiter.api.Test;
 
 /**
  * Tests {@link ArrayUtils}.
@@ -6602,15 +6602,12 @@ public class ArrayUtilsTest extends AbstractLangTest {
         assertEquals("{pink,blue}", ArrayUtils.toString(new String[]{"pink", "blue"}, "<empty>"));
     }
 
-@Test
+    @Test
     public void testToStringArray_array() {
         assertNull(ArrayUtils.toStringArray(null));
-
         assertArrayEquals(new String[0], ArrayUtils.toStringArray(new Object[0]));
-
         final Object[] array = {1, 2, 3, "array", "test"};
         assertArrayEquals(new String[]{"1", "2", "3", "array", "test"}, ArrayUtils.toStringArray(array));
-
         assertArrayEquals(new String[]{"null"}, ArrayUtils.toStringArray(new Object[]{null}));
     }
 

@@ -17,6 +17,8 @@
 
 package org.apache.commons.lang3;
 
+
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
@@ -24,13 +26,10 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import java.util.Comparator;
-
+import java.util.stream.IntStream;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import java.util.stream.IntStream;
 
 /**
  * Tests {@link IntegerRange}.
@@ -411,8 +410,7 @@ public class IntegerRangeTest extends AbstractLangTest {
         assertEquals("From 10 to 20", str);
     }
 
-
-@Test
+    @Test
     public void testToIntStream() {
         try (IntStream stream = range1.toIntStream()) {
             assertEquals(165, stream.sum());

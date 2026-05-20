@@ -1,42 +1,53 @@
 {
-  "timestamp": "2026-05-16T11:11:06.630742+00:00",
-  "repo": "D:\\软件测试导论\\final_homework\\commons-lang",
-  "ref": "bcad40a502cd45b49a5e025938b9711d95c7bde7",
-  "target_test_path": "src/test/java/org/apache/commons/lang3/reflect/TypeUtilsTest.java",
-  "replacement_test_file": "D:\\软件测试导论\\final_homework\\Introduction-to-Software-Testing\\artifacts\\sample_runs\\cand031_bcad40a502cd\\generated.java",
-  "test_selector": "TypeUtilsTest",
-  "maven_args": [
-    "-q"
-  ],
-  "discard_all_tracked_changes": false,
-  "checkout": {
-    "command": [
-      "git",
-      "checkout",
-      "--detach",
-      "bcad40a502cd45b49a5e025938b9711d95c7bde7"
-    ],
-    "cwd": "D:\\软件测试导论\\final_homework\\commons-lang",
-    "returncode": 0,
-    "stdout": "",
-    "stderr": "Previous HEAD position was bb675e112 Add \"ppc64le\" to ArchUtils (#1625)\nHEAD is now at bcad40a50 [LANG-1749] Add stricter type checks for  parameterized types in  method (#1548)\n"
-  },
-  "maven": {
-    "command": [
-      "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
-      "-q",
-      "-Dtest=TypeUtilsTest",
-      "test"
-    ],
-    "cwd": "D:\\软件测试导论\\final_homework\\commons-lang",
-    "returncode": 1,
-    "stdout": "[ERROR] Unexpected count for UNAPPROVED, limit is [0,0].  Count: 1\n[ERROR] Failed to execute goal org.apache.rat:apache-rat-plugin:0.17:check (rat-check) on project commons-lang3: Counter(s) UNAPPROVED exceeded minimum or maximum values. See RAT report in: 'D:\\�������Ե���\\final_homework\\commons-lang\\target\\rat.txt'. -> [Help 1]\n[ERROR] \n[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.\n[ERROR] Re-run Maven using the -X switch to enable full debug logging.\n[ERROR] \n[ERROR] For more information about the errors and possible solutions, please read the following articles:\n[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException\n",
-    "stderr": ""
-  },
-  "restore": [
+  "command_history": [
     {
+      "name": "checkout",
+      "cwd": "./.",
+      "env": {
+        "JAVA_HOME": "/usr/lib/jvm/java-21-openjdk",
+        "PATH": "/usr/lib/jvm/java-21-openjdk/bin:/usr/local/bin:/usr/bin:/bin",
+        "PWD": "./."
+      },
       "command": [
-        "git",
+        "/usr/bin/git",
+        "worktree",
+        "add",
+        "--detach",
+        "${tmp}/run-TypeUtilsTest-gwbw_4fz",
+        "bcad40a502cd45b49a5e025938b9711d95c7bde7"
+      ],
+      "returncode": 0,
+      "stdout": "HEAD is now at bcad40a50 [LANG-1749] Add stricter type checks for  parameterized types in  method (#1548)\n",
+      "stderr": "Preparing worktree (detached HEAD bcad40a50)\n"
+    },
+    {
+      "name": "maven",
+      "cwd": "${tmp}/run-TypeUtilsTest-gwbw_4fz",
+      "env": {
+        "JAVA_HOME": "/usr/lib/jvm/java-21-openjdk",
+        "PATH": "/usr/lib/jvm/java-21-openjdk/bin:/usr/local/bin:/usr/bin:/bin",
+        "PWD": "${tmp}/run-TypeUtilsTest-gwbw_4fz"
+      },
+      "command": [
+        "/usr/bin/mvn",
+        "-q",
+        "-Dtest=TypeUtilsTest",
+        "test"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "name": "restore",
+      "cwd": "${tmp}/run-TypeUtilsTest-gwbw_4fz",
+      "env": {
+        "JAVA_HOME": "/usr/lib/jvm/java-21-openjdk",
+        "PATH": "/usr/lib/jvm/java-21-openjdk/bin:/usr/local/bin:/usr/bin:/bin",
+        "PWD": "${tmp}/run-TypeUtilsTest-gwbw_4fz"
+      },
+      "command": [
+        "/usr/bin/git",
         "restore",
         "--source=HEAD",
         "--staged",
@@ -44,12 +55,28 @@
         "--",
         "src/test/java/org/apache/commons/lang3/reflect/TypeUtilsTest.java"
       ],
-      "cwd": "D:\\软件测试导论\\final_homework\\commons-lang",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "name": "worktree_remove",
+      "cwd": "./.",
+      "env": {
+        "JAVA_HOME": "/usr/lib/jvm/java-21-openjdk",
+        "PATH": "/usr/lib/jvm/java-21-openjdk/bin:/usr/local/bin:/usr/bin:/bin",
+        "PWD": "./."
+      },
+      "command": [
+        "/usr/bin/git",
+        "worktree",
+        "remove",
+        "--force",
+        "${tmp}/run-TypeUtilsTest-gwbw_4fz"
+      ],
       "returncode": 0,
       "stdout": "",
       "stderr": ""
     }
-  ],
-  "failure_message": null,
-  "maven_command_shell": "'D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD' -q -Dtest=TypeUtilsTest test"
+  ]
 }

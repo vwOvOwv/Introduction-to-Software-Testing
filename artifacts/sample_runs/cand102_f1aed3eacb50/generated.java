@@ -16,9 +16,17 @@
  */
 package org.apache.commons.lang3.time;
 
+
+
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.allOf;
 import static org.hamcrest.Matchers.greaterThanOrEqualTo;
+import java.time.Duration;
+import java.time.Instant;
+import java.util.concurrent.TimeUnit;
+import org.apache.commons.lang3.AbstractLangTest;
+import org.junit.jupiter.api.Test;
+import static org.hamcrest.Matchers.allOf;
 import static org.hamcrest.Matchers.lessThan;
 import static org.hamcrest.Matchers.lessThanOrEqualTo;
 import static org.hamcrest.Matchers.not;
@@ -27,18 +35,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
-import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-
-import java.time.Duration;
-import java.util.concurrent.TimeUnit;
-
-import org.apache.commons.lang3.AbstractLangTest;
 import org.apache.commons.lang3.ThreadUtils;
 import org.apache.commons.lang3.reflect.FieldUtils;
-import org.junit.jupiter.api.Test;
-
-import java.time.Instant;
 
 /**
  * Tests {@link StopWatch}.
@@ -396,8 +395,7 @@ public class StopWatchTest extends AbstractLangTest {
         assertEquals(12 + MESSAGE.length() + 1, splitStr.length(), "Formatted split string not the correct length");
     }
 
-
-@Test
+    @Test
     public void testGetStartInstant() {
         final long beforeStopWatchMillis = System.currentTimeMillis();
         final StopWatch watch = new StopWatch();

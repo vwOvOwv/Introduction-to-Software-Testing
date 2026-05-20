@@ -17,18 +17,17 @@
 
 package org.apache.commons.lang3.function;
 
+
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.function.Function;
-
-import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.assertThrows;
 import org.apache.commons.lang3.StringUtils;
+import org.junit.jupiter.api.Test;
 
 /**
  * Tests {@link Functions}.
@@ -55,36 +54,33 @@ class FunctionsTest {
         assertEquals("foo", Functions.function(String::valueOf).andThen(String::toString).apply("foo"));
     }
 
+    @Test
+    void testApplyNotNull3() {
+        assertEquals("CBA", Functions.applyNotNull(" abc ", String::toUpperCase, String::trim, StringUtils::reverse));
+        assertNull(Functions.applyNotNull((String) null, String::toUpperCase, String::trim, StringUtils::reverse));
+        assertNull(Functions.applyNotNull(" abc ", s -> null, String::trim, StringUtils::reverse));
+        assertNull(Functions.applyNotNull(" abc ", String::toUpperCase, s -> null, StringUtils::reverse));
+        assertNull(Functions.applyNotNull(" abc ", String::toUpperCase, String::trim, s -> null));
+        assertThrows(NullPointerException.class, () -> Functions.applyNotNull(" abc ", null, String::trim, StringUtils::reverse));
+        assertThrows(NullPointerException.class, () -> Functions.applyNotNull(" abc ", String::toUpperCase, null, StringUtils::reverse));
+        assertThrows(NullPointerException.class, () -> Functions.applyNotNull(" abc ", String::toUpperCase, String::trim, null));
+    }
 
-@Test
-void testApplyNotNull3() {
-    assertEquals("CBA", Functions.applyNotNull(" abc ", String::toUpperCase, String::trim, StringUtils::reverse));
-    assertNull(Functions.applyNotNull((String) null, String::toUpperCase, String::trim, StringUtils::reverse));
-    assertNull(Functions.applyNotNull(" abc ", s -> null, String::trim, StringUtils::reverse));
-    assertNull(Functions.applyNotNull(" abc ", String::toUpperCase, s -> null, StringUtils::reverse));
-    assertNull(Functions.applyNotNull(" abc ", String::toUpperCase, String::trim, s -> null));
-    assertThrows(NullPointerException.class, () -> Functions.applyNotNull(" abc ", null, String::trim, StringUtils::reverse));
-    assertThrows(NullPointerException.class, () -> Functions.applyNotNull(" abc ", String::toUpperCase, null, StringUtils::reverse));
-    assertThrows(NullPointerException.class, () -> Functions.applyNotNull(" abc ", String::toUpperCase, String::trim, null));
-}
+    @Test
+    void testApplyNotNull2() {
+        assertEquals("A", Functions.applyNotNull(" a ", String::toUpperCase, String::trim));
+        assertNull(Functions.applyNotNull((String) null, String::toUpperCase, String::trim));
+        assertNull(Functions.applyNotNull(" a ", s -> null, String::trim));
+        assertNull(Functions.applyNotNull(" a ", String::toUpperCase, s -> null));
+        assertThrows(NullPointerException.class, () -> Functions.applyNotNull(" a ", null, String::trim));
+        assertThrows(NullPointerException.class, () -> Functions.applyNotNull(" a ", String::toUpperCase, null));
+    }
 
-
-@Test
-void testApplyNotNull2() {
-    assertEquals("A", Functions.applyNotNull(" a ", String::toUpperCase, String::trim));
-    assertNull(Functions.applyNotNull((String) null, String::toUpperCase, String::trim));
-    assertNull(Functions.applyNotNull(" a ", s -> null, String::trim));
-    assertNull(Functions.applyNotNull(" a ", String::toUpperCase, s -> null));
-    assertThrows(NullPointerException.class, () -> Functions.applyNotNull(" a ", null, String::trim));
-    assertThrows(NullPointerException.class, () -> Functions.applyNotNull(" a ", String::toUpperCase, null));
-}
-
-
-@Test
-void testApplyNotNull() {
-    assertEquals("A", Functions.applyNotNull("a", String::toUpperCase));
-    assertNull(Functions.applyNotNull((String) null, String::toUpperCase));
-    assertNull(Functions.applyNotNull("a", s -> null));
-    assertThrows(NullPointerException.class, () -> Functions.applyNotNull("a", null));
-}
+    @Test
+    void testApplyNotNull() {
+        assertEquals("A", Functions.applyNotNull("a", String::toUpperCase));
+        assertNull(Functions.applyNotNull((String) null, String::toUpperCase));
+        assertNull(Functions.applyNotNull("a", s -> null));
+        assertThrows(NullPointerException.class, () -> Functions.applyNotNull("a", null));
+    }
 }

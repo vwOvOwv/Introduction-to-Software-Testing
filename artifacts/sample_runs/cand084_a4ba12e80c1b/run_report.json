@@ -1,42 +1,53 @@
 {
-  "timestamp": "2026-05-16T11:32:23.820966+00:00",
-  "repo": "D:\\软件测试导论\\final_homework\\commons-lang",
-  "ref": "a4ba12e80c1b82b814b0165704934ef182ad069f",
-  "target_test_path": "src/test/java/org/apache/commons/lang3/EnumUtilsTest.java",
-  "replacement_test_file": "D:\\软件测试导论\\final_homework\\Introduction-to-Software-Testing\\artifacts\\sample_runs\\cand084_a4ba12e80c1b\\generated.java",
-  "test_selector": "EnumUtilsTest",
-  "maven_args": [
-    "-q"
-  ],
-  "discard_all_tracked_changes": false,
-  "checkout": {
-    "command": [
-      "git",
-      "checkout",
-      "--detach",
-      "a4ba12e80c1b82b814b0165704934ef182ad069f"
-    ],
-    "cwd": "D:\\软件测试导论\\final_homework\\commons-lang",
-    "returncode": 0,
-    "stdout": "",
-    "stderr": "Previous HEAD position was a01471c19 [LANG-1759] SerializationUtils.clone(Object) throws ClassCastException when called with a Serializable lambda\nHEAD is now at a4ba12e80 org.apache.commons.lang3.EnumUtils.getFirstEnumIgnoreCase(Class<E>, String, Function<E, String>, E) now returns the given default enum on null enumClass input\n"
-  },
-  "maven": {
-    "command": [
-      "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
-      "-q",
-      "-Dtest=EnumUtilsTest",
-      "test"
-    ],
-    "cwd": "D:\\软件测试导论\\final_homework\\commons-lang",
-    "returncode": 0,
-    "stdout": "",
-    "stderr": ""
-  },
-  "restore": [
+  "command_history": [
     {
+      "name": "checkout",
+      "cwd": "./.",
+      "env": {
+        "JAVA_HOME": "/usr/lib/jvm/java-21-openjdk",
+        "PATH": "/usr/lib/jvm/java-21-openjdk/bin:/usr/local/bin:/usr/bin:/bin",
+        "PWD": "./."
+      },
       "command": [
-        "git",
+        "/usr/bin/git",
+        "worktree",
+        "add",
+        "--detach",
+        "${tmp}/run-EnumUtilsTest-wagdacvw",
+        "a4ba12e80c1b82b814b0165704934ef182ad069f"
+      ],
+      "returncode": 0,
+      "stdout": "HEAD is now at a4ba12e80 org.apache.commons.lang3.EnumUtils.getFirstEnumIgnoreCase(Class<E>, String, Function<E, String>, E) now returns the given default enum on null enumClass input\n",
+      "stderr": "Preparing worktree (detached HEAD a4ba12e80)\n"
+    },
+    {
+      "name": "maven",
+      "cwd": "${tmp}/run-EnumUtilsTest-wagdacvw",
+      "env": {
+        "JAVA_HOME": "/usr/lib/jvm/java-21-openjdk",
+        "PATH": "/usr/lib/jvm/java-21-openjdk/bin:/usr/local/bin:/usr/bin:/bin",
+        "PWD": "${tmp}/run-EnumUtilsTest-wagdacvw"
+      },
+      "command": [
+        "/usr/bin/mvn",
+        "-q",
+        "-Dtest=EnumUtilsTest",
+        "test"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "name": "restore",
+      "cwd": "${tmp}/run-EnumUtilsTest-wagdacvw",
+      "env": {
+        "JAVA_HOME": "/usr/lib/jvm/java-21-openjdk",
+        "PATH": "/usr/lib/jvm/java-21-openjdk/bin:/usr/local/bin:/usr/bin:/bin",
+        "PWD": "${tmp}/run-EnumUtilsTest-wagdacvw"
+      },
+      "command": [
+        "/usr/bin/git",
         "restore",
         "--source=HEAD",
         "--staged",
@@ -44,12 +55,28 @@
         "--",
         "src/test/java/org/apache/commons/lang3/EnumUtilsTest.java"
       ],
-      "cwd": "D:\\软件测试导论\\final_homework\\commons-lang",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "name": "worktree_remove",
+      "cwd": "./.",
+      "env": {
+        "JAVA_HOME": "/usr/lib/jvm/java-21-openjdk",
+        "PATH": "/usr/lib/jvm/java-21-openjdk/bin:/usr/local/bin:/usr/bin:/bin",
+        "PWD": "./."
+      },
+      "command": [
+        "/usr/bin/git",
+        "worktree",
+        "remove",
+        "--force",
+        "${tmp}/run-EnumUtilsTest-wagdacvw"
+      ],
       "returncode": 0,
       "stdout": "",
       "stderr": ""
     }
-  ],
-  "failure_message": null,
-  "maven_command_shell": "'D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD' -q -Dtest=EnumUtilsTest test"
+  ]
 }

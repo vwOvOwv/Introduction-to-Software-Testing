@@ -16,6 +16,8 @@
  */
 package org.apache.commons.lang3.reflect;
 
+
+
 import static org.apache.commons.lang3.LangAssertions.assertNullPointerException;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -26,7 +28,6 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import java.awt.Color;
 import java.lang.reflect.Method;
 import java.lang.reflect.Type;
@@ -39,7 +40,6 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-
 import org.apache.commons.lang3.AbstractLangTest;
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.ClassUtils;
@@ -630,58 +630,58 @@ class MethodUtilsTest extends AbstractLangTest {
         expectMatchingAccessibleMethodParameterTypes(Files.class, "exists", singletonArray(Path.class), new Class[] { Path.class, LinkOption[].class });
     }
 
-@Test
-void testGetMatchingMethod() throws NoSuchMethodException {
-    assertEquals(MethodUtils.getMatchingMethod(GetMatchingMethodClass.class, "testMethod"),
-            GetMatchingMethodClass.class.getMethod("testMethod"));
+    @Test
+    void testGetMatchingMethod() throws NoSuchMethodException {
+        assertEquals(MethodUtils.getMatchingMethod(GetMatchingMethodClass.class, "testMethod"),
+                GetMatchingMethodClass.class.getMethod("testMethod"));
 
-    assertEquals(MethodUtils.getMatchingMethod(GetMatchingMethodClass.class, "testMethod", Long.TYPE),
-            GetMatchingMethodClass.class.getMethod("testMethod", Long.TYPE));
+        assertEquals(MethodUtils.getMatchingMethod(GetMatchingMethodClass.class, "testMethod", Long.TYPE),
+                GetMatchingMethodClass.class.getMethod("testMethod", Long.TYPE));
 
-    assertEquals(MethodUtils.getMatchingMethod(GetMatchingMethodClass.class, "testMethod", Long.class),
-            GetMatchingMethodClass.class.getMethod("testMethod", Long.class));
+        assertEquals(MethodUtils.getMatchingMethod(GetMatchingMethodClass.class, "testMethod", Long.class),
+                GetMatchingMethodClass.class.getMethod("testMethod", Long.class));
 
-    assertEquals(MethodUtils.getMatchingMethod(GetMatchingMethodClass.class, "testMethod", (Class<?>) null),
-            GetMatchingMethodClass.class.getMethod("testMethod", Long.class));
+        assertEquals(MethodUtils.getMatchingMethod(GetMatchingMethodClass.class, "testMethod", (Class<?>) null),
+                GetMatchingMethodClass.class.getMethod("testMethod", Long.class));
 
-    assertThrows(IllegalStateException.class,
-            () -> MethodUtils.getMatchingMethod(GetMatchingMethodClass.class, "testMethod2", (Class<?>) null));
+        assertThrows(IllegalStateException.class,
+                () -> MethodUtils.getMatchingMethod(GetMatchingMethodClass.class, "testMethod2", (Class<?>) null));
 
-    assertEquals(MethodUtils.getMatchingMethod(GetMatchingMethodClass.class, "testMethod3", Long.TYPE, Long.class),
-            GetMatchingMethodClass.class.getMethod("testMethod3", Long.TYPE, Long.class));
+        assertEquals(MethodUtils.getMatchingMethod(GetMatchingMethodClass.class, "testMethod3", Long.TYPE, Long.class),
+                GetMatchingMethodClass.class.getMethod("testMethod3", Long.TYPE, Long.class));
 
-    assertEquals(MethodUtils.getMatchingMethod(GetMatchingMethodClass.class, "testMethod3", Long.class, Long.TYPE),
-            GetMatchingMethodClass.class.getMethod("testMethod3", Long.class, Long.TYPE));
+        assertEquals(MethodUtils.getMatchingMethod(GetMatchingMethodClass.class, "testMethod3", Long.class, Long.TYPE),
+                GetMatchingMethodClass.class.getMethod("testMethod3", Long.class, Long.TYPE));
 
-    assertEquals(MethodUtils.getMatchingMethod(GetMatchingMethodClass.class, "testMethod3", null, Long.TYPE),
-            GetMatchingMethodClass.class.getMethod("testMethod3", Long.class, Long.TYPE));
+        assertEquals(MethodUtils.getMatchingMethod(GetMatchingMethodClass.class, "testMethod3", null, Long.TYPE),
+                GetMatchingMethodClass.class.getMethod("testMethod3", Long.class, Long.TYPE));
 
-    assertEquals(MethodUtils.getMatchingMethod(GetMatchingMethodClass.class, "testMethod3", Long.TYPE, null),
-            GetMatchingMethodClass.class.getMethod("testMethod3", Long.TYPE, Long.class));
+        assertEquals(MethodUtils.getMatchingMethod(GetMatchingMethodClass.class, "testMethod3", Long.TYPE, null),
+                GetMatchingMethodClass.class.getMethod("testMethod3", Long.TYPE, Long.class));
 
-    assertThrows(IllegalStateException.class,
-            () -> MethodUtils.getMatchingMethod(GetMatchingMethodClass.class, "testMethod4", null, null));
+        assertThrows(IllegalStateException.class,
+                () -> MethodUtils.getMatchingMethod(GetMatchingMethodClass.class, "testMethod4", null, null));
 
-    assertEquals(MethodUtils.getMatchingMethod(GetMatchingMethodImpl.class, "testMethod5", RuntimeException.class),
-            GetMatchingMethodImpl.class.getMethod("testMethod5", Exception.class));
+        assertEquals(MethodUtils.getMatchingMethod(GetMatchingMethodImpl.class, "testMethod5", RuntimeException.class),
+                GetMatchingMethodImpl.class.getMethod("testMethod5", Exception.class));
 
-    assertEquals(GetMatchingMethodImpl.class.getMethod("testMethod6"),
-        MethodUtils.getMatchingMethod(GetMatchingMethodImpl.class, "testMethod6"));
+        assertEquals(GetMatchingMethodImpl.class.getMethod("testMethod6"),
+            MethodUtils.getMatchingMethod(GetMatchingMethodImpl.class, "testMethod6"));
 
-    assertNullPointerException(
-            () -> MethodUtils.getMatchingMethod(null, "testMethod5", RuntimeException.class));
+        assertNullPointerException(
+                () -> MethodUtils.getMatchingMethod(null, "testMethod5", RuntimeException.class));
 
-    {
-        final Method testMethod6 = MethodUtils.getMatchingMethod(ConcreteGetMatchingMethod2.class, "testMethod6");
-        assertNotNull(testMethod6);
-        assertEquals(AbstractGetMatchingMethod2.class, testMethod6.getDeclaringClass());
+        {
+            final Method testMethod6 = MethodUtils.getMatchingMethod(ConcreteGetMatchingMethod2.class, "testMethod6");
+            assertNotNull(testMethod6);
+            assertEquals(AbstractGetMatchingMethod2.class, testMethod6.getDeclaringClass());
+        }
+        {
+            final Method testMethod6 = MethodUtils.getMatchingMethod(ConcreteGetMatchingMethod22.class, "testMethod6");
+            assertNotNull(testMethod6);
+            assertEquals(ConcreteGetMatchingMethod22.class, testMethod6.getDeclaringClass());
+        }
     }
-    {
-        final Method testMethod6 = MethodUtils.getMatchingMethod(ConcreteGetMatchingMethod22.class, "testMethod6");
-        assertNotNull(testMethod6);
-        assertEquals(ConcreteGetMatchingMethod22.class, testMethod6.getDeclaringClass());
-    }
-}
 
     @Test
     void testGetMethodObject() throws Exception {
@@ -1093,5 +1093,15 @@ void testGetMatchingMethod() throws NoSuchMethodException {
         assertEquals("Number...", TestBean.varOverload((short) 1, (byte) 1));
         assertEquals("Object...", TestBean.varOverload(1, 'c'));
         assertEquals("Object...", TestBean.varOverload('c', "s"));
+    }
+    private static final class ConcreteGetMatchingMethod22 extends AbstractGetMatchingMethod2 {
+        @Override
+        public void testMethod6() { }
+    }
+
+    private static final class ConcreteGetMatchingMethod2 extends AbstractGetMatchingMethod2 { }
+    protected abstract static class AbstractGetMatchingMethod2 implements InterfaceGetMatchingMethod {
+        @Override
+        public void testMethod6() { }
     }
 }

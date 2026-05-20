@@ -16,6 +16,7 @@
  */
 package org.apache.commons.lang3.math;
 
+
 import static org.apache.commons.lang3.LangAssertions.assertIllegalArgumentException;
 import static org.apache.commons.lang3.LangAssertions.assertNullPointerException;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -25,7 +26,6 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Modifier;
 import java.math.BigDecimal;
@@ -34,7 +34,6 @@ import java.math.RoundingMode;
 import java.text.NumberFormat;
 import java.text.ParseException;
 import java.util.function.Function;
-
 import org.apache.commons.lang3.AbstractLangTest;
 import org.apache.commons.lang3.JavaVersion;
 import org.apache.commons.lang3.SystemProperties;
@@ -2029,7 +2028,9 @@ class NumberUtilsTest extends AbstractLangTest {
         assertEquals(5, NumberUtils.toShort(null, (short) 5));
     }
 
-
+    /**
+     * Tests <a href="https://issues.apache.org/jira/browse/LANG-1821">LANG-1821</a>.
+     */
     @Test
     void testLang1821() {
         compareIsCreatableWithCreateNumber("123L", true);
@@ -2051,4 +2052,9 @@ class NumberUtilsTest extends AbstractLangTest {
         compareIsCreatableWithCreateNumber("0X" + Long.toHexString(Long.MAX_VALUE) + "l", true);
         compareIsCreatableWithCreateNumber("0X" + Long.toHexString(Long.MAX_VALUE) + "L", true);
     }
+
+
+/**
+     * Tests <a href="https://issues.apache.org/jira/browse/LANG-1821">LANG-1821</a>.
+     */
 }

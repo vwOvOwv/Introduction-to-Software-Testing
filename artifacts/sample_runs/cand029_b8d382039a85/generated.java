@@ -18,15 +18,14 @@
  */
 package org.apache.commons.lang3;
 
+
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
-import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import java.lang.reflect.Modifier;
-
 import org.junit.jupiter.api.Test;
 
 /**
@@ -390,6 +389,8 @@ class CharSetTest extends AbstractLangTest {
     @Test
     void testGetInstance() {
         assertSame(CharSet.EMPTY, CharSet.getInstance((String) null));
+        assertSame(CharSet.EMPTY, CharSet.getInstance((String[]) null));
+        assertSame(CharSet.EMPTY, CharSet.getInstance(null));
         assertSame(CharSet.EMPTY, CharSet.getInstance(""));
         assertSame(CharSet.ASCII_ALPHA, CharSet.getInstance("a-zA-Z"));
         assertSame(CharSet.ASCII_ALPHA, CharSet.getInstance("A-Za-z"));
@@ -398,7 +399,7 @@ class CharSetTest extends AbstractLangTest {
         assertSame(CharSet.ASCII_NUMERIC, CharSet.getInstance("0-9"));
     }
 
-@Test
+    @Test
     void testGetInstance_Stringarray() {
         assertEquals("[]", CharSet.getInstance((String[]) null).toString());
         assertEquals("[]", CharSet.getInstance().toString());

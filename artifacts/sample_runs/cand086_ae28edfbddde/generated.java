@@ -16,17 +16,18 @@
  */
 package org.apache.commons.lang3.concurrent.locks;
 
+
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNotSame;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import java.time.Duration;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.locks.ReadWriteLock;
+import java.util.concurrent.locks.ReentrantLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 import java.util.function.LongConsumer;
-
 import org.apache.commons.lang3.AbstractLangTest;
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.ThreadUtils;
@@ -34,8 +35,6 @@ import org.apache.commons.lang3.concurrent.locks.LockingVisitors.LockVisitor;
 import org.apache.commons.lang3.concurrent.locks.LockingVisitors.StampedLockVisitor;
 import org.apache.commons.lang3.function.FailableConsumer;
 import org.junit.jupiter.api.Test;
-
-import java.util.concurrent.locks.ReentrantLock;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
@@ -60,7 +59,7 @@ class LockingVisitorsTest extends AbstractLangTest {
         assertNotNull(visitor.getLock());
         assertNotNull(visitor.getObject());
         final boolean[] runningValues = new boolean[10];
-        final long startTimeMillis = System.currentTimeMillis();
+        // final long startTimeMillis = System.currentTimeMillis();
         for (int i = 0; i < booleanValues.length; i++) {
             final int index = i;
             final FailableConsumer<boolean[], ?> consumer = b -> {
@@ -82,7 +81,7 @@ class LockingVisitorsTest extends AbstractLangTest {
         while (containsTrue(runningValues)) {
             ThreadUtils.sleep(SHORT_DELAY);
         }
-        final long endTimeMillis = System.currentTimeMillis();
+        // final long endTimeMillis = System.currentTimeMillis();
         for (final boolean booleanValue : booleanValues) {
             assertTrue(booleanValue);
         }
@@ -156,7 +155,6 @@ class LockingVisitorsTest extends AbstractLangTest {
         runTest(DELAY, false, millis -> assertTrue(millis < TOTAL_DELAY.toMillis()), booleanValues, LockingVisitors.stampedLockVisitor(booleanValues));
     }
 
-
     @ParameterizedTest
     @ValueSource(booleans = { true, false })
     void testReentrantLockFairness(final boolean fairness) throws Exception {
@@ -166,8 +164,7 @@ class LockingVisitorsTest extends AbstractLangTest {
                 LockingVisitors.create(booleanValues, new ReentrantLock(fairness)));
     }
 
-
-@Test
+    @Test
     void testReentrantLock() throws Exception {
         // If our threads are running concurrently, then we expect to be faster than running one after the other.
         final boolean[] booleanValues = new boolean[10];

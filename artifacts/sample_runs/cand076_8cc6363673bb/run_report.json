@@ -1,42 +1,53 @@
 {
-  "timestamp": "2026-05-16T11:29:45.030269+00:00",
-  "repo": "D:\\软件测试导论\\final_homework\\commons-lang",
-  "ref": "8cc6363673bbcbff0777dc20343d207a443eed4a",
-  "target_test_path": "src/test/java/org/apache/commons/lang3/compare/ComparableUtilsTest.java",
-  "replacement_test_file": "D:\\软件测试导论\\final_homework\\Introduction-to-Software-Testing\\artifacts\\sample_runs\\cand076_8cc6363673bb\\generated.java",
-  "test_selector": "ComparableUtilsTest",
-  "maven_args": [
-    "-q"
-  ],
-  "discard_all_tracked_changes": false,
-  "checkout": {
-    "command": [
-      "git",
-      "checkout",
-      "--detach",
-      "8cc6363673bbcbff0777dc20343d207a443eed4a"
-    ],
-    "cwd": "D:\\软件测试导论\\final_homework\\commons-lang",
-    "returncode": 0,
-    "stdout": "",
-    "stderr": "Previous HEAD position was 8a7b0da6f org.apache.commons.lang3.reflect.MethodUtils.getMethodObject(Class<?>, String, Class<?>...) now returns null instead of throwing a NullPointerException, as it does for other exception types\nHEAD is now at 8cc636367 Fix NullPointerExceptions in org.apache.commons.lang3.compare.ComparableUtils.ComparableCheckBuilder\n"
-  },
-  "maven": {
-    "command": [
-      "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
-      "-q",
-      "-Dtest=ComparableUtilsTest",
-      "test"
-    ],
-    "cwd": "D:\\软件测试导论\\final_homework\\commons-lang",
-    "returncode": 0,
-    "stdout": "",
-    "stderr": ""
-  },
-  "restore": [
+  "command_history": [
     {
+      "name": "checkout",
+      "cwd": "./.",
+      "env": {
+        "JAVA_HOME": "/usr/lib/jvm/java-21-openjdk",
+        "PATH": "/usr/lib/jvm/java-21-openjdk/bin:/usr/local/bin:/usr/bin:/bin",
+        "PWD": "./."
+      },
       "command": [
-        "git",
+        "/usr/bin/git",
+        "worktree",
+        "add",
+        "--detach",
+        "${tmp}/run-ComparableUtilsTest-l0wknjm8",
+        "8cc6363673bbcbff0777dc20343d207a443eed4a"
+      ],
+      "returncode": 0,
+      "stdout": "HEAD is now at 8cc636367 Fix NullPointerExceptions in org.apache.commons.lang3.compare.ComparableUtils.ComparableCheckBuilder\n",
+      "stderr": "Preparing worktree (detached HEAD 8cc636367)\n"
+    },
+    {
+      "name": "maven",
+      "cwd": "${tmp}/run-ComparableUtilsTest-l0wknjm8",
+      "env": {
+        "JAVA_HOME": "/usr/lib/jvm/java-21-openjdk",
+        "PATH": "/usr/lib/jvm/java-21-openjdk/bin:/usr/local/bin:/usr/bin:/bin",
+        "PWD": "${tmp}/run-ComparableUtilsTest-l0wknjm8"
+      },
+      "command": [
+        "/usr/bin/mvn",
+        "-q",
+        "-Dtest=ComparableUtilsTest",
+        "test"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "name": "restore",
+      "cwd": "${tmp}/run-ComparableUtilsTest-l0wknjm8",
+      "env": {
+        "JAVA_HOME": "/usr/lib/jvm/java-21-openjdk",
+        "PATH": "/usr/lib/jvm/java-21-openjdk/bin:/usr/local/bin:/usr/bin:/bin",
+        "PWD": "${tmp}/run-ComparableUtilsTest-l0wknjm8"
+      },
+      "command": [
+        "/usr/bin/git",
         "restore",
         "--source=HEAD",
         "--staged",
@@ -44,12 +55,28 @@
         "--",
         "src/test/java/org/apache/commons/lang3/compare/ComparableUtilsTest.java"
       ],
-      "cwd": "D:\\软件测试导论\\final_homework\\commons-lang",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "name": "worktree_remove",
+      "cwd": "./.",
+      "env": {
+        "JAVA_HOME": "/usr/lib/jvm/java-21-openjdk",
+        "PATH": "/usr/lib/jvm/java-21-openjdk/bin:/usr/local/bin:/usr/bin:/bin",
+        "PWD": "./."
+      },
+      "command": [
+        "/usr/bin/git",
+        "worktree",
+        "remove",
+        "--force",
+        "${tmp}/run-ComparableUtilsTest-l0wknjm8"
+      ],
       "returncode": 0,
       "stdout": "",
       "stderr": ""
     }
-  ],
-  "failure_message": null,
-  "maven_command_shell": "'D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD' -q -Dtest=ComparableUtilsTest test"
+  ]
 }

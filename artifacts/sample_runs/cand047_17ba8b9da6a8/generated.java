@@ -17,16 +17,16 @@
 
 package org.apache.commons.lang3.stream;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.jupiter.api.Test;
 import java.util.Arrays;
 import java.util.Objects;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.function.Function;
 import java.util.stream.Collector;
 import java.util.stream.Stream;
-
-import org.junit.jupiter.api.Test;
 
 /**
  * Tests {@link LangCollectors}
@@ -120,7 +120,7 @@ public class LangCollectorsTest {
         assertEquals("<1-2>", join3(new Fixture(1), new Fixture(2)));
     }
 
-@Test
+    @Test
     public void testJoinCollectNonStrings4Args() {
         assertEquals("<>", join4());
         assertEquals("<1>", join4(_1L));
@@ -258,5 +258,19 @@ public class LangCollectorsTest {
         assertEquals("<1-2-3>", Stream.of("1", "2", "3").collect(JOINING_4));
         assertEquals("<1-null-3>", Stream.of("1", null, "3").collect(JOINING_4));
         assertEquals("<1-NUL-3>", Stream.of("1", null, "3").collect(JOINING_4_NUL));
+    }
+
+    @Test
+    public void testJoinCollectNullArgs() {
+        assertEquals("", join0((Object[]) null));
+        assertEquals("", join1((Object[]) null));
+        assertEquals("<>", join3((Object[]) null));
+        assertEquals("<>", join4NullToString((Object[]) null));
+    }
+
+
+
+    private String join4NullToString(final Object... objects) {
+        return LangCollectors.collect(JOINING_4_NUL, objects);
     }
 }

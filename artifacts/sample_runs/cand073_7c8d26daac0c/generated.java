@@ -16,16 +16,15 @@
  */
 package org.apache.commons.lang3.builder;
 
+
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
-
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import java.math.BigDecimal;
 import java.math.BigInteger;
-
 import org.apache.commons.lang3.AbstractLangTest;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.assertThrows;
 
 /**
  * Tests {@link ReflectionDiffBuilder}.
@@ -304,9 +303,7 @@ class ReflectionDiffBuilderTest extends AbstractLangTest {
         assertEquals(0, list.getNumberOfDiffs());
     }
 
-
-
-@Test
+    @Test
     void testNoDiffBuilderSet() {
         assertThrows(NullPointerException.class, () -> ReflectionDiffBuilder.<TypeTestClass>builder().build());
     }

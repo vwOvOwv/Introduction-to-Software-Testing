@@ -1,42 +1,53 @@
 {
-  "timestamp": "2026-05-16T11:40:41.770965+00:00",
-  "repo": "D:\\软件测试导论\\final_homework\\commons-lang",
-  "ref": "e7d001f1b77c382f99ee7fe01d8563d8219697df",
-  "target_test_path": "src/test/java/org/apache/commons/lang3/RegExUtilsTest.java",
-  "replacement_test_file": "D:\\软件测试导论\\final_homework\\Introduction-to-Software-Testing\\artifacts\\sample_runs\\cand099_e7d001f1b77c\\generated.java",
-  "test_selector": "RegExUtilsTest",
-  "maven_args": [
-    "-q"
-  ],
-  "discard_all_tracked_changes": false,
-  "checkout": {
-    "command": [
-      "git",
-      "checkout",
-      "--detach",
-      "e7d001f1b77c382f99ee7fe01d8563d8219697df"
-    ],
-    "cwd": "D:\\软件测试导论\\final_homework\\commons-lang",
-    "returncode": 0,
-    "stdout": "",
-    "stderr": "Previous HEAD position was e1ffb6ea0 ThreadUtils.sleepQuietly(Duration) now restores the current thread's interrupt flag when catching InterruptedException.\nHEAD is now at e7d001f1b Add RegExUtils.removePattern(CharSequence, String) and deprecate RegExUtils.removePattern(String, String)\n"
-  },
-  "maven": {
-    "command": [
-      "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
-      "-q",
-      "-Dtest=RegExUtilsTest",
-      "test"
-    ],
-    "cwd": "D:\\软件测试导论\\final_homework\\commons-lang",
-    "returncode": 0,
-    "stdout": "",
-    "stderr": ""
-  },
-  "restore": [
+  "command_history": [
     {
+      "name": "checkout",
+      "cwd": "./.",
+      "env": {
+        "JAVA_HOME": "/usr/lib/jvm/java-21-openjdk",
+        "PATH": "/usr/lib/jvm/java-21-openjdk/bin:/usr/local/bin:/usr/bin:/bin",
+        "PWD": "./."
+      },
       "command": [
-        "git",
+        "/usr/bin/git",
+        "worktree",
+        "add",
+        "--detach",
+        "${tmp}/run-RegExUtilsTest-xbs4bcp0",
+        "e7d001f1b77c382f99ee7fe01d8563d8219697df"
+      ],
+      "returncode": 0,
+      "stdout": "HEAD is now at e7d001f1b Add RegExUtils.removePattern(CharSequence, String) and deprecate RegExUtils.removePattern(String, String)\n",
+      "stderr": "Preparing worktree (detached HEAD e7d001f1b)\n"
+    },
+    {
+      "name": "maven",
+      "cwd": "${tmp}/run-RegExUtilsTest-xbs4bcp0",
+      "env": {
+        "JAVA_HOME": "/usr/lib/jvm/java-21-openjdk",
+        "PATH": "/usr/lib/jvm/java-21-openjdk/bin:/usr/local/bin:/usr/bin:/bin",
+        "PWD": "${tmp}/run-RegExUtilsTest-xbs4bcp0"
+      },
+      "command": [
+        "/usr/bin/mvn",
+        "-q",
+        "-Dtest=RegExUtilsTest",
+        "test"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "name": "restore",
+      "cwd": "${tmp}/run-RegExUtilsTest-xbs4bcp0",
+      "env": {
+        "JAVA_HOME": "/usr/lib/jvm/java-21-openjdk",
+        "PATH": "/usr/lib/jvm/java-21-openjdk/bin:/usr/local/bin:/usr/bin:/bin",
+        "PWD": "${tmp}/run-RegExUtilsTest-xbs4bcp0"
+      },
+      "command": [
+        "/usr/bin/git",
         "restore",
         "--source=HEAD",
         "--staged",
@@ -44,12 +55,28 @@
         "--",
         "src/test/java/org/apache/commons/lang3/RegExUtilsTest.java"
       ],
-      "cwd": "D:\\软件测试导论\\final_homework\\commons-lang",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "name": "worktree_remove",
+      "cwd": "./.",
+      "env": {
+        "JAVA_HOME": "/usr/lib/jvm/java-21-openjdk",
+        "PATH": "/usr/lib/jvm/java-21-openjdk/bin:/usr/local/bin:/usr/bin:/bin",
+        "PWD": "./."
+      },
+      "command": [
+        "/usr/bin/git",
+        "worktree",
+        "remove",
+        "--force",
+        "${tmp}/run-RegExUtilsTest-xbs4bcp0"
+      ],
       "returncode": 0,
       "stdout": "",
       "stderr": ""
     }
-  ],
-  "failure_message": null,
-  "maven_command_shell": "'D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD' -q -Dtest=RegExUtilsTest test"
+  ]
 }

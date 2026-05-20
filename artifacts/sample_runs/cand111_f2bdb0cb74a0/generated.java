@@ -16,10 +16,13 @@
  */
 package org.apache.commons.lang3;
 
+
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-
+import org.apache.commons.lang3.AbstractLangTest;
+import org.apache.commons.lang3.BitField;
 import org.junit.jupiter.api.Test;
 
 /**
@@ -27,48 +30,17 @@ import org.junit.jupiter.api.Test;
  */
 class BitFieldTest extends AbstractLangTest {
 
-    private static final BitField bf_multi  = new BitField(0x3F80);
-    private static final BitField bf_single = new BitField(0x4000);
-    private static final BitField bf_zero = new BitField(0);
+    private static final BitField BF_MULTI  = new BitField(0x3F80);
+    private static final BitField BF_SINGLE = new BitField(0x4000);
+    private static final BitField BF_ZERO = new BitField(0);
 
-    @Test
-    void testByte() {
-        assertEquals(0, new BitField(0).setByteBoolean((byte) 0, true));
-        assertEquals(1, new BitField(1).setByteBoolean((byte) 0, true));
-        assertEquals(2, new BitField(2).setByteBoolean((byte) 0, true));
-        assertEquals(4, new BitField(4).setByteBoolean((byte) 0, true));
-        assertEquals(8, new BitField(8).setByteBoolean((byte) 0, true));
-        assertEquals(16, new BitField(16).setByteBoolean((byte) 0, true));
-        assertEquals(32, new BitField(32).setByteBoolean((byte) 0, true));
-        assertEquals(64, new BitField(64).setByteBoolean((byte) 0, true));
-        assertEquals(-128, new BitField(128).setByteBoolean((byte) 0, true));
-        assertEquals(1, new BitField(0).setByteBoolean((byte) 1, false));
-        assertEquals(0, new BitField(1).setByteBoolean((byte) 1, false));
-        assertEquals(0, new BitField(2).setByteBoolean((byte) 2, false));
-        assertEquals(0, new BitField(4).setByteBoolean((byte) 4, false));
-        assertEquals(0, new BitField(8).setByteBoolean((byte) 8, false));
-        assertEquals(0, new BitField(16).setByteBoolean((byte) 16, false));
-        assertEquals(0, new BitField(32).setByteBoolean((byte) 32, false));
-        assertEquals(0, new BitField(64).setByteBoolean((byte) 64, false));
-        assertEquals(0, new BitField(128).setByteBoolean((byte) 128, false));
-        assertEquals(-2, new BitField(1).setByteBoolean((byte) 255, false));
-        final byte clearedBit = new BitField(0x40).setByteBoolean((byte) - 63, false);
-
-        assertFalse(new BitField(0x40).isSet(clearedBit));
-    }
 
     /**
      * test the clear() method
      */
-    @Test
-    void testClear() {
-        assertEquals(bf_multi.clear(-1), 0xFFFFC07F);
-        assertEquals(bf_single.clear(-1), 0xFFFFBFFF);
-        assertEquals(bf_zero.clear(-1), 0xFFFFFFFF);
-    }
 
     /**
-     * test the clearShort() method
+     * Tests the {@link BitField#clearShort()} method.
      */
     @Test
     void testClearShort() {
@@ -78,7 +50,7 @@ class BitFieldTest extends AbstractLangTest {
     }
 
     /**
-     * test the getRawValue() method
+     * Tests the {@link BitField#getRawValue()} method.
      */
     @Test
     void testGetRawValue() {
@@ -91,7 +63,7 @@ class BitFieldTest extends AbstractLangTest {
     }
 
     /**
-     * test the getShortRawValue() method
+     * Tests the {@link BitField#getShortRawValue()} method.
      */
     @Test
     void testGetShortRawValue() {
@@ -104,7 +76,7 @@ class BitFieldTest extends AbstractLangTest {
     }
 
     /**
-     * test the getShortValue() method
+     * Tests the {@link BitField#getShortValue()} method.
      */
     @Test
     void testGetShortValue() {
@@ -117,7 +89,7 @@ class BitFieldTest extends AbstractLangTest {
     }
 
     /**
-     * test the getValue() method
+     * Tests the {@link BitField#getValue()} method.
      */
     @Test
     void testGetValue() {
@@ -130,7 +102,7 @@ class BitFieldTest extends AbstractLangTest {
     }
 
     /**
-     * test the isAllSet() method
+     * Tests the {@link BitField#isAllSet()} method.
      */
     @Test
     void testIsAllSet() {
@@ -144,7 +116,7 @@ class BitFieldTest extends AbstractLangTest {
     }
 
     /**
-     * test the isSet() method
+     * test the isSet() method.
      */
     @Test
     void testIsSet() {
@@ -161,7 +133,7 @@ class BitFieldTest extends AbstractLangTest {
     }
 
     /**
-     * test the set() method
+     * Tests the {@link BitField#set()} method.
      */
     @Test
     void testSet() {
@@ -171,7 +143,7 @@ class BitFieldTest extends AbstractLangTest {
     }
 
     /**
-     * test the setBoolean() method
+     * Tests the {@link BitField#setBoolean()} method.
      */
     @Test
     void testSetBoolean() {
@@ -184,7 +156,7 @@ class BitFieldTest extends AbstractLangTest {
     }
 
     /**
-     * test the setShort() method
+     * Tests the {@link BitField#setShort()} method.
      */
     @Test
     void testSetShort() {
@@ -256,8 +228,19 @@ class BitFieldTest extends AbstractLangTest {
         assertEquals(BF_SINGLE.setValue(0x4000, 2), 0);
     }
 
+    /**
+     * Tests the {@link BitField#clear()} method.
+     */
+    @Test
+    void testClearLong() {
+        assertEquals(BF_MULTI.clear(-1L), 0xFFFFC07F);
+        assertEquals(BF_SINGLE.clear(-1L), 0xFFFFBFFF);
+        assertEquals(BF_ZERO.clear(-1L), 0xFFFFFFFF);
+    }
 
-
+    /**
+     * Tests the {@link BitField#clear()} method.
+     */
     @Test
     void testClearInt() {
         assertEquals(BF_MULTI.clear(-1), 0xFFFFC07F);
@@ -265,8 +248,7 @@ class BitFieldTest extends AbstractLangTest {
         assertEquals(BF_ZERO.clear(-1), 0xFFFFFFFF);
     }
 
-
-@Test
+    @Test
     void testByteBoolean() {
         assertEquals(0, new BitField(0).setByteBoolean((byte) 0, true));
         assertEquals(1, new BitField(1).setByteBoolean((byte) 0, true));

@@ -17,13 +17,14 @@
 
 package org.apache.commons.lang3;
 
-import static org.junit.jupiter.api.Assertions.assertArrayEquals;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNull;
-import static org.junit.jupiter.api.Assertions.assertSame;
 
-import org.apache.commons.lang3.function.FailableIntFunction;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertSame;
 import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import org.apache.commons.lang3.function.FailableIntFunction;
 
 /**
  * Tests {@link ArrayFill}.
@@ -197,24 +198,22 @@ public class ArrayFillTest extends AbstractLangTest {
         }
     }
 
-
-@Test
-public void testFillBooleanArrayNull() {
-    final boolean[] array = null;
-    final boolean val = true;
-    final boolean[] actual = ArrayFill.fill(array, val);
-    assertSame(array, actual);
-}
-
-
-@Test
-public void testFillBooleanArray() {
-    final boolean[] array = new boolean[3];
-    final boolean val = true;
-    final boolean[] actual = ArrayFill.fill(array, val);
-    assertSame(array, actual);
-    for (final boolean v : actual) {
-        assertEquals(val, v);
+    @Test
+    public void testFillBooleanArrayNull() {
+        final boolean[] array = null;
+        final boolean val = true;
+        final boolean[] actual = ArrayFill.fill(array, val);
+        assertSame(array, actual);
     }
-}
+
+    @Test
+    public void testFillBooleanArray() {
+        final boolean[] array = new boolean[3];
+        final boolean val = true;
+        final boolean[] actual = ArrayFill.fill(array, val);
+        assertSame(array, actual);
+        for (final boolean v : actual) {
+            assertEquals(val, v);
+        }
+    }
 }

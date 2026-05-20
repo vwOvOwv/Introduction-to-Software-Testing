@@ -19,12 +19,12 @@
 
 package org.apache.commons.lang3;
 
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import java.io.File;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
@@ -32,7 +32,6 @@ import java.lang.reflect.Modifier;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Locale;
-
 import org.junit.jupiter.api.Test;
 
 /**
@@ -94,6 +93,7 @@ class SystemUtilsTest extends AbstractLangTest {
             assertFalse(SystemUtils.IS_JAVA_24);
             assertFalse(SystemUtils.IS_JAVA_25);
             assertFalse(SystemUtils.IS_JAVA_26);
+            assertFalse(SystemUtils.IS_JAVA_27);
             for (int version = 9; version <= lastSupportedVersion; version++) {
                 assertFalse(getIS_JAVA(version));
             }
@@ -124,6 +124,7 @@ class SystemUtilsTest extends AbstractLangTest {
             assertFalse(SystemUtils.IS_JAVA_24);
             assertFalse(SystemUtils.IS_JAVA_25);
             assertFalse(SystemUtils.IS_JAVA_26);
+            assertFalse(SystemUtils.IS_JAVA_27);
             for (int version = 9; version <= lastSupportedVersion; version++) {
                 assertFalse(getIS_JAVA(version));
             }
@@ -371,8 +372,8 @@ class SystemUtilsTest extends AbstractLangTest {
         assertEquals(System.getProperty("user.name", "foo"), SystemUtils.getUserName("foo"));
     }
 
-@Test
-void testIsJavaVersionAtLeast() {
+    @Test
+    void testIsJavaVersionAtLeast() {
 
     @Test
     void testIsJavaVersionAtMost() {
@@ -1601,4 +1602,361 @@ void testIsJavaVersionAtLeast() {
         assertTrue(SystemUtils.isOsVersionMatch(osVersion, "10.10"));
         assertTrue(SystemUtils.isOsVersionMatch(osVersion, "10.10.1"));
     }
+
+
+if (SystemUtils.IS_JAVA_1_8) {
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_1_1));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_1_2));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_1_3));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_1_4));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_1_5));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_1_6));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_1_7));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_1_8));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_9));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_10));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_11));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_12));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_13));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_14));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_15));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_16));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_17));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_18));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_19));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_20));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_21));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_22));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_23));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_24));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_25));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_26));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_27));
+        } else if (SystemUtils.IS_JAVA_9) {
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_1_1));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_1_2));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_1_3));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_1_4));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_1_5));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_1_6));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_1_7));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_1_8));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_9));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_10));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_11));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_12));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_13));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_14));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_15));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_16));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_17));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_18));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_19));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_20));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_21));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_22));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_23));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_24));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_25));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_26));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_27));
+        } else if (SystemUtils.IS_JAVA_10) {
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_1_1));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_1_2));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_1_3));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_1_4));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_1_5));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_1_6));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_1_7));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_1_8));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_9));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_10));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_11));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_12));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_13));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_14));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_15));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_16));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_17));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_18));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_19));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_20));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_21));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_22));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_23));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_24));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_25));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_26));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_27));
+        } else if (SystemUtils.IS_JAVA_11) {
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_1_1));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_1_2));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_1_3));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_1_4));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_1_5));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_1_6));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_1_7));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_1_8));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_9));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_10));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_11));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_12));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_13));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_14));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_15));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_16));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_17));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_18));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_19));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_20));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_21));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_22));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_23));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_24));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_25));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_26));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_27));
+        } else if (SystemUtils.IS_JAVA_12) {
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_1_1));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_1_2));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_1_3));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_1_4));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_1_5));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_1_6));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_1_7));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_1_8));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_9));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_10));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_11));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_12));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_13));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_14));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_15));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_16));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_17));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_18));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_19));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_20));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_21));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_22));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_23));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_24));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_25));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_26));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_27));
+        } else if (SystemUtils.IS_JAVA_13) {
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_1_1));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_1_2));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_1_3));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_1_4));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_1_5));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_1_6));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_1_7));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_1_8));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_9));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_10));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_11));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_12));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_13));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_14));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_15));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_16));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_17));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_18));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_19));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_20));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_21));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_22));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_23));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_24));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_25));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_26));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_27));
+        } else if (SystemUtils.IS_JAVA_14) {
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_1_1));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_1_2));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_1_3));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_1_4));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_1_5));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_1_6));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_1_7));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_1_8));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_9));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_10));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_11));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_12));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_13));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_14));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_15));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_16));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_17));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_18));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_19));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_20));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_21));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_22));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_23));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_24));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_25));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_26));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_27));
+        } else if (SystemUtils.IS_JAVA_15) {
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_1_1));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_1_2));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_1_3));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_1_4));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_1_5));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_1_6));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_1_7));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_1_8));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_9));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_10));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_11));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_12));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_13));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_14));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_15));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_16));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_17));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_18));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_19));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_20));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_21));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_22));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_23));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_24));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_25));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_26));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_27));
+        } else if (SystemUtils.IS_JAVA_16) {
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_1_1));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_1_2));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_1_3));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_1_4));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_1_5));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_1_6));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_1_7));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_1_8));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_9));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_10));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_11));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_12));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_13));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_14));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_15));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_16));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_17));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_18));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_19));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_20));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_21));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_22));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_23));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_24));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_25));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_26));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_27));
+        } else if (SystemUtils.IS_JAVA_17) {
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_1_1));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_1_2));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_1_3));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_1_4));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_1_5));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_1_6));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_1_7));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_1_8));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_9));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_10));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_11));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_12));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_13));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_14));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_15));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_16));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_17));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_18));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_19));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_20));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_21));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_22));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_23));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_24));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_25));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_26));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_27));
+        } else if (SystemUtils.IS_JAVA_18) {
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_1_1));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_1_2));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_1_3));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_1_4));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_1_5));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_1_6));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_1_7));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_1_8));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_9));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_10));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_11));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_12));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_13));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_14));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_15));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_16));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_17));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_18));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_19));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_20));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_21));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_22));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_23));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_24));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_25));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_26));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_27));
+        } else if (SystemUtils.IS_JAVA_19) {
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_1_1));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_1_2));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_1_3));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_1_4));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_1_5));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_1_6));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_1_7));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_1_8));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_9));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_10));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_11));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_12));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_13));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_14));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_15));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_16));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_17));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_18));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_19));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_20));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_21));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_22));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_23));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_24));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_25));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_26));
+            assertFalse(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_27));
+        } else if (SystemUtils.IS_JAVA_20) {
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_1_1));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_1_2));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_1_3));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_1_4));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_1_5));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_1_6));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_1_7));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_1_8));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_9));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_10));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_11));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_12));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_13));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_14));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_15));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_16));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_17));
+            assertTrue(SystemUtils.isJavaVersionAtLeast(JavaVersion.J
 }

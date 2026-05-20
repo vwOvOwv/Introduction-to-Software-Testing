@@ -16,6 +16,15 @@
  */
 package org.apache.commons.lang3.time;
 
+
+
+import java.io.IOException;
+import java.time.Duration;
+import java.time.Instant;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicInteger;
+import org.apache.commons.lang3.AbstractLangTest;
+import org.apache.commons.lang3.ThreadUtils;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.greaterThanOrEqualTo;
 import static org.hamcrest.Matchers.not;
@@ -26,19 +35,9 @@ import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-
-import java.time.Duration;
-import java.time.Instant;
-import java.util.concurrent.TimeUnit;
-
-import org.apache.commons.lang3.AbstractLangTest;
-import org.apache.commons.lang3.ThreadUtils;
 import org.apache.commons.lang3.reflect.FieldUtils;
 import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.Test;
-
-import java.io.IOException;
-import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * Tests {@link StopWatch}.
@@ -53,17 +52,13 @@ public class StopWatchTest extends AbstractLangTest {
 
     /**
      * <p>
-     * Creates a suspended StopWatch object which appears to have elapsed for the requested amount of time in
-     * nanoseconds.
+     * Creates a suspended StopWatch object which appears to have elapsed for the requested amount of time in nanoseconds.
      * <p>
      * <p>
      *
      * <pre>
      * // Create a mock StopWatch with a time of 2:59:01.999
-     * final long nanos = TimeUnit.HOURS.toNanos(2)
-     *         + TimeUnit.MINUTES.toNanos(59)
-     *         + TimeUnit.SECONDS.toNanos(1)
-     *         + TimeUnit.MILLISECONDS.toNanos(999);
+     * final long nanos = TimeUnit.HOURS.toNanos(2) + TimeUnit.MINUTES.toNanos(59) + TimeUnit.SECONDS.toNanos(1) + TimeUnit.MILLISECONDS.toNanos(999);
      * final StopWatch watch = createMockStopWatch(nanos);
      * </pre>
      *
@@ -100,7 +95,7 @@ public class StopWatchTest extends AbstractLangTest {
     /**
      * Tests bad states.
      */
-@Test
+    @Test
     public void testBadStates() {
         final StopWatch watch = new StopWatch();
         assertThrows(IllegalStateException.class, watch::stop, "Calling stop on an unstarted StopWatch should throw an exception. ");
@@ -420,6 +415,7 @@ public class StopWatchTest extends AbstractLangTest {
                 () -> String.format("totalTimeFromNanos %s < testTooLongMillis %s", totalTimeFromNanos, testTooLongMillis));
         assertTrue(totalDuration.compareTo(Duration.ofMillis(testTooLongMillis)) < 0,
                 () -> String.format("totalDuration %s < testTooLongMillis %s", totalDuration, testTooLongMillis));
+
     }
 
     @Test
@@ -461,5 +457,67 @@ public class StopWatchTest extends AbstractLangTest {
         watch.split();
         final String splitStr = watch.toString();
         assertEquals(SPLIT_CLOCK_STR_LEN + MESSAGE.length() + 1, splitStr.length(), "Formatted split string not the correct length");
+    }
+
+    @Test
+    public void testRun() throws Throwable {
+        final StopWatch watch = new StopWatch();
+        final AtomicInteger i = new AtomicInteger();
+        watch.run(i::incrementAndGet);
+        assertEquals(1, i.get());
+        watch.runT(i::incrementAndGet);
+        assertEquals(2, i.get());
+        final IOException e = assertThrows(IOException.class, () -> watch.runT(this::throwIOException));
+        assertEquals("A", e.getMessage());
+        // test state
+        assertTrue(watch.isSuspended());
+        watch.run(() -> {
+            assertTrue(watch.isStarted());
+            i.incrementAndGet();
+        });
+        assertEquals(3, i.get());
+        assertTrue(watch.isSuspended());
+        final long nanos1 = watch.getDuration().toNanos();
+        assertTrue(nanos1 > 0);
+        // test state
+        assertTrue(watch.isSuspended());
+        watch.runT(() -> {
+            assertTrue(watch.isStarted());
+            i.incrementAndGet();
+        });
+        assertEquals(4, i.get());
+        assertTrue(watch.isSuspended());
+        assertTrue(watch.getDuration().toNanos() >= nanos1);
+    }
+
+    @Test
+    public void testGet() throws Throwable {
+        final StopWatch watch = new StopWatch();
+        final AtomicInteger i = new AtomicInteger();
+        assertEquals(1, watch.get(i::incrementAndGet));
+        assertEquals(2, watch.getT(i::incrementAndGet));
+        final IOException e = assertThrows(IOException.class, () -> watch.getT(this::throwIOException));
+        assertEquals("A", e.getMessage());
+        // test state
+        assertTrue(watch.isSuspended());
+        assertEquals(3, watch.get(() -> {
+            assertTrue(watch.isStarted());
+            return i.incrementAndGet();
+        }));
+        assertTrue(watch.isSuspended());
+        final long nanos1 = watch.getDuration().toNanos();
+        assertTrue(nanos1 >= 0);
+        // test state
+        assertTrue(watch.isSuspended());
+        assertEquals(4, watch.getT(() -> {
+            assertTrue(watch.isStarted());
+            return i.incrementAndGet();
+        }));
+        assertTrue(watch.isSuspended());
+        assertTrue(watch.getDuration().toNanos() >= nanos1);
+    }
+
+    private int throwIOException() throws IOException {
+        throw new IOException("A");
     }
 }

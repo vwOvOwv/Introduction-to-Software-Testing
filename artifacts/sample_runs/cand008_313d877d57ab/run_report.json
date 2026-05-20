@@ -1,42 +1,53 @@
 {
-  "timestamp": "2026-05-16T10:58:51.837295+00:00",
-  "repo": "D:\\软件测试导论\\final_homework\\commons-lang",
-  "ref": "313d877d57abefdbb1ad0c42781bf719b83d5a35",
-  "target_test_path": "src/test/java/org/apache/commons/lang3/RandomStringUtilsTest.java",
-  "replacement_test_file": "D:\\软件测试导论\\final_homework\\Introduction-to-Software-Testing\\artifacts\\sample_runs\\cand008_313d877d57ab\\generated.java",
-  "test_selector": "RandomStringUtilsTest",
-  "maven_args": [
-    "-q"
-  ],
-  "discard_all_tracked_changes": false,
-  "checkout": {
-    "command": [
-      "git",
-      "checkout",
-      "--detach",
-      "313d877d57abefdbb1ad0c42781bf719b83d5a35"
-    ],
-    "cwd": "D:\\软件测试导论\\final_homework\\commons-lang",
-    "returncode": 0,
-    "stdout": "",
-    "stderr": "Previous HEAD position was 26ead6134 [LANG-1814] ArrayUtils.subarray(..) may overflow index arithmetic and violate contract for extreme index values #1585\nHEAD is now at 313d877d5 Two fixes in RandomStringUtils.random(int, int, int, boolean, boolean, (#1638)\n"
-  },
-  "maven": {
-    "command": [
-      "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
-      "-q",
-      "-Dtest=RandomStringUtilsTest",
-      "test"
-    ],
-    "cwd": "D:\\软件测试导论\\final_homework\\commons-lang",
-    "returncode": 0,
-    "stdout": "",
-    "stderr": ""
-  },
-  "restore": [
+  "command_history": [
     {
+      "name": "checkout",
+      "cwd": "./.",
+      "env": {
+        "JAVA_HOME": "/usr/lib/jvm/java-21-openjdk",
+        "PATH": "/usr/lib/jvm/java-21-openjdk/bin:/usr/local/bin:/usr/bin:/bin",
+        "PWD": "./."
+      },
       "command": [
-        "git",
+        "/usr/bin/git",
+        "worktree",
+        "add",
+        "--detach",
+        "${tmp}/run-RandomStringUtilsTest-s9njjpjz",
+        "313d877d57abefdbb1ad0c42781bf719b83d5a35"
+      ],
+      "returncode": 0,
+      "stdout": "HEAD is now at 313d877d5 Two fixes in RandomStringUtils.random(int, int, int, boolean, boolean, (#1638)\n",
+      "stderr": "Preparing worktree (detached HEAD 313d877d5)\n"
+    },
+    {
+      "name": "maven",
+      "cwd": "${tmp}/run-RandomStringUtilsTest-s9njjpjz",
+      "env": {
+        "JAVA_HOME": "/usr/lib/jvm/java-21-openjdk",
+        "PATH": "/usr/lib/jvm/java-21-openjdk/bin:/usr/local/bin:/usr/bin:/bin",
+        "PWD": "${tmp}/run-RandomStringUtilsTest-s9njjpjz"
+      },
+      "command": [
+        "/usr/bin/mvn",
+        "-q",
+        "-Dtest=RandomStringUtilsTest",
+        "test"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "name": "restore",
+      "cwd": "${tmp}/run-RandomStringUtilsTest-s9njjpjz",
+      "env": {
+        "JAVA_HOME": "/usr/lib/jvm/java-21-openjdk",
+        "PATH": "/usr/lib/jvm/java-21-openjdk/bin:/usr/local/bin:/usr/bin:/bin",
+        "PWD": "${tmp}/run-RandomStringUtilsTest-s9njjpjz"
+      },
+      "command": [
+        "/usr/bin/git",
         "restore",
         "--source=HEAD",
         "--staged",
@@ -44,12 +55,28 @@
         "--",
         "src/test/java/org/apache/commons/lang3/RandomStringUtilsTest.java"
       ],
-      "cwd": "D:\\软件测试导论\\final_homework\\commons-lang",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "name": "worktree_remove",
+      "cwd": "./.",
+      "env": {
+        "JAVA_HOME": "/usr/lib/jvm/java-21-openjdk",
+        "PATH": "/usr/lib/jvm/java-21-openjdk/bin:/usr/local/bin:/usr/bin:/bin",
+        "PWD": "./."
+      },
+      "command": [
+        "/usr/bin/git",
+        "worktree",
+        "remove",
+        "--force",
+        "${tmp}/run-RandomStringUtilsTest-s9njjpjz"
+      ],
       "returncode": 0,
       "stdout": "",
       "stderr": ""
     }
-  ],
-  "failure_message": null,
-  "maven_command_shell": "'D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD' -q -Dtest=RandomStringUtilsTest test"
+  ]
 }

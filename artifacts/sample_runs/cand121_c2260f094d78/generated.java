@@ -16,23 +16,22 @@
  */
 package org.apache.commons.lang3;
 
+
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
-
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.util.Random;
 import java.util.stream.Stream;
-
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.condition.EnabledIfSystemProperty;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
-
-import org.junit.jupiter.api.condition.EnabledIfSystemProperty;
 import org.junit.jupiter.params.provider.ValueSource;
 
 /**
@@ -41,6 +40,7 @@ import org.junit.jupiter.params.provider.ValueSource;
 public class RandomStringUtilsTest extends AbstractLangTest {
 
     private static final int LOOP_COUNT = 1_000;
+
 
     static Stream<RandomStringUtils> randomProvider() {
         return Stream.of(RandomStringUtils.secure(), RandomStringUtils.secureStrong(), RandomStringUtils.insecure());
@@ -806,7 +806,6 @@ public class RandomStringUtilsTest extends AbstractLangTest {
         assertNotEquals(r2, r3);
     }
 
-
     @ParameterizedTest
     @ValueSource(ints = {MAX_SAFE_COUNT, MAX_SAFE_COUNT + 1})
     @EnabledIfSystemProperty(named = "test.large.heap", matches = "true")
@@ -814,4 +813,6 @@ public class RandomStringUtilsTest extends AbstractLangTest {
         final String hugeString = RandomStringUtils.random(expectedLength);
         assertEquals(expectedLength, hugeString.length(), "hugeString.length() == expectedLength");
     }
+    /** Maximum safe value for count to avoid overflow: (21x + 3) / 5 + 10 < 0x0FFF_FFFF */
+    private static final int MAX_SAFE_COUNT = 63_913_201;
 }

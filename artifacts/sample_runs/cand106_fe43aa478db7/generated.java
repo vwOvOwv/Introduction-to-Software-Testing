@@ -17,6 +17,7 @@
 
 package org.apache.commons.lang3;
 
+
 import static org.apache.commons.lang3.LangAssertions.assertIllegalArgumentException;
 import static org.apache.commons.lang3.LangAssertions.assertNullPointerException;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -25,10 +26,8 @@ import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import java.util.Comparator;
 import java.util.stream.LongStream;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -158,7 +157,7 @@ class LongRangeTest extends AbstractLangTest {
         assertNotEquals("Ni!", range2);
     }
 
-@Test
+    @Test
     void testFit() {
         assertEquals(range1.getMinimum(), range1.fit(Integer.MIN_VALUE));
         assertEquals(range1.getMinimum(), range1.fit(range1.getMinimum()));

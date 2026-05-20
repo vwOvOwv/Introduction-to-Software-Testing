@@ -16,6 +16,8 @@
  */
 package org.apache.commons.lang3;
 
+
+
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.allOf;
 import static org.hamcrest.Matchers.greaterThanOrEqualTo;
@@ -27,17 +29,14 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.fail;
-
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Modifier;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.util.Random;
-
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 /**
  * Tests {@link RandomStringUtils}.
@@ -474,6 +473,11 @@ public class RandomStringUtilsTest extends AbstractLangTest {
         assertEquals(50, r2.length(), "random(50) length");
         assertFalse(r1.equals(r2), "!r1.equals(r2)");
 
+        final long seedMillis = System.currentTimeMillis();
+        r1 = RandomStringUtils.random(50, 0, 0, true, true, null, new Random(seedMillis));
+        r2 = RandomStringUtils.random(50, 0, 0, true, true, null, new Random(seedMillis));
+        assertEquals(r1, r2, "r1.equals(r2)");
+
         r1 = RandomStringUtils.random(0);
         assertEquals("", r1, "random(0).equals(\"\")");
     }
@@ -516,7 +520,9 @@ public class RandomStringUtilsTest extends AbstractLangTest {
         assertThat("test homogeneity -- will fail about 1 in 100,000 times", chiSquare(expected, counts), lessThan(23.025850929940457d));
     }
 
-
+    /**
+     * Test {@code RandomStringUtils.random} works appropriately when chars specified.
+     */
     @Test
     void testRandomWithChars() {
         final char[] digitChars = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9'};
@@ -537,4 +543,9 @@ public class RandomStringUtilsTest extends AbstractLangTest {
         assertNotEquals(r1, r3);
         assertNotEquals(r2, r3);
     }
+
+
+/**
+     * Test {@code RandomStringUtils.random} works appropriately when chars specified.
+     */
 }

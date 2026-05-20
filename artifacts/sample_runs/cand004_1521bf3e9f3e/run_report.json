@@ -1,42 +1,53 @@
 {
-  "timestamp": "2026-05-16T10:57:44.548199+00:00",
-  "repo": "D:\\软件测试导论\\final_homework\\commons-lang",
-  "ref": "1521bf3e9f3e2f944fc2331b0ac19c9f5f0fde6d",
-  "target_test_path": "src/test/java/org/apache/commons/lang3/ArrayUtilsTest.java",
-  "replacement_test_file": "D:\\软件测试导论\\final_homework\\Introduction-to-Software-Testing\\artifacts\\sample_runs\\cand004_1521bf3e9f3e\\generated.java",
-  "test_selector": "ArrayUtilsTest",
-  "maven_args": [
-    "-q"
-  ],
-  "discard_all_tracked_changes": false,
-  "checkout": {
-    "command": [
-      "git",
-      "checkout",
-      "--detach",
-      "1521bf3e9f3e2f944fc2331b0ac19c9f5f0fde6d"
-    ],
-    "cwd": "D:\\软件测试导论\\final_homework\\commons-lang",
-    "returncode": 0,
-    "stdout": "",
-    "stderr": "Previous HEAD position was 1418a770b [LANG-1452] RecursiveToStringStyle and MultilineRecursiveToStringStyle shouldn't recurse into a java.math.BigDecimal (#1584)\nHEAD is now at 1521bf3e9 Instead of throwing a NullPointerException, ArrayUtils.toStringArray(Object[]) should return \"null\" for null elements like ArrayUtils.toStringArray(Object[], String) returns its valueForNullElements.\n"
-  },
-  "maven": {
-    "command": [
-      "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
-      "-q",
-      "-Dtest=ArrayUtilsTest",
-      "test"
-    ],
-    "cwd": "D:\\软件测试导论\\final_homework\\commons-lang",
-    "returncode": 0,
-    "stdout": "",
-    "stderr": ""
-  },
-  "restore": [
+  "command_history": [
     {
+      "name": "checkout",
+      "cwd": "./.",
+      "env": {
+        "JAVA_HOME": "/usr/lib/jvm/java-21-openjdk",
+        "PATH": "/usr/lib/jvm/java-21-openjdk/bin:/usr/local/bin:/usr/bin:/bin",
+        "PWD": "./."
+      },
       "command": [
-        "git",
+        "/usr/bin/git",
+        "worktree",
+        "add",
+        "--detach",
+        "${tmp}/run-ArrayUtilsTest-1fsbf0jj",
+        "1521bf3e9f3e2f944fc2331b0ac19c9f5f0fde6d"
+      ],
+      "returncode": 0,
+      "stdout": "HEAD is now at 1521bf3e9 Instead of throwing a NullPointerException, ArrayUtils.toStringArray(Object[]) should return \"null\" for null elements like ArrayUtils.toStringArray(Object[], String) returns its valueForNullElements.\n",
+      "stderr": "Preparing worktree (detached HEAD 1521bf3e9)\n"
+    },
+    {
+      "name": "maven",
+      "cwd": "${tmp}/run-ArrayUtilsTest-1fsbf0jj",
+      "env": {
+        "JAVA_HOME": "/usr/lib/jvm/java-21-openjdk",
+        "PATH": "/usr/lib/jvm/java-21-openjdk/bin:/usr/local/bin:/usr/bin:/bin",
+        "PWD": "${tmp}/run-ArrayUtilsTest-1fsbf0jj"
+      },
+      "command": [
+        "/usr/bin/mvn",
+        "-q",
+        "-Dtest=ArrayUtilsTest",
+        "test"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "name": "restore",
+      "cwd": "${tmp}/run-ArrayUtilsTest-1fsbf0jj",
+      "env": {
+        "JAVA_HOME": "/usr/lib/jvm/java-21-openjdk",
+        "PATH": "/usr/lib/jvm/java-21-openjdk/bin:/usr/local/bin:/usr/bin:/bin",
+        "PWD": "${tmp}/run-ArrayUtilsTest-1fsbf0jj"
+      },
+      "command": [
+        "/usr/bin/git",
         "restore",
         "--source=HEAD",
         "--staged",
@@ -44,12 +55,28 @@
         "--",
         "src/test/java/org/apache/commons/lang3/ArrayUtilsTest.java"
       ],
-      "cwd": "D:\\软件测试导论\\final_homework\\commons-lang",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "name": "worktree_remove",
+      "cwd": "./.",
+      "env": {
+        "JAVA_HOME": "/usr/lib/jvm/java-21-openjdk",
+        "PATH": "/usr/lib/jvm/java-21-openjdk/bin:/usr/local/bin:/usr/bin:/bin",
+        "PWD": "./."
+      },
+      "command": [
+        "/usr/bin/git",
+        "worktree",
+        "remove",
+        "--force",
+        "${tmp}/run-ArrayUtilsTest-1fsbf0jj"
+      ],
       "returncode": 0,
       "stdout": "",
       "stderr": ""
     }
-  ],
-  "failure_message": null,
-  "maven_command_shell": "'D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD' -q -Dtest=ArrayUtilsTest test"
+  ]
 }

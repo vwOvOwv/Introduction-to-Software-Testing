@@ -1,42 +1,53 @@
 {
-  "timestamp": "2026-05-16T11:44:59.374359+00:00",
-  "repo": "D:\\软件测试导论\\final_homework\\commons-lang",
-  "ref": "1d5ba7a1109ba6bf5b7948ece6add47d57f9d6c2",
-  "target_test_path": "src/test/java/org/apache/commons/lang3/reflect/MethodUtilsTest.java",
-  "replacement_test_file": "D:\\软件测试导论\\final_homework\\Introduction-to-Software-Testing\\artifacts\\sample_runs\\cand110_1d5ba7a1109b\\generated.java",
-  "test_selector": "MethodUtilsTest",
-  "maven_args": [
-    "-q"
-  ],
-  "discard_all_tracked_changes": false,
-  "checkout": {
-    "command": [
-      "git",
-      "checkout",
-      "--detach",
-      "1d5ba7a1109ba6bf5b7948ece6add47d57f9d6c2"
-    ],
-    "cwd": "D:\\软件测试导论\\final_homework\\commons-lang",
-    "returncode": 0,
-    "stdout": "",
-    "stderr": "Previous HEAD position was da246244a Add StopWatch.run([Failable]Runnable) and get([Failable]Supplier)\nHEAD is now at 1d5ba7a11 MethodUtils cannot find or invoke a public method on a public class implemented in its package-private superclass\n"
-  },
-  "maven": {
-    "command": [
-      "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
-      "-q",
-      "-Dtest=MethodUtilsTest",
-      "test"
-    ],
-    "cwd": "D:\\软件测试导论\\final_homework\\commons-lang",
-    "returncode": 1,
-    "stdout": "[ERROR] COMPILATION ERROR : \n[ERROR] /D:/�������Ե���/final_homework/commons-lang/src/test/java/org/apache/commons/lang3/reflect/MethodUtilsTest.java:[1097,20] ������ org.apache.commons.lang3.reflect.MethodUtilsTest�ж������� org.apache.commons.lang3.reflect.MethodUtilsTest.TestMutable\n[ERROR] /D:/�������Ե���/final_homework/commons-lang/src/test/java/org/apache/commons/lang3/reflect/testbed/Annotated.java:[27,9] ���ظ�: org.apache.commons.lang3.reflect.testbed.Annotated\n[ERROR] /D:/�������Ե���/final_homework/commons-lang/src/test/java/org/apache/commons/lang3/reflect/testbed/GenericConsumer.java:[19,8] ���ظ�: org.apache.commons.lang3.reflect.testbed.GenericConsumer\n[ERROR] /D:/�������Ե���/final_homework/commons-lang/src/test/java/org/apache/commons/lang3/reflect/testbed/GenericParent.java:[22,8] ���ظ�: org.apache.commons.lang3.reflect.testbed.GenericParent\n[ERROR] /D:/�������Ե���/final_homework/commons-lang/src/test/java/org/apache/commons/lang3/reflect/testbed/PublicChild.java:[21,8] ���ظ�: org.apache.commons.lang3.reflect.testbed.PublicChild\n[ERROR] /D:/�������Ե���/final_homework/commons-lang/src/test/java/org/apache/commons/lang3/reflect/testbed/StringParameterizedChild.java:[22,8] ���ظ�: org.apache.commons.lang3.reflect.testbed.StringParameterizedChild\n[ERROR] /D:/�������Ե���/final_homework/commons-lang/src/test/java/org/apache/commons/lang3/reflect/MethodUtilsTest.java:[474,48] �Ҳ�������\n  ����:   �� TestMutableSubclass\n  λ��: �� org.apache.commons.lang3.reflect.MethodUtilsTest\n[ERROR] /D:/�������Ե���/final_homework/commons-lang/src/test/java/org/apache/commons/lang3/reflect/MethodUtilsTest.java:[489,48] �Ҳ�������\n  ����:   �� TestMutableSubclass\n  λ��: �� org.apache.commons.lang3.reflect.MethodUtilsTest\n[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.14.0:testCompile (default-testCompile) on project commons-lang3: Compilation failure: Compilation failure: \n[ERROR] /D:/�������Ե���/final_homework/commons-lang/src/test/java/org/apache/commons/lang3/reflect/MethodUtilsTest.java:[1097,20] ������ org.apache.commons.lang3.reflect.MethodUtilsTest�ж������� org.apache.commons.lang3.reflect.MethodUtilsTest.TestMutable\n[ERROR] /D:/�������Ե���/final_homework/commons-lang/src/test/java/org/apache/commons/lang3/reflect/testbed/Annotated.java:[27,9] ���ظ�: org.apache.commons.lang3.reflect.testbed.Annotated\n[ERROR] /D:/�������Ե���/final_homework/commons-lang/src/test/java/org/apache/commons/lang3/reflect/testbed/GenericConsumer.java:[19,8] ���ظ�: org.apache.commons.lang3.reflect.testbed.GenericConsumer\n[ERROR] /D:/�������Ե���/final_homework/commons-lang/src/test/java/org/apache/commons/lang3/reflect/testbed/GenericParent.java:[22,8] ���ظ�: org.apache.commons.lang3.reflect.testbed.GenericParent\n[ERROR] /D:/�������Ե���/final_homework/commons-lang/src/test/java/org/apache/commons/lang3/reflect/testbed/PublicChild.java:[21,8] ���ظ�: org.apache.commons.lang3.reflect.testbed.PublicChild\n[ERROR] /D:/�������Ե���/final_homework/commons-lang/src/test/java/org/apache/commons/lang3/reflect/testbed/StringParameterizedChild.java:[22,8] ���ظ�: org.apache.commons.lang3.reflect.testbed.StringParameterizedChild\n[ERROR] /D:/�������Ե���/final_homework/commons-lang/src/test/java/org/apache/commons/lang3/reflect/MethodUtilsTest.java:[474,48] �Ҳ�������\n[ERROR]   ����:   �� TestMutableSubclass\n[ERROR]   λ��: �� org.apache.commons.lang3.reflect.MethodUtilsTest\n[ERROR] /D:/�������Ե���/final_homework/commons-lang/src/test/java/org/apache/commons/lang3/reflect/MethodUtilsTest.java:[489,48] �Ҳ�������\n[ERROR]   ����:   �� TestMutableSubclass\n[ERROR]   λ��: �� org.apache.commons.lang3.reflect.MethodUtilsTest\n[ERROR] -> [Help 1]\n[ERROR] \n[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.\n[ERROR] Re-run Maven using the -X switch to enable full debug logging.\n[ERROR] \n[ERROR] For more information about the errors and possible solutions, please read the following articles:\n[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException\n",
-    "stderr": ""
-  },
-  "restore": [
+  "command_history": [
     {
+      "name": "checkout",
+      "cwd": "./.",
+      "env": {
+        "JAVA_HOME": "/usr/lib/jvm/java-21-openjdk",
+        "PATH": "/usr/lib/jvm/java-21-openjdk/bin:/usr/local/bin:/usr/bin:/bin",
+        "PWD": "./."
+      },
       "command": [
-        "git",
+        "/usr/bin/git",
+        "worktree",
+        "add",
+        "--detach",
+        "${tmp}/run-MethodUtilsTest-ofbe0px5",
+        "1d5ba7a1109ba6bf5b7948ece6add47d57f9d6c2"
+      ],
+      "returncode": 0,
+      "stdout": "HEAD is now at 1d5ba7a11 MethodUtils cannot find or invoke a public method on a public class implemented in its package-private superclass\n",
+      "stderr": "Preparing worktree (detached HEAD 1d5ba7a11)\n"
+    },
+    {
+      "name": "maven",
+      "cwd": "${tmp}/run-MethodUtilsTest-ofbe0px5",
+      "env": {
+        "JAVA_HOME": "/usr/lib/jvm/java-21-openjdk",
+        "PATH": "/usr/lib/jvm/java-21-openjdk/bin:/usr/local/bin:/usr/bin:/bin",
+        "PWD": "${tmp}/run-MethodUtilsTest-ofbe0px5"
+      },
+      "command": [
+        "/usr/bin/mvn",
+        "-q",
+        "-Dtest=MethodUtilsTest",
+        "test"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "name": "restore",
+      "cwd": "${tmp}/run-MethodUtilsTest-ofbe0px5",
+      "env": {
+        "JAVA_HOME": "/usr/lib/jvm/java-21-openjdk",
+        "PATH": "/usr/lib/jvm/java-21-openjdk/bin:/usr/local/bin:/usr/bin:/bin",
+        "PWD": "${tmp}/run-MethodUtilsTest-ofbe0px5"
+      },
+      "command": [
+        "/usr/bin/git",
         "restore",
         "--source=HEAD",
         "--staged",
@@ -44,12 +55,28 @@
         "--",
         "src/test/java/org/apache/commons/lang3/reflect/MethodUtilsTest.java"
       ],
-      "cwd": "D:\\软件测试导论\\final_homework\\commons-lang",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "name": "worktree_remove",
+      "cwd": "./.",
+      "env": {
+        "JAVA_HOME": "/usr/lib/jvm/java-21-openjdk",
+        "PATH": "/usr/lib/jvm/java-21-openjdk/bin:/usr/local/bin:/usr/bin:/bin",
+        "PWD": "./."
+      },
+      "command": [
+        "/usr/bin/git",
+        "worktree",
+        "remove",
+        "--force",
+        "${tmp}/run-MethodUtilsTest-ofbe0px5"
+      ],
       "returncode": 0,
       "stdout": "",
       "stderr": ""
     }
-  ],
-  "failure_message": null,
-  "maven_command_shell": "'D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD' -q -Dtest=MethodUtilsTest test"
+  ]
 }

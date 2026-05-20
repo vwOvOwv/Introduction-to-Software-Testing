@@ -17,19 +17,18 @@
 
 package org.apache.commons.lang3.time;
 
+
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
-import java.util.Calendar;
-import java.util.Locale;
-
-import org.apache.commons.lang3.AbstractLangTest;
-import org.junit.jupiter.api.Test;
-
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
+import java.util.Calendar;
 import java.util.GregorianCalendar;
+import java.util.Locale;
 import java.util.TimeZone;
+import org.apache.commons.lang3.AbstractLangTest;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
 
@@ -91,8 +90,6 @@ public class CalendarUtilsTest extends AbstractLangTest {
         assertEquals(Calendar.getInstance().get(Calendar.YEAR), CalendarUtils.INSTANCE.getYear());
     }
 
-
-
     @ParameterizedTest
     @MethodSource(TIME_ZONE_GET_AVAILABLE_IDS)
     public void testToLocalDateTime(final String id) {
@@ -105,4 +102,6 @@ public class CalendarUtilsTest extends AbstractLangTest {
         calendar.setTimeInMillis(zdt1.toInstant().toEpochMilli());
         assertEquals(LocalDateTime.ofInstant(zdt1.toInstant(), calendar.getTimeZone().toZoneId()), new CalendarUtils(calendar).toLocalDateTime());
     }
+
+    private static final String TIME_ZONE_GET_AVAILABLE_IDS = "java.util.TimeZone#getAvailableIDs()";
 }

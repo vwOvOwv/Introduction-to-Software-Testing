@@ -1,42 +1,53 @@
 {
-  "timestamp": "2026-05-16T11:11:45.657536+00:00",
-  "repo": "D:\\软件测试导论\\final_homework\\commons-lang",
-  "ref": "ce2ba7b282608da952d97eada2747ff00d13d14f",
-  "target_test_path": "src/test/java/org/apache/commons/lang3/time/StopWatchTest.java",
-  "replacement_test_file": "D:\\软件测试导论\\final_homework\\Introduction-to-Software-Testing\\artifacts\\sample_runs\\cand033_ce2ba7b28260\\generated.java",
-  "test_selector": "StopWatchTest",
-  "maven_args": [
-    "-q"
-  ],
-  "discard_all_tracked_changes": false,
-  "checkout": {
-    "command": [
-      "git",
-      "checkout",
-      "--detach",
-      "ce2ba7b282608da952d97eada2747ff00d13d14f"
-    ],
-    "cwd": "D:\\软件测试导论\\final_homework\\commons-lang",
-    "returncode": 0,
-    "stdout": "",
-    "stderr": "Previous HEAD position was be8b654fc Conversion.hexTo*() methods now throw IllegalArgumentException instead of StringIndexOutOfBoundsException\nHEAD is now at ce2ba7b28 LANG-1504 - Adding labels to split StopWatch feature (#1473)\n"
-  },
-  "maven": {
-    "command": [
-      "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
-      "-q",
-      "-Dtest=StopWatchTest",
-      "test"
-    ],
-    "cwd": "D:\\软件测试导论\\final_homework\\commons-lang",
-    "returncode": 1,
-    "stdout": "[ERROR] COMPILATION ERROR : \n[ERROR] /D:/�������Ե���/final_homework/commons-lang/src/test/java/org/apache/commons/lang3/time/StopWatchTest.java:[547,5] �޷����� org.apache.commons.lang3.time.StopWatchTest�еķ��� testGetSplitsӦ�õ���������;\n  ��Ҫ: û�в���\n  �ҵ�:    org.apache.commons.lang3.time.StopWatch\n  ԭ��: ʵ�ʲ����б�����ʽ�����б����Ȳ�ͬ\n[ERROR] /D:/�������Ե���/final_homework/commons-lang/src/test/java/org/apache/commons/lang3/time/StopWatchTest.java:[548,5] �޷����� org.apache.commons.lang3.time.StopWatchTest�еķ��� testGetSplitsӦ�õ���������;\n  ��Ҫ: û�в���\n  �ҵ�:    org.apache.commons.lang3.time.StopWatch\n  ԭ��: ʵ�ʲ����б�����ʽ�����б����Ȳ�ͬ\n[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.14.1:testCompile (default-testCompile) on project commons-lang3: Compilation failure: Compilation failure: \n[ERROR] /D:/�������Ե���/final_homework/commons-lang/src/test/java/org/apache/commons/lang3/time/StopWatchTest.java:[547,5] �޷����� org.apache.commons.lang3.time.StopWatchTest�еķ��� testGetSplitsӦ�õ���������;\n[ERROR]   ��Ҫ: û�в���\n[ERROR]   �ҵ�:    org.apache.commons.lang3.time.StopWatch\n[ERROR]   ԭ��: ʵ�ʲ����б�����ʽ�����б����Ȳ�ͬ\n[ERROR] /D:/�������Ե���/final_homework/commons-lang/src/test/java/org/apache/commons/lang3/time/StopWatchTest.java:[548,5] �޷����� org.apache.commons.lang3.time.StopWatchTest�еķ��� testGetSplitsӦ�õ���������;\n[ERROR]   ��Ҫ: û�в���\n[ERROR]   �ҵ�:    org.apache.commons.lang3.time.StopWatch\n[ERROR]   ԭ��: ʵ�ʲ����б�����ʽ�����б����Ȳ�ͬ\n[ERROR] -> [Help 1]\n[ERROR] \n[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.\n[ERROR] Re-run Maven using the -X switch to enable full debug logging.\n[ERROR] \n[ERROR] For more information about the errors and possible solutions, please read the following articles:\n[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException\n",
-    "stderr": ""
-  },
-  "restore": [
+  "command_history": [
     {
+      "name": "checkout",
+      "cwd": "./.",
+      "env": {
+        "JAVA_HOME": "/usr/lib/jvm/java-21-openjdk",
+        "PATH": "/usr/lib/jvm/java-21-openjdk/bin:/usr/local/bin:/usr/bin:/bin",
+        "PWD": "./."
+      },
       "command": [
-        "git",
+        "/usr/bin/git",
+        "worktree",
+        "add",
+        "--detach",
+        "${tmp}/run-StopWatchTest-3cfpvzng",
+        "ce2ba7b282608da952d97eada2747ff00d13d14f"
+      ],
+      "returncode": 0,
+      "stdout": "HEAD is now at ce2ba7b28 LANG-1504 - Adding labels to split StopWatch feature (#1473)\n",
+      "stderr": "Preparing worktree (detached HEAD ce2ba7b28)\n"
+    },
+    {
+      "name": "maven",
+      "cwd": "${tmp}/run-StopWatchTest-3cfpvzng",
+      "env": {
+        "JAVA_HOME": "/usr/lib/jvm/java-21-openjdk",
+        "PATH": "/usr/lib/jvm/java-21-openjdk/bin:/usr/local/bin:/usr/bin:/bin",
+        "PWD": "${tmp}/run-StopWatchTest-3cfpvzng"
+      },
+      "command": [
+        "/usr/bin/mvn",
+        "-q",
+        "-Dtest=StopWatchTest",
+        "test"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "name": "restore",
+      "cwd": "${tmp}/run-StopWatchTest-3cfpvzng",
+      "env": {
+        "JAVA_HOME": "/usr/lib/jvm/java-21-openjdk",
+        "PATH": "/usr/lib/jvm/java-21-openjdk/bin:/usr/local/bin:/usr/bin:/bin",
+        "PWD": "${tmp}/run-StopWatchTest-3cfpvzng"
+      },
+      "command": [
+        "/usr/bin/git",
         "restore",
         "--source=HEAD",
         "--staged",
@@ -44,12 +55,28 @@
         "--",
         "src/test/java/org/apache/commons/lang3/time/StopWatchTest.java"
       ],
-      "cwd": "D:\\软件测试导论\\final_homework\\commons-lang",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "name": "worktree_remove",
+      "cwd": "./.",
+      "env": {
+        "JAVA_HOME": "/usr/lib/jvm/java-21-openjdk",
+        "PATH": "/usr/lib/jvm/java-21-openjdk/bin:/usr/local/bin:/usr/bin:/bin",
+        "PWD": "./."
+      },
+      "command": [
+        "/usr/bin/git",
+        "worktree",
+        "remove",
+        "--force",
+        "${tmp}/run-StopWatchTest-3cfpvzng"
+      ],
       "returncode": 0,
       "stdout": "",
       "stderr": ""
     }
-  ],
-  "failure_message": null,
-  "maven_command_shell": "'D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD' -q -Dtest=StopWatchTest test"
+  ]
 }

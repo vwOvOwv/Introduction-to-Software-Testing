@@ -16,6 +16,11 @@
  */
 package org.apache.commons.lang3.reflect;
 
+
+
+import java.nio.file.Files;
+import java.nio.file.LinkOption;
+import java.nio.file.Path;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.hasItemInArray;
 import static org.hamcrest.Matchers.hasItems;
@@ -28,7 +33,6 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import java.awt.Color;
 import java.lang.reflect.Method;
 import java.lang.reflect.Type;
@@ -38,7 +42,6 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-
 import org.apache.commons.lang3.AbstractLangTest;
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.ClassUtils;
@@ -54,10 +57,6 @@ import org.apache.commons.lang3.reflect.testbed.StringParameterizedChild;
 import org.apache.commons.lang3.tuple.ImmutablePair;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import java.nio.file.Files;
-import java.nio.file.LinkOption;
-import java.nio.file.Path;
 
 /**
  * Unit tests MethodUtils
@@ -599,7 +598,7 @@ public class MethodUtilsTest extends AbstractLangTest {
                 Annotated.class, true, false));
     }
 
-@Test
+    @Test
     public void testGetMatchingAccessibleMethod() {
         expectMatchingAccessibleMethodParameterTypes(TestBean.class, "foo", ArrayUtils.EMPTY_CLASS_ARRAY, ArrayUtils.EMPTY_CLASS_ARRAY);
         expectMatchingAccessibleMethodParameterTypes(TestBean.class, "foo", null, ArrayUtils.EMPTY_CLASS_ARRAY);

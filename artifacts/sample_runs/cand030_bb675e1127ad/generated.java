@@ -16,13 +16,14 @@
  */
 package org.apache.commons.lang3;
 
+
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import org.apache.commons.lang3.arch.Processor;
 import org.apache.commons.lang3.arch.Processor.Arch;
 import org.apache.commons.lang3.arch.Processor.Type;
@@ -228,5 +229,5 @@ class ArchUtilsTest extends AbstractLangTest {
             assertFalse(type.getLabel().isEmpty());
         }
     }
-
+    private static final String PPC64_LE = "ppc64le";
 }

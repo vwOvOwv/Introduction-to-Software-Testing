@@ -16,43 +16,44 @@
  */
 package org.apache.commons.lang3;
 
-import static org.apache.commons.lang3.LangAssertions.assertIllegalArgumentException;
-import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertNotSame;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-
+import static org.junit.jupiter.api.Assertions.fail;
 import java.io.Serializable;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.Set;
 import java.util.TreeMap;
 import java.util.function.Function;
-
+import org.apache.commons.lang3.mutable.MutableObject;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junitpioneer.jupiter.params.IntRangeSource;
+import static org.apache.commons.lang3.LangAssertions.assertIllegalArgumentException;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertNotSame;
 import org.apache.commons.lang3.ClassUtils.Interfaces;
 import org.apache.commons.lang3.reflect.testbed.GenericConsumer;
 import org.apache.commons.lang3.reflect.testbed.GenericParent;
 import org.apache.commons.lang3.reflect.testbed.StringParameterizedChild;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.fail;
-import java.util.Objects;
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junitpioneer.jupiter.params.IntRangeSource;
 
 /**
  * Tests {@link ClassUtils}.
@@ -1280,25 +1281,6 @@ class ClassUtilsTest extends AbstractLangTest {
         assertNull(ClassUtils.getComponentType(null));
     }
 
-    @Test
-    void testGetInnerClass() throws ClassNotFoundException {
-        assertEquals(Inner.DeeplyNested.class, ClassUtils.getClass("org.apache.commons.lang3.ClassUtilsTest.Inner.DeeplyNested"));
-        assertEquals(Inner.DeeplyNested.class, ClassUtils.getClass("org.apache.commons.lang3.ClassUtilsTest.Inner$DeeplyNested"));
-        assertEquals(Inner.DeeplyNested.class, ClassUtils.getClass("org.apache.commons.lang3.ClassUtilsTest$Inner$DeeplyNested"));
-        assertEquals(Inner.DeeplyNested.class, ClassUtils.getClass("org.apache.commons.lang3.ClassUtilsTest$Inner.DeeplyNested"));
-        //
-        assertEquals(Inner.DeeplyNested.class, ClassUtils.getClass("org.apache.commons.lang3.ClassUtilsTest.Inner.DeeplyNested", true));
-        assertEquals(Inner.DeeplyNested.class, ClassUtils.getClass("org.apache.commons.lang3.ClassUtilsTest.Inner$DeeplyNested", true));
-        assertEquals(Inner.DeeplyNested.class, ClassUtils.getClass("org.apache.commons.lang3.ClassUtilsTest$Inner$DeeplyNested", true));
-        assertEquals(Inner.DeeplyNested.class, ClassUtils.getClass("org.apache.commons.lang3.ClassUtilsTest$Inner.DeeplyNested", true));
-        //
-        final ClassLoader classLoader = Inner.DeeplyNested.class.getClassLoader();
-        assertEquals(Inner.DeeplyNested.class, ClassUtils.getClass(classLoader, "org.apache.commons.lang3.ClassUtilsTest.Inner.DeeplyNested"));
-        assertEquals(Inner.DeeplyNested.class, ClassUtils.getClass(classLoader, "org.apache.commons.lang3.ClassUtilsTest.Inner$DeeplyNested"));
-        assertEquals(Inner.DeeplyNested.class, ClassUtils.getClass(classLoader, "org.apache.commons.lang3.ClassUtilsTest$Inner$DeeplyNested"));
-        assertEquals(Inner.DeeplyNested.class, ClassUtils.getClass(classLoader, "org.apache.commons.lang3.ClassUtilsTest$Inner.DeeplyNested"));
-        //
-    }
 
     @Test
     void testGetPublicMethod() throws Exception {
@@ -1531,7 +1513,6 @@ class ClassUtilsTest extends AbstractLangTest {
         assertNull(ClassUtils.wrapperToPrimitive(null), "Wrong result for null class");
     }
 
-
     @Test
     void testGetClassInner() throws ClassNotFoundException {
         assertEquals(Inner.DeeplyNested.class, ClassUtils.getClass("org.apache.commons.lang3.ClassUtilsTest.Inner.DeeplyNested"));
@@ -1552,7 +1533,6 @@ class ClassUtilsTest extends AbstractLangTest {
         assertEquals(Inner.DeeplyNested.class, ClassUtils.getClass(classLoader, "org.apache.commons.lang3.ClassUtilsTest$Inner.DeeplyNested"));
     }
 
-
     @ParameterizedTest
     @IntRangeSource(from = 256, to = 300)
     void testGetClassArrayIllegal(final int dimensions) throws ClassNotFoundException {
@@ -1562,12 +1542,27 @@ class ClassUtilsTest extends AbstractLangTest {
                 () -> assertEquals(dimensions, getDimension(ClassUtils.getClass("java.lang.String" + StringUtils.repeat("[]", dimensions)))));
     }
 
-
     @ParameterizedTest
     @IntRangeSource(from = 1, to = 255)
     void testGetClassArray(final int dimensions) throws ClassNotFoundException {
         assertEquals(dimensions,
                 getDimension(ClassUtils.getClass("org.apache.commons.lang3.ClassUtilsTest$Inner.DeeplyNested" + StringUtils.repeat("[]", dimensions))));
         assertEquals(dimensions, getDimension(ClassUtils.getClass("java.lang.String" + StringUtils.repeat("[]", dimensions))));
+    }
+
+    private int getDimension(final Class<?> clazz) {
+        Objects.requireNonNull(clazz);
+        if (!clazz.isArray()) {
+            fail("Not an array: " + clazz);
+        }
+        final String className = clazz.getName();
+        int dimension = 0;
+        for (final char c : className.toCharArray()) {
+            if (c != '[') {
+                break;
+            }
+            dimension++;
+        }
+        return dimension;
     }
 }

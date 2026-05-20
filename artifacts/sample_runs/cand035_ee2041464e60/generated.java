@@ -16,24 +16,24 @@
  */
 package org.apache.commons.lang3.math;
 
+
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Modifier;
-import java.math.BigDecimal;
 import java.math.BigInteger;
-import java.math.RoundingMode;
 import java.text.NumberFormat;
 import java.text.ParseException;
 import java.util.function.Function;
-
 import org.apache.commons.lang3.AbstractLangTest;
-import org.junit.jupiter.api.Test;
 
 /**
  * Unit tests {@link org.apache.commons.lang3.math.NumberUtils}.
@@ -1605,6 +1605,10 @@ public class NumberUtilsTest extends AbstractLangTest {
      */
     @Test
     public void testStringToDoubleStringD() {
+        assertEquals(1.2345d, NumberUtils.toDouble("1.2345", 5.1d), "toDouble(String, int) 1 failed");
+        assertEquals(5.0d, NumberUtils.toDouble("a", 5.0d), "toDouble(String, int) 2 failed");
+        // LANG-1060
+        assertEquals(1.2345d, NumberUtils.toDouble("001.2345", 5.1d), "toDouble(String, int) 3 failed");
         assertEquals(NumberUtils.toDouble("-001.2345", 5.1d), -1.2345d, "toDouble(String, int) 4 failed");
         assertEquals(1.2345d, NumberUtils.toDouble("+001.2345", 5.1d), "toDouble(String, int) 5 failed");
         assertEquals(0d, NumberUtils.toDouble("000.00", 5.1d), "toDouble(String, int) 7 failed");
@@ -1626,7 +1630,7 @@ public class NumberUtilsTest extends AbstractLangTest {
     /**
      * Test for {@link NumberUtils#toByte(String, byte)}.
      */
-@Test
+    @Test
     public void testToByteStringI() {
         assertEquals(123, NumberUtils.toByte("123", (byte) 5), "toByte(String, byte) 1 failed");
         assertEquals(5, NumberUtils.toByte("12.3", (byte) 5), "toByte(String, byte) 2 failed");
@@ -1659,6 +1663,9 @@ public class NumberUtilsTest extends AbstractLangTest {
      */
     @Test
     public void testToFloatStringF() {
+        assertEquals(1.2345f, NumberUtils.toFloat("1.2345", 5.1f), "toFloat(String, int) 1 failed");
+        assertEquals(5.0f, NumberUtils.toFloat("a", 5.0f), "toFloat(String, int) 2 failed");
+        // LANG-1060
         assertEquals(5.0f, NumberUtils.toFloat("-001Z.2345", 5.0f), "toFloat(String, int) 3 failed");
         assertEquals(5.0f, NumberUtils.toFloat("+001AB.2345", 5.0f), "toFloat(String, int) 4 failed");
         assertEquals(5.0f, NumberUtils.toFloat("001Z.2345", 5.0f), "toFloat(String, int) 5 failed");
@@ -1887,4 +1894,6 @@ public class NumberUtilsTest extends AbstractLangTest {
         assertEquals(5, NumberUtils.toShort("", (short) 5));
         assertEquals(5, NumberUtils.toShort(null, (short) 5));
     }
+
+
 }

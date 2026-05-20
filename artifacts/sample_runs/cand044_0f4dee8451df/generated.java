@@ -16,16 +16,19 @@
  */
 package org.apache.commons.lang3;
 
-import static org.apache.commons.lang3.JavaVersion.JAVA_1_4;
+
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import org.apache.commons.lang3.SystemUtils;
+import org.junit.jupiter.api.Test;
+import static org.apache.commons.lang3.JavaVersion.JAVA_1_4;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertSame;
-import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Modifier;
 import java.util.Arrays;
@@ -34,9 +37,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Locale;
 import java.util.Set;
-
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
 
@@ -525,24 +526,24 @@ public class LocaleUtilsTest extends AbstractLangTest {
     /**
      * Test toLocale() method.
      */
-@Test
-public void testToLocale_3Part() {
-    assertValidToLocale("us_EN_A", "us", "EN", "A");
-    // this isn't pretty, but was caused by a jdk bug it seems
-    // https://bugs.java.com/bugdatabase/view_bug.do?bug_id=4210525
-    if (SystemUtils.isJavaVersionAtLeast(JAVA_1_4)) {
-        assertValidToLocale("us_EN_a", "us", "EN", "a");
-        assertValidToLocale("us_EN_SFsafdFDsdfF", "us", "EN", "SFsafdFDsdfF");
-    } else {
-        assertValidToLocale("us_EN_a", "us", "EN", "A");
-        assertValidToLocale("us_EN_SFsafdFDsdfF", "us", "EN", "SFSAFDFDSDFF");
+    @Test
+    public void testToLocale_3Part() {
+        assertValidToLocale("us_EN_A", "us", "EN", "A");
+        assertValidToLocale("us-EN-A", "us", "EN", "A");
+        // this isn't pretty, but was caused by a jdk bug it seems
+        // https://bugs.java.com/bugdatabase/view_bug.do?bug_id=4210525
+        if (SystemUtils.isJavaVersionAtLeast(JAVA_1_4)) {
+            assertValidToLocale("us_EN_a", "us", "EN", "a");
+            assertValidToLocale("us_EN_SFsafdFDsdfF", "us", "EN", "SFsafdFDsdfF");
+        } else {
+            assertValidToLocale("us_EN_a", "us", "EN", "A");
+            assertValidToLocale("us_EN_SFsafdFDsdfF", "us", "EN", "SFSAFDFDSDFF");
+        }
+        assertThrows(IllegalArgumentException.class, () -> LocaleUtils.toLocale("us_EN-a"), "Should fail as no consistent delimiter");
+        assertThrows(IllegalArgumentException.class, () -> LocaleUtils.toLocale("uu_UU_"), "Must be 3, 5 or 7+ in length");
+        // LANG-1741
+        assertEquals(new Locale("en", "001", "US_POSIX"), LocaleUtils.toLocale("en_001_US_POSIX"));
     }
-
-    assertThrows(IllegalArgumentException.class, () -> LocaleUtils.toLocale("us_EN-a"), "Should fail as no consistent delimiter");
-    assertThrows(IllegalArgumentException.class, () -> LocaleUtils.toLocale("uu_UU_"), "Must be 3, 5 or 7+ in length");
-    // LANG-1741
-    assertEquals(new Locale("en", "001", "US_POSIX"), LocaleUtils.toLocale("en_001_US_POSIX"));
-}
 
     /**
      * Test toLocale(Locale) method.

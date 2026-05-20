@@ -18,10 +18,10 @@
  */
 package org.apache.commons.lang3;
 
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import org.junit.jupiter.api.Test;
 
 /**
@@ -39,7 +39,7 @@ class JavaVersionTest extends AbstractLangTest {
         assertFalse(JavaVersion.JAVA_0_9.atLeast(JavaVersion.JAVA_1_6), "0.9 at least 1.6 passed");
     }
 
-@Test
+    @Test
     void testGetJavaVersion() throws Exception {
         assertEquals(JavaVersion.JAVA_0_9, JavaVersion.get("0.9"), "0.9 failed");
         assertEquals(JavaVersion.JAVA_1_1, JavaVersion.get("1.1"), "1.1 failed");

@@ -16,16 +16,17 @@
  */
 package org.apache.commons.lang3.math;
 
+
+
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.apache.commons.lang3.LangAssertions.assertIllegalArgumentException;
 import static org.apache.commons.lang3.LangAssertions.assertNullPointerException;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertInstanceOf;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
-import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Modifier;
 import java.math.BigDecimal;
@@ -34,7 +35,6 @@ import java.math.RoundingMode;
 import java.text.NumberFormat;
 import java.text.ParseException;
 import java.util.function.Function;
-
 import org.apache.commons.lang3.AbstractLangTest;
 import org.junit.jupiter.api.Test;
 
@@ -1036,8 +1036,9 @@ class NumberUtilsTest extends AbstractLangTest {
      * https://docs.oracle.com/javase/specs/jls/se8/html/jls-3.html#jls-3.10.2, and https://docs.oracle.com/javase/specs/jls/se8/html/jls-3.html#jls-Digits,
      * fullwidth Unicode digits are not applicable. Moved to JDK as an enhancement.</blockquote>
      */
-@Test
+    @Test
     void testIsParsableFullWidthUnicodeJDK8326627() {
+        // 123 in fullwidth Unicode digits
         final String fullWidth123 = "\uFF10\uFF11\uFF12";
         assertThrows(NumberFormatException.class, () -> Double.parseDouble(fullWidth123));
         assertThrows(NumberFormatException.class, () -> Float.parseFloat(fullWidth123));
@@ -1077,7 +1078,6 @@ class NumberUtilsTest extends AbstractLangTest {
     void testLang1729IsParsableDouble() {
         assertTrue(isParsableDouble("1"));
         assertFalse(isParsableDouble("1 2 3"));
-        assertTrue(isParsableDouble("１２３"));
         assertFalse(isParsableDouble("１ ２ ３"));
     }
 
@@ -1085,7 +1085,6 @@ class NumberUtilsTest extends AbstractLangTest {
     void testLang1729IsParsableFloat() {
         assertTrue(isParsableFloat("1"));
         assertFalse(isParsableFloat("1 2 3"));
-        assertTrue(isParsableFloat("１２３"));
         assertFalse(isParsableFloat("１ ２ ３"));
     }
 

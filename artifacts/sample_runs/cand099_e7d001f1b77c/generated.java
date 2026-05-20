@@ -16,15 +16,15 @@
  */
 package org.apache.commons.lang3;
 
+
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
+import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import java.util.regex.Pattern;
 import java.util.regex.PatternSyntaxException;
-
-import org.junit.jupiter.api.Test;
 
 /**
  * Tests {@link RegExUtils}.
@@ -124,22 +124,6 @@ public class RegExUtilsTest extends AbstractLangTest {
                 "RegExUtils.removeFirst expecting PatternSyntaxException");
     }
 
-    @Test
-    public void testRemovePattern_StringString() {
-        assertNull(RegExUtils.removePattern(null, ""));
-        assertEquals("any", RegExUtils.removePattern("any", (String) null));
-
-        assertEquals("", RegExUtils.removePattern("", ""));
-        assertEquals("", RegExUtils.removePattern("", ".*"));
-        assertEquals("", RegExUtils.removePattern("", ".+"));
-
-        assertEquals("AB", RegExUtils.removePattern("A<__>\n<__>B", "<.*>"));
-        assertEquals("AB", RegExUtils.removePattern("A<__>\\n<__>B", "<.*>"));
-        assertEquals("", RegExUtils.removePattern("<A>x\\ny</A>", "<A>.*</A>"));
-        assertEquals("", RegExUtils.removePattern("<A>\nxy\n</A>", "<A>.*</A>"));
-
-        assertEquals("ABC123", RegExUtils.removePattern("ABCabc123", "[a-z]"));
-    }
 
     @Test
     public void testReplaceAll_StringPatternString() {
@@ -282,29 +266,37 @@ public class RegExUtilsTest extends AbstractLangTest {
         assertEquals("Lorem_ipsum_dolor_sit", RegExUtils.replacePattern("Lorem ipsum  dolor   sit", "( +)([a-z]+)", "_$2"));
     }
 
+    @Test
+    public void testRemovePatternDeprecated() {
+        assertNull(RegExUtils.removePattern(null, ""));
+        assertEquals("any", RegExUtils.removePattern("any", (String) null));
 
+        assertEquals("", RegExUtils.removePattern("", ""));
+        assertEquals("", RegExUtils.removePattern("", ".*"));
+        assertEquals("", RegExUtils.removePattern("", ".+"));
 
-@Test
-public void testRemovePatternDeprecated() {
-    assertNull(RegExUtils.removePattern(null, ""));
-    assertEquals("any", RegExUtils.removePattern("any", (String) null));
-}
+        assertEquals("AB", RegExUtils.removePattern("A<__>\n<__>B", "<.*>"));
+        assertEquals("AB", RegExUtils.removePattern("A<__>\\n<__>B", "<.*>"));
+        assertEquals("", RegExUtils.removePattern("<A>x\\ny</A>", "<A>.*</A>"));
+        assertEquals("", RegExUtils.removePattern("<A>\nxy\n</A>", "<A>.*</A>"));
 
+        assertEquals("ABC123", RegExUtils.removePattern("ABCabc123", "[a-z]"));
+    }
 
-@Test
-public void testRemovePattern() {
-    assertNull(RegExUtils.removePattern((CharSequence) null, ""));
-    assertEquals("any", RegExUtils.removePattern((CharSequence) "any", (String) null));
+    @Test
+    public void testRemovePattern() {
+        assertNull(RegExUtils.removePattern((CharSequence) null, ""));
+        assertEquals("any", RegExUtils.removePattern((CharSequence) "any", (String) null));
 
-    assertEquals("", RegExUtils.removePattern((CharSequence) "", ""));
-    assertEquals("", RegExUtils.removePattern((CharSequence) "", ".*"));
-    assertEquals("", RegExUtils.removePattern((CharSequence) "", ".+"));
+        assertEquals("", RegExUtils.removePattern((CharSequence) "", ""));
+        assertEquals("", RegExUtils.removePattern((CharSequence) "", ".*"));
+        assertEquals("", RegExUtils.removePattern((CharSequence) "", ".+"));
 
-    assertEquals("AB", RegExUtils.removePattern((CharSequence) "A<__>\n<__>B", "<.*>"));
-    assertEquals("AB", RegExUtils.removePattern((CharSequence) "A<__>\\n<__>B", "<.*>"));
-    assertEquals("", RegExUtils.removePattern((CharSequence) "<A>x\\ny</A>", "<A>.*</A>"));
-    assertEquals("", RegExUtils.removePattern((CharSequence) "<A>\nxy\n</A>", "<A>.*</A>"));
+        assertEquals("AB", RegExUtils.removePattern((CharSequence) "A<__>\n<__>B", "<.*>"));
+        assertEquals("AB", RegExUtils.removePattern((CharSequence) "A<__>\\n<__>B", "<.*>"));
+        assertEquals("", RegExUtils.removePattern((CharSequence) "<A>x\\ny</A>", "<A>.*</A>"));
+        assertEquals("", RegExUtils.removePattern((CharSequence) "<A>\nxy\n</A>", "<A>.*</A>"));
 
-    assertEquals("ABC123", RegExUtils.removePattern((CharSequence) "ABCabc123", "[a-z]"));
-}
+        assertEquals("ABC123", RegExUtils.removePattern((CharSequence) "ABCabc123", "[a-z]"));
+    }
 }

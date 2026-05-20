@@ -19,12 +19,12 @@
 
 package org.apache.commons.lang3;
 
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import java.io.File;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
@@ -32,7 +32,6 @@ import java.lang.reflect.Modifier;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Locale;
-
 import org.junit.jupiter.api.Test;
 
 /**
@@ -1465,11 +1464,18 @@ public class SystemUtilsTest extends AbstractLangTest {
         assertTrue(SystemUtils.isOsVersionMatch(osVersion, "10.10.1"));
     }
 
-
+    /**
+     * Assumes no security manager exists.
+     */
     @Test
     public void testGetUserHomePath() {
         final Path dir = SystemUtils.getUserHomePath();
         assertNotNull(dir);
         assertTrue(Files.exists(dir));
     }
+
+
+/**
+     * Assumes no security manager exists.
+     */
 }

@@ -17,17 +17,16 @@
 
 package org.apache.commons.lang3.stream;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import java.util.Arrays;
 import java.util.Objects;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.function.Function;
 import java.util.stream.Collector;
 import java.util.stream.Stream;
-
 import org.junit.jupiter.api.Test;
-
-import java.util.Arrays;
 
 /**
  * Tests {@link LangCollectors}
@@ -159,7 +158,6 @@ public class LangCollectorsTest {
         assertEquals("<1-NUL-3>", Stream.of("1", null, "3").collect(JOINING_4_NUL));
     }
 
-
     @Test
     public void testJoinCollectStrings4Args() {
         assertEquals("<>", join4());
@@ -170,7 +168,6 @@ public class LangCollectorsTest {
         assertEquals("<1-NUL-3>", join4Nul("1", null, "3"));
     }
 
-
     @Test
     public void testJoinCollectStrings3Args() {
         assertEquals("<>", join3());
@@ -180,7 +177,6 @@ public class LangCollectorsTest {
         assertEquals("<1-null-3>", join3("1", null, "3"));
     }
 
-
     @Test
     public void testJoinCollectStrings0Arg() {
         assertEquals("", join0());
@@ -189,7 +185,6 @@ public class LangCollectorsTest {
         assertEquals("123", join0("1", "2", "3"));
         assertEquals("1null3", join0("1", null, "3"));
     }
-
 
     @Test
     public void testJoinCollectNonStrings4Args() {
@@ -203,7 +198,6 @@ public class LangCollectorsTest {
         assertEquals("<1-2>", join4(new Fixture(1), new Fixture(2)));
     }
 
-
     @Test
     public void testJoinCollectNonStrings3Args() {
         assertEquals("<>", join3());
@@ -214,7 +208,6 @@ public class LangCollectorsTest {
         assertEquals("<1-2>", join3(new AtomicLong(1), new AtomicLong(2)));
         assertEquals("<1-2>", join3(new Fixture(1), new Fixture(2)));
     }
-
 
     @Test
     public void testJoinCollectNonStrings1Arg() {
@@ -227,7 +220,6 @@ public class LangCollectorsTest {
         assertEquals("1-2", join1(new Fixture(1), new Fixture(2)));
     }
 
-
     @Test
     public void testJoinCollectNonStrings0Arg() {
         assertEquals("", join0());
@@ -239,7 +231,6 @@ public class LangCollectorsTest {
         assertEquals("12", join0(new Fixture(1), new Fixture(2)));
     }
 
-
     @Test
     public void testCollectStrings1Arg() {
         assertEquals("", join1());
@@ -247,5 +238,25 @@ public class LangCollectorsTest {
         assertEquals("1-2", join1("1", "2"));
         assertEquals("1-2-3", join1("1", "2", "3"));
         assertEquals("1-null-3", join1("1", null, "3"));
+    }
+
+    private String join4Nul(final Object... objects) {
+        return LangCollectors.collect(JOINING_4_NUL, objects);
+    }
+
+    private String join4(final Object... objects) {
+        return LangCollectors.collect(JOINING_4, objects);
+    }
+
+    private String join3(final Object... objects) {
+        return LangCollectors.collect(JOINING_3, objects);
+    }
+
+    private String join1(final Object... objects) {
+        return LangCollectors.collect(JOINING_1, objects);
+    }
+
+    private String join0(final Object... objects) {
+        return LangCollectors.collect(JOINING_0, objects);
     }
 }

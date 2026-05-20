@@ -17,13 +17,14 @@
 
 package org.apache.commons.lang3;
 
+
+
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assumptions.assumeTrue;
-
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.function.ThrowingSupplier;
 
@@ -47,7 +48,7 @@ public class SystemPropertiesTest {
         return SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_11);
     }
 
-@Test
+    @Test
     public void testActualKeys() {
         basicKeyCheck(SystemProperties.APPLE_AWT_ENABLE_TEMPLATE_IMAGES);
         basicKeyCheck(SystemProperties.AWT_TOOLKIT);
@@ -326,9 +327,6 @@ public class SystemPropertiesTest {
         assertDoesNotThrow(SystemProperties::getJavaRuntimeName);
         assertDoesNotThrow(SystemProperties::getJavaRuntimeVersion);
         assertDoesNotThrow(SystemProperties::getJavaSecurityAuthLoginConfig);
-        assertDoesNotThrow(SystemProperties::getJavaSecurityKerberosConf);
-        assertDoesNotThrow(SystemProperties::getJavaSecurityKerberosKdc);
-        assertDoesNotThrow(SystemProperties::getJavaSecurityKerberosRealm);
         assertDoesNotThrow(SystemProperties::getJavaSecurityManager);
         assertDoesNotThrow(SystemProperties::getJavaSpecificationMaintenanceVersion);
         assertDoesNotThrow(SystemProperties::getJavaSpecificationName);

@@ -17,22 +17,21 @@
 
 package org.apache.commons.lang3.time;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import java.time.LocalDateTime;
+import java.time.OffsetDateTime;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.Locale;
 import java.util.TimeZone;
-
 import org.apache.commons.lang3.AbstractLangTest;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
-
-import java.time.OffsetDateTime;
 
 public class CalendarUtilsTest extends AbstractLangTest {
 
@@ -120,17 +119,16 @@ public class CalendarUtilsTest extends AbstractLangTest {
         assertEquals(ZonedDateTime.ofInstant(zdt1.toInstant(), calendar.getTimeZone().toZoneId()), new CalendarUtils(calendar).toZonedDateTime());
     }
 
-
-@ParameterizedTest
-@MethodSource(TIME_ZONE_GET_AVAILABLE_IDS)
-public void testToOffsetDateTime(final String id) {
-    final TimeZone timeZone = TimeZone.getTimeZone(id);
-    final ZoneId zoneId = timeZone.toZoneId();
-    final Calendar calendar = new GregorianCalendar(timeZone);
-    calendar.setTimeInMillis(0);
-    assertEquals(OffsetDateTime.ofInstant(calendar.toInstant(), calendar.getTimeZone().toZoneId()), new CalendarUtils(calendar).toOffsetDateTime());
-    final ZonedDateTime zdt1 = ZonedDateTime.of(1, 2, 3, 4, 5, 6, 0, zoneId);
-    calendar.setTimeInMillis(zdt1.toInstant().toEpochMilli());
-    assertEquals(OffsetDateTime.ofInstant(zdt1.toInstant(), calendar.getTimeZone().toZoneId()), new CalendarUtils(calendar).toOffsetDateTime());
-}
+    @ParameterizedTest
+    @MethodSource(TIME_ZONE_GET_AVAILABLE_IDS)
+    public void testToOffsetDateTime(final String id) {
+        final TimeZone timeZone = TimeZone.getTimeZone(id);
+        final ZoneId zoneId = timeZone.toZoneId();
+        final Calendar calendar = new GregorianCalendar(timeZone);
+        calendar.setTimeInMillis(0);
+        assertEquals(OffsetDateTime.ofInstant(calendar.toInstant(), calendar.getTimeZone().toZoneId()), new CalendarUtils(calendar).toOffsetDateTime());
+        final ZonedDateTime zdt1 = ZonedDateTime.of(1, 2, 3, 4, 5, 6, 0, zoneId);
+        calendar.setTimeInMillis(zdt1.toInstant().toEpochMilli());
+        assertEquals(OffsetDateTime.ofInstant(zdt1.toInstant(), calendar.getTimeZone().toZoneId()), new CalendarUtils(calendar).toOffsetDateTime());
+    }
 }

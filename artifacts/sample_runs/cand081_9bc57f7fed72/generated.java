@@ -16,14 +16,14 @@
  */
 package org.apache.commons.lang3;
 
+
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import java.util.regex.Pattern;
 import java.util.regex.PatternSyntaxException;
-
 import org.junit.jupiter.api.Test;
 
 /**
@@ -36,10 +36,10 @@ public class RegExUtilsTest extends AbstractLangTest {
         assertTrue(RegExUtils.dotAll("<A>.*</A>").matcher("<A>\nxy\n</A>").matches());
     }
 
-@Test
-public void testDotAllMatcher() {
-    assertTrue(RegExUtils.dotAllMatcher("<A>.*</A>", (CharSequence) "<A>\nxy\n</A>").matches());
-}
+    @Test
+    public void testDotAllMatcher() {
+        assertTrue(RegExUtils.dotAllMatcher("<A>.*</A>", (CharSequence) "<A>\nxy\n</A>").matches());
+    }
 
     @Test
     public void testRemoveAll_StringPattern() {
@@ -257,11 +257,9 @@ public void testDotAllMatcher() {
                 RegExUtils.replacePattern("Lorem ipsum  dolor   sit", "( +)([a-z]+)", "_$2"));
     }
 
-
-
-@SuppressWarnings("deprecation")
-@Test
-public void testDotAllMatcherDeprecated() {
-    assertTrue(RegExUtils.dotAllMatcher("<A>.*</A>", "<A>\nxy\n</A>").matches());
-}
+    @SuppressWarnings("deprecation")
+    @Test
+    public void testDotAllMatcherDeprecated() {
+        assertTrue(RegExUtils.dotAllMatcher("<A>.*</A>", "<A>\nxy\n</A>").matches());
+    }
 }

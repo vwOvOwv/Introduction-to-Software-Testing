@@ -1,42 +1,53 @@
 {
-  "timestamp": "2026-05-16T11:20:17.240658+00:00",
-  "repo": "D:\\软件测试导论\\final_homework\\commons-lang",
-  "ref": "35fee6998b8d92c047f6db82fde825810fc26f4a",
-  "target_test_path": "src/test/java/org/apache/commons/lang3/concurrent/BasicThreadFactoryTest.java",
-  "replacement_test_file": "D:\\软件测试导论\\final_homework\\Introduction-to-Software-Testing\\artifacts\\sample_runs\\cand052_35fee6998b8d\\generated.java",
-  "test_selector": "BasicThreadFactoryTest",
-  "maven_args": [
-    "-q"
-  ],
-  "discard_all_tracked_changes": false,
-  "checkout": {
-    "command": [
-      "git",
-      "checkout",
-      "--detach",
-      "35fee6998b8d92c047f6db82fde825810fc26f4a"
-    ],
-    "cwd": "D:\\软件测试导论\\final_homework\\commons-lang",
-    "returncode": 0,
-    "stdout": "",
-    "stderr": "Previous HEAD position was 35f35e9e1 Add DurationUtils.get(String, TemporalUnit, long)\nHEAD is now at 35fee6998 Add BasicThreadFactory.builder() and deprecate BasicThreadFactory.Builder()\n"
-  },
-  "maven": {
-    "command": [
-      "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
-      "-q",
-      "-Dtest=BasicThreadFactoryTest",
-      "test"
-    ],
-    "cwd": "D:\\软件测试导论\\final_homework\\commons-lang",
-    "returncode": 0,
-    "stdout": "",
-    "stderr": ""
-  },
-  "restore": [
+  "command_history": [
     {
+      "name": "checkout",
+      "cwd": "./.",
+      "env": {
+        "JAVA_HOME": "/usr/lib/jvm/java-21-openjdk",
+        "PATH": "/usr/lib/jvm/java-21-openjdk/bin:/usr/local/bin:/usr/bin:/bin",
+        "PWD": "./."
+      },
       "command": [
-        "git",
+        "/usr/bin/git",
+        "worktree",
+        "add",
+        "--detach",
+        "${tmp}/run-BasicThreadFactoryTest-8fors7cc",
+        "35fee6998b8d92c047f6db82fde825810fc26f4a"
+      ],
+      "returncode": 0,
+      "stdout": "HEAD is now at 35fee6998 Add BasicThreadFactory.builder() and deprecate BasicThreadFactory.Builder()\n",
+      "stderr": "Preparing worktree (detached HEAD 35fee6998)\n"
+    },
+    {
+      "name": "maven",
+      "cwd": "${tmp}/run-BasicThreadFactoryTest-8fors7cc",
+      "env": {
+        "JAVA_HOME": "/usr/lib/jvm/java-21-openjdk",
+        "PATH": "/usr/lib/jvm/java-21-openjdk/bin:/usr/local/bin:/usr/bin:/bin",
+        "PWD": "${tmp}/run-BasicThreadFactoryTest-8fors7cc"
+      },
+      "command": [
+        "/usr/bin/mvn",
+        "-q",
+        "-Dtest=BasicThreadFactoryTest",
+        "test"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "name": "restore",
+      "cwd": "${tmp}/run-BasicThreadFactoryTest-8fors7cc",
+      "env": {
+        "JAVA_HOME": "/usr/lib/jvm/java-21-openjdk",
+        "PATH": "/usr/lib/jvm/java-21-openjdk/bin:/usr/local/bin:/usr/bin:/bin",
+        "PWD": "${tmp}/run-BasicThreadFactoryTest-8fors7cc"
+      },
+      "command": [
+        "/usr/bin/git",
         "restore",
         "--source=HEAD",
         "--staged",
@@ -44,12 +55,28 @@
         "--",
         "src/test/java/org/apache/commons/lang3/concurrent/BasicThreadFactoryTest.java"
       ],
-      "cwd": "D:\\软件测试导论\\final_homework\\commons-lang",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "name": "worktree_remove",
+      "cwd": "./.",
+      "env": {
+        "JAVA_HOME": "/usr/lib/jvm/java-21-openjdk",
+        "PATH": "/usr/lib/jvm/java-21-openjdk/bin:/usr/local/bin:/usr/bin:/bin",
+        "PWD": "./."
+      },
+      "command": [
+        "/usr/bin/git",
+        "worktree",
+        "remove",
+        "--force",
+        "${tmp}/run-BasicThreadFactoryTest-8fors7cc"
+      ],
       "returncode": 0,
       "stdout": "",
       "stderr": ""
     }
-  ],
-  "failure_message": null,
-  "maven_command_shell": "'D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD' -q -Dtest=BasicThreadFactoryTest test"
+  ]
 }

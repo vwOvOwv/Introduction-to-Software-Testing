@@ -16,8 +16,8 @@
  */
 package org.apache.commons.lang3;
 
-import static org.apache.commons.lang3.LangAssertions.assertIllegalArgumentException;
-import static org.apache.commons.lang3.LangAssertions.assertNullPointerException;
+
+
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
@@ -29,12 +29,6 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-
-import java.lang.annotation.ElementType;
-import java.lang.reflect.Constructor;
-import java.lang.reflect.Modifier;
-import java.nio.charset.Charset;
-import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import java.util.BitSet;
 import java.util.Collections;
@@ -44,9 +38,15 @@ import java.util.Map;
 import java.util.Random;
 import java.util.function.Function;
 import java.util.function.Supplier;
-
 import org.apache.commons.lang3.function.Suppliers;
 import org.junit.jupiter.api.Test;
+import static org.apache.commons.lang3.LangAssertions.assertIllegalArgumentException;
+import static org.apache.commons.lang3.LangAssertions.assertNullPointerException;
+import java.lang.annotation.ElementType;
+import java.lang.reflect.Constructor;
+import java.lang.reflect.Modifier;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 
 /**
  * Tests {@link ArrayUtils}.
@@ -5197,7 +5197,7 @@ class ArrayUtilsTest extends AbstractLangTest {
         assertNull(array);
     }
 
-@Test
+    @Test
     void testShuffleBoolean() {
         ArrayUtils.shuffle((boolean[]) null);
         ArrayUtils.shuffle(ArrayUtils.EMPTY_BOOLEAN_ARRAY);
@@ -5249,8 +5249,8 @@ class ArrayUtilsTest extends AbstractLangTest {
     void testShuffleByteRandom() {
         ArrayUtils.shuffle((byte[]) null, null);
         ArrayUtils.shuffle((byte[]) null, seededRandom());
-        ArrayUtils.shuffle(ArrayUtils.EMPTY_BOOLEAN_ARRAY, null);
-        ArrayUtils.shuffle(ArrayUtils.EMPTY_BOOLEAN_ARRAY, seededRandom());
+        ArrayUtils.shuffle(ArrayUtils.EMPTY_BYTE_ARRAY, null);
+        ArrayUtils.shuffle(ArrayUtils.EMPTY_BYTE_ARRAY, seededRandom());
         // Don't use a "small" array, reduce spurious failures.
         final byte[] array1 = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2,
                 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0,
@@ -5390,7 +5390,7 @@ class ArrayUtilsTest extends AbstractLangTest {
                 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0,
                 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
         final int[] array2 = ArrayUtils.clone(array1);
-        ArrayUtils.shuffle(array1, seededRandom());
+        ArrayUtils.shuffle(array1);
         assertFalse(Arrays.equals(array1, array2));
         for (final int element : array2) {
             assertTrue(ArrayUtils.contains(array1, element), () -> "Element " + element + " not found");
@@ -5437,28 +5437,20 @@ class ArrayUtilsTest extends AbstractLangTest {
 
     @Test
     void testShuffleLongRandom() {
-        ArrayUtils.shuffle((long[]) null, null);
-        ArrayUtils.shuffle((long[]) null, seededRandom());
-        ArrayUtils.shuffle(ArrayUtils.EMPTY_LONG_ARRAY, null);
-        ArrayUtils.shuffle(ArrayUtils.EMPTY_LONG_ARRAY, seededRandom());
-        // Don't use a "small" array, reduce spurious failures.
-        final long[] array1 = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2,
-                3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0,
-                1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-        final long[] array2 = ArrayUtils.clone(array1);
-        // no shuffle
-        ArrayUtils.shuffle(array1, null);
-        assertTrue(Arrays.equals(array1, array2));
-        // actual shuffle
-        ArrayUtils.shuffle(array1, seededRandom());
-        assertFalse(Arrays.equals(array1, array2));
-        for (final long element : array2) {
-            assertTrue(ArrayUtils.contains(array1, element), () -> "Element " + element + " not found");
-        }
-    }
 
     @Test
     void testShuffleShort() {
+        // Don't use a "small" array, reduce spurious failures.
+        final short[] array1 = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1,
+                2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9,
+                0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+        final short[] array2 = ArrayUtils.clone(array1);
+        ArrayUtils.shuffle(array1);
+        assertFalse(Arrays.equals(array1, array2));
+        for (final short element : array2) {
+            assertTrue(ArrayUtils.contains(array1, element), () -> "Element " + element + " not found");
+        }
+    }
 
     @Test
     void testShuffleShortRandom() {
@@ -6927,4 +6919,13 @@ class ArrayUtilsTest extends AbstractLangTest {
         assertEquals("{<null>}", ArrayUtils.toString(new String[]{null}, "<empty>"));
         assertEquals("{pink,blue}", ArrayUtils.toString(new String[]{"pink", "blue"}, "<empty>"));
     }
+
+
+ArrayUtils.shuffle((long[]) null, null);
+        ArrayUtils.shuffle((long[]) null, seededRandom());
+        ArrayUtils.shuffle(ArrayUtils.EMPTY_LONG_ARRAY, null);
+        ArrayUtils.shuffle(ArrayUtils.EMPTY_LONG_ARRAY, seededRandom());
+        // Don't use a "small" array, reduce spurious failures.
+        final long[] array1 = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2,
+                3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9
 }

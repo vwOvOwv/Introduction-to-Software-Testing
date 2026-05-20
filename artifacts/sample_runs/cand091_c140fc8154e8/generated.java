@@ -16,14 +16,14 @@
  */
 package org.apache.commons.lang3.tuple;
 
+
+
 import static org.apache.commons.lang3.LangAssertions.assertNullPointerException;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
-
 import java.util.HashMap;
 import java.util.Map.Entry;
-
 import org.apache.commons.lang3.AbstractLangTest;
 import org.apache.commons.lang3.SerializationUtils;
 import org.junit.jupiter.api.Test;
@@ -114,17 +114,17 @@ class MutablePairTest extends AbstractLangTest {
         assertEquals("y", pair.right);
     }
 
-@Test
-void testPairOfMapEntry() {
-    assertNull(MutablePair.of(null).getLeft());
-    assertNull(MutablePair.of(null).getRight());
-    final HashMap<Integer, String> map = new HashMap<>();
-    map.put(0, "foo");
-    final Entry<Integer, String> entry = map.entrySet().iterator().next();
-    final Pair<Integer, String> pair = MutablePair.of(entry);
-    assertEquals(entry.getKey(), pair.getLeft());
-    assertEquals(entry.getValue(), pair.getRight());
-}
+    @Test
+    void testPairOfMapEntry() {
+        assertNull(MutablePair.of(null).getLeft());
+        assertNull(MutablePair.of(null).getRight());
+        final HashMap<Integer, String> map = new HashMap<>();
+        map.put(0, "foo");
+        final Entry<Integer, String> entry = map.entrySet().iterator().next();
+        final Pair<Integer, String> pair = MutablePair.of(entry);
+        assertEquals(entry.getKey(), pair.getLeft());
+        assertEquals(entry.getValue(), pair.getRight());
+    }
 
     @Test
     void testPairOfObjects() {
@@ -155,13 +155,12 @@ void testPairOfMapEntry() {
         assertEquals("(one,two)", MutablePair.of("one", "two").toString());
     }
 
-
-@Test
-void testOfNonNullMapEntry() {
-    assertNullPointerException(() -> MutablePair.ofNonNull(null));
-    final Pair<Integer, String> pair = Pair.of(0, "foo");
-    final MutablePair<Integer, String> mutablePair = MutablePair.ofNonNull(pair);
-    assertEquals(pair.getLeft(), mutablePair.getLeft());
-    assertEquals(pair.getRight(), mutablePair.getRight());
-}
+    @Test
+    void testOfNonNullMapEntry() {
+        assertNullPointerException(() -> MutablePair.ofNonNull(null));
+        final Pair<Integer, String> pair = Pair.of(0, "foo");
+        final MutablePair<Integer, String> mutablePair = MutablePair.ofNonNull(pair);
+        assertEquals(pair.getLeft(), mutablePair.getLeft());
+        assertEquals(pair.getRight(), mutablePair.getRight());
+    }
 }

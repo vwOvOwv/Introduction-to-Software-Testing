@@ -16,6 +16,8 @@
  */
 package org.apache.commons.lang3;
 
+
+
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
@@ -27,10 +29,10 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import java.lang.annotation.ElementType;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Modifier;
+import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import java.util.BitSet;
 import java.util.Collections;
@@ -40,11 +42,8 @@ import java.util.Map;
 import java.util.Random;
 import java.util.function.Function;
 import java.util.function.Supplier;
-
 import org.apache.commons.lang3.function.Suppliers;
 import org.junit.jupiter.api.Test;
-
-import java.nio.charset.StandardCharsets;
 
 /**
  * Tests {@link ArrayUtils}.
@@ -6598,8 +6597,7 @@ public class ArrayUtilsTest extends AbstractLangTest {
                 ArrayUtils.toStringArray(array, "valueForNullElements"));
     }
 
-
-@Test
+    @Test
     public void testStartsWith() {
         // edge cases
         assertTrue(ArrayUtils.startsWith(null, null));

@@ -1,42 +1,53 @@
 {
-  "timestamp": "2026-05-16T11:18:13.749572+00:00",
-  "repo": "D:\\软件测试导论\\final_homework\\commons-lang",
-  "ref": "17ba8b9da6a87791446917250b3d92b6925cbff0",
-  "target_test_path": "src/test/java/org/apache/commons/lang3/stream/LangCollectorsTest.java",
-  "replacement_test_file": "D:\\软件测试导论\\final_homework\\Introduction-to-Software-Testing\\artifacts\\sample_runs\\cand047_17ba8b9da6a8\\generated.java",
-  "test_selector": "LangCollectorsTest",
-  "maven_args": [
-    "-q"
-  ],
-  "discard_all_tracked_changes": false,
-  "checkout": {
-    "command": [
-      "git",
-      "checkout",
-      "--detach",
-      "17ba8b9da6a87791446917250b3d92b6925cbff0"
-    ],
-    "cwd": "D:\\软件测试导论\\final_homework\\commons-lang",
-    "returncode": 0,
-    "stdout": "",
-    "stderr": "Previous HEAD position was 118652d76 Add LangCollectors.collect(Collector, T...)\nHEAD is now at 17ba8b9da Make LangCollectors.collect(...) null-safe\n"
-  },
-  "maven": {
-    "command": [
-      "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
-      "-q",
-      "-Dtest=LangCollectorsTest",
-      "test"
-    ],
-    "cwd": "D:\\软件测试导论\\final_homework\\commons-lang",
-    "returncode": 1,
-    "stdout": "[ERROR] COMPILATION ERROR : \n[ERROR] /D:/�������Ե���/final_homework/commons-lang/src/test/java/org/apache/commons/lang3/stream/LangCollectorsTest.java:[130,35] �Ҳ�������\n  ����:   ���� join4NullToString(java.lang.Long,<nulltype>,java.lang.Long)\n  λ��: �� org.apache.commons.lang3.stream.LangCollectorsTest\n[ERROR] /D:/�������Ե���/final_homework/commons-lang/src/test/java/org/apache/commons/lang3/stream/LangCollectorsTest.java:[160,35] �Ҳ�������\n  ����:   ���� join4NullToString(java.lang.String,<nulltype>,java.lang.String)\n  λ��: �� org.apache.commons.lang3.stream.LangCollectorsTest\n[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.13.0:testCompile (default-testCompile) on project commons-lang3: Compilation failure: Compilation failure: \n[ERROR] /D:/�������Ե���/final_homework/commons-lang/src/test/java/org/apache/commons/lang3/stream/LangCollectorsTest.java:[130,35] �Ҳ�������\n[ERROR]   ����:   ���� join4NullToString(java.lang.Long,<nulltype>,java.lang.Long)\n[ERROR]   λ��: �� org.apache.commons.lang3.stream.LangCollectorsTest\n[ERROR] /D:/�������Ե���/final_homework/commons-lang/src/test/java/org/apache/commons/lang3/stream/LangCollectorsTest.java:[160,35] �Ҳ�������\n[ERROR]   ����:   ���� join4NullToString(java.lang.String,<nulltype>,java.lang.String)\n[ERROR]   λ��: �� org.apache.commons.lang3.stream.LangCollectorsTest\n[ERROR] -> [Help 1]\n[ERROR] \n[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.\n[ERROR] Re-run Maven using the -X switch to enable full debug logging.\n[ERROR] \n[ERROR] For more information about the errors and possible solutions, please read the following articles:\n[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException\n",
-    "stderr": ""
-  },
-  "restore": [
+  "command_history": [
     {
+      "name": "checkout",
+      "cwd": "./.",
+      "env": {
+        "JAVA_HOME": "/usr/lib/jvm/java-21-openjdk",
+        "PATH": "/usr/lib/jvm/java-21-openjdk/bin:/usr/local/bin:/usr/bin:/bin",
+        "PWD": "./."
+      },
       "command": [
-        "git",
+        "/usr/bin/git",
+        "worktree",
+        "add",
+        "--detach",
+        "${tmp}/run-LangCollectorsTest-khzxk9l5",
+        "17ba8b9da6a87791446917250b3d92b6925cbff0"
+      ],
+      "returncode": 0,
+      "stdout": "HEAD is now at 17ba8b9da Make LangCollectors.collect(...) null-safe\n",
+      "stderr": "Preparing worktree (detached HEAD 17ba8b9da)\n"
+    },
+    {
+      "name": "maven",
+      "cwd": "${tmp}/run-LangCollectorsTest-khzxk9l5",
+      "env": {
+        "JAVA_HOME": "/usr/lib/jvm/java-21-openjdk",
+        "PATH": "/usr/lib/jvm/java-21-openjdk/bin:/usr/local/bin:/usr/bin:/bin",
+        "PWD": "${tmp}/run-LangCollectorsTest-khzxk9l5"
+      },
+      "command": [
+        "/usr/bin/mvn",
+        "-q",
+        "-Dtest=LangCollectorsTest",
+        "test"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "name": "restore",
+      "cwd": "${tmp}/run-LangCollectorsTest-khzxk9l5",
+      "env": {
+        "JAVA_HOME": "/usr/lib/jvm/java-21-openjdk",
+        "PATH": "/usr/lib/jvm/java-21-openjdk/bin:/usr/local/bin:/usr/bin:/bin",
+        "PWD": "${tmp}/run-LangCollectorsTest-khzxk9l5"
+      },
+      "command": [
+        "/usr/bin/git",
         "restore",
         "--source=HEAD",
         "--staged",
@@ -44,12 +55,28 @@
         "--",
         "src/test/java/org/apache/commons/lang3/stream/LangCollectorsTest.java"
       ],
-      "cwd": "D:\\软件测试导论\\final_homework\\commons-lang",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "name": "worktree_remove",
+      "cwd": "./.",
+      "env": {
+        "JAVA_HOME": "/usr/lib/jvm/java-21-openjdk",
+        "PATH": "/usr/lib/jvm/java-21-openjdk/bin:/usr/local/bin:/usr/bin:/bin",
+        "PWD": "./."
+      },
+      "command": [
+        "/usr/bin/git",
+        "worktree",
+        "remove",
+        "--force",
+        "${tmp}/run-LangCollectorsTest-khzxk9l5"
+      ],
       "returncode": 0,
       "stdout": "",
       "stderr": ""
     }
-  ],
-  "failure_message": null,
-  "maven_command_shell": "'D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD' -q -Dtest=LangCollectorsTest test"
+  ]
 }

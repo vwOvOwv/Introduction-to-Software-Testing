@@ -16,34 +16,33 @@
  */
 package org.apache.commons.lang3.function;
 
-import static org.apache.commons.lang3.LangAssertions.assertNullPointerException;
+
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertInstanceOf;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
-import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import java.io.IOException;
+import java.util.function.BiPredicate;
+import java.util.function.Predicate;
+import org.apache.commons.lang3.AbstractLangTest;
+import org.apache.commons.lang3.StringUtils;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+import static org.apache.commons.lang3.LangAssertions.assertNullPointerException;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertSame;
 import java.io.UncheckedIOException;
 import java.lang.reflect.UndeclaredThrowableException;
 import java.util.concurrent.Callable;
 import java.util.function.BiConsumer;
 import java.util.function.BiFunction;
-import java.util.function.BiPredicate;
 import java.util.function.Consumer;
 import java.util.function.Function;
-import java.util.function.Predicate;
 import java.util.function.Supplier;
-
-import org.apache.commons.lang3.AbstractLangTest;
-import org.apache.commons.lang3.StringUtils;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
-
-import org.junit.jupiter.api.BeforeEach;
 
 /**
  * Tests "failable" interfaces defined in this package.
@@ -729,7 +728,7 @@ class FailableTest extends AbstractLangTest {
         assertNullPointerException(() -> failingBiFunctionTest.andThen(null));
     }
 
-@Test
+    @Test
     @DisplayName("Test that asPredicate(FailableBiPredicate) is converted to -> BiPredicate ")
     void testBiPredicate() {
         FailureOnOddInvocations.invocations = 0;
@@ -2852,4 +2851,129 @@ class FailableTest extends AbstractLangTest {
         return input;
     }
 
+    @Test
+    void testApplyNotNull3() throws SomeException, IOException, ClassNotFoundException {
+        // No checked exceptions in signatures
+        assertEquals("CBA", Failable.applyNotNull(" abc ", String::toUpperCase, String::trim, StringUtils::reverse));
+        assertNull(Failable.applyNotNull((String) null, String::toUpperCase, String::trim, StringUtils::reverse));
+        assertNull(Failable.applyNotNull(" abc ", s -> null, String::trim, StringUtils::reverse));
+        assertNull(Failable.applyNotNull(" abc ", String::toUpperCase, s -> null, StringUtils::reverse));
+        assertNull(Failable.applyNotNull(" abc ", String::toUpperCase, String::trim, s -> null));
+        assertThrows(NullPointerException.class, () -> Failable.applyNotNull(" abc ", null, String::trim, StringUtils::reverse));
+        assertThrows(NullPointerException.class, () -> Failable.applyNotNull(" abc ", String::toUpperCase, null, StringUtils::reverse));
+        assertThrows(NullPointerException.class, () -> Failable.applyNotNull(" abc ", String::toUpperCase, String::trim, null));
+        // Same checked exceptions in signatures
+        final FailureOnInvocationCount obj1 = new FailureOnInvocationCount(1);
+        final FailureOnInvocationCount obj2 = new FailureOnInvocationCount(2);
+        final FailureOnInvocationCount obj3 = new FailureOnInvocationCount(3);
+        assertEquals(1, assertThrows(SomeException.class, () -> Failable.applyNotNull(1, obj1::inc, obj1::inc, obj1::inc)).value);
+        assertEquals(2, assertThrows(SomeException.class, () -> Failable.applyNotNull(1, obj2::inc, obj2::inc, obj2::inc)).value);
+        assertEquals(3, assertThrows(SomeException.class, () -> Failable.applyNotNull(1, obj3::inc, obj3::inc, obj3::inc)).value);
+        assertEquals(4, Failable.applyNotNull(1, obj1::inc, obj1::inc, obj1::inc));
+        assertEquals(4, Failable.applyNotNull(1, obj2::inc, obj2::inc, obj2::inc));
+        assertEquals(4, Failable.applyNotNull(1, obj3::inc, obj3::inc, obj3::inc));
+        // Different checked exceptions in signatures
+        obj1.reset();
+        obj2.reset();
+        obj3.reset();
+        assertEquals(1, assertThrows(SomeException.class, () -> Failable.applyNotNull(1, obj1::inc, obj1::incIo, obj1::incIo)).value);
+        assertEquals(2, ((SomeException) assertThrows(IOException.class, () -> Failable.applyNotNull(1, obj2::inc, obj2::incIo, obj2::incIo)).getCause()).value);
+        assertEquals(3, ((SomeException) assertThrows(IOException.class, () -> Failable.applyNotNull(1, obj3::inc, obj3::incIo, obj3::incIo)).getCause()).value);
+        assertEquals(4, Failable.applyNotNull(1, obj1::inc, obj1::incIo, obj1::incIo));
+        assertEquals(4, Failable.applyNotNull(1, obj2::inc, obj2::incIo, obj2::incIo));
+        assertEquals(4, Failable.applyNotNull(1, obj3::inc, obj3::incIo, obj3::incIo));
+    }
+
+    @Test
+    void testApplyNotNull2() throws SomeException, IOException {
+        // No checked exceptions in signatures
+        assertEquals("A", Failable.applyNotNull(" a ", String::toUpperCase, String::trim));
+        assertNull(Failable.applyNotNull((String) null, String::toUpperCase, String::trim));
+        assertNull(Failable.applyNotNull(" a ", s -> null, String::trim));
+        assertNull(Failable.applyNotNull(" a ", String::toUpperCase, s -> null));
+        assertThrows(NullPointerException.class, () -> Failable.applyNotNull(" a ", null, String::trim));
+        assertThrows(NullPointerException.class, () -> Failable.applyNotNull(" a ", String::toUpperCase, null));
+        // Same checked exceptions in signatures
+        final FailureOnInvocationCount obj1 = new FailureOnInvocationCount(1);
+        final FailureOnInvocationCount obj2 = new FailureOnInvocationCount(2);
+        assertEquals(1, assertThrows(SomeException.class, () -> Failable.applyNotNull(1, obj1::inc, obj1::inc)).value);
+        assertEquals(2, assertThrows(SomeException.class, () -> Failable.applyNotNull(1, obj2::inc, obj2::inc)).value);
+        assertEquals(3, Failable.applyNotNull(1, obj1::inc, obj1::inc));
+        assertEquals(3, Failable.applyNotNull(1, obj2::inc, obj2::inc));
+        // Different checked exceptions in signatures
+        obj1.reset();
+        obj2.reset();
+        assertEquals(1, assertThrows(SomeException.class, () -> Failable.applyNotNull(1, obj1::inc, obj1::incIo)).value);
+        assertEquals(2, ((SomeException) assertThrows(IOException.class, () -> Failable.applyNotNull(1, obj2::inc, obj2::incIo)).getCause()).value);
+        assertEquals(3, Failable.applyNotNull(1, obj1::inc, obj1::incIo));
+        assertEquals(3, Failable.applyNotNull(1, obj2::inc, obj2::incIo));
+    }
+
+    @Test
+    void testApplyNotNull() throws SomeException {
+        // No checked exceptions in signatures
+        assertEquals("A", Failable.applyNotNull("a", String::toUpperCase));
+        assertNull(Failable.applyNotNull((String) null, String::toUpperCase));
+        assertNull(Failable.applyNotNull("a", s -> null));
+        assertThrows(NullPointerException.class, () -> Failable.applyNotNull("a", null));
+        // Checked exceptions in signatures
+        final FailureOnInvocationCount obj1 = new FailureOnInvocationCount(1);
+        assertEquals(1, assertThrows(SomeException.class, () -> Failable.applyNotNull(1, obj1::inc)).value);
+        assertEquals(2, Failable.applyNotNull(1, obj1::inc));
+    }
+
+    @BeforeEach
+    void beforeEach() {
+        FailureOnOddInvocations.reset();
+    }
+
+
+
+    public static class FailureOnInvocationCount {
+        private int current;
+        private final int throwOn;
+
+        FailureOnInvocationCount(final int throwOn) throws SomeException {
+            this.throwOn = throwOn;
+        }
+
+        int inc(final int value) throws SomeException {
+            throwSeOn();
+            return value + 1;
+        }
+
+        int incCnfe(final int value) throws ClassNotFoundException {
+            throwCnfeOn();
+            return value + 1;
+        }
+
+        int incIo(final int value) throws IOException {
+            throwIoOn();
+            return value + 1;
+        }
+
+        void reset() {
+            current = 0;
+        }
+
+        private void throwCnfeOn() throws ClassNotFoundException {
+            if (++current == throwOn) {
+                final String message = "Count: " + current;
+                throw new ClassNotFoundException(message, new SomeException(message, current));
+            }
+        }
+
+        private void throwIoOn() throws IOException {
+            if (++current == throwOn) {
+                throw new IOException(new SomeException("Count: " + current, current));
+            }
+        }
+
+        private void throwSeOn() throws SomeException {
+            if (++current == throwOn) {
+                throw new SomeException("Count: " + current, current);
+            }
+        }
+
+    }
 }

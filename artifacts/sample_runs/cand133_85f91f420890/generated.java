@@ -16,9 +16,12 @@
  */
 package org.apache.commons.lang3;
 
+
+
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertInstanceOf;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -26,8 +29,6 @@ import static org.junit.jupiter.api.Assertions.assertNotSame;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Modifier;
 import java.util.Arrays;
@@ -39,7 +40,6 @@ import java.util.Map;
 import java.util.Random;
 import java.util.function.Function;
 import java.util.function.Supplier;
-
 import org.apache.commons.lang3.function.Suppliers;
 import org.junit.jupiter.api.Test;
 
@@ -251,18 +251,6 @@ public class ArrayUtilsTest extends AbstractLangTest {
         assertTrue(ArrayUtils.contains(array, new LANG1261ParentObject()));
     }
 
-    @Test
-    public void testContainsAny() {
-        final Object[] array = {"0", "1", "2", "3", null, "0"};
-        assertFalse(ArrayUtils.containsAny(null, (Object) null));
-        assertFalse(ArrayUtils.containsAny(null, "1"));
-        assertTrue(ArrayUtils.containsAny(array, "0"));
-        assertTrue(ArrayUtils.containsAny(array, "1"));
-        assertTrue(ArrayUtils.containsAny(array, "2"));
-        assertTrue(ArrayUtils.containsAny(array, "3"));
-        assertFalse(ArrayUtils.containsAny(array, "notInArray"));
-        assertTrue(ArrayUtils.containsAny(array, (Object[]) new String[] { null }));
-    }
 
     @Test
     public void testContainsBoolean() {
@@ -6579,7 +6567,6 @@ public class ArrayUtilsTest extends AbstractLangTest {
                 ArrayUtils.toStringArray(array, "valueForNullElements"));
     }
 
-
     @Test
     public void testContainsAnyObject() {
         final Object[] array = {"0", "1", "2", "3", null, "0"};
@@ -6593,8 +6580,7 @@ public class ArrayUtilsTest extends AbstractLangTest {
         assertTrue(ArrayUtils.containsAny(array, (Object[]) new String[] { null }));
     }
 
-
-@Test
+    @Test
     public void testContainsAnyInt() {
         final int[] array = {0, 1, 2, 3, 0};
         assertFalse(ArrayUtils.containsAny((int[]) null, 1));

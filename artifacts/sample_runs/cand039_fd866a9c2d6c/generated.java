@@ -16,6 +16,8 @@
  */
 package org.apache.commons.lang3;
 
+
+
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.allOf;
 import static org.hamcrest.Matchers.greaterThanOrEqualTo;
@@ -29,12 +31,10 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
-
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.util.Random;
 import java.util.stream.Stream;
-
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -108,7 +108,7 @@ public class RandomStringUtilsTest extends AbstractLangTest {
         assertThrows(IllegalArgumentException.class, () -> RandomStringUtils.random(1, Integer.MIN_VALUE, -10, false, false, null));
     }
 
-@ParameterizedTest
+    @ParameterizedTest
     @MethodSource("randomProvider")
     public void testExceptionsRandom(final RandomStringUtils rsu) {
         assertThrows(IllegalArgumentException.class, () -> rsu.next(-1));
@@ -119,7 +119,6 @@ public class RandomStringUtilsTest extends AbstractLangTest {
         assertThrows(IllegalArgumentException.class, () -> rsu.next(-1, (String) null));
         assertThrows(IllegalArgumentException.class, () -> rsu.next(-1, 'a', 'z', false, false));
         assertThrows(IllegalArgumentException.class, () -> rsu.next(-1, 'a', 'z', false, false, new char[] { 'a' }));
-        // end must be <= 0x7f to trigger the new validation
         assertThrows(IllegalArgumentException.class, () -> rsu.next(8, 32, 48, false, true));
         assertThrows(IllegalArgumentException.class, () -> rsu.next(8, 32, 65, true, false));
         assertThrows(IllegalArgumentException.class, () -> rsu.next(1, Integer.MIN_VALUE, -10, false, false, null));
@@ -734,7 +733,11 @@ public class RandomStringUtilsTest extends AbstractLangTest {
         assertNotEquals(r2, r3);
     }
 
-
+    /**
+     * Test {@code RandomStringUtils.random} works appropriately when numbers=true
+     * and the range does not only include ASCII numbers/digits.
+     * Fails with probability less than 2^-40 (in practice this never happens).
+     */
     @ParameterizedTest
     @MethodSource("randomProvider")
     void testNonASCIINumbers(final RandomStringUtils rsu) {
@@ -765,7 +768,11 @@ public class RandomStringUtilsTest extends AbstractLangTest {
         assertTrue(found, "no non-ASCII number generated");
     }
 
-
+    /**
+     * Test {@code RandomStringUtils.random} works appropriately when letters=true
+     * and the range does not only include ASCII letters.
+     * Fails with probability less than 2^-40 (in practice this never happens).
+     */
     @ParameterizedTest
     @MethodSource("randomProvider")
     void testNonASCIILetters(final RandomStringUtils rsu) {
@@ -795,4 +802,17 @@ public class RandomStringUtilsTest extends AbstractLangTest {
         }
         assertTrue(found, "no non-ASCII letter generated");
     }
+
+
+/**
+     * Test {@code RandomStringUtils.random} works appropriately when letters=true
+     * and the range does not only include ASCII letters.
+     * Fails with probability less than 2^-40 (in practice this never happens).
+     */
+
+    /**
+     * Test {@code RandomStringUtils.random} works appropriately when numbers=true
+     * and the range does not only include ASCII numbers/digits.
+     * Fails with probability less than 2^-40 (in practice this never happens).
+     */
 }

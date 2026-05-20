@@ -1,42 +1,53 @@
 {
-  "timestamp": "2026-05-16T11:05:21.199626+00:00",
-  "repo": "D:\\软件测试导论\\final_homework\\commons-lang",
-  "ref": "65970408668e105fc880cb8e79e645085df7cd3b",
-  "target_test_path": "src/test/java/org/apache/commons/lang3/reflect/MethodUtilsTest.java",
-  "replacement_test_file": "D:\\软件测试导论\\final_homework\\Introduction-to-Software-Testing\\artifacts\\sample_runs\\cand015_65970408668e\\generated.java",
-  "test_selector": "MethodUtilsTest",
-  "maven_args": [
-    "-q"
-  ],
-  "discard_all_tracked_changes": false,
-  "checkout": {
-    "command": [
-      "git",
-      "checkout",
-      "--detach",
-      "65970408668e105fc880cb8e79e645085df7cd3b"
-    ],
-    "cwd": "D:\\软件测试导论\\final_homework\\commons-lang",
-    "returncode": 0,
-    "stdout": "",
-    "stderr": "Previous HEAD position was 61c2d8f84 [LANG-1774] Improve handling of ClassUtils.getShortCanonicalName for invalid input data (#1437)\nHEAD is now at 659704086 [LANG-1754] Use getAllSuperclassesAndInterfaces() in getMatchingMethod(). (#1289)\n"
-  },
-  "maven": {
-    "command": [
-      "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
-      "-q",
-      "-Dtest=MethodUtilsTest",
-      "test"
-    ],
-    "cwd": "D:\\软件测试导论\\final_homework\\commons-lang",
-    "returncode": 1,
-    "stdout": "[ERROR] Tests run: 44, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.221 s <<< FAILURE! -- in org.apache.commons.lang3.reflect.MethodUtilsTest\n[ERROR] org.apache.commons.lang3.reflect.MethodUtilsTest.testGetMatchingMethod -- Time elapsed: 0.077 s <<< ERROR!\njava.lang.NoSuchMethodException: org.apache.commons.lang3.reflect.MethodUtilsTest$GetMatchingMethodImpl.testMethod6()\n\tat java.base/java.lang.Class.getMethod(Class.java:2395)\n\tat org.apache.commons.lang3.reflect.MethodUtilsTest.testGetMatchingMethod(MethodUtilsTest.java:685)\n\tat java.base/java.lang.reflect.Method.invoke(Method.java:580)\n\tat java.base/java.util.ArrayList.forEach(ArrayList.java:1596)\n\tat java.base/java.util.ArrayList.forEach(ArrayList.java:1596)\n\n[ERROR] Errors: \n[ERROR]   MethodUtilsTest.testGetMatchingMethod:685 ? NoSuchMethod org.apache.commons.lang3.reflect.MethodUtilsTest$GetMatchingMethodImpl.testMethod6()\n[ERROR] Tests run: 44, Failures: 0, Errors: 1, Skipped: 0\n[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:3.5.0:test (default-test) on project commons-lang3: \n[ERROR] \n[ERROR] Please refer to D:\\�������Ե���\\final_homework\\commons-lang\\target\\surefire-reports for the individual test results.\n[ERROR] Please refer to dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.\n[ERROR] -> [Help 1]\n[ERROR] \n[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.\n[ERROR] Re-run Maven using the -X switch to enable full debug logging.\n[ERROR] \n[ERROR] For more information about the errors and possible solutions, please read the following articles:\n[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException\n",
-    "stderr": ""
-  },
-  "restore": [
+  "command_history": [
     {
+      "name": "checkout",
+      "cwd": "./.",
+      "env": {
+        "JAVA_HOME": "/usr/lib/jvm/java-21-openjdk",
+        "PATH": "/usr/lib/jvm/java-21-openjdk/bin:/usr/local/bin:/usr/bin:/bin",
+        "PWD": "./."
+      },
       "command": [
-        "git",
+        "/usr/bin/git",
+        "worktree",
+        "add",
+        "--detach",
+        "${tmp}/run-MethodUtilsTest-dlirw83u",
+        "65970408668e105fc880cb8e79e645085df7cd3b"
+      ],
+      "returncode": 0,
+      "stdout": "HEAD is now at 659704086 [LANG-1754] Use getAllSuperclassesAndInterfaces() in getMatchingMethod(). (#1289)\n",
+      "stderr": "Preparing worktree (detached HEAD 659704086)\n"
+    },
+    {
+      "name": "maven",
+      "cwd": "${tmp}/run-MethodUtilsTest-dlirw83u",
+      "env": {
+        "JAVA_HOME": "/usr/lib/jvm/java-21-openjdk",
+        "PATH": "/usr/lib/jvm/java-21-openjdk/bin:/usr/local/bin:/usr/bin:/bin",
+        "PWD": "${tmp}/run-MethodUtilsTest-dlirw83u"
+      },
+      "command": [
+        "/usr/bin/mvn",
+        "-q",
+        "-Dtest=MethodUtilsTest",
+        "test"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "name": "restore",
+      "cwd": "${tmp}/run-MethodUtilsTest-dlirw83u",
+      "env": {
+        "JAVA_HOME": "/usr/lib/jvm/java-21-openjdk",
+        "PATH": "/usr/lib/jvm/java-21-openjdk/bin:/usr/local/bin:/usr/bin:/bin",
+        "PWD": "${tmp}/run-MethodUtilsTest-dlirw83u"
+      },
+      "command": [
+        "/usr/bin/git",
         "restore",
         "--source=HEAD",
         "--staged",
@@ -44,12 +55,28 @@
         "--",
         "src/test/java/org/apache/commons/lang3/reflect/MethodUtilsTest.java"
       ],
-      "cwd": "D:\\软件测试导论\\final_homework\\commons-lang",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "name": "worktree_remove",
+      "cwd": "./.",
+      "env": {
+        "JAVA_HOME": "/usr/lib/jvm/java-21-openjdk",
+        "PATH": "/usr/lib/jvm/java-21-openjdk/bin:/usr/local/bin:/usr/bin:/bin",
+        "PWD": "./."
+      },
+      "command": [
+        "/usr/bin/git",
+        "worktree",
+        "remove",
+        "--force",
+        "${tmp}/run-MethodUtilsTest-dlirw83u"
+      ],
       "returncode": 0,
       "stdout": "",
       "stderr": ""
     }
-  ],
-  "failure_message": null,
-  "maven_command_shell": "'D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD' -q -Dtest=MethodUtilsTest test"
+  ]
 }

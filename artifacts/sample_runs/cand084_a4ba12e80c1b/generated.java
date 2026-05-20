@@ -18,13 +18,14 @@
  */
 package org.apache.commons.lang3;
 
-import static org.apache.commons.lang3.LangAssertions.assertNullPointerException;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+
+
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.apache.commons.lang3.LangAssertions.assertNullPointerException;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.EnumSet;
@@ -34,7 +35,6 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Function;
 import java.util.function.ToIntFunction;
-
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -43,6 +43,8 @@ enum Enum64 {
     A23, A24, A25, A26, A27, A28, A29, A30, A31, A32, A33, A34, A35, A36, A37, A38, A39, A40, A41, A42, A43, A44, A45,
     A46, A47, A48, A49, A50, A51, A52, A53, A54, A55, A56, A57, A58, A59, A60, A61, A62, A63
 }
+
+
 
 /**
  */
@@ -321,6 +323,7 @@ class EnumUtilsTest extends AbstractLangTest {
         assertEquals(Traffic.GREEN, EnumUtils.getEnumIgnoreCase(Traffic.class, null, Traffic.GREEN));
         assertEquals(Traffic.RED, EnumUtils.getEnumIgnoreCase(Traffic.class, null, Traffic.RED));
         assertNull(EnumUtils.getEnumIgnoreCase(Traffic.class, "PURPLE", null));
+        assertNull(EnumUtils.getEnumIgnoreCase(null, "PURPLE", null));
     }
 
     /**
@@ -334,10 +337,10 @@ class EnumUtilsTest extends AbstractLangTest {
         assertNull(EnumUtils.getEnumIgnoreCase(rawType, "rawType"));
     }
 
-@Test
-void testGetEnumIgnoreCase_nullClass() {
-    assertNull(EnumUtils.getEnumIgnoreCase((Class<Traffic>) null, "PURPLE"));
-}
+    @Test
+    void testGetEnumIgnoreCase_nullClass() {
+        assertNull(EnumUtils.getEnumIgnoreCase((Class<Traffic>) null, "PURPLE"));
+    }
 
     @Test
     void testGetEnumList() {
@@ -440,6 +443,7 @@ void testGetEnumIgnoreCase_nullClass() {
         assertEquals(Traffic2.GREEN, EnumUtils.getFirstEnumIgnoreCase(Traffic2.class, null, f, Traffic2.GREEN));
         assertEquals(Traffic2.RED, EnumUtils.getFirstEnumIgnoreCase(Traffic2.class, null, f, Traffic2.RED));
         assertNull(EnumUtils.getFirstEnumIgnoreCase(Traffic2.class, "PURPLE", f, null));
+        assertNull(EnumUtils.getFirstEnumIgnoreCase(null, "PURPLE", f, null));
     }
 
     @Test
@@ -480,10 +484,10 @@ void testGetEnumIgnoreCase_nullClass() {
         assertFalse(EnumUtils.isValidEnumIgnoreCase(Traffic.class, null));
     }
 
-@Test
-void testIsValidEnumIgnoreCase_nullClass() {
-    assertFalse(EnumUtils.isValidEnumIgnoreCase(null, "PURPLE"));
-}
+    @Test
+    void testIsValidEnumIgnoreCase_nullClass() {
+        assertFalse(EnumUtils.isValidEnumIgnoreCase(null, "PURPLE"));
+    }
 
     @Test
     void testProcessBitVector() {
@@ -613,6 +617,7 @@ void testIsValidEnumIgnoreCase_nullClass() {
         assertEquals(7, EnumUtils.stream(TimeUnit.class).count());
         Assertions.assertArrayEquals(TimeUnit.values(), EnumUtils.stream(TimeUnit.class).toArray(TimeUnit[]::new));
         assertEquals(0, EnumUtils.stream(Object.class).count());
+        assertEquals(0, EnumUtils.stream(null).count());
     }
 
 }
@@ -631,15 +636,21 @@ enum Month {
     }
 }
 
+
+
 enum TooMany {
     A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z, A1, B1, C1, D1, E1, F1, G1, H1, I1,
     J1, K1, L1, M1, N1, O1, P1, Q1, R1, S1, T1, U1, V1, W1, X1, Y1, Z1, A2, B2, C2, D2, E2, F2, G2, H2, I2, J2, K2, L2,
     M2
 }
 
+
+
 enum Traffic {
     RED, AMBER, GREEN
 }
+
+
 
 enum Traffic2 {
 
@@ -661,3 +672,5 @@ enum Traffic2 {
         return value;
     }
 }
+
+

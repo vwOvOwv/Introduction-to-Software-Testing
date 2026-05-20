@@ -16,6 +16,8 @@
  */
 package org.apache.commons.lang3;
 
+
+
 import static org.apache.commons.lang3.JavaVersion.JAVA_1_4;
 import static org.apache.commons.lang3.LangAssertions.assertIllegalArgumentException;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -26,7 +28,6 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Modifier;
 import java.util.Arrays;
@@ -36,12 +37,10 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Locale;
 import java.util.Set;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
-
 import org.junitpioneer.jupiter.DefaultLocale;
 
 /**
@@ -527,24 +526,22 @@ class LocaleUtilsTest extends AbstractLangTest {
         assertEquals(actualLocale, LocaleUtils.toLocale(actualLocale));
     }
 
+    @Test
+    @DefaultLocale(country = "US", language = "en")
+    void testToLocaleGetIso3Language() {
+        assertEquals("United States", LocaleUtils.toLocale("US").getDisplayCountry());
+        assertEquals("United Kingdom", LocaleUtils.toLocale("GB").getDisplayCountry());
+        assertEquals("Pakistan", LocaleUtils.toLocale("PK").getDisplayCountry());
+        assertEquals("India", LocaleUtils.toLocale("IN").getDisplayCountry());
+        assertEquals("France", LocaleUtils.toLocale("FR").getDisplayCountry());
+    }
 
-@Test
-@DefaultLocale(country = "US", language = "en")
-void testToLocaleGetIso3Language() {
-    assertEquals("United States", LocaleUtils.toLocale("US").getDisplayCountry());
-    assertEquals("United Kingdom", LocaleUtils.toLocale("GB").getDisplayCountry());
-    assertEquals("Pakistan", LocaleUtils.toLocale("PK").getDisplayCountry());
-    assertEquals("India", LocaleUtils.toLocale("IN").getDisplayCountry());
-    assertEquals("France", LocaleUtils.toLocale("FR").getDisplayCountry());
-}
-
-
-@Test
-void testToLocaleGetIso3Country() {
-    assertEquals("USA", LocaleUtils.toLocale("US").getISO3Country());
-    assertEquals("GBR", LocaleUtils.toLocale("GB").getISO3Country());
-    assertEquals("PAK", LocaleUtils.toLocale("PK").getISO3Country());
-    assertEquals("IND", LocaleUtils.toLocale("IN").getISO3Country());
-    assertEquals("FRA", LocaleUtils.toLocale("FR").getISO3Country());
-}
+    @Test
+    void testToLocaleGetIso3Country() {
+        assertEquals("USA", LocaleUtils.toLocale("US").getISO3Country());
+        assertEquals("GBR", LocaleUtils.toLocale("GB").getISO3Country());
+        assertEquals("PAK", LocaleUtils.toLocale("PK").getISO3Country());
+        assertEquals("IND", LocaleUtils.toLocale("IN").getISO3Country());
+        assertEquals("FRA", LocaleUtils.toLocale("FR").getISO3Country());
+    }
 }

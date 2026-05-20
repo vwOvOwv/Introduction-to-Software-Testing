@@ -16,6 +16,8 @@
  */
 package org.apache.commons.lang3.reflect;
 
+
+
 import static org.apache.commons.lang3.LangAssertions.assertIllegalArgumentException;
 import static org.apache.commons.lang3.LangAssertions.assertNullPointerException;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
@@ -25,7 +27,6 @@ import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import java.awt.Insets;
 import java.io.Serializable;
 import java.lang.reflect.Constructor;
@@ -43,12 +44,12 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Properties;
 import java.util.TreeSet;
 import java.util.stream.Stream;
-
 import org.apache.commons.lang3.AbstractLangTest;
 import org.apache.commons.lang3.reflect.testbed.Foo;
 import org.apache.commons.lang3.reflect.testbed.GenericParent;
@@ -58,8 +59,6 @@ import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
-
-import java.util.Iterator;
 
 /**
  * Test fixture for https://issues.apache.org/jira/browse/LANG-1524
@@ -80,6 +79,8 @@ final class AAAClass extends AAClass<String> {
     }
 }
 
+
+
 /**
  * Test fixture.
  *
@@ -96,6 +97,8 @@ class AAClass<T> {
         // empty
     }
 }
+
+
 
 @SuppressWarnings("rawtypes")
 //raw types, where used, are used purposely
@@ -150,6 +153,8 @@ final class AClass extends AAClass<String>.BBClass<Number> {
         enclosingInstance.super();
     }
 }
+
+
 @SuppressWarnings("rawtypes")
 abstract class Test1<G> {
     public abstract Object m0();
@@ -171,6 +176,8 @@ abstract class Test1<G> {
     public abstract Map<? extends Enum<?>, ? super Enum<?>> m8();
     public abstract <K, V> Map<? extends K, ? super V[]> m9();
 }
+
+
 
 /**
  * Tests {@link TypeUtils}.
@@ -368,7 +375,49 @@ public class TypeUtilsTest<B> extends AbstractLangTest {
 
         // this fails with a stack overflow
         final Type unrolledType = TypeUtils.unrollVariables(typeArguments, type);
-        assertNotNull(unrolledType);
+    }
+
+    static class MyException extends Exception implements Iterable<Throwable> {
+
+        private static final long serialVersionUID = 1L;
+
+        @Override
+        public Iterator<Throwable> iterator() {
+            return null;
+        }
+    }
+
+    static class MyNonTransientException extends MyException {
+        private static final long serialVersionUID = 1L;
+    }
+
+    interface MyComparator<T> {
+    }
+
+    static class MyOrdering<T> implements MyComparator<T> {
+    }
+
+    static class LexOrdering<T> extends MyOrdering<Iterable<T>> implements Serializable {
+        private static final long serialVersionUID = 1L;
+    }
+
+    /**
+     * Tests that a parameterized type with a nested generic argument is correctly
+     * evaluated for assignability to a wildcard lower-bounded type.
+     *
+     * @see <a href="https://issues.apache.org/jira/browse/LANG-1700">LANG-1700</a>
+     */
+    @Test
+    public void test_LANG_1700() {
+        final ParameterizedType from = TypeUtils.parameterize(LexOrdering.class, MyNonTransientException.class);
+        // MyComparator<? super MyNonTransientException>
+        final ParameterizedType to = TypeUtils.parameterize(MyComparator.class,
+                TypeUtils.wildcardType().withLowerBounds(MyNonTransientException.class).build());
+        // This is MyComparator<Iterable<MyNonTransientException>>
+        // It should NOT be assignable to MyComparator<? super MyNonTransientException>
+        // because Iterable<MyNonTransientException> is NOT a supertype of MyNonTransientException
+        assertFalse(TypeUtils.isAssignable(from, to),
+                () -> String.format("Type %s should not be assignable to %s", TypeUtils.toString(from), TypeUtils.toString(to)));
     }
 
     @Test
@@ -1185,28 +1234,6 @@ public class TypeUtilsTest<B> extends AbstractLangTest {
         assertTrue(TypeUtils.equals(t, TypeUtils.wrap(t).getType()));
         assertEquals(String.class, TypeUtils.wrap(String.class).getType());
     }
-
-
-    @Test
-    public void test_LANG_1700() {
-        final ParameterizedType from = TypeUtils.parameterize(LexOrdering.class, MyNonTransientException.class);
-        // MyComparator<? super MyNonTransientException>
-        final ParameterizedType to = TypeUtils.parameterize(MyComparator.class,
-                TypeUtils.wildcardType().withLowerBounds(MyNonTransientException.class).build());
-        // This is MyComparator<Iterable<MyNonTransientException>>
-        // It should NOT be assignable to MyComparator<? super MyNonTransientException>
-        // because Iterable<MyNonTransientException> is NOT a supertype of MyNonTransientException
-        assertFalse(TypeUtils.isAssignable(from, to),
-                () -> String.format("Type %s should not be assignable to %s", TypeUtils.toString(from), TypeUtils.toString(to)));
-    }
-
-
-    static class MyNonTransientException extends MyException {
-        private static final long serialVersionUID = 1L;
-    }
-
-
-    static class LexOrdering<T> extends MyOrdering<Iterable<T>> implements Serializable {
-        private static final long serialVersionUID = 1L;
-    }
 }
+
+

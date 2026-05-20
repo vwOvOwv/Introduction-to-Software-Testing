@@ -16,17 +16,19 @@
  */
 package org.apache.commons.lang3.reflect;
 
+
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import org.junit.jupiter.api.Test;
 import static org.apache.commons.lang3.LangAssertions.assertNullPointerException;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNotSame;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertSame;
-import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import java.awt.Color;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
@@ -40,7 +42,6 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-
 import org.apache.commons.lang3.AbstractLangTest;
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.ClassUtils;
@@ -56,7 +57,6 @@ import org.apache.commons.lang3.reflect.testbed.PublicSubBeanOtherPackage;
 import org.apache.commons.lang3.reflect.testbed.StringParameterizedChild;
 import org.apache.commons.lang3.tuple.ImmutablePair;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
@@ -1086,7 +1086,7 @@ class MethodUtilsTest extends AbstractLangTest {
         assertEquals("String...", MethodUtils.invokeMethod(testBean, "varOverload", "a", "b", null));
     }
 
-@Test
+    @Test
     void testInvokeMethod1PlusVarArgs() throws Exception {
         // intStringVarArg
         assertEquals("int, String...", MethodUtils.invokeMethod(testBean, "intStringVarArg", 1));

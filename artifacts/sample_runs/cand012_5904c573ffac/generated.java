@@ -16,30 +16,30 @@
  */
 package org.apache.commons.lang3.math;
 
-import static org.apache.commons.lang3.LangAssertions.assertIllegalArgumentException;
-import static org.apache.commons.lang3.LangAssertions.assertNullPointerException;
+
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertInstanceOf;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
-import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
-import java.lang.reflect.Constructor;
-import java.lang.reflect.Modifier;
 import java.math.BigDecimal;
 import java.math.BigInteger;
+import org.junit.jupiter.api.Test;
+import static org.apache.commons.lang3.LangAssertions.assertIllegalArgumentException;
+import static org.apache.commons.lang3.LangAssertions.assertNullPointerException;
+import static org.junit.jupiter.api.Assertions.assertInstanceOf;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import java.lang.reflect.Constructor;
+import java.lang.reflect.Modifier;
 import java.math.RoundingMode;
 import java.text.NumberFormat;
 import java.text.ParseException;
 import java.util.function.Function;
-
 import org.apache.commons.lang3.AbstractLangTest;
 import org.apache.commons.lang3.JavaVersion;
 import org.apache.commons.lang3.SystemProperties;
 import org.apache.commons.lang3.SystemUtils;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
@@ -445,7 +445,7 @@ class NumberUtilsTest extends AbstractLangTest {
         assertFalse(Modifier.isFinal(NumberUtils.class.getModifiers()));
     }
 
-@Test
+    @Test
     void testCreateBigDecimal() {
         final String string1 = "1234.5";
         assertEquals(new BigDecimal(string1), NumberUtils.createBigDecimal(string1), "createBigDecimal(String) failed");
@@ -602,28 +602,21 @@ class NumberUtilsTest extends AbstractLangTest {
         assertEquals(Double.valueOf("1.1E-200"), NumberUtils.createNumber("1.1E-200"), "createNumber(String) 14 failed");
         assertNull(NumberUtils.createNumber(null), "createNumber(null) failed");
         assertEquals(new BigInteger("12345678901234567890"), NumberUtils.createNumber("12345678901234567890L"), "createNumber(String) failed");
-
         assertEquals(new BigDecimal("1.1E-700"), NumberUtils.createNumber("1.1E-700F"), "createNumber(String) 15 failed");
-
         assertEquals(Long.valueOf("10" + Integer.MAX_VALUE), NumberUtils.createNumber("10" + Integer.MAX_VALUE + "L"), "createNumber(String) 16 failed");
         assertEquals(Long.valueOf("10" + Integer.MAX_VALUE), NumberUtils.createNumber("10" + Integer.MAX_VALUE), "createNumber(String) 17 failed");
         assertEquals(new BigInteger("10" + Long.MAX_VALUE), NumberUtils.createNumber("10" + Long.MAX_VALUE), "createNumber(String) 18 failed");
-
         // LANG-521
         assertEquals(Float.valueOf("2."), NumberUtils.createNumber("2."), "createNumber(String) LANG-521 failed");
-
         // LANG-638
         assertFalse(checkCreateNumber("1eE"), "createNumber(String) succeeded");
-
         // LANG-693
         assertEquals(Double.valueOf(Double.MAX_VALUE), NumberUtils.createNumber("" + Double.MAX_VALUE), "createNumber(String) LANG-693 failed");
-
         // LANG-822
         // ensure that the underlying negative number would create a BigDecimal
         final Number bigNum = NumberUtils.createNumber("-1.1E-700F");
         assertNotNull(bigNum);
         assertEquals(BigDecimal.class, bigNum.getClass());
-
         // LANG-1018
         assertEquals(Double.valueOf("-160952.54"), NumberUtils.createNumber("-160952.54"), "createNumber(String) LANG-1018 failed");
         // LANG-1187
@@ -883,6 +876,7 @@ class NumberUtilsTest extends AbstractLangTest {
         compareIsCreatableWithCreateNumber("1.0E-2147483648", false);
         compareIsCreatableWithCreateNumber("1E+999999999999999999999", false);
         compareIsCreatableWithCreateNumber("1E-999999999999999999999", false);
+        compareIsCreatableWithCreateNumber("0.100000001490116121", true);
     }
 
     @Test

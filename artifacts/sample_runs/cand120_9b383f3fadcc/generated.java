@@ -17,31 +17,30 @@
 
 package org.apache.commons.lang3;
 
+
+
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assumptions.assumeTrue;
-
 import java.util.function.Supplier;
-
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.function.ThrowingSupplier;
-import org.junitpioneer.jupiter.SetSystemProperty;
-import org.junitpioneer.jupiter.SetSystemProperty.SetSystemProperties;
-
-import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
+import org.junitpioneer.jupiter.SetSystemProperty;
+import org.junitpioneer.jupiter.SetSystemProperty.SetSystemProperties;
 
 @SetSystemProperties({
     @SetSystemProperty(key = SystemPropertiesTest.KEY_SPACE_1, value = "value1"),
     @SetSystemProperty(key = SystemPropertiesTest.KEY_TAB_1, value = "value2") })
 class SystemPropertiesTest {
 
-    private static final String KEY_SPACE_1 = " ";
-    private static final String KEY_TAB_1 = "\t";
+    static final String KEY_SPACE_1 = " ";
+    static final String KEY_TAB_1 = "\t";
 
     private void basicKeyCheck(final String key) {
         assertNotNull(key);
@@ -717,7 +716,7 @@ class SystemPropertiesTest {
         assertEquals("value2", SystemProperties.getProperty(KEY_TAB_1));
     }
 
-@Test
+    @Test
     void testGetPropertyStringString() {
         assertNull(SystemProperties.getProperty(null, StringUtils.NULL));
         assertNull(SystemProperties.getProperty(StringUtils.EMPTY, StringUtils.NULL));
@@ -774,14 +773,11 @@ class SystemPropertiesTest {
         assertDoesNotThrow(SystemProperties::getUserTimezone);
     }
 
-
-
     @Test
     void testIsPropertySetEdges() {
         assertFalse(SystemProperties.isPropertySet(StringUtils.NULL));
         assertFalse(SystemProperties.isPropertySet(StringUtils.EMPTY));
     }
-
 
     @ParameterizedTest
     @ValueSource(strings = { KEY_SPACE_1, KEY_TAB_1 })

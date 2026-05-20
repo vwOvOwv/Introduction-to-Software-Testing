@@ -1,0 +1,82 @@
+{
+  "command_history": [
+    {
+      "name": "checkout",
+      "cwd": "./.",
+      "env": {
+        "JAVA_HOME": "/usr/lib/jvm/java-21-openjdk",
+        "PATH": "/usr/lib/jvm/java-21-openjdk/bin:/usr/local/bin:/usr/bin:/bin",
+        "PWD": "./."
+      },
+      "command": [
+        "/usr/bin/git",
+        "worktree",
+        "add",
+        "--detach",
+        "${tmp}/run-FastDateParserTest-z4j_ukuq",
+        "ef5de64ed438be8074ccb017c74c122d47b7195a"
+      ],
+      "returncode": 0,
+      "stdout": "HEAD is now at ef5de64ed Clean caches between tests\n",
+      "stderr": "Preparing worktree (detached HEAD ef5de64ed)\n"
+    },
+    {
+      "name": "maven",
+      "cwd": "${tmp}/run-FastDateParserTest-z4j_ukuq",
+      "env": {
+        "JAVA_HOME": "/usr/lib/jvm/java-21-openjdk",
+        "PATH": "/usr/lib/jvm/java-21-openjdk/bin:/usr/local/bin:/usr/bin:/bin",
+        "PWD": "${tmp}/run-FastDateParserTest-z4j_ukuq"
+      },
+      "command": [
+        "/usr/bin/mvn",
+        "-q",
+        "-Dtest=FastDateParserTest",
+        "test"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "name": "restore",
+      "cwd": "${tmp}/run-FastDateParserTest-z4j_ukuq",
+      "env": {
+        "JAVA_HOME": "/usr/lib/jvm/java-21-openjdk",
+        "PATH": "/usr/lib/jvm/java-21-openjdk/bin:/usr/local/bin:/usr/bin:/bin",
+        "PWD": "${tmp}/run-FastDateParserTest-z4j_ukuq"
+      },
+      "command": [
+        "/usr/bin/git",
+        "restore",
+        "--source=HEAD",
+        "--staged",
+        "--worktree",
+        "--",
+        "src/test/java/org/apache/commons/lang3/time/FastDateParserTest.java"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "name": "worktree_remove",
+      "cwd": "./.",
+      "env": {
+        "JAVA_HOME": "/usr/lib/jvm/java-21-openjdk",
+        "PATH": "/usr/lib/jvm/java-21-openjdk/bin:/usr/local/bin:/usr/bin:/bin",
+        "PWD": "./."
+      },
+      "command": [
+        "/usr/bin/git",
+        "worktree",
+        "remove",
+        "--force",
+        "${tmp}/run-FastDateParserTest-z4j_ukuq"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ]
+}

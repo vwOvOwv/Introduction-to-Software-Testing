@@ -16,21 +16,21 @@
  */
 package org.apache.commons.lang3.concurrent;
 
+
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNotSame;
-import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertSame;
-import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-
-import java.util.concurrent.ThreadFactory;
-
-import org.apache.commons.lang3.AbstractLangTest;
 import org.easymock.EasyMock;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import java.util.concurrent.ThreadFactory;
+import org.apache.commons.lang3.AbstractLangTest;
 
 /**
  * Test class for {@code BasicThreadFactory}.
@@ -53,8 +53,12 @@ public class BasicThreadFactoryTest extends AbstractLangTest {
         final Thread t = new Thread();
         EasyMock.expect(wrapped.newThread(r)).andReturn(t);
         EasyMock.replay(wrapped, r);
-        final BasicThreadFactory factory = builder.wrappedFactory(wrapped).daemon(
-                flag).build();
+        // @formatter:off
+        final BasicThreadFactory factory = builder
+                .wrappedFactory(wrapped)
+                .daemon(flag)
+                .build();
+        // @formatter:on
         assertSame(t, factory.newThread(r), "Wrong thread");
         assertEquals(flag, t.isDaemon(), "Wrong daemon flag");
         EasyMock.verify(wrapped, r);
@@ -75,7 +79,7 @@ public class BasicThreadFactoryTest extends AbstractLangTest {
 
     @BeforeEach
     public void setUp() {
-        builder = new BasicThreadFactory.Builder();
+        builder = BasicThreadFactory.builder();
     }
 
     /**
@@ -90,7 +94,7 @@ public class BasicThreadFactoryTest extends AbstractLangTest {
     /**
      * Tests the reset() method of the builder.
      */
-@Test
+    @Test
     public void testBuilderReset() {
         final ThreadFactory wrappedFactory = EasyMock.createMock(ThreadFactory.class);
         final Thread.UncaughtExceptionHandler exHandler = EasyMock
@@ -302,5 +306,25 @@ public class BasicThreadFactoryTest extends AbstractLangTest {
         assertSame(t, factory.newThread(r), "Wrong thread");
         assertEquals(priority, t.getPriority(), "Wrong priority");
         EasyMock.verify(wrapped, r);
+    }
+
+    /**
+     * Tests the daemon() method of the builder.
+     */
+    @Test
+    public void testBuilderDaemonBoolean() {
+        builder.daemon(true);
+        assertTrue(builder.build().getDaemonFlag());
+        builder.daemon(false);
+        assertFalse(builder.build().getDaemonFlag());
+    }
+
+    /**
+     * Tests the daemon() method of the builder.
+     */
+    @Test
+    public void testBuilderDaemon() {
+        builder.daemon();
+        assertTrue(builder.build().getDaemonFlag());
     }
 }

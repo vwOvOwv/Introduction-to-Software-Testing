@@ -16,8 +16,8 @@
  */
 package org.apache.commons.lang3;
 
-import static org.apache.commons.lang3.LangAssertions.assertIllegalArgumentException;
-import static org.apache.commons.lang3.LangAssertions.assertNullPointerException;
+
+
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
@@ -29,7 +29,6 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import java.lang.annotation.ElementType;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Modifier;
@@ -44,9 +43,10 @@ import java.util.Map;
 import java.util.Random;
 import java.util.function.Function;
 import java.util.function.Supplier;
-
 import org.apache.commons.lang3.function.Suppliers;
 import org.junit.jupiter.api.Test;
+import static org.apache.commons.lang3.LangAssertions.assertIllegalArgumentException;
+import static org.apache.commons.lang3.LangAssertions.assertNullPointerException;
 
 /**
  * Tests {@link ArrayUtils}.
@@ -6959,8 +6959,7 @@ class ArrayUtilsTest extends AbstractLangTest {
         assertEquals("{pink,blue}", ArrayUtils.toString(new String[]{"pink", "blue"}, "<empty>"));
     }
 
-
-@Test
+    @Test
     void testMaxArrayLength() {
         assertEquals(Integer.MAX_VALUE - 8, ArrayUtils.SAFE_MAX_ARRAY_LENGTH);
     }

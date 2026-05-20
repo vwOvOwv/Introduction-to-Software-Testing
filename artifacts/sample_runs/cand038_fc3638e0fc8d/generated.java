@@ -16,13 +16,15 @@
  */
 package org.apache.commons.lang3.tuple;
 
+
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertInstanceOf;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import java.util.AbstractMap;
 import java.util.Calendar;
 import java.util.HashMap;
@@ -36,9 +38,7 @@ import java.util.WeakHashMap;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentSkipListMap;
 import java.util.stream.Stream;
-
 import org.apache.commons.lang3.AbstractLangTest;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
 
@@ -81,15 +81,6 @@ public class PairTest extends AbstractLangTest {
         assertEquals("C", map.get("B"));
     }
 
-    @Test
-    public void testComparable1() {
-        final Pair<String, String> pair1 = Pair.of("A", "D");
-        final Pair<String, String> pair2 = Pair.of("B", "C");
-        assertEquals(0, pair1.compareTo(pair1));
-        assertTrue(pair1.compareTo(pair2) < 0);
-        assertEquals(0, pair2.compareTo(pair2));
-        assertTrue(pair2.compareTo(pair1) > 0);
-    }
 
     @Test
     public void testComparableLeftEquals() {
@@ -312,8 +303,6 @@ public class PairTest extends AbstractLangTest {
         assertEquals("Test created on " + "04-25-2011", pair.toString("Test created on %2$tm-%2$td-%2$tY"));
     }
 
-
-
     @Test
     public void testComparableRightEquals() {
         final Pair<String, String> pair1 = Pair.of("A", "E");
@@ -324,8 +313,7 @@ public class PairTest extends AbstractLangTest {
         assertTrue(pair2.compareTo(pair1) > 0);
     }
 
-
-@Test
+    @Test
     public void testComparableAllDifferent() {
         final Pair<String, String> pair1 = Pair.of("A", "D");
         final Pair<String, String> pair2 = Pair.of("B", "C");

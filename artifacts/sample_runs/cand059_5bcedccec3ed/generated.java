@@ -16,12 +16,12 @@
  */
 package org.apache.commons.lang3.builder;
 
+
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
-
 import java.math.BigDecimal;
 import java.math.BigInteger;
-
 import org.apache.commons.lang3.AbstractLangTest;
 import org.junit.jupiter.api.Test;
 
@@ -155,7 +155,6 @@ class ReflectionDiffBuilderTest extends AbstractLangTest {
                         .setRight(new TypeTestChildClass())
                         .setStyle(SHORT_STYLE)
                         .build())
-                .setExcludeFieldNames(ArrayUtils.EMPTY_STRING_ARRAY)
                 .build();
         // @formatter:on
         final String[] excludeFieldNames = reflectionDiffBuilder.getExcludeFieldNames();
@@ -172,7 +171,8 @@ class ReflectionDiffBuilderTest extends AbstractLangTest {
         // @formatter:on
         reflectionDiffBuilder.setExcludeFieldNames((String[]) null);
         final String[] excludeFieldNames = reflectionDiffBuilder.getExcludeFieldNames();
-        assertNull(excludeFieldNames);
+        assertNotNull(excludeFieldNames);
+        assertEquals(0, excludeFieldNames.length);
         assertNotNull(reflectionDiffBuilder.build());
     }
 
@@ -294,9 +294,7 @@ class ReflectionDiffBuilderTest extends AbstractLangTest {
         assertEquals(0, list.getNumberOfDiffs());
     }
 
-
-
-@Test
+    @Test
     void testGetExcludeFieldNamesEmpty() {
         final ReflectionDiffBuilder reflectionDiffBuilder = new ReflectionDiffBuilder(new TypeTestClass(), new TypeTestChildClass(), SHORT_STYLE);
         final String[] excludeFieldNames = reflectionDiffBuilder.getExcludeFieldNames();

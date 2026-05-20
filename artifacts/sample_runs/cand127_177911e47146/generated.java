@@ -16,6 +16,8 @@
  */
 package org.apache.commons.lang3;
 
+
+
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
@@ -27,7 +29,6 @@ import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
-
 import java.io.IOException;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Modifier;
@@ -46,7 +47,6 @@ import java.util.Objects;
 import java.util.Optional;
 import java.util.Set;
 import java.util.function.Supplier;
-
 import org.apache.commons.lang3.exception.CloneFailedException;
 import org.apache.commons.lang3.function.Suppliers;
 import org.apache.commons.lang3.mutable.MutableInt;
@@ -423,13 +423,26 @@ public class ObjectUtilsTest extends AbstractLangTest {
         assertFalse(Modifier.isFinal(ObjectUtils.class.getModifiers()));
     }
 
-@Test
-public void testDefaultIfNull() {
-    final Object o = FOO;
-    final Object dflt = BAR;
-    assertSame(dflt, ObjectUtils.defaultIfNull(null, dflt), "dflt was not returned when o was null");
-    assertSame(o, ObjectUtils.defaultIfNull(o, dflt), "dflt was returned when o was not null");
-}
+    @Test
+    public void testDefaultIfNull() {
+        final Object o = FOO;
+        final Object dflt = BAR;
+        assertSame(dflt, ObjectUtils.defaultIfNull(null, dflt), "dflt was not returned when o was null");
+        assertSame(o, ObjectUtils.defaultIfNull(o, dflt), "dflt was returned when o was not null");
+        assertSame(dflt, ObjectUtils.getIfNull(null, () -> dflt), "dflt was not returned when o was null");
+        assertSame(o, ObjectUtils.getIfNull(o, () -> dflt), "dflt was returned when o was not null");
+        assertSame(o, ObjectUtils.getIfNull(FOO, () -> dflt), "dflt was returned when o was not null");
+        assertSame(o, ObjectUtils.getIfNull("foo", () -> dflt), "dflt was returned when o was not null");
+        final MutableInt callsCounter = new MutableInt(0);
+        final Supplier<Object> countingDefaultSupplier = () -> {
+            callsCounter.increment();
+            return dflt;
+        };
+        ObjectUtils.getIfNull(o, countingDefaultSupplier);
+        assertEquals(0, callsCounter.getValue());
+        ObjectUtils.getIfNull(null, countingDefaultSupplier);
+        assertEquals(1, callsCounter.getValue());
+    }
 
     @Test
     public void testEquals() {
@@ -865,35 +878,32 @@ public void testDefaultIfNull() {
         assertThrows(IllegalMonitorStateException.class, () -> ObjectUtils.wait(new Object(), Duration.ZERO));
     }
 
+    @Test
+    public void testGetIfNullSupplier() {
+        final Object o = FOO;
+        final Object defaultObject = BAR;
+        assertNull(ObjectUtils.getIfNull(null, (Supplier<Object>) null));
+        assertSame(defaultObject, ObjectUtils.getIfNull(null, () -> defaultObject), "dflt was not returned when o was null");
+        assertSame(o, ObjectUtils.getIfNull(o, () -> defaultObject), "dflt was returned when o was not null");
+        assertSame(o, ObjectUtils.getIfNull(FOO, () -> defaultObject), "dflt was returned when o was not null");
+        assertSame(o, ObjectUtils.getIfNull("foo", () -> defaultObject), "dflt was returned when o was not null");
+        final MutableInt callsCounter = new MutableInt(0);
+        final Supplier<Object> countingDefaultSupplier = () -> {
+            callsCounter.increment();
+            return defaultObject;
+        };
+        ObjectUtils.getIfNull(o, countingDefaultSupplier);
+        assertEquals(0, callsCounter.getValue());
+        ObjectUtils.getIfNull(null, countingDefaultSupplier);
+        assertEquals(1, callsCounter.getValue());
+    }
 
-
-@Test
-public void testGetIfNullSupplier() {
-    final Object o = FOO;
-    final Object defaultObject = BAR;
-    assertNull(ObjectUtils.getIfNull(null, (Supplier<Object>) null));
-    assertSame(defaultObject, ObjectUtils.getIfNull(null, () -> defaultObject), "dflt was not returned when o was null");
-    assertSame(o, ObjectUtils.getIfNull(o, () -> defaultObject), "dflt was returned when o was not null");
-    assertSame(o, ObjectUtils.getIfNull(FOO, () -> defaultObject), "dflt was returned when o was not null");
-    assertSame(o, ObjectUtils.getIfNull("foo", () -> defaultObject), "dflt was returned when o was not null");
-    final MutableInt callsCounter = new MutableInt(0);
-    final Supplier<Object> countingDefaultSupplier = () -> {
-        callsCounter.increment();
-        return defaultObject;
-    };
-    ObjectUtils.getIfNull(o, countingDefaultSupplier);
-    assertEquals(0, callsCounter.getValue());
-    ObjectUtils.getIfNull(null, countingDefaultSupplier);
-    assertEquals(1, callsCounter.getValue());
-}
-
-
-@Test
-public void testGetIfNullObject() {
-    final Object o = FOO;
-    final Object defaultObject = BAR;
-    assertNull(ObjectUtils.getIfNull(null, (Object) null));
-    assertSame(defaultObject, ObjectUtils.getIfNull(null, defaultObject), "dflt was not returned when o was null");
-    assertSame(o, ObjectUtils.getIfNull(o, defaultObject), "dflt was returned when o was not null");
-}
+    @Test
+    public void testGetIfNullObject() {
+        final Object o = FOO;
+        final Object defaultObject = BAR;
+        assertNull(ObjectUtils.getIfNull(null, (Object) null));
+        assertSame(defaultObject, ObjectUtils.getIfNull(null, defaultObject), "dflt was not returned when o was null");
+        assertSame(o, ObjectUtils.getIfNull(o, defaultObject), "dflt was returned when o was not null");
+    }
 }

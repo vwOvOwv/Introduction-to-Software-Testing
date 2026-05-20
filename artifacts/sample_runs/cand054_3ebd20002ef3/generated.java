@@ -16,28 +16,28 @@
  */
 package org.apache.commons.lang3.time;
 
+
+
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.allOf;
 import static org.hamcrest.Matchers.greaterThanOrEqualTo;
-import static org.hamcrest.Matchers.lessThan;
 import static org.hamcrest.Matchers.lessThanOrEqualTo;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import java.time.Instant;
+import org.junit.jupiter.api.Test;
+import static org.hamcrest.Matchers.lessThan;
 import static org.hamcrest.Matchers.not;
 import static org.hamcrest.Matchers.startsWith;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import java.time.Duration;
-import java.time.Instant;
 import java.util.concurrent.TimeUnit;
-
 import org.apache.commons.lang3.AbstractLangTest;
 import org.apache.commons.lang3.ThreadUtils;
 import org.apache.commons.lang3.reflect.FieldUtils;
-import org.junit.jupiter.api.Test;
 
 /**
  * Tests {@link StopWatch}.
@@ -257,17 +257,17 @@ public class StopWatchTest extends AbstractLangTest {
         assertThat("stopWatch.toSplitString", stopWatch.toSplitString(), startsWith(MESSAGE));
     }
 
-@Test
-public void testStopTimeSimple() throws InterruptedException {
-    final StopWatch watch = StopWatch.createStarted();
-    final long testStartMillis = System.currentTimeMillis();
-    sleep(MILLIS_550);
-    watch.stop();
-    final long testEndMillis = System.currentTimeMillis();
-    final long stopTime = watch.getStopTime();
-    assertEquals(stopTime, watch.getStopTime());
-    assertThat("stopTime", stopTime, allOf(greaterThanOrEqualTo(testStartMillis), lessThanOrEqualTo(testEndMillis)));
-}
+    @Test
+    public void testStopTimeSimple() throws InterruptedException {
+        final StopWatch watch = StopWatch.createStarted();
+        final long testStartMillis = System.currentTimeMillis();
+        sleep(MILLIS_550);
+        watch.stop();
+        final long testEndMillis = System.currentTimeMillis();
+        final long stopTime = watch.getStopTime();
+        assertEquals(stopTime, watch.getStopTime());
+        assertThat("stopTime", stopTime, allOf(greaterThanOrEqualTo(testStartMillis), lessThanOrEqualTo(testEndMillis)));
+    }
 
     @Test
     public void testStopWatchGetWithTimeUnit() {
@@ -409,17 +409,16 @@ public void testStopTimeSimple() throws InterruptedException {
         assertEquals(12 + MESSAGE.length() + 1, splitStr.length(), "Formatted split string not the correct length");
     }
 
-
-@Test
-public void testStopInstantSimple() throws InterruptedException {
-    final StopWatch watch = StopWatch.createStarted();
-    final long testStartMillis = System.currentTimeMillis();
-    sleep(MILLIS_550);
-    watch.stop();
-    final long testEndMillis = System.currentTimeMillis();
-    final Instant stopTime = watch.getStopInstant();
-    assertEquals(stopTime, watch.getStopInstant());
-    assertThat("stopTime", stopTime,
-            allOf(greaterThanOrEqualTo(Instant.ofEpochMilli(testStartMillis)), lessThanOrEqualTo(Instant.ofEpochMilli(testEndMillis))));
-}
+    @Test
+    public void testStopInstantSimple() throws InterruptedException {
+        final StopWatch watch = StopWatch.createStarted();
+        final long testStartMillis = System.currentTimeMillis();
+        sleep(MILLIS_550);
+        watch.stop();
+        final long testEndMillis = System.currentTimeMillis();
+        final Instant stopTime = watch.getStopInstant();
+        assertEquals(stopTime, watch.getStopInstant());
+        assertThat("stopTime", stopTime,
+                allOf(greaterThanOrEqualTo(Instant.ofEpochMilli(testStartMillis)), lessThanOrEqualTo(Instant.ofEpochMilli(testEndMillis))));
+    }
 }

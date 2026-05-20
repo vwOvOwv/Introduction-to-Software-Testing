@@ -16,16 +16,15 @@
  */
 package org.apache.commons.lang3;
 
+
 import static org.apache.commons.lang3.LangAssertions.assertIllegalArgumentException;
 import static org.apache.commons.lang3.LangAssertions.assertIndexOutOfBoundsException;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
-
 import java.util.Arrays;
 import java.util.SplittableRandom;
 import java.util.UUID;
-
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
@@ -1772,4 +1771,17 @@ class ConversionTest extends AbstractLangTest {
             (byte) 0x00, (byte) 0x00}, Conversion.uuidToByteArray(new UUID(
             0xFFEEDDCCBBAA9988L, 0x7766554433221100L), new byte[16], 2, 12));
     }
+
+
+/**
+     * Tests {@link Conversion#hexToInt(String, int, int, int, int)}.
+     */
+
+    /**
+     * Tests {@link Conversion#hexToLong(String, int, long, int, int)}.
+     */
+
+    /**
+     * Tests {@link Conversion#hexToShort(String, int, short, int, int)}.
+     */
 }

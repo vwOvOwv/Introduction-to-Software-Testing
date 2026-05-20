@@ -18,17 +18,17 @@
  */
 package org.apache.commons.lang3.math;
 
+
+
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import org.apache.commons.lang3.AbstractLangTest;
-import org.junit.jupiter.api.Test;
-
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.CsvSource;
 
 /**
  * Test cases for the {@link Fraction} class
@@ -610,7 +610,7 @@ public class FractionTest extends AbstractLangTest {
         assertEquals(1, f.getDenominator());
     }
 
-@Test
+    @Test
     public void testHashCode() {
         final Fraction f1 = Fraction.getFraction(3, 5);
         Fraction f2 = Fraction.getFraction(3, 5);
@@ -1128,4 +1128,9 @@ public class FractionTest extends AbstractLangTest {
         assertNotEquals(Fraction.getFraction(f1n, f1d), Fraction.getFraction(f2n, f2d));
         assertNotEquals(Fraction.getFraction(f1n, f1d).hashCode(), Fraction.getFraction(f2n, f2d).hashCode());
     }
+
+
+/**
+     * Tests https://issues.apache.org/jira/browse/LANG-1764
+     */
 }

@@ -16,10 +16,14 @@
  */
 package org.apache.commons.lang3;
 
+
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import org.junit.jupiter.api.Test;
 import static org.apache.commons.lang3.LangAssertions.assertIllegalArgumentException;
 import static org.apache.commons.lang3.LangAssertions.assertNullPointerException;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertInstanceOf;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
@@ -28,8 +32,6 @@ import static org.junit.jupiter.api.Assertions.assertNotSame;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import java.lang.annotation.ElementType;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Modifier;
@@ -45,9 +47,7 @@ import java.util.Objects;
 import java.util.Random;
 import java.util.function.Function;
 import java.util.function.Supplier;
-
 import org.apache.commons.lang3.function.Suppliers;
-import org.junit.jupiter.api.Test;
 
 /**
  * Tests {@link ArrayUtils}.
@@ -362,6 +362,10 @@ class ArrayUtilsTest extends AbstractLangTest {
         assertTrue(ArrayUtils.contains(a, Double.POSITIVE_INFINITY));
         assertTrue(ArrayUtils.contains(a, Double.NEGATIVE_INFINITY));
         assertTrue(ArrayUtils.contains(a, Double.NaN));
+
+        assertTrue(ArrayUtils.contains(a, Double.POSITIVE_INFINITY, 0.1));
+        assertTrue(ArrayUtils.contains(a, Double.NEGATIVE_INFINITY, 0.1));
+        assertTrue(ArrayUtils.contains(a, Double.NaN, 0.1));
     }
 
     @Test
@@ -1131,29 +1135,31 @@ class ArrayUtilsTest extends AbstractLangTest {
         assertEquals(-1, ArrayUtils.indexOf(array, 99));
     }
 
-@Test
-void testIndexOfDoubleNaN() {
-    final double[] array = { Double.NEGATIVE_INFINITY, Double.NaN, Double.POSITIVE_INFINITY, Double.NaN };
-    assertEquals(0, ArrayUtils.indexOf(array, Double.NEGATIVE_INFINITY));
-    assertEquals(0, ArrayUtils.indexOf(array, Double.NEGATIVE_INFINITY, (double) 0));
-    assertEquals(1, ArrayUtils.indexOf(array, Double.NaN));
-    assertEquals(1, ArrayUtils.indexOf(array, Double.NaN, (double) 0));
-    assertEquals(2, ArrayUtils.indexOf(array, Double.POSITIVE_INFINITY));
-    assertEquals(2, ArrayUtils.indexOf(array, Double.POSITIVE_INFINITY, (double) 0));
-}
+    @Test
+    void testIndexOfDoubleNaN() {
+        final double[] array = { Double.NEGATIVE_INFINITY, Double.NaN, Double.POSITIVE_INFINITY, Double.NaN };
+        assertEquals(0, ArrayUtils.indexOf(array, Double.NEGATIVE_INFINITY));
+        assertEquals(0, ArrayUtils.indexOf(array, Double.NEGATIVE_INFINITY, (double) 0));
+        assertEquals(1, ArrayUtils.indexOf(array, Double.NaN));
+        assertEquals(1, ArrayUtils.indexOf(array, Double.NaN, (double) 0));
+        assertEquals(2, ArrayUtils.indexOf(array, Double.POSITIVE_INFINITY));
+        assertEquals(2, ArrayUtils.indexOf(array, Double.POSITIVE_INFINITY, (double) 0));
+    }
 
-@Test
-void testIndexOfDoubleTolerance() {
-    double[] array = null;
-    assertEquals(-1, ArrayUtils.indexOf(array, (double) 0, (double) 0));
-    assertEquals(-1, ArrayUtils.indexOf(array, Double.NaN, (double) 0));
-    array = new double[0];
-    assertEquals(-1, ArrayUtils.indexOf(array, (double) 0, (double) 0));
-    assertEquals(-1, ArrayUtils.indexOf(array, Double.NaN, (double) 0));
-    array = new double[]{0, 1, 2, 3, 0};
-    assertEquals(0, ArrayUtils.indexOf(array, 0, 0.3));
-    assertEquals(2, ArrayUtils.indexOf(array, 2.2, 0.35));
-}
+    @Test
+    void testIndexOfDoubleTolerance() {
+        double[] array = null;
+        assertEquals(-1, ArrayUtils.indexOf(array, (double) 0, (double) 0));
+        assertEquals(-1, ArrayUtils.indexOf(array, Double.NaN, (double) 0));
+        array = new double[0];
+        assertEquals(-1, ArrayUtils.indexOf(array, (double) 0, (double) 0));
+        assertEquals(-1, ArrayUtils.indexOf(array, Double.NaN, (double) 0));
+        array = new double[]{0, 1, 2, 3, 0};
+        assertEquals(0, ArrayUtils.indexOf(array, 0, 0.3));
+        assertEquals(2, ArrayUtils.indexOf(array, 2.2, 0.35));
+        assertEquals(3, ArrayUtils.indexOf(array, 4.15, 2.0));
+        assertEquals(1, ArrayUtils.indexOf(array, 1.00001324, 0.0001));
+    }
 
     @Test
     void testIndexOfDoubleWithStartIndex() {

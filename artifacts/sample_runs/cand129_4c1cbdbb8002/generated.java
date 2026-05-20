@@ -17,12 +17,12 @@
 
 package org.apache.commons.lang3.function;
 
+
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import java.util.function.Consumer;
 import java.util.stream.Stream;
-
 import org.apache.commons.lang3.AbstractLangTest;
 import org.junit.jupiter.api.Test;
 
@@ -41,7 +41,7 @@ public class ConsumersTest extends AbstractLangTest {
     }
 
     /**
-     * Tests {@link Consumers#accept(Object, Consumer)}.
+     * Tests {@link Consumers#accept(Consumer, Object)}.
      */
     @Test
     public void testAccept() {
@@ -75,4 +75,9 @@ public class ConsumersTest extends AbstractLangTest {
         Consumers.nop().accept(null);
         Consumers.nop().accept("");
     }
+
+
+/**
+     * Tests {@link Consumers#accept(Consumer, Object)}.
+     */
 }

@@ -16,6 +16,8 @@
  */
 package org.apache.commons.lang3.math;
 
+
+
 import static org.apache.commons.lang3.LangAssertions.assertIllegalArgumentException;
 import static org.apache.commons.lang3.LangAssertions.assertNullPointerException;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -25,7 +27,6 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Modifier;
 import java.math.BigDecimal;
@@ -34,15 +35,13 @@ import java.math.RoundingMode;
 import java.text.NumberFormat;
 import java.text.ParseException;
 import java.util.function.Function;
-
 import org.apache.commons.lang3.AbstractLangTest;
+import org.apache.commons.lang3.JavaVersion;
 import org.apache.commons.lang3.SystemProperties;
+import org.apache.commons.lang3.SystemUtils;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
-
-import org.apache.commons.lang3.JavaVersion;
-import org.apache.commons.lang3.SystemUtils;
 
 /**
  * Tests {@link org.apache.commons.lang3.math.NumberUtils}.
@@ -57,8 +56,7 @@ class NumberUtilsTest extends AbstractLangTest {
 
     private boolean checkCreateNumber(final String val) {
         try {
-            final Object obj = NumberUtils.createNumber(val);
-            return obj != null;
+            return NumberUtils.createNumber(val) != null;
         } catch (final NumberFormatException e) {
             return false;
         }

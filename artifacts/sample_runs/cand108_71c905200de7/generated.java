@@ -17,16 +17,15 @@
 
 package org.apache.commons.lang3.compare;
 
+
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
-
+import static org.junit.jupiter.api.Assertions.assertSame;
 import java.util.Arrays;
 import java.util.List;
-
 import org.apache.commons.lang3.AbstractLangTest;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.assertSame;
 
 /**
  * Tests {@link ObjectToStringComparator}.
@@ -47,14 +46,6 @@ class ObjectToStringComparatorTest extends AbstractLangTest {
         }
     }
 
-    @Test
-    void testNull() {
-        final List<Thing> things = Arrays.asList(null, new Thing("y"), null);
-        things.sort(ObjectToStringComparator.INSTANCE);
-        assertEquals("y", things.get(0).string);
-        assertNull(things.get(1));
-        assertNull(things.get(2));
-    }
 
     @Test
     void testNullToString() {
@@ -74,7 +65,6 @@ class ObjectToStringComparatorTest extends AbstractLangTest {
         assertEquals("z", things.get(2).string);
     }
 
-
     @Test
     void testNullRight() {
         final Thing thing = new Thing("y");
@@ -84,7 +74,6 @@ class ObjectToStringComparatorTest extends AbstractLangTest {
         assertSame(thing, things.get(0));
         assertNull(things.get(1));
     }
-
 
     @Test
     void testNullLeft() {
@@ -97,8 +86,7 @@ class ObjectToStringComparatorTest extends AbstractLangTest {
         assertNull(things.get(1));
     }
 
-
-@Test
+    @Test
     void testNulls() {
         final Thing thing = new Thing("y");
         final List<Thing> things = Arrays.asList(null, thing, null);

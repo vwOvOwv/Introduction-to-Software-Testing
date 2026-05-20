@@ -16,12 +16,12 @@
  */
 package org.apache.commons.lang3.builder;
 
+
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
-
 import java.math.BigDecimal;
 import java.math.BigInteger;
-
 import org.apache.commons.lang3.AbstractLangTest;
 import org.junit.jupiter.api.Test;
 
@@ -146,7 +146,7 @@ public class ReflectionDiffBuilderTest extends AbstractLangTest {
         assertEquals(1, list.getNumberOfDiffs());
     }
 
-@Test
+    @Test
     public void testGetExcludeFieldNamesWithNullExcludedFieldNames() {
         // @formatter:off
         final ReflectionDiffBuilder<TypeTestClass> reflectionDiffBuilder = ReflectionDiffBuilder.<TypeTestClass>builder()
@@ -217,6 +217,7 @@ public class ReflectionDiffBuilderTest extends AbstractLangTest {
         assertEquals(0, firstObject.diffDeprecated(secondObject).getNumberOfDiffs());
     }
 
+
     @Test
     public void testNoDifferencesDiffExcludeAnnotatedField() {
         final TypeTestClass firstObject = new TypeTestClass();
@@ -281,8 +282,6 @@ public class ReflectionDiffBuilderTest extends AbstractLangTest {
         list = firstObject.diffDeprecated(secondObject);
         assertEquals(0, list.getNumberOfDiffs());
     }
-
-
 
     @Test
     public void testRetention() throws Exception {

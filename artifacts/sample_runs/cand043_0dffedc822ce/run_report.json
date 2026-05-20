@@ -1,42 +1,53 @@
 {
-  "timestamp": "2026-05-16T11:16:32.742337+00:00",
-  "repo": "D:\\软件测试导论\\final_homework\\commons-lang",
-  "ref": "0dffedc822cefbec5151653170ee23faa18d7fac",
-  "target_test_path": "src/test/java/org/apache/commons/lang3/SystemPropertiesTest.java",
-  "replacement_test_file": "D:\\软件测试导论\\final_homework\\Introduction-to-Software-Testing\\artifacts\\sample_runs\\cand043_0dffedc822ce\\generated.java",
-  "test_selector": "SystemPropertiesTest",
-  "maven_args": [
-    "-q"
-  ],
-  "discard_all_tracked_changes": false,
-  "checkout": {
-    "command": [
-      "git",
-      "checkout",
-      "--detach",
-      "0dffedc822cefbec5151653170ee23faa18d7fac"
-    ],
-    "cwd": "D:\\软件测试导论\\final_homework\\commons-lang",
-    "returncode": 0,
-    "stdout": "",
-    "stderr": "Previous HEAD position was 0c6a5c10a Add org.apache.commons.lang3.time.DateUtils.toLocalDateTime(Date[, TimeZone]) #1385\nHEAD is now at 0dffedc82 Add SystemProperties.JAVA_SECURITY_KERBEROS_CONF\n"
-  },
-  "maven": {
-    "command": [
-      "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
-      "-q",
-      "-Dtest=SystemPropertiesTest",
-      "test"
-    ],
-    "cwd": "D:\\软件测试导论\\final_homework\\commons-lang",
-    "returncode": 1,
-    "stdout": "[ERROR] COMPILATION ERROR : \n[ERROR] /D:/�������Ե���/final_homework/commons-lang/src/test/java/org/apache/commons/lang3/SystemPropertiesTest.java:[329,28] ����������Ч\n  �Ҳ�������\n    ����:   ���� getJavaSecurityKerberosConf()\n    λ��: �� org.apache.commons.lang3.SystemProperties\n[ERROR] /D:/�������Ե���/final_homework/commons-lang/src/test/java/org/apache/commons/lang3/SystemPropertiesTest.java:[330,28] ����������Ч\n  �Ҳ�������\n    ����:   ���� getJavaSecurityKerberosKdc()\n    λ��: �� org.apache.commons.lang3.SystemProperties\n[ERROR] /D:/�������Ե���/final_homework/commons-lang/src/test/java/org/apache/commons/lang3/SystemPropertiesTest.java:[331,28] ����������Ч\n  �Ҳ�������\n    ����:   ���� getJavaSecurityKerberosRealm()\n    λ��: �� org.apache.commons.lang3.SystemProperties\n[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.13.0:testCompile (default-testCompile) on project commons-lang3: Compilation failure: Compilation failure: \n[ERROR] /D:/�������Ե���/final_homework/commons-lang/src/test/java/org/apache/commons/lang3/SystemPropertiesTest.java:[329,28] ����������Ч\n[ERROR]   �Ҳ�������\n[ERROR]     ����:   ���� getJavaSecurityKerberosConf()\n[ERROR]     λ��: �� org.apache.commons.lang3.SystemProperties\n[ERROR] /D:/�������Ե���/final_homework/commons-lang/src/test/java/org/apache/commons/lang3/SystemPropertiesTest.java:[330,28] ����������Ч\n[ERROR]   �Ҳ�������\n[ERROR]     ����:   ���� getJavaSecurityKerberosKdc()\n[ERROR]     λ��: �� org.apache.commons.lang3.SystemProperties\n[ERROR] /D:/�������Ե���/final_homework/commons-lang/src/test/java/org/apache/commons/lang3/SystemPropertiesTest.java:[331,28] ����������Ч\n[ERROR]   �Ҳ�������\n[ERROR]     ����:   ���� getJavaSecurityKerberosRealm()\n[ERROR]     λ��: �� org.apache.commons.lang3.SystemProperties\n[ERROR] -> [Help 1]\n[ERROR] \n[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.\n[ERROR] Re-run Maven using the -X switch to enable full debug logging.\n[ERROR] \n[ERROR] For more information about the errors and possible solutions, please read the following articles:\n[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException\n",
-    "stderr": ""
-  },
-  "restore": [
+  "command_history": [
     {
+      "name": "checkout",
+      "cwd": "./.",
+      "env": {
+        "JAVA_HOME": "/usr/lib/jvm/java-21-openjdk",
+        "PATH": "/usr/lib/jvm/java-21-openjdk/bin:/usr/local/bin:/usr/bin:/bin",
+        "PWD": "./."
+      },
       "command": [
-        "git",
+        "/usr/bin/git",
+        "worktree",
+        "add",
+        "--detach",
+        "${tmp}/run-SystemPropertiesTest-o31h0h7k",
+        "0dffedc822cefbec5151653170ee23faa18d7fac"
+      ],
+      "returncode": 0,
+      "stdout": "HEAD is now at 0dffedc82 Add SystemProperties.JAVA_SECURITY_KERBEROS_CONF\n",
+      "stderr": "Preparing worktree (detached HEAD 0dffedc82)\n"
+    },
+    {
+      "name": "maven",
+      "cwd": "${tmp}/run-SystemPropertiesTest-o31h0h7k",
+      "env": {
+        "JAVA_HOME": "/usr/lib/jvm/java-21-openjdk",
+        "PATH": "/usr/lib/jvm/java-21-openjdk/bin:/usr/local/bin:/usr/bin:/bin",
+        "PWD": "${tmp}/run-SystemPropertiesTest-o31h0h7k"
+      },
+      "command": [
+        "/usr/bin/mvn",
+        "-q",
+        "-Dtest=SystemPropertiesTest",
+        "test"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "name": "restore",
+      "cwd": "${tmp}/run-SystemPropertiesTest-o31h0h7k",
+      "env": {
+        "JAVA_HOME": "/usr/lib/jvm/java-21-openjdk",
+        "PATH": "/usr/lib/jvm/java-21-openjdk/bin:/usr/local/bin:/usr/bin:/bin",
+        "PWD": "${tmp}/run-SystemPropertiesTest-o31h0h7k"
+      },
+      "command": [
+        "/usr/bin/git",
         "restore",
         "--source=HEAD",
         "--staged",
@@ -44,12 +55,28 @@
         "--",
         "src/test/java/org/apache/commons/lang3/SystemPropertiesTest.java"
       ],
-      "cwd": "D:\\软件测试导论\\final_homework\\commons-lang",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "name": "worktree_remove",
+      "cwd": "./.",
+      "env": {
+        "JAVA_HOME": "/usr/lib/jvm/java-21-openjdk",
+        "PATH": "/usr/lib/jvm/java-21-openjdk/bin:/usr/local/bin:/usr/bin:/bin",
+        "PWD": "./."
+      },
+      "command": [
+        "/usr/bin/git",
+        "worktree",
+        "remove",
+        "--force",
+        "${tmp}/run-SystemPropertiesTest-o31h0h7k"
+      ],
       "returncode": 0,
       "stdout": "",
       "stderr": ""
     }
-  ],
-  "failure_message": null,
-  "maven_command_shell": "'D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD' -q -Dtest=SystemPropertiesTest test"
+  ]
 }

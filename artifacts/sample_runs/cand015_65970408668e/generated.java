@@ -16,6 +16,8 @@
  */
 package org.apache.commons.lang3.reflect;
 
+
+
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.hasItemInArray;
 import static org.hamcrest.Matchers.hasItems;
@@ -28,7 +30,6 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import java.awt.Color;
 import java.lang.reflect.Method;
 import java.lang.reflect.Type;
@@ -38,7 +39,6 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-
 import org.apache.commons.lang3.AbstractLangTest;
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.ClassUtils;
@@ -60,7 +60,7 @@ import org.junit.jupiter.api.Test;
  */
 public class MethodUtilsTest extends AbstractLangTest {
 
-    protected abstract static class AbstractGetMatchingMethod {
+    protected abstract static class AbstractGetMatchingMethod implements InterfaceGetMatchingMethod {
         public abstract void testMethod5(Exception exception);
     }
 
@@ -647,7 +647,7 @@ public class MethodUtilsTest extends AbstractLangTest {
                 singletonArray(ChildObject.class), singletonArray(ChildInterface.class));
     }
 
-@Test
+    @Test
     public void testGetMatchingMethod() throws NoSuchMethodException {
         assertEquals(MethodUtils.getMatchingMethod(GetMatchingMethodClass.class, "testMethod"),
                 GetMatchingMethodClass.class.getMethod("testMethod"));
@@ -1139,5 +1139,9 @@ public class MethodUtilsTest extends AbstractLangTest {
         assertEquals("Number...", TestBean.varOverload((short) 1, (byte) 1));
         assertEquals("Object...", TestBean.varOverload(1, 'c'));
         assertEquals("Object...", TestBean.varOverload('c', "s"));
+    }
+    interface InterfaceGetMatchingMethod {
+        default void testMethod6() {
+        }
     }
 }

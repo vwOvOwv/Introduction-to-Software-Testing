@@ -16,13 +16,15 @@
  */
 package org.apache.commons.lang3.time;
 
+
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import java.io.IOException;
 import java.time.Duration;
 import java.time.Instant;
@@ -30,14 +32,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
-
 import org.apache.commons.lang3.AbstractLangTest;
 import org.apache.commons.lang3.ThreadUtils;
 import org.apache.commons.lang3.reflect.FieldUtils;
 import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 /**
  * Tests {@link StopWatch}.
@@ -558,21 +557,19 @@ class StopWatchTest extends AbstractLangTest {
         throw new IOException("A");
     }
 
+    @Test
+    void testSplitWithLabelGetStopInstant() {
+      final StopWatch watch = StopWatch.createStarted();
+      watch.split("one");
+      assertNotNull(watch.getStopTime());
+      assertNotNull(watch.getStopInstant());
+    }
 
-@Test
-void testSplitWithLabelGetStopInstant() {
-    final StopWatch watch = StopWatch.createStarted();
-    watch.split("one");
-    assertNotNull(watch.getStopTime());
-    assertNotNull(watch.getStopInstant());
-}
-
-
-@Test
-void testSplitGetStopInstant() {
-    final StopWatch watch = StopWatch.createStarted();
-    watch.split();
-    assertNotNull(watch.getStopTime());
-    assertNotNull(watch.getStopInstant());
-}
+    @Test
+    void testSplitGetStopInstant() {
+      final StopWatch watch = StopWatch.createStarted();
+      watch.split();
+      assertNotNull(watch.getStopTime());
+      assertNotNull(watch.getStopInstant());
+    }
 }

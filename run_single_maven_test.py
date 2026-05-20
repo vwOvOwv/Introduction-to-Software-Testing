@@ -4,13 +4,14 @@
 from __future__ import annotations
 
 import argparse
+import getpass
 import json
-import shlex
+import os
 import shutil
 import subprocess
 import sys
-from dataclasses import asdict, dataclass
-from datetime import datetime, timezone
+import tempfile
+from dataclasses import dataclass
 from pathlib import Path
 
 
@@ -18,15 +19,40 @@ from pathlib import Path
 class CommandResult:
     command: list[str]
     cwd: str
+    env: dict[str, str]
     returncode: int
     stdout: str
     stderr: str
 
 
-def run_command(command: list[str], cwd: Path) -> CommandResult:
+def build_manual_env(cwd: Path, repo: Path) -> dict[str, str]:
+    java_path = shutil.which("java")
+    path_entries = ["/usr/local/bin", "/usr/bin", "/bin"]
+    if java_path:
+        java_home = Path(java_path).resolve().parent.parent
+        path_entries.insert(0, str(java_home / "bin"))
+    env: dict[str, str] = {
+        # "HOME": str(Path.home()),
+        # "LANG": "zh_CN.UTF-8",
+        # "LC_ALL": "zh_CN.UTF-8",
+        # "LOGNAME": getpass.getuser(),
+        "PATH": ":".join(path_entries),
+        "PWD": os.path.relpath(cwd, start=repo),
+        "JAVA_HOME": str(java_home),
+        # "TERM": "xterm-256color",
+        # "USER": getpass.getuser(),
+    }
+    if java_home is not None:
+        env["JAVA_HOME"] = str(java_home)
+    return env
+
+
+def run_command(command: list[str], cwd: Path, repo: Path) -> CommandResult:
+    env = build_manual_env(cwd, repo)
     process = subprocess.run(
         command,
         cwd=str(cwd),
+        env=env,
         text=True,
         encoding="utf-8",
         errors="replace",
@@ -35,6 +61,7 @@ def run_command(command: list[str], cwd: Path) -> CommandResult:
     return CommandResult(
         command=command,
         cwd=str(cwd),
+        env=env,
         returncode=process.returncode,
         stdout=process.stdout,
         stderr=process.stderr,
@@ -64,8 +91,82 @@ def write_report(report_path: Path, payload: dict) -> None:
     )
 
 
+def normalize_path_text(value: str, repo: Path, temp_root: Path) -> str:
+    candidate = Path(value)
+    try:
+        relative_to_temp = str(candidate.resolve().relative_to(temp_root.resolve()))
+        return "${tmp}/" + relative_to_temp
+    except Exception:  # noqa: BLE001
+        pass
+    
+    try:
+        return "./" + str(candidate.resolve().relative_to(repo.resolve()))
+    except Exception:
+        return os.path.abspath(value)
+
+def normalize_command(command: list[str], repo: Path, temp_root: Path) -> list[str]:
+    normalized: list[str] = []
+    for index, token in enumerate(command):
+        if os.path.isabs(token):
+            normalized.append(normalize_path_text(token, repo, temp_root))
+        else:
+            normalized.append(token)
+    return normalized
+
+
+def normalize_env_value(value: str, repo: Path, temp_root: Path) -> str:
+    if os.pathsep in value:
+        return os.pathsep.join(
+            normalize_path_text(part, repo, temp_root) if part and os.path.isabs(part) else part
+            for part in value.split(os.pathsep)
+        )
+    if os.path.isabs(value):
+        return normalize_path_text(value, repo, temp_root)
+    return value
+
+
+def normalize_env(env: dict[str, str], cwd: Path, repo: Path, temp_root: Path) -> dict[str, str]:
+    normalized = dict(env)
+    normalized["PWD"] = normalize_path_text(str(cwd), repo, temp_root)
+    for key in ("HOME", "JAVA_HOME"):
+        if key in normalized:
+            normalized[key] = normalize_env_value(normalized[key], repo, temp_root)
+    if "PATH" in normalized:
+        normalized["PATH"] = normalize_env_value(normalized["PATH"], repo, temp_root)
+    return dict(sorted(normalized.items()))
+
+
+def command_history_entry(name: str, result: CommandResult, repo: Path, temp_root: Path) -> dict[str, object]:
+    cwd = normalize_path_text(result.cwd, repo, temp_root)
+    return {
+        "name": name,
+        "cwd": cwd,
+        "env": normalize_env(result.env, Path(result.cwd), repo, temp_root),
+        "command": normalize_command(result.command, repo, temp_root),
+        "returncode": result.returncode,
+        "stdout": result.stdout,
+        "stderr": result.stderr,
+    }
+
+
 def checkout_ref(repo: Path, git_ref: str) -> CommandResult:
-    return run_command(["git", "checkout", "--detach", git_ref], cwd=repo)
+    return run_command([resolve_git_executable(), "checkout", "--detach", git_ref], cwd=repo, repo=repo)
+
+
+def add_worktree(repo: Path, worktree_dir: Path, git_ref: str) -> CommandResult:
+    return run_command(
+        [resolve_git_executable(), "worktree", "add", "--detach", str(worktree_dir), git_ref],
+        cwd=repo,
+        repo=repo,
+    )
+
+
+def remove_worktree(repo: Path, worktree_dir: Path) -> CommandResult:
+    return run_command(
+        [resolve_git_executable(), "worktree", "remove", "--force", str(worktree_dir)],
+        cwd=repo,
+        repo=repo,
+    )
 
 
 def overwrite_test_file(source_file: Path, destination_file: Path) -> None:
@@ -76,11 +177,26 @@ def overwrite_test_file(source_file: Path, destination_file: Path) -> None:
 def discard_changes(repo: Path, target_path: str | None) -> list[CommandResult]:
     commands: list[list[str]] = []
     if target_path:
-        commands.append(["git", "restore", "--source=HEAD", "--staged", "--worktree", "--", target_path])
+        commands.append([
+            resolve_git_executable(),
+            "restore",
+            "--source=HEAD",
+            "--staged",
+            "--worktree",
+            "--",
+            target_path,
+        ])
     else:
-        commands.append(["git", "restore", "--source=HEAD", "--staged", "--worktree", "."])
+        commands.append([resolve_git_executable(), "restore", "--source=HEAD", "--staged", "--worktree", "."])
 
-    return [run_command(command, cwd=repo) for command in commands]
+    return [run_command(command, cwd=repo, repo=repo) for command in commands]
+
+
+def resolve_git_executable() -> str:
+    path = shutil.which("git")
+    if not path:
+        raise RuntimeError("PATH 中找不到 git，请安装 Git 或配置环境变量")
+    return path
 
 
 def resolve_mvn_executable() -> str:
@@ -150,7 +266,11 @@ def main() -> int:
     checkout_result: CommandResult | None = None
     maven_result: CommandResult | None = None
     restore_results: list[CommandResult] = []
-    failure_message: str | None = None
+    worktree_remove_result: CommandResult | None = None
+    worktree_path: Path | None = None
+    active_repo = repo
+    active_destination_test_file = destination_test_file
+    command_history: list[dict[str, object]] = []
 
     try:
         require_git_repo(repo)
@@ -158,39 +278,43 @@ def main() -> int:
         ensure_tool_exists("git")
         resolve_mvn_executable()
 
-        checkout_result = checkout_ref(repo, args.ref)
+        worktree_root = Path(tempfile.gettempdir()) / "sample_runs"
+        worktree_root.mkdir(parents=True, exist_ok=True)
+        worktree_path = Path(
+            tempfile.mkdtemp(prefix=f"run-{Path(target_test_path).stem}-", dir=str(worktree_root))
+        )
+        checkout_result = add_worktree(repo, worktree_path, args.ref)
         if checkout_result.returncode != 0:
-            failure_message = "git checkout 失败"
             return 1
 
-        overwrite_test_file(replacement_test_file, destination_test_file)
+        active_repo = worktree_path
+        active_destination_test_file = active_repo / Path(target_test_path)
+
+        overwrite_test_file(replacement_test_file, active_destination_test_file)
 
         maven_command = build_maven_command(args.test_selector, args.maven_arg)
-        maven_result = run_command(maven_command, cwd=repo)
+        maven_result = run_command(maven_command, cwd=active_repo, repo=repo)
         return 0 if maven_result.returncode == 0 else maven_result.returncode
     except Exception as exc:  # noqa: BLE001
-        failure_message = str(exc)
         return 1
     finally:
         restore_target = None if args.discard_all_tracked_changes else target_test_path
         if checkout_result is not None and checkout_result.returncode == 0:
-            restore_results = discard_changes(repo, restore_target)
+            restore_results = discard_changes(active_repo, restore_target)
+        if worktree_path is not None and checkout_result is not None and checkout_result.returncode == 0:
+            worktree_remove_result = remove_worktree(repo, worktree_path)
 
-        payload = {
-            "timestamp": datetime.now(timezone.utc).isoformat(),
-            "repo": str(repo),
-            "ref": args.ref,
-            "target_test_path": target_test_path,
-            "replacement_test_file": str(replacement_test_file),
-            "test_selector": args.test_selector,
-            "maven_args": args.maven_arg,
-            "discard_all_tracked_changes": args.discard_all_tracked_changes,
-            "checkout": asdict(checkout_result) if checkout_result else None,
-            "maven": asdict(maven_result) if maven_result else None,
-            "restore": [asdict(item) for item in restore_results],
-            "failure_message": failure_message,
-            "maven_command_shell": shlex.join(build_maven_command(args.test_selector, args.maven_arg)),
-        }
+        if checkout_result is not None:
+            command_history.append(command_history_entry("checkout", checkout_result, repo, worktree_root))
+        if maven_result is not None:
+            command_history.append(command_history_entry("maven", maven_result, repo, worktree_root))
+        for index, item in enumerate(restore_results, start=1):
+            history_name = "restore" if len(restore_results) == 1 else f"restore_{index}"
+            command_history.append(command_history_entry(history_name, item, repo, worktree_root))
+        if worktree_remove_result is not None:
+            command_history.append(command_history_entry("worktree_remove", worktree_remove_result, repo, worktree_root))
+
+        payload = {"command_history": command_history}
         write_report(report_file, payload)
 
 

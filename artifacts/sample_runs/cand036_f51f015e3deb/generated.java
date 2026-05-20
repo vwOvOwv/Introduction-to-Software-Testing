@@ -17,12 +17,12 @@
 
 package org.apache.commons.lang3;
 
+
+
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import java.util.stream.Stream;
-
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -81,22 +81,24 @@ public class StringsTest {
         assertFalse(strings.equals("", nullCharSequence));
     }
 
+    /**
+     * Expanding the existing test group {@link StringUtilsStartsEndsWithTest#testStartsWithAny()} to include case-insensitive cases
+     */
+    @Test
+    public void testCaseInsensitiveStartsWithAny() {
+        // LANG-1682
+        assertFalse(Strings.CI.startsWithAny(null, (String[]) null));
+        assertFalse(Strings.CI.startsWithAny(null, "aBc"));
+        assertFalse(Strings.CI.startsWithAny("AbCxYz", (String[]) null));
+        assertFalse(Strings.CI.startsWithAny("AbCxYz"));
+        assertTrue(Strings.CI.startsWithAny("AbCxYz", "aBc"));
+        assertTrue(Strings.CI.startsWithAny("AbCxYz", null, "XyZ", "aBc"));
+        assertFalse(Strings.CI.startsWithAny("AbCxYz", null, "XyZ", "aBcD"));
+        assertTrue(Strings.CI.startsWithAny("AbCxYz", ""));
+        assertTrue(Strings.CI.startsWithAny("abcxyz", null, "XyZ", "ABCX"));
+        assertTrue(Strings.CI.startsWithAny("ABCXYZ", null, "XyZ", "abc"));
 
-@Test
-public void testCaseInsensitiveStartsWithAny() {
-    // LANG-1682
-    assertFalse(Strings.CI.startsWithAny(null, (String[]) null));
-    assertFalse(Strings.CI.startsWithAny(null, "aBc"));
-    assertFalse(Strings.CI.startsWithAny("AbCxYz", (String[]) null));
-    assertFalse(Strings.CI.startsWithAny("AbCxYz"));
-    assertTrue(Strings.CI.startsWithAny("AbCxYz", "aBc"));
-    assertTrue(Strings.CI.startsWithAny("AbCxYz", null, "XyZ", "aBc"));
-    assertFalse(Strings.CI.startsWithAny("AbCxYz", null, "XyZ", "aBcD"));
-    assertTrue(Strings.CI.startsWithAny("AbCxYz", ""));
-    assertTrue(Strings.CI.startsWithAny("abcxyz", null, "XyZ", "ABCX"));
-    assertTrue(Strings.CI.startsWithAny("ABCXYZ", null, "XyZ", "abc"));
-
-    assertTrue(Strings.CI.startsWithAny("AbCxYz", new StringBuilder("XyZ"), new StringBuffer("aBc")));
-    assertTrue(Strings.CI.startsWithAny(new StringBuffer("AbCxYz"), new StringBuilder("XyZ"), new StringBuffer("abc")));
-}
+        assertTrue(Strings.CI.startsWithAny("AbCxYz", new StringBuilder("XyZ"), new StringBuffer("aBc")));
+        assertTrue(Strings.CI.startsWithAny(new StringBuffer("AbCxYz"), new StringBuilder("XyZ"), new StringBuffer("abc")));
+    }
 }

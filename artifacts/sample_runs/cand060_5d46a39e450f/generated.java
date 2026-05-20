@@ -16,26 +16,25 @@
  */
 package org.apache.commons.lang3;
 
+
+
 import static org.apache.commons.lang3.LangAssertions.assertIllegalArgumentException;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
-
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.util.Random;
 import java.util.stream.Stream;
-
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Timeout;
 import org.junit.jupiter.api.condition.EnabledIfSystemProperty;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
 import org.junit.jupiter.params.provider.ValueSource;
-
-import static org.junit.jupiter.api.Assertions.assertThrows;
-import org.junit.jupiter.api.Timeout;
 
 /**
  * Tests {@link RandomStringUtils}.
@@ -110,21 +109,21 @@ class RandomStringUtilsTest extends AbstractLangTest {
         assertIllegalArgumentException(() -> RandomStringUtils.random(1, Integer.MIN_VALUE, -10, false, false, null));
     }
 
-@Test
-void testExceptionsRandom() {
-    assertIllegalArgumentException(() -> RandomStringUtils.random(-1));
-    assertIllegalArgumentException(() -> RandomStringUtils.random(-1, true, true));
-    assertIllegalArgumentException(() -> RandomStringUtils.random(-1, new char[] { 'a' }));
-    assertIllegalArgumentException(() -> RandomStringUtils.random(1, new char[0]));
-    assertIllegalArgumentException(() -> RandomStringUtils.random(-1, ""));
-    assertIllegalArgumentException(() -> RandomStringUtils.random(-1, (String) null));
-    assertIllegalArgumentException(() -> RandomStringUtils.random(-1, 'a', 'z', false, false));
-    assertIllegalArgumentException(() -> RandomStringUtils.random(-1, 'a', 'z', false, false, new char[] { 'a' }));
-    assertIllegalArgumentException(() -> RandomStringUtils.random(-1, 'a', 'z', false, false, new char[] { 'a' }, new Random()));
-    assertIllegalArgumentException(() -> RandomStringUtils.random(8, 32, 48, false, true));
-    assertIllegalArgumentException(() -> RandomStringUtils.random(8, 32, 65, true, false));
-    assertIllegalArgumentException(() -> RandomStringUtils.random(1, Integer.MIN_VALUE, -10, false, false, null));
-}
+    @ParameterizedTest
+    @MethodSource("randomProvider")
+    void testExceptionsRandom(final RandomStringUtils rsu) {
+        assertIllegalArgumentException(() -> rsu.next(-1));
+        assertIllegalArgumentException(() -> rsu.next(-1, true, true));
+        assertIllegalArgumentException(() -> rsu.next(-1, new char[] { 'a' }));
+        assertIllegalArgumentException(() -> rsu.next(1, new char[0]));
+        assertIllegalArgumentException(() -> rsu.next(-1, ""));
+        assertIllegalArgumentException(() -> rsu.next(-1, (String) null));
+        assertIllegalArgumentException(() -> rsu.next(-1, 'a', 'z', false, false));
+        assertIllegalArgumentException(() -> rsu.next(-1, 'a', 'z', false, false, new char[] { 'a' }));
+        assertIllegalArgumentException(() -> rsu.next(8, 32, 48, false, true));
+        assertIllegalArgumentException(() -> rsu.next(8, 32, 65, true, false));
+        assertIllegalArgumentException(() -> rsu.next(1, Integer.MIN_VALUE, -10, false, false, null));
+    }
 
     @Test
     void testExceptionsRandomAlphabetic() {
@@ -820,17 +819,15 @@ void testExceptionsRandom() {
         assertNotEquals(r2, r3);
     }
 
+    @Test
+    @Timeout(value = 2, threadMode = Timeout.ThreadMode.SAME_THREAD)
+    void testFilterNumbers() {
+        assertThrows(IllegalArgumentException.class, () -> RandomStringUtils.random(5, 0x80, 0xA0, false, true, null, new Random()));
+    }
 
-@Test
-@Timeout(value = 2, threadMode = Timeout.ThreadMode.SAME_THREAD)
-void testFilterNumbers() {
-    assertThrows(IllegalArgumentException.class, () -> RandomStringUtils.random(5, 0x80, 0xA0, false, true, null, new Random()));
-}
-
-
-@Test
-@Timeout(value = 2, threadMode = Timeout.ThreadMode.SAME_THREAD)
-void testFilterLetters() {
-    assertThrows(IllegalArgumentException.class, () -> RandomStringUtils.random(5, 0x80, 0xA0, true, false, null, new Random()));
-}
+    @Test
+    @Timeout(value = 2, threadMode = Timeout.ThreadMode.SAME_THREAD)
+    void testFilterLetters() {
+        assertThrows(IllegalArgumentException.class, () -> RandomStringUtils.random(5, 0x80, 0xA0, true, false, null, new Random()));
+    }
 }

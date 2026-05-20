@@ -16,6 +16,15 @@
  */
 package org.apache.commons.lang3.time;
 
+
+
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.ZoneOffset;
+import java.util.stream.Stream;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.MethodSource;
 import static org.apache.commons.lang3.LangAssertions.assertIllegalArgumentException;
 import static org.apache.commons.lang3.LangAssertions.assertNullPointerException;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -24,7 +33,6 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNotSame;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Modifier;
 import java.text.DateFormat;
@@ -37,7 +45,6 @@ import java.util.Iterator;
 import java.util.Locale;
 import java.util.NoSuchElementException;
 import java.util.TimeZone;
-
 import org.apache.commons.lang3.AbstractLangTest;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
@@ -46,14 +53,6 @@ import org.junit.jupiter.api.Test;
 import org.junitpioneer.jupiter.DefaultLocale;
 import org.junitpioneer.jupiter.ReadsDefaultLocale;
 import org.junitpioneer.jupiter.WritesDefaultLocale;
-
-import java.time.LocalDateTime;
-import java.time.ZoneId;
-import java.time.ZoneOffset;
-import java.util.stream.Stream;
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.Arguments;
-import org.junit.jupiter.params.provider.MethodSource;
 
 /**
  * Tests {@link org.apache.commons.lang3.time.DateUtils}.
@@ -1511,19 +1510,68 @@ class DateUtilsTest extends AbstractLangTest {
         }
     }
 
-
-
     @Test
     void testToLocalDateTime() {
         final Date date = new Date();
         assertEquals(LocalDateTime.ofInstant(date.toInstant(), ZoneId.systemDefault()), DateUtils.toLocalDateTime(date));
     }
 
-
     @ParameterizedTest
     @MethodSource
     void testToLocalDateTimeTimeZone(final LocalDateTime expected, final Date date, final TimeZone timeZone) {
         assertEquals(expected, DateUtils.toLocalDateTime(date, timeZone));
+    }
+
+    private static Stream<Arguments> testToLocalDateTimeTimeZone() {
+        // @formatter:off
+        return Stream.of(
+                Arguments.of(
+                        LocalDateTime.ofInstant(
+                                java.sql.Timestamp.valueOf("2000-01-01 12:30:45").toInstant(),
+                                TimeZone.getTimeZone("America/New_York").toZoneId()
+                        ),
+                        java.sql.Timestamp.valueOf("2000-01-01 12:30:45"),
+                        TimeZone.getTimeZone("America/New_York")
+                ),
+                Arguments.of(
+                        LocalDateTime.ofInstant(
+                                java.sql.Timestamp.valueOf("2023-03-12 02:30:00").toInstant(),
+                                TimeZone.getTimeZone("America/New_York").toZoneId()
+                        ),
+                        java.sql.Timestamp.valueOf("2023-03-12 02:30:00"),
+                        TimeZone.getTimeZone("America/New_York")
+                ),
+                Arguments.of(
+                        LocalDateTime.ofInstant(
+                                java.sql.Timestamp.valueOf("2023-03-12 02:30:00").toInstant(),
+                                TimeZone.getDefault().toZoneId()
+                        ),
+                        java.sql.Timestamp.valueOf("2023-03-12 02:30:00"),
+                        null
+                ),
+                Arguments.of(
+                        LocalDateTime.of(2022, 12, 31, 19, 0),
+                        Date.from(LocalDateTime.of(2023, 1, 1, 0, 0)
+                                .atOffset(ZoneOffset.UTC)
+                                .toInstant()),
+                        TimeZone.getTimeZone("America/New_York")
+                ),
+                Arguments.of(
+                        LocalDateTime.of(2023, 3, 12, 3, 0),
+                        Date.from(LocalDateTime.of(2023, 3, 12, 7, 0)
+                                .atOffset(ZoneOffset.UTC)
+                                .toInstant()),
+                        TimeZone.getTimeZone("America/New_York")
+                ),
+                Arguments.of(
+                        LocalDateTime.of(2023, 1, 1, 14, 0),
+                        Date.from(LocalDateTime.of(2023, 1, 1, 0, 0)
+                                .atOffset(ZoneOffset.UTC)
+                                .toInstant()),
+                        TimeZone.getTimeZone("Pacific/Kiritimati")
+                )
+        );
+        // @formatter:on
     }
 }
 

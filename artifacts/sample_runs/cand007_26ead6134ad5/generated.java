@@ -16,6 +16,8 @@
  */
 package org.apache.commons.lang3;
 
+
+
 import static org.apache.commons.lang3.LangAssertions.assertIllegalArgumentException;
 import static org.apache.commons.lang3.LangAssertions.assertNullPointerException;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
@@ -29,7 +31,6 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import java.lang.annotation.ElementType;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Modifier;
@@ -45,7 +46,6 @@ import java.util.Objects;
 import java.util.Random;
 import java.util.function.Function;
 import java.util.function.Supplier;
-
 import org.apache.commons.lang3.function.Suppliers;
 import org.junit.jupiter.api.Test;
 
@@ -5587,7 +5587,7 @@ class ArrayUtilsTest extends AbstractLangTest {
         assertFalse(ArrayUtils.startsWith(new byte[1], new byte[2]));
     }
 
-@Test
+    @Test
     void testSubarrayBoolean() {
         final boolean[] nullArray = null;
         final boolean[] array = {true, true, false, true, false, true};
@@ -5786,7 +5786,6 @@ class ArrayUtilsTest extends AbstractLangTest {
                 "empty array, object test");
 
         assertSame(ArrayUtils.EMPTY_LONG_ARRAY, ArrayUtils.subarray(array, 4, 1), "start > end, object test");
-
         assertSame(ArrayUtils.EMPTY_LONG_ARRAY, ArrayUtils.subarray(array, 2147483647, -2147483648), "start > end, possible overflow");
 
         assertSame(ArrayUtils.EMPTY_LONG_ARRAY, ArrayUtils.subarray(array, 3, 3), "start == end, object test");

@@ -12,6 +12,20 @@ CANDIDATES = ROOT / "artifacts" / "lang_sample_candidates_filtered.json"
 RESULTS = ROOT / "results.md"
 
 
+def extract_maven_run_report(report: dict) -> dict:
+    maven = report.get("maven")
+    if isinstance(maven, dict):
+        return maven
+
+    history = report.get("command_history")
+    if isinstance(history, list):
+        for item in history:
+            if isinstance(item, dict) and item.get("name") == "maven":
+                return item
+
+    return {}
+
+
 def classify(maven_rc: int | None, stdout: str, has_gen: bool, has_md: bool) -> str:
     if has_md and not has_gen:
         return "merge_error"
@@ -46,13 +60,13 @@ def main() -> None:
     for i, c in enumerate(cands, 1):
         bshort = c["b"][:12]
         d = RUNS / f"cand{i:03d}_{bshort}"
-        has_md = (d / "deepseek_output.md").is_file()
+        has_md = (d / "raw.md").is_file() or (d / "deepseek_output.md").is_file()
         has_gen = (d / "generated.java").is_file()
         maven_rc = None
         stdout = ""
         if (d / "run_report.json").is_file():
             rep = json.loads((d / "run_report.json").read_text(encoding="utf-8"))
-            maven = rep.get("maven") or {}
+            maven = extract_maven_run_report(rep)
             maven_rc = maven.get("returncode")
             stdout = maven.get("stdout") or ""
         status = classify(maven_rc, stdout, has_gen, has_md)
@@ -131,7 +145,7 @@ def main() -> None:
 | 指标 | 数量 | 占比 |
 | --- | ---: | ---: |
 | 样本总数 | {n} | 100% |
-| DeepSeek 有输出（`deepseek_output.md`） | {n_deepseek} | {n_deepseek / n * 100:.1f}% |
+| DeepSeek 有输出（`raw.md` / `deepseek_output.md`） | {n_deepseek} | {n_deepseek / n * 100:.1f}% |
 | **Maven 通过**（`returncode=0`） | **{n_pass}** | **{n_pass / n * 100:.1f}%** |
 | 编译失败（`COMPILATION ERROR`） | {stats.get('compile_fail', 0)} | {stats.get('compile_fail', 0) / n * 100:.1f}% |
 | 测试失败（已编译，`Tests run` 失败） | {stats.get('test_fail', 0)} | {stats.get('test_fail', 0) / n * 100:.1f}% |

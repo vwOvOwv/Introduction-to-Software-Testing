@@ -18,17 +18,16 @@
  */
 package org.apache.commons.lang3;
 
+
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import java.lang.reflect.Modifier;
+import java.util.Set;
+import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertSame;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
-import java.lang.reflect.Modifier;
-
-import org.junit.jupiter.api.Test;
-
-import java.util.Set;
 
 /**
  * Tests {@link CharSet}.
@@ -41,7 +40,7 @@ class CharSetTest extends AbstractLangTest {
         assertFalse(Modifier.isFinal(CharSet.class.getModifiers()));
     }
 
-@Test
+    @Test
     void testConstructor_String_combo() {
         CharSet set;
         Set<CharRange> array;

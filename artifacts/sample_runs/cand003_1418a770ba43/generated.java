@@ -16,21 +16,17 @@
  */
 package org.apache.commons.lang3.builder;
 
+
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-
-import org.apache.commons.lang3.AbstractLangTest;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-
 import java.math.BigDecimal;
 import java.math.BigInteger;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLong;
+import org.apache.commons.lang3.AbstractLangTest;
 import org.apache.commons.lang3.mutable.MutableBoolean;
 import org.apache.commons.lang3.mutable.MutableByte;
 import org.apache.commons.lang3.mutable.MutableDouble;
@@ -38,6 +34,9 @@ import org.apache.commons.lang3.mutable.MutableFloat;
 import org.apache.commons.lang3.mutable.MutableInt;
 import org.apache.commons.lang3.mutable.MutableLong;
 import org.apache.commons.lang3.mutable.MutableShort;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 /**
  * Tests {@link org.apache.commons.lang3.builder.RecursiveToStringStyleTest}.
@@ -177,6 +176,7 @@ class RecursiveToStringStyleTest extends AbstractLangTest {
 
     @Test
     void testPrimitiveWrapperArray() {
+        assertEquals(baseStr + "[{<null>,5,{3,6}}]", new ToStringBuilder(base).append(new Object[] { null, base, new Character[] { '3', '6' } }).toString());
         assertEquals(baseStr + "[{<null>,5,{3,6}}]", new ToStringBuilder(base).append(new Object[] { null, base, new Long[] { 3L, 6L } }).toString());
         assertEquals(baseStr + "[{<null>,5,{3,6}}]", new ToStringBuilder(base).append(new Object[] { null, base, new Integer[] { 3, 6 } }).toString());
         assertEquals(baseStr + "[{<null>,5,{3,6}}]", new ToStringBuilder(base).append(new Object[] { null, base, new Short[] { 3, 6 } }).toString());
@@ -186,8 +186,6 @@ class RecursiveToStringStyleTest extends AbstractLangTest {
         assertEquals(baseStr + "[{<null>,5,{true,false}}]",
                 new ToStringBuilder(base).append(new Object[] { null, base, new Boolean[] { true, false } }).toString());
     }
-
-
 
     @Test
     void testMutableWrapperArray() {
@@ -207,13 +205,11 @@ class RecursiveToStringStyleTest extends AbstractLangTest {
                 new ToStringBuilder(base).append(new Object[] { null, base, new MutableBoolean[] { new MutableBoolean(true), new MutableBoolean(false) } }).toString());
     }
 
-
     @Test
     void testBigInteger() {
         assertEquals(baseStr + "[{<null>,5,{3,6}}]",
                 new ToStringBuilder(base).append(new Object[] { null, base, new BigInteger[] { BigInteger.valueOf(3), BigInteger.valueOf(6) } }).toString());
     }
-
 
     @Test
     void testBigDecimal() {
@@ -223,8 +219,7 @@ class RecursiveToStringStyleTest extends AbstractLangTest {
                 new ToStringBuilder(base).append(new Object[] { null, base, new BigDecimal[] { BigDecimal.valueOf(3.0), BigDecimal.valueOf(6.0) } }).toString());
     }
 
-
-@Test
+    @Test
     void testAtomicsArray() {
         assertEquals(baseStr + "[{<null>,5,{3,6}}]",
                 new ToStringBuilder(base).append(new Object[] { null, base, new AtomicLong[] { new AtomicLong(3), new AtomicLong(6) } }).toString());

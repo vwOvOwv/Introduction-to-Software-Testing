@@ -17,8 +17,9 @@
 
 package org.apache.commons.lang3.time;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
@@ -26,7 +27,6 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.Locale;
 import java.util.TimeZone;
-
 import org.apache.commons.lang3.AbstractLangTest;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -105,8 +105,7 @@ public class CalendarUtilsTest extends AbstractLangTest {
         assertEquals(LocalDateTime.ofInstant(zdt1.toInstant(), calendar.getTimeZone().toZoneId()), new CalendarUtils(calendar).toLocalDateTime());
     }
 
-
-@ParameterizedTest
+    @ParameterizedTest
     @MethodSource(TIME_ZONE_GET_AVAILABLE_IDS)
     public void testToZonedDateTime(final String id) {
         final TimeZone timeZone = TimeZone.getTimeZone(id);

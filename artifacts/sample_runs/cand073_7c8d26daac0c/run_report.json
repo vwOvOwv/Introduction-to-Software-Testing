@@ -1,42 +1,53 @@
 {
-  "timestamp": "2026-05-16T11:28:37.042913+00:00",
-  "repo": "D:\\软件测试导论\\final_homework\\commons-lang",
-  "ref": "7c8d26daac0c08e888249d506e5ef4e655898166",
-  "target_test_path": "src/test/java/org/apache/commons/lang3/builder/ReflectionDiffBuilderTest.java",
-  "replacement_test_file": "D:\\软件测试导论\\final_homework\\Introduction-to-Software-Testing\\artifacts\\sample_runs\\cand073_7c8d26daac0c\\generated.java",
-  "test_selector": "ReflectionDiffBuilderTest",
-  "maven_args": [
-    "-q"
-  ],
-  "discard_all_tracked_changes": false,
-  "checkout": {
-    "command": [
-      "git",
-      "checkout",
-      "--detach",
-      "7c8d26daac0c08e888249d506e5ef4e655898166"
-    ],
-    "cwd": "D:\\软件测试导论\\final_homework\\commons-lang",
-    "returncode": 0,
-    "stdout": "",
-    "stderr": "Previous HEAD position was 798caa4e5 Add LongRange.toLongStream()\nHEAD is now at 7c8d26daa Fail-fast for a null DiffBuilder in ReflectionDiffBuilder.ReflectionDiffBuilder(DiffBuilder, String[]) instead of getting a NullPointerException in ReflectionDiffBuilder instance methods\n"
-  },
-  "maven": {
-    "command": [
-      "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
-      "-q",
-      "-Dtest=ReflectionDiffBuilderTest",
-      "test"
-    ],
-    "cwd": "D:\\软件测试导论\\final_homework\\commons-lang",
-    "returncode": 0,
-    "stdout": "",
-    "stderr": ""
-  },
-  "restore": [
+  "command_history": [
     {
+      "name": "checkout",
+      "cwd": "./.",
+      "env": {
+        "JAVA_HOME": "/usr/lib/jvm/java-21-openjdk",
+        "PATH": "/usr/lib/jvm/java-21-openjdk/bin:/usr/local/bin:/usr/bin:/bin",
+        "PWD": "./."
+      },
       "command": [
-        "git",
+        "/usr/bin/git",
+        "worktree",
+        "add",
+        "--detach",
+        "${tmp}/run-ReflectionDiffBuilderTest-m0_shy0z",
+        "7c8d26daac0c08e888249d506e5ef4e655898166"
+      ],
+      "returncode": 0,
+      "stdout": "HEAD is now at 7c8d26daa Fail-fast for a null DiffBuilder in ReflectionDiffBuilder.ReflectionDiffBuilder(DiffBuilder, String[]) instead of getting a NullPointerException in ReflectionDiffBuilder instance methods\n",
+      "stderr": "Preparing worktree (detached HEAD 7c8d26daa)\n"
+    },
+    {
+      "name": "maven",
+      "cwd": "${tmp}/run-ReflectionDiffBuilderTest-m0_shy0z",
+      "env": {
+        "JAVA_HOME": "/usr/lib/jvm/java-21-openjdk",
+        "PATH": "/usr/lib/jvm/java-21-openjdk/bin:/usr/local/bin:/usr/bin:/bin",
+        "PWD": "${tmp}/run-ReflectionDiffBuilderTest-m0_shy0z"
+      },
+      "command": [
+        "/usr/bin/mvn",
+        "-q",
+        "-Dtest=ReflectionDiffBuilderTest",
+        "test"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "name": "restore",
+      "cwd": "${tmp}/run-ReflectionDiffBuilderTest-m0_shy0z",
+      "env": {
+        "JAVA_HOME": "/usr/lib/jvm/java-21-openjdk",
+        "PATH": "/usr/lib/jvm/java-21-openjdk/bin:/usr/local/bin:/usr/bin:/bin",
+        "PWD": "${tmp}/run-ReflectionDiffBuilderTest-m0_shy0z"
+      },
+      "command": [
+        "/usr/bin/git",
         "restore",
         "--source=HEAD",
         "--staged",
@@ -44,12 +55,28 @@
         "--",
         "src/test/java/org/apache/commons/lang3/builder/ReflectionDiffBuilderTest.java"
       ],
-      "cwd": "D:\\软件测试导论\\final_homework\\commons-lang",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "name": "worktree_remove",
+      "cwd": "./.",
+      "env": {
+        "JAVA_HOME": "/usr/lib/jvm/java-21-openjdk",
+        "PATH": "/usr/lib/jvm/java-21-openjdk/bin:/usr/local/bin:/usr/bin:/bin",
+        "PWD": "./."
+      },
+      "command": [
+        "/usr/bin/git",
+        "worktree",
+        "remove",
+        "--force",
+        "${tmp}/run-ReflectionDiffBuilderTest-m0_shy0z"
+      ],
       "returncode": 0,
       "stdout": "",
       "stderr": ""
     }
-  ],
-  "failure_message": null,
-  "maven_command_shell": "'D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD' -q -Dtest=ReflectionDiffBuilderTest test"
+  ]
 }

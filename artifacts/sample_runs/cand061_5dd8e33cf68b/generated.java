@@ -16,6 +16,8 @@
  */
 package org.apache.commons.lang3.reflect;
 
+
+
 import static org.apache.commons.lang3.LangAssertions.assertNullPointerException;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -26,7 +28,6 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import java.awt.Color;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
@@ -40,7 +41,6 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-
 import org.apache.commons.lang3.AbstractLangTest;
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.ClassUtils;
@@ -1099,21 +1099,21 @@ class MethodUtilsTest extends AbstractLangTest {
 
     @Test
     void testInvokeMethod1PlusVarArgs() throws Exception {
-        // intIntVarArg
-        assertEquals("int, int...", MethodUtils.invokeMethod(testBean, "intIntVarArg", 1));
-        assertEquals("int, int...", MethodUtils.invokeMethod(testBean, "intIntVarArg", 1, 2));
-        assertEquals("int, int...", MethodUtils.invokeMethod(testBean, "intIntVarArg", 1, 2, 3));
-        assertThrows(NoSuchMethodException.class, () -> MethodUtils.invokeMethod(testBean, "intIntVarArg", 1, "s1", 5));
-        // intLongVarArg
-        assertEquals("int, long...", MethodUtils.invokeMethod(testBean, "intLongVarArg", 1));
-        assertEquals("int, long...", MethodUtils.invokeMethod(testBean, "intLongVarArg", 1, 2L));
-        assertEquals("int, long...", MethodUtils.invokeMethod(testBean, "intLongVarArg", 1, 2L, 3L));
-        assertThrows(NoSuchMethodException.class, () -> MethodUtils.invokeMethod(testBean, "intLongVarArg", 1, "s1", 5));
         // intStringVarArg
         assertEquals("int, String...", MethodUtils.invokeMethod(testBean, "intStringVarArg", 1));
         assertEquals("int, String...", MethodUtils.invokeMethod(testBean, "intStringVarArg", 1, "s"));
         assertEquals("int, String...", MethodUtils.invokeMethod(testBean, "intStringVarArg", 1, "s1", "s2"));
         assertThrows(NoSuchMethodException.class, () -> MethodUtils.invokeMethod(testBean, "intStringVarArg", 1, "s1", 5));
+        // intLongVarArg
+        assertEquals("int, long...", MethodUtils.invokeMethod(testBean, "intLongVarArg", 1));
+        assertEquals("int, long...", MethodUtils.invokeMethod(testBean, "intLongVarArg", 1, 2L));
+        assertEquals("int, long...", MethodUtils.invokeMethod(testBean, "intLongVarArg", 1, 2L, 3L));
+        assertThrows(NoSuchMethodException.class, () -> MethodUtils.invokeMethod(testBean, "intLongVarArg", 1, "s1", 5));
+        // intIntVarArg
+        assertEquals("int, int...", MethodUtils.invokeMethod(testBean, "intIntVarArg", 1));
+        assertEquals("int, int...", MethodUtils.invokeMethod(testBean, "intIntVarArg", 1, 2));
+        assertEquals("int, int...", MethodUtils.invokeMethod(testBean, "intIntVarArg", 1, 2, 3));
+        assertThrows(NoSuchMethodException.class, () -> MethodUtils.invokeMethod(testBean, "intLongVarArg", 1, "s1", 5));
     }
 
     @Test
@@ -1229,21 +1229,21 @@ class MethodUtilsTest extends AbstractLangTest {
 
     @Test
     void testInvokeStaticMethod1PlusVarArgs() throws Exception {
-        // staticIntIntVarArg
-        assertEquals("static int, int...", MethodUtils.invokeStaticMethod(TestBean.class, "staticIntIntVarArg", 1));
-        assertEquals("static int, int...", MethodUtils.invokeStaticMethod(TestBean.class, "staticIntIntVarArg", 1, 2));
-        assertEquals("static int, int...", MethodUtils.invokeStaticMethod(TestBean.class, "staticIntIntVarArg", 1, 2, 3));
-        assertThrows(NoSuchMethodException.class, () -> MethodUtils.invokeStaticMethod(TestBean.class, "staticIntIntVarArg", 1, "s1", 5));
+        // staticIntStringVarArg
+        assertEquals("static int, String...", MethodUtils.invokeStaticMethod(TestBean.class, "staticIntStringVarArg", 1));
+        assertEquals("static int, String...", MethodUtils.invokeStaticMethod(TestBean.class, "staticIntStringVarArg", 1, "s"));
+        assertEquals("static int, String...", MethodUtils.invokeStaticMethod(TestBean.class, "staticIntStringVarArg", 1, "s1", "s2"));
+        assertThrows(NoSuchMethodException.class, () -> MethodUtils.invokeStaticMethod(TestBean.class, "staticIntStringVarArg", 1, "s1", 5));
         // staticIntLongVarArg
         assertEquals("static int, long...", MethodUtils.invokeMethod(testBean, "staticIntLongVarArg", 1));
         assertEquals("static int, long...", MethodUtils.invokeMethod(testBean, "staticIntLongVarArg", 1, 2L));
         assertEquals("static int, long...", MethodUtils.invokeMethod(testBean, "staticIntLongVarArg", 1, 2L, 3L));
         assertThrows(NoSuchMethodException.class, () -> MethodUtils.invokeMethod(testBean, "staticIntLongVarArg", 1, "s1", 5));
-        // staticIntStringVarArg
-        assertEquals("static int, String...", MethodUtils.invokeMethod(testBean, "staticIntStringVarArg", 1));
-        assertEquals("static int, String...", MethodUtils.invokeMethod(testBean, "staticIntStringVarArg", 1, "s"));
-        assertEquals("static int, String...", MethodUtils.invokeMethod(testBean, "staticIntStringVarArg", 1, "s1", "s2"));
-        assertThrows(NoSuchMethodException.class, () -> MethodUtils.invokeMethod(testBean, "staticIntStringVarArg", 1, "s1", 5));
+        // staticIntIntVarArg
+        assertEquals("static int, int...", MethodUtils.invokeMethod(testBean, "staticIntIntVarArg", 1));
+        assertEquals("static int, int...", MethodUtils.invokeMethod(testBean, "staticIntIntVarArg", 1, 2));
+        assertEquals("static int, int...", MethodUtils.invokeMethod(testBean, "staticIntIntVarArg", 1, 2, 3));
+        assertThrows(NoSuchMethodException.class, () -> MethodUtils.invokeMethod(testBean, "staticIntIntVarArg", 1, "s1", 5));
     }
 
     @Test
@@ -1281,7 +1281,6 @@ class MethodUtilsTest extends AbstractLangTest {
         return Arrays.asList(c).toString();
     }
 
-
     @Test
     void testInvokeMethodVarArgsOfInterface() throws Exception {
         // packagePrivateEmptyInterface
@@ -1294,8 +1293,7 @@ class MethodUtilsTest extends AbstractLangTest {
         }));
     }
 
-
-@Test
+    @Test
     void testInvokeStaticMethodVarArgsOfInterface() throws Exception {
         // staticPackagePrivateEmptyInterface
         assertEquals("static PackagePrivateEmptyInterface...", MethodUtils.invokeStaticMethod(TestBean.class, "staticPackagePrivateEmptyInterface",
@@ -1308,13 +1306,11 @@ class MethodUtilsTest extends AbstractLangTest {
                 }));
     }
 
-
-    public static class PublicImpl1OfPackagePrivateEmptyInterface implements PackagePrivateEmptyInterface {
+    public static class PublicImpl2OfPackagePrivateEmptyInterface implements PackagePrivateEmptyInterface {
         // empty
     }
 
-
-    public static class PublicImpl2OfPackagePrivateEmptyInterface implements PackagePrivateEmptyInterface {
+    public static class PublicImpl1OfPackagePrivateEmptyInterface implements PackagePrivateEmptyInterface {
         // empty
     }
 }

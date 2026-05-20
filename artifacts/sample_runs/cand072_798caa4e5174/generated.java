@@ -17,6 +17,9 @@
 
 package org.apache.commons.lang3;
 
+
+
+import java.util.stream.LongStream;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
@@ -24,13 +27,9 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import java.util.Comparator;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import java.util.stream.LongStream;
 
 /**
  * Tests {@link LongRange}.
@@ -425,7 +424,6 @@ public class LongRangeTest extends AbstractLangTest {
         final String str = range1.toString("From %1$s to %2$s");
         assertEquals("From 10 to 20", str);
     }
-
 
     @Test
     public void testToIntStream() {

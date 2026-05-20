@@ -7,7 +7,7 @@
 可选仅跑 Maven 验证报告中 status=pass 的条目（--only-verified-pass）。
 
 用法：
-  set DEEPSEEK_API_KEY=sk-...
+    在 key.py 中设置 DEEPSEEK_API_KEY
   python run_sample_experiment.py
   python run_sample_experiment.py --limit 5
   python run_sample_experiment.py --resume
@@ -26,7 +26,16 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-REPO = ROOT.parent / "commons-lang"
+
+
+def default_repo_path() -> Path:
+    workspace_repo = ROOT / "commons-lang"
+    if (workspace_repo / ".git").is_dir():
+        return workspace_repo
+    return ROOT.parent / "commons-lang"
+
+
+REPO = default_repo_path()
 ARTIFACTS = ROOT / "artifacts" / "sample_runs"
 DEFAULT_CANDIDATES = ROOT / "artifacts" / "lang_sample_candidates_filtered.json"
 DEFAULT_VERIFY_REPORT = ROOT / "artifacts" / "lang_sample_verify_report.json"
@@ -34,7 +43,9 @@ UPDATE_SCRIPT = ROOT / "update_tests_deepseek.py"
 RUN_SCRIPT = ROOT / "run_single_maven_test.py"
 
 DEFAULT_NOTE_TEMPLATE = (
-    "只输出需要修改的 @Test / @ParameterizedTest 方法的完整方法体（含注解），"
+    "输出一个 Java 代码块；如需修改文件头 import，请先给出完整目标 import 区块，并用 "
+    "// IMPORTS_START 与 // IMPORTS_END 包裹；如果只需新增 import，也可直接给出 import 语句。"
+    "随后给出需要修改的 @Test / @ParameterizedTest 方法完整方法体（含注解）。不要输出 package。"
     "不要输出整个测试类（除非该类极短）。保持类名 {selector} 与原有 package 不变。"
     "对照生产代码 diff 与测试 diff 调整断言。"
 )
@@ -51,6 +62,13 @@ def run_command(command: list[str]) -> subprocess.CompletedProcess[str]:
         errors="replace",
         capture_output=True,
     )
+
+
+def git_show(repo: Path, revision: str, relpath: str) -> str:
+    result = run_command(["git", "-C", str(repo), "show", f"{revision}:{relpath}"])
+    if result.returncode != 0:
+        raise RuntimeError(f"git show 失败: {relpath}\nstderr:\n{result.stderr.strip()}")
+    return result.stdout
 
 
 def extract_java(markdown_text: str) -> str:
@@ -72,18 +90,37 @@ def build_generated_java(
     sync_from_b: bool = True,
 ) -> str:
     """从 DeepSeek 回复得到可编译的完整测试类（方法级输出会合并进 A 上旧类）。"""
-    from update_tests_deepseek import _git_show, finalize_merged_test_class, merge_patch_into_test_class
+    from update_tests_deepseek import (
+        _git_show,
+        _looks_like_full_test_class,
+        finalize_merged_test_class,
+        merge_patch_into_test_class,
+    )
 
     patch = extract_java(markdown_text)
-    if re.search(r"\bclass\s+[A-Za-z_]\w*", patch):
+    base = _git_show(repo, a, test_path)
+    if _looks_like_full_test_class(patch, expected_class_name=test_selector_from_path(test_path)):
         merged = patch.strip() + "\n"
     else:
-        base = _git_show(repo, a, test_path)
         merged = merge_patch_into_test_class(base, patch)
     if sync_from_b:
         reference = _git_show(repo, b, test_path)
         merged = finalize_merged_test_class(merged, reference_source=reference)
     return merged
+
+
+def extract_maven_run_report(report: dict[str, object]) -> dict[str, object]:
+    maven = report.get("maven")
+    if isinstance(maven, dict):
+        return maven
+
+    command_history = report.get("command_history")
+    if isinstance(command_history, list):
+        for item in command_history:
+            if isinstance(item, dict) and item.get("name") == "maven":
+                return item
+
+    return {}
 
 
 def test_selector_from_path(test_path: str) -> str:
@@ -153,17 +190,31 @@ def process_sample(
 ) -> dict[str, object]:
     sample_dir = sample_run_dir(sample)
     sample_dir.mkdir(parents=True, exist_ok=True)
-    deepseek_md = sample_dir / "deepseek_output.md"
+    raw_md = sample_dir / "raw.md"
+    legacy_deepseek_md = sample_dir / "deepseek_output.md"
+    old_test_java = sample_dir / "old_test.java"
     generated_java = sample_dir / "generated.java"
     run_report = sample_dir / "run_report.json"
 
     entry: dict[str, object] = dict(sample)
     entry["sample_dir"] = str(sample_dir)
+    old_test_java.write_text(git_show(REPO, str(sample["a"]), str(sample["input_test"])), encoding="utf-8")
+    entry["old_test_extracted"] = True
+    entry["old_test_path"] = str(old_test_java)
 
-    if resync_generated and deepseek_md.is_file():
+    source_md = raw_md if raw_md.is_file() else legacy_deepseek_md
+    source_text: str | None = None
+
+    if source_md.is_file():
+        source_text = source_md.read_text(encoding="utf-8")
+        if source_md != raw_md:
+            raw_md.write_text(source_text, encoding="utf-8")
+            source_md = raw_md
+
+    if resync_generated and source_md.is_file():
         generated_java.write_text(
             build_generated_java(
-                deepseek_md.read_text(encoding="utf-8"),
+                source_text if source_text is not None else source_md.read_text(encoding="utf-8"),
                 repo=REPO,
                 a=str(sample["a"]),
                 b=str(sample["b"]),
@@ -173,12 +224,25 @@ def process_sample(
         )
         entry["resync_generated"] = True
         entry["generated"] = True
+        entry["raw_md"] = str(raw_md)
         entry["generated_java"] = str(generated_java)
         java_source = generated_java.read_text(encoding="utf-8")
         entry["generated_class_name_present"] = str(sample["selector"]) in java_source
-    elif resume and deepseek_md.is_file() and generated_java.is_file():
+    elif source_md.is_file():
+        if not generated_java.is_file():
+            generated_java.write_text(
+                build_generated_java(
+                    source_text if source_text is not None else source_md.read_text(encoding="utf-8"),
+                    repo=REPO,
+                    a=str(sample["a"]),
+                    b=str(sample["b"]),
+                    test_path=str(sample["input_test"]),
+                ),
+                encoding="utf-8",
+            )
         entry["update_skipped"] = True
         entry["generated"] = True
+        entry["raw_md"] = str(raw_md)
         entry["generated_java"] = str(generated_java)
         java_source = generated_java.read_text(encoding="utf-8")
         entry["generated_class_name_present"] = str(sample["selector"]) in java_source
@@ -197,7 +261,7 @@ def process_sample(
             "--prod",
             str(sample["prod"]),
             "--out",
-            str(deepseek_md),
+            str(raw_md),
             "--note",
             str(sample["note"]),
         ]
@@ -206,13 +270,16 @@ def process_sample(
         entry["update_stdout_tail"] = update_result.stdout[-2000:]
         entry["update_stderr_tail"] = update_result.stderr[-4000:]
 
-        if update_result.returncode != 0 or not deepseek_md.is_file():
+        if update_result.returncode != 0 or not raw_md.is_file():
             entry["generated"] = False
             return entry
 
+        source_text = raw_md.read_text(encoding="utf-8")
+        entry["raw_md"] = str(raw_md)
+
         generated_java.write_text(
             build_generated_java(
-                deepseek_md.read_text(encoding="utf-8"),
+                source_text,
                 repo=REPO,
                 a=str(sample["a"]),
                 b=str(sample["b"]),
@@ -234,8 +301,10 @@ def process_sample(
         entry["run_report"] = str(run_report)
         entry["run_report_exists"] = True
         payload = json.loads(run_report.read_text(encoding="utf-8"))
-        maven = payload.get("maven") or {}
+        maven = extract_maven_run_report(payload)
         entry["maven_returncode"] = maven.get("returncode")
+        entry["maven_stdout_tail"] = (maven.get("stdout") or "")[-2000:]
+        entry["maven_stderr_tail"] = (maven.get("stderr") or "")[-3000:]
         return entry
 
     run_test_command = [
@@ -264,7 +333,7 @@ def process_sample(
 
     if run_report.is_file():
         payload = json.loads(run_report.read_text(encoding="utf-8"))
-        maven = payload.get("maven") or {}
+        maven = extract_maven_run_report(payload)
         entry["maven_returncode"] = maven.get("returncode")
         entry["maven_stdout_tail"] = maven.get("stdout", "")[-2000:]
         entry["maven_stderr_tail"] = maven.get("stderr", "")[-3000:]
@@ -308,11 +377,11 @@ def main() -> int:
     parser.add_argument("--verify-report", type=Path, default=DEFAULT_VERIFY_REPORT)
     parser.add_argument("--limit", type=int, default=None, help="最多处理多少条")
     parser.add_argument("--start", type=int, default=1, help="从候选列表第几条开始（1-based）")
-    parser.add_argument("--resume", action="store_true", help="跳过已有 deepseek_output / run_report 的步骤")
+    parser.add_argument("--resume", action="store_true", help="跳过已有 raw.md / generated.java / run_report 的步骤")
     parser.add_argument(
         "--resync-generated",
         action="store_true",
-        help="用已有 deepseek_output.md 按当前规则重生成 generated.java 并重跑 Maven（不调 API）",
+        help="用已有 raw.md 按当前规则重生成 generated.java 并重跑 Maven（不调 API）",
     )
     parser.add_argument("--skip-maven", action="store_true", help="只调 DeepSeek，不跑 Maven")
     parser.add_argument(
@@ -322,10 +391,6 @@ def main() -> int:
         help="汇总 JSON 路径",
     )
     args = parser.parse_args()
-
-    if not os.environ.get("DEEPSEEK_API_KEY", "").strip():
-        print("错误：请设置环境变量 DEEPSEEK_API_KEY", file=sys.stderr)
-        return 2
 
     if not args.candidates.is_file():
         print(f"错误：找不到 {args.candidates}", file=sys.stderr)

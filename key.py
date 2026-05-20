@@ -1,0 +1,1 @@
+DEEPSEEK_API_KEY='sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx' # fill in the API KEY

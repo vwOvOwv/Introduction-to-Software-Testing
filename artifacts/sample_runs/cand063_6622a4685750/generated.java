@@ -16,6 +16,9 @@
  */
 package org.apache.commons.lang3.stream;
 
+
+
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -23,7 +26,6 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.DynamicTest.dynamicTest;
-
 import java.lang.reflect.UndeclaredThrowableException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -32,7 +34,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
-
 import org.apache.commons.lang3.AbstractLangTest;
 import org.apache.commons.lang3.function.Failable;
 import org.apache.commons.lang3.function.FailableConsumer;
@@ -42,8 +43,6 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestFactory;
 import org.junit.jupiter.api.function.Executable;
 import org.xml.sax.SAXException;
-
-import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 /**
  * Tests {@link Streams}.
@@ -319,15 +318,13 @@ class StreamsTest extends AbstractLangTest {
         assertEquals("1", array[2]);
     }
 
-
-
-@Test
-void testArrayCollectorCombiner() {
-    final String[] expected = { "A1", "B1" };
-    assertArrayEquals(expected, Stream.of("A", "B").collect(Collectors.mapping(s -> s + "1", Streams.toArray(String.class))));
-    assertArrayEquals(expected, Streams.failableStream("A", "B").collect(Collectors.mapping(s -> s + "1", Streams.toArray(String.class))));
-    final List<String> left = new ArrayList<>();
-    left.add("a");
-    assertEquals(Arrays.asList("a", "b", "c"), Streams.toArray(String.class).combiner().apply(left, Arrays.asList("b", "c")));
-}
+    @Test
+    void testArrayCollectorCombiner() {
+        final String[] expected = { "A1", "B1" };
+        assertArrayEquals(expected, Stream.of("A", "B").collect(Collectors.mapping(s -> s + "1", Streams.toArray(String.class))));
+        assertArrayEquals(expected, Streams.failableStream("A", "B").collect(Collectors.mapping(s -> s + "1", Streams.toArray(String.class))));
+        final List<String> left = new ArrayList<>();
+        left.add("a");
+        assertEquals(Arrays.asList("a", "b", "c"), Streams.toArray(String.class).combiner().apply(left, Arrays.asList("b", "c")));
+    }
 }

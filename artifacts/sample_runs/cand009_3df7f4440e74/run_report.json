@@ -1,42 +1,53 @@
 {
-  "timestamp": "2026-05-16T11:02:51.936400+00:00",
-  "repo": "D:\\软件测试导论\\final_homework\\commons-lang",
-  "ref": "3df7f4440e7447bc55e95400ec511323e708c652",
-  "target_test_path": "src/test/java/org/apache/commons/lang3/LocaleUtilsTest.java",
-  "replacement_test_file": "D:\\软件测试导论\\final_homework\\Introduction-to-Software-Testing\\artifacts\\sample_runs\\cand009_3df7f4440e74\\generated.java",
-  "test_selector": "LocaleUtilsTest",
-  "maven_args": [
-    "-q"
-  ],
-  "discard_all_tracked_changes": false,
-  "checkout": {
-    "command": [
-      "git",
-      "checkout",
-      "--detach",
-      "3df7f4440e7447bc55e95400ec511323e708c652"
-    ],
-    "cwd": "D:\\软件测试导论\\final_homework\\commons-lang",
-    "returncode": 0,
-    "stdout": "",
-    "stderr": "Previous HEAD position was 313d877d5 Two fixes in RandomStringUtils.random(int, int, int, boolean, boolean, (#1638)\nHEAD is now at 3df7f4440 [LANG-1823] LocaleUtils.toLocale cannot parse valid JDK Locale string containing '#'  (#1630)\n"
-  },
-  "maven": {
-    "command": [
-      "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
-      "-q",
-      "-Dtest=LocaleUtilsTest",
-      "test"
-    ],
-    "cwd": "D:\\软件测试导论\\final_homework\\commons-lang",
-    "returncode": 0,
-    "stdout": "",
-    "stderr": ""
-  },
-  "restore": [
+  "command_history": [
     {
+      "name": "checkout",
+      "cwd": "./.",
+      "env": {
+        "JAVA_HOME": "/usr/lib/jvm/java-21-openjdk",
+        "PATH": "/usr/lib/jvm/java-21-openjdk/bin:/usr/local/bin:/usr/bin:/bin",
+        "PWD": "./."
+      },
       "command": [
-        "git",
+        "/usr/bin/git",
+        "worktree",
+        "add",
+        "--detach",
+        "${tmp}/run-LocaleUtilsTest-mvpy86zp",
+        "3df7f4440e7447bc55e95400ec511323e708c652"
+      ],
+      "returncode": 0,
+      "stdout": "HEAD is now at 3df7f4440 [LANG-1823] LocaleUtils.toLocale cannot parse valid JDK Locale string containing '#'  (#1630)\n",
+      "stderr": "Preparing worktree (detached HEAD 3df7f4440)\n"
+    },
+    {
+      "name": "maven",
+      "cwd": "${tmp}/run-LocaleUtilsTest-mvpy86zp",
+      "env": {
+        "JAVA_HOME": "/usr/lib/jvm/java-21-openjdk",
+        "PATH": "/usr/lib/jvm/java-21-openjdk/bin:/usr/local/bin:/usr/bin:/bin",
+        "PWD": "${tmp}/run-LocaleUtilsTest-mvpy86zp"
+      },
+      "command": [
+        "/usr/bin/mvn",
+        "-q",
+        "-Dtest=LocaleUtilsTest",
+        "test"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "name": "restore",
+      "cwd": "${tmp}/run-LocaleUtilsTest-mvpy86zp",
+      "env": {
+        "JAVA_HOME": "/usr/lib/jvm/java-21-openjdk",
+        "PATH": "/usr/lib/jvm/java-21-openjdk/bin:/usr/local/bin:/usr/bin:/bin",
+        "PWD": "${tmp}/run-LocaleUtilsTest-mvpy86zp"
+      },
+      "command": [
+        "/usr/bin/git",
         "restore",
         "--source=HEAD",
         "--staged",
@@ -44,12 +55,28 @@
         "--",
         "src/test/java/org/apache/commons/lang3/LocaleUtilsTest.java"
       ],
-      "cwd": "D:\\软件测试导论\\final_homework\\commons-lang",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "name": "worktree_remove",
+      "cwd": "./.",
+      "env": {
+        "JAVA_HOME": "/usr/lib/jvm/java-21-openjdk",
+        "PATH": "/usr/lib/jvm/java-21-openjdk/bin:/usr/local/bin:/usr/bin:/bin",
+        "PWD": "./."
+      },
+      "command": [
+        "/usr/bin/git",
+        "worktree",
+        "remove",
+        "--force",
+        "${tmp}/run-LocaleUtilsTest-mvpy86zp"
+      ],
       "returncode": 0,
       "stdout": "",
       "stderr": ""
     }
-  ],
-  "failure_message": null,
-  "maven_command_shell": "'D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD' -q -Dtest=LocaleUtilsTest test"
+  ]
 }

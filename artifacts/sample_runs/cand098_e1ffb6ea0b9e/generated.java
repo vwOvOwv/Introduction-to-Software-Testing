@@ -19,6 +19,8 @@
 
 package org.apache.commons.lang3;
 
+
+
 import static org.apache.commons.lang3.LangAssertions.assertIllegalArgumentException;
 import static org.apache.commons.lang3.LangAssertions.assertNullPointerException;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -27,7 +29,6 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Modifier;
 import java.time.Duration;
@@ -36,14 +37,12 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Objects;
 import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.function.Predicate;
-
 import org.apache.commons.lang3.ThreadUtils.ThreadGroupPredicate;
 import org.apache.commons.lang3.ThreadUtils.ThreadPredicate;
 import org.apache.commons.lang3.function.Predicates;
 import org.junit.jupiter.api.Test;
-
-import java.util.concurrent.atomic.AtomicBoolean;
 
 /**
  * Tests {@link ThreadUtils}.
@@ -423,37 +422,33 @@ class ThreadUtilsTest extends AbstractLangTest {
         }
     }
 
+    @Test
+    void testSleepQuietlyNormalNoInterrupt() {
+        Thread.interrupted();
+        ThreadUtils.sleepQuietly(Duration.ofMillis(10));
+        assertFalse(Thread.currentThread().isInterrupted(), "Interrupted flag should not be set for normal sleep");
+    }
 
+    @Test
+    void testSleepQuietlyInterruptedFlagPreserved() {
+        Thread.currentThread().interrupt();
+        // Immediately throw InterruptedException and restores the interrupted status
+        ThreadUtils.sleepQuietly(Duration.ofMillis(1000));
+        assertTrue(Thread.interrupted(), "Interrupted flag should be preserved");
+    }
 
-@Test
-void testSleepQuietlyNormalNoInterrupt() {
-    Thread.interrupted();
-    ThreadUtils.sleepQuietly(Duration.ofMillis(10));
-    assertFalse(Thread.currentThread().isInterrupted(), "Interrupted flag should not be set for normal sleep");
-}
-
-
-@Test
-void testSleepQuietlyInterruptedFlagPreserved() {
-    Thread.currentThread().interrupt();
-    // Immediately throw InterruptedException and restores the interrupted status
-    ThreadUtils.sleepQuietly(Duration.ofMillis(1000));
-    assertTrue(Thread.interrupted(), "Interrupted flag should be preserved");
-}
-
-
-@Test
-void testSleepQuietlyInterruptDuringSleep() throws Exception {
-    final AtomicBoolean isInterrupted = new AtomicBoolean();
-    final Thread testThread = new Thread(() -> {
-        // This will be interrupted while sleeping
-        ThreadUtils.sleepQuietly(Duration.ofSeconds(10));
-        isInterrupted.set(Thread.currentThread().isInterrupted());
-    });
-    testThread.start();
-    Thread.sleep(100);
-    testThread.interrupt();
-    testThread.join(1000);
-    assertTrue(isInterrupted.get(), "Interrupted flag should be preserved after InterruptedException");
-}
+    @Test
+    void testSleepQuietlyInterruptDuringSleep() throws Exception {
+        final AtomicBoolean isInterrupted = new AtomicBoolean();
+        final Thread testThread = new Thread(() -> {
+            // This will be interrupted while sleeping
+            ThreadUtils.sleepQuietly(Duration.ofSeconds(10));
+            isInterrupted.set(Thread.currentThread().isInterrupted());
+        });
+        testThread.start();
+        Thread.sleep(100);
+        testThread.interrupt();
+        testThread.join(1000);
+        assertTrue(isInterrupted.get(), "Interrupted flag should be preserved after InterruptedException");
+    }
 }

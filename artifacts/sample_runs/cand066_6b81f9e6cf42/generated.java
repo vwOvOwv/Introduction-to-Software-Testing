@@ -16,15 +16,16 @@
  */
 package org.apache.commons.lang3;
 
+
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
+import org.junit.jupiter.api.Test;
+import org.apache.commons.lang3.RegExUtils;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import java.util.regex.Pattern;
 import java.util.regex.PatternSyntaxException;
-
-import org.junit.jupiter.api.Test;
 
 /**
  * Tests {@link RegExUtils}.
@@ -242,8 +243,9 @@ public class RegExUtilsTest extends AbstractLangTest {
                 "RegExUtils.replaceFirst expecting PatternSyntaxException");
     }
 
+
     @Test
-    public void testReplacePattern_StringStringString() {
+    public void testReplacePatternDeprecated() {
         assertNull(RegExUtils.replacePattern(null, "", ""));
         assertEquals("any", RegExUtils.replacePattern("any", (String) null, ""));
         assertEquals("any", RegExUtils.replacePattern("any", "", null));
@@ -259,50 +261,26 @@ public class RegExUtilsTest extends AbstractLangTest {
         assertEquals("ABC___123", RegExUtils.replacePattern("ABCabc123", "[a-z]", "_"));
         assertEquals("ABC_123", RegExUtils.replacePattern("ABCabc123", "[^A-Z0-9]+", "_"));
         assertEquals("ABC123", RegExUtils.replacePattern("ABCabc123", "[^A-Z0-9]+", ""));
-        assertEquals("Lorem_ipsum_dolor_sit",
-                RegExUtils.replacePattern("Lorem ipsum  dolor   sit", "( +)([a-z]+)", "_$2"));
+        assertEquals("Lorem_ipsum_dolor_sit", RegExUtils.replacePattern("Lorem ipsum  dolor   sit", "( +)([a-z]+)", "_$2"));
     }
 
+    @Test
+    public void testReplacePattern() {
+        assertNull(RegExUtils.replacePattern((CharSequence) null, "", ""));
+        assertEquals("any", RegExUtils.replacePattern((CharSequence) "any", (String) null, ""));
+        assertEquals("any", RegExUtils.replacePattern((CharSequence) "any", "", null));
 
+        assertEquals("zzz", RegExUtils.replacePattern((CharSequence) "", "", "zzz"));
+        assertEquals("zzz", RegExUtils.replacePattern((CharSequence) "", ".*", "zzz"));
+        assertEquals("", RegExUtils.replacePattern((CharSequence) "", ".+", "zzz"));
 
-@Test
-public void testReplacePatternDeprecated() {
-    assertNull(RegExUtils.replacePattern(null, "", ""));
-    assertEquals("any", RegExUtils.replacePattern("any", (String) null, ""));
-    assertEquals("any", RegExUtils.replacePattern("any", "", null));
+        assertEquals("z", RegExUtils.replacePattern((CharSequence) "<__>\n<__>", "<.*>", "z"));
+        assertEquals("z", RegExUtils.replacePattern((CharSequence) "<__>\\n<__>", "<.*>", "z"));
+        assertEquals("X", RegExUtils.replacePattern((CharSequence) "<A>\nxy\n</A>", "<A>.*</A>", "X"));
 
-    assertEquals("zzz", RegExUtils.replacePattern("", "", "zzz"));
-    assertEquals("zzz", RegExUtils.replacePattern("", ".*", "zzz"));
-    assertEquals("", RegExUtils.replacePattern("", ".+", "zzz"));
-
-    assertEquals("z", RegExUtils.replacePattern("<__>\n<__>", "<.*>", "z"));
-    assertEquals("z", RegExUtils.replacePattern("<__>\\n<__>", "<.*>", "z"));
-    assertEquals("X", RegExUtils.replacePattern("<A>\nxy\n</A>", "<A>.*</A>", "X"));
-
-    assertEquals("ABC___123", RegExUtils.replacePattern("ABCabc123", "[a-z]", "_"));
-    assertEquals("ABC_123", RegExUtils.replacePattern("ABCabc123", "[^A-Z0-9]+", "_"));
-    assertEquals("ABC123", RegExUtils.replacePattern("ABCabc123", "[^A-Z0-9]+", ""));
-    assertEquals("Lorem_ipsum_dolor_sit", RegExUtils.replacePattern("Lorem ipsum  dolor   sit", "( +)([a-z]+)", "_$2"));
-}
-
-
-@Test
-public void testReplacePattern() {
-    assertNull(RegExUtils.replacePattern((CharSequence) null, "", ""));
-    assertEquals("any", RegExUtils.replacePattern((CharSequence) "any", (String) null, ""));
-    assertEquals("any", RegExUtils.replacePattern((CharSequence) "any", "", null));
-
-    assertEquals("zzz", RegExUtils.replacePattern((CharSequence) "", "", "zzz"));
-    assertEquals("zzz", RegExUtils.replacePattern((CharSequence) "", ".*", "zzz"));
-    assertEquals("", RegExUtils.replacePattern((CharSequence) "", ".+", "zzz"));
-
-    assertEquals("z", RegExUtils.replacePattern((CharSequence) "<__>\n<__>", "<.*>", "z"));
-    assertEquals("z", RegExUtils.replacePattern((CharSequence) "<__>\\n<__>", "<.*>", "z"));
-    assertEquals("X", RegExUtils.replacePattern((CharSequence) "<A>\nxy\n</A>", "<A>.*</A>", "X"));
-
-    assertEquals("ABC___123", RegExUtils.replacePattern((CharSequence) "ABCabc123", "[a-z]", "_"));
-    assertEquals("ABC_123", RegExUtils.replacePattern((CharSequence) "ABCabc123", "[^A-Z0-9]+", "_"));
-    assertEquals("ABC123", RegExUtils.replacePattern((CharSequence) "ABCabc123", "[^A-Z0-9]+", ""));
-    assertEquals("Lorem_ipsum_dolor_sit", RegExUtils.replacePattern((CharSequence) "Lorem ipsum  dolor   sit", "( +)([a-z]+)", "_$2"));
-}
+        assertEquals("ABC___123", RegExUtils.replacePattern((CharSequence) "ABCabc123", "[a-z]", "_"));
+        assertEquals("ABC_123", RegExUtils.replacePattern((CharSequence) "ABCabc123", "[^A-Z0-9]+", "_"));
+        assertEquals("ABC123", RegExUtils.replacePattern((CharSequence) "ABCabc123", "[^A-Z0-9]+", ""));
+        assertEquals("Lorem_ipsum_dolor_sit", RegExUtils.replacePattern((CharSequence) "Lorem ipsum  dolor   sit", "( +)([a-z]+)", "_$2"));
+    }
 }

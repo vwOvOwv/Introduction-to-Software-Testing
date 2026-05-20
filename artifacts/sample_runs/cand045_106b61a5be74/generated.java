@@ -17,16 +17,16 @@
 
 package org.apache.commons.lang3;
 
+
+
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assumptions.assumeTrue;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.function.ThrowingSupplier;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
-import static org.junit.jupiter.api.Assumptions.assumeTrue;
-
-import org.junit.jupiter.api.Test;
-
-import org.junit.jupiter.api.function.ThrowingSupplier;
 
 public class SystemPropertiesTest {
 
@@ -109,6 +109,7 @@ public class SystemPropertiesTest {
         basicKeyCheck(SystemProperties.JAVA_RUNTIME_NAME);
         basicKeyCheck(SystemProperties.JAVA_RUNTIME_VERSION);
         basicKeyCheck(SystemProperties.JAVA_SECURITY_AUTH_LOGIN_CONFIG);
+        basicKeyCheck(SystemProperties.JAVA_SECURITY_DEBUG);
         basicKeyCheck(SystemProperties.JAVA_SECURITY_MANAGER);
         basicKeyCheck(SystemProperties.JAVA_SPECIFICATION_MAINTENANCE_VERSION);
         basicKeyCheck(SystemProperties.JAVA_SPECIFICATION_NAME);
@@ -262,7 +263,7 @@ public class SystemPropertiesTest {
         }
     }
 
-@Test
+    @Test
     public void testGetDoesNotThrow() {
         assertDoesNotThrow(SystemProperties::getAppleAwtEnableTemplateImages);
         assertDoesNotThrow(SystemProperties::getAwtToolkit);

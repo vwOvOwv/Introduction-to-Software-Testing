@@ -16,6 +16,8 @@
  */
 package org.apache.commons.lang3.reflect;
 
+
+
 import static org.apache.commons.lang3.LangAssertions.assertNullPointerException;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -26,7 +28,6 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import java.awt.Color;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
@@ -40,7 +41,6 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-
 import org.apache.commons.lang3.AbstractLangTest;
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.ClassUtils;
@@ -1106,14 +1106,14 @@ class MethodUtilsTest extends AbstractLangTest {
         assertThrows(NoSuchMethodException.class, () -> MethodUtils.invokeMethod(testBean, null, 1, 2));
     }
 
-@Test
-void testInvokeMethod_VarArgsWithNullValues() throws Exception {
-    assertEquals("String...", MethodUtils.invokeMethod(testBean, "varOverload", "a", null, "c"));
-    assertEquals("String...", MethodUtils.invokeMethod(testBean, "varOverload", "a", "b", null));
-    assertEquals("String...", MethodUtils.invokeMethod(testBean, "varOverload", new String[] { "a" }, new Class<?>[] { String.class }));
-    assertThrows(NoSuchMethodException.class,
-            () -> assertEquals("String...", MethodUtils.invokeMethod(testBean, "doesn't exist", new String[] { "a" }, new Class<?>[] { null })));
-}
+    @Test
+    void testInvokeMethod_VarArgsWithNullValues() throws Exception {
+        assertEquals("String...", MethodUtils.invokeMethod(testBean, "varOverload", "a", null, "c"));
+        assertEquals("String...", MethodUtils.invokeMethod(testBean, "varOverload", "a", "b", null));
+        assertEquals("String...", MethodUtils.invokeMethod(testBean, "varOverload", new String[] { "a" }, new Class<?>[] { String.class }));
+        assertThrows(NoSuchMethodException.class,
+                () -> assertEquals("String...", MethodUtils.invokeMethod(testBean, "doesn't exist", new String[] { "a" }, new Class<?>[] { null })));
+    }
 
     @Test
     void testInvokeMethod1PlusVarArgs() throws Exception {

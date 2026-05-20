@@ -16,20 +16,19 @@
  */
 package org.apache.commons.lang3.concurrent;
 
+
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
-
-import java.util.concurrent.atomic.AtomicBoolean;
-import java.util.concurrent.atomic.AtomicInteger;
-
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import java.io.IOException;
 import java.nio.file.FileSystemException;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicInteger;
 import org.apache.commons.lang3.exception.ExceptionUtils;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Timeout;
 import org.junit.jupiter.api.Timeout.ThreadMode;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -47,6 +46,7 @@ class AtomicSafeInitializerTest extends AbstractConcurrentInitializerTest<Object
      * </p>
      */
     private static final class AtomicSafeInitializerTestImpl extends AtomicSafeInitializer<Object> {
+
         /** A counter for initialize() invocations. */
         final AtomicInteger initCounter = new AtomicInteger();
 
@@ -63,7 +63,7 @@ class AtomicSafeInitializerTest extends AbstractConcurrentInitializerTest<Object
     /**
      * Returns the initializer to be tested.
      *
-     * @return the {@code AtomicSafeInitializer} under test
+     * @return the {@code AtomicSafeInitializer} under test.
      */
     @Override
     protected ConcurrentInitializer<Object> createInitializer() {
@@ -75,9 +75,10 @@ class AtomicSafeInitializerTest extends AbstractConcurrentInitializerTest<Object
         initializer = new AtomicSafeInitializerTestImpl();
     }
 
-@Test
+    @Test
     void testGetThatReturnsNullFirstTime() throws ConcurrentException {
         final AtomicSafeInitializer<Object> initializer = new AtomicSafeInitializer<Object>() {
+
             final AtomicBoolean firstRun = new AtomicBoolean(true);
 
             @Override
@@ -88,27 +89,21 @@ class AtomicSafeInitializerTest extends AbstractConcurrentInitializerTest<Object
                 return new Object();
             }
         };
-
-        // 第一次调用 get()，initialize() 返回 null，所以 get() 返回 null
         assertNull(initializer.get());
-        // 第二次调用 get()，此时 reference 中存储的是 null，而 getNoInit() 也是 null，
-        // 所以会进入循环，再次调用 initialize()，返回非 null 对象
-        // 但由于第一次设置了 null，第二次 initialize() 返回非 null 对象后，get() 返回该对象
         assertNull(initializer.get());
     }
 
     /**
      * Tests that initialize() is called only once.
      *
-     * @throws org.apache.commons.lang3.concurrent.ConcurrentException because {@link #testGetConcurrent()} may throw it
-     * @throws InterruptedException because {@link #testGetConcurrent()} may throw it
+     * @throws org.apache.commons.lang3.concurrent.ConcurrentException because {@link #testGetConcurrent()} may throw it.
+     * @throws InterruptedException                                    because {@link #testGetConcurrent()} may throw it.
      */
     @Test
     void testNumberOfInitializeInvocations() throws ConcurrentException, InterruptedException {
         testGetConcurrent();
         assertEquals(1, initializer.initCounter.get(), "Wrong number of invocations");
     }
-
 
     @ParameterizedTest
     @ValueSource(classes = { IllegalStateException.class, IllegalArgumentException.class, NullPointerException.class, RuntimeException.class })
@@ -121,7 +116,6 @@ class AtomicSafeInitializerTest extends AbstractConcurrentInitializerTest<Object
         assertEquals(message, assertThrows(throwableClass, asi::get).getMessage());
         assertEquals(message, assertThrows(throwableClass, asi::get).getMessage());
     }
-
 
     @ParameterizedTest
     @ValueSource(classes = { IOException.class, Exception.class, FileSystemException.class, ReflectiveOperationException.class, ConcurrentException.class })

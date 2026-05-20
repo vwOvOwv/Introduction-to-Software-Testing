@@ -53,7 +53,9 @@ scripts/build_results_md.py   → results.md
 
 ```powershell
 cd Introduction-to-Software-Testing
-$env:DEEPSEEK_API_KEY = "sk-..."
+
+# 修改 key.py，写入你的 DeepSeek API Key
+# DEEPSEEK_API_KEY = "sk-..."
 
 # 跑全部 135 条（耗时长、消耗 API）
 python run_sample_experiment.py
@@ -80,7 +82,7 @@ python scripts/build_results_md.py
 
 ## 流水线要点（与早期 6 条手工样本的区别）
 
-1. **Prompt**：向模型提供生产 diff、测试 diff、A 上相关 `@Test` 方法（非整份 B 生产文件）；要求只输出需修改的测试**方法**。
+1. **Prompt**：向模型提供生产 diff、A 上相关 `@Test` 方法（非整份 B 生产文件）；要求只输出需修改的测试**方法**。
 2. **合并**：以 **A** 上完整测试类为底，将模型输出的方法替换/插入；再调用 `finalize_merged_test_class()`：
    - 从 **B** 补齐缺失的 `import`；
    - 若代码引用了某嵌套类型，用 **B** 上同名 `static class` 等定义**替换或插入**（一层嵌套；深层嵌套如 cand006 仍可能编译失败）。
@@ -108,7 +110,7 @@ python scripts/build_results_md.py
   python update_tests_deepseek.py --index 1 --out artifacts/sample_runs/...
   python update_tests_deepseek.py --run-all --limit 5
   ```
-- **环境变量**：`DEEPSEEK_API_KEY`；可选 `DEEPSEEK_MAX_OUTPUT_TOKENS`（默认 8192）。
+- **环境变量**：~~`DEEPSEEK_API_KEY`~~；可选 `DEEPSEEK_MAX_OUTPUT_TOKENS`（默认 8192）。
 
 ### `run_single_maven_test.py`
 
@@ -138,22 +140,7 @@ python scripts/build_results_md.py
 
 ## 结果解读（135 条实验概况）
 
-详见 **`results.md`**。约略分布（以 `run_report.json` 为准）：
-
-| 结果 | 约占比 |
-| --- | --- |
-| Maven 通过 | ~70% |
-| 编译失败（缺 import、深层嵌套类等） | ~19% |
-| 测试失败（能编译，断言未过） | ~6% |
-| 合并失败（模型未输出可解析 `@Test`） | ~2% |
-
-典型失败原因：
-
-- **合并失败**：cand124、cand128 等（`deepseek_output.md` 无 `@Test` 代码块）。
-- **编译失败**：仅合并了 `@Test`，B 上还有内部类/辅助方法/字段变更未带上（cand006 等）。
-- **测试失败**：已能编译，但生成断言与 B 上行为不一致。
-
----
+详见 **`results.md`**。
 
 ## 已知限制
 
@@ -169,6 +156,5 @@ python scripts/build_results_md.py
 | 路径 | 说明 |
 | --- | --- |
 | `results.md` | 135 条实验汇总表与结论 |
-| `sample.md` | 早期 6 条手工样本说明（已被 135 条流水线替代，作参考） |
 | `artifacts/lang_sample_candidates_filtered.json` | 当前实验样本池 |
 | `artifacts/sample_runs/summary.json` | 最近一次批量运行的机器可读汇总 |

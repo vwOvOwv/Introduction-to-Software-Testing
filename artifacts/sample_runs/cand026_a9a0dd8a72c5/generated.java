@@ -16,6 +16,8 @@
  */
 package org.apache.commons.lang3.time;
 
+
+
 import static org.apache.commons.lang3.LangAssertions.assertIllegalArgumentException;
 import static org.apache.commons.lang3.LangAssertions.assertNullPointerException;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -24,7 +26,6 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNotSame;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Modifier;
 import java.text.DateFormat;
@@ -45,7 +46,6 @@ import java.util.Locale;
 import java.util.NoSuchElementException;
 import java.util.TimeZone;
 import java.util.stream.Stream;
-
 import org.apache.commons.lang3.AbstractLangTest;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
@@ -284,6 +284,7 @@ class DateUtilsTest extends AbstractLangTest {
             dateTimeParser.setTimeZone(TIME_ZONE_DEFAULT);
             TimeZone.setDefault(TIME_ZONE_DEFAULT);
         }
+        date9 = dateTimeParser.parse("March 30, 2003 01:10:00.000");
         calAmPm1 = Calendar.getInstance();
         calAmPm1.setTime(dateAmPm1);
         calAmPm2 = Calendar.getInstance();
@@ -480,7 +481,7 @@ class DateUtilsTest extends AbstractLangTest {
      *
      * @throws Exception so we don't have to catch it
      */
-@Test
+    @Test
     void testCeiling() throws Exception {
         // test javadoc
         assertEquals(dateTimeParser.parse("March 28, 2002 14:00:00.000"),
@@ -1677,6 +1678,6 @@ class DateUtilsTest extends AbstractLangTest {
             now.add(Calendar.DATE, 1);
         }
     }
-
+    private Date date9;
 }
 

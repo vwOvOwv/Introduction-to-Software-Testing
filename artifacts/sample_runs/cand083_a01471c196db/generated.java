@@ -16,6 +16,8 @@
  */
 package org.apache.commons.lang3;
 
+
+
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
@@ -26,7 +28,6 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -38,13 +39,15 @@ import java.io.Serializable;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Modifier;
 import java.util.HashMap;
-
+import java.util.function.Supplier;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.util.function.Supplier;
+interface SerializableSupplier<T> extends Supplier<T>, Serializable {
+    // empty
+}
 
-final class ClassNotFoundSerialization implements Serializable {
+class ClassNotFoundSerialization implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -58,7 +61,7 @@ final class ClassNotFoundSerialization implements Serializable {
  */
 public class SerializationUtilsTest extends AbstractLangTest {
 
-  static final String CLASS_NOT_FOUND_MESSAGE = "ClassNotFoundSerialization.readObject fake exception";
+    static final String CLASS_NOT_FOUND_MESSAGE = "ClassNotFoundSerialization.readObject fake exception";
     protected static final String SERIALIZE_IO_EXCEPTION_MESSAGE = "Anonymous OutputStream I/O exception";
 
     private String iString;
@@ -74,31 +77,39 @@ public class SerializationUtilsTest extends AbstractLangTest {
         iMap.put("BAR", iInteger);
     }
 
-@Test
-public void testClone() {
-    final Object test = SerializationUtils.clone(iMap);
-    assertNotNull(test);
-    assertInstanceOf(HashMap.class, test);
-    assertNotSame(test, iMap);
-    final HashMap<?, ?> testMap = (HashMap<?, ?>) test;
-    assertEquals(iString, testMap.get("FOO"));
-    assertNotSame(iString, testMap.get("FOO"));
-    assertEquals(iInteger, testMap.get("BAR"));
-    assertNotSame(iInteger, testMap.get("BAR"));
-    assertEquals(iMap, testMap);
-}
+    @Test
+    public void testClone() {
+        final Object test = SerializationUtils.clone(iMap);
+        assertNotNull(test);
+        assertInstanceOf(HashMap.class, test);
+        assertNotSame(test, iMap);
+        final HashMap<?, ?> testMap = (HashMap<?, ?>) test;
+        assertEquals(iString, testMap.get("FOO"));
+        assertNotSame(iString, testMap.get("FOO"));
+        assertEquals(iInteger, testMap.get("BAR"));
+        assertNotSame(iInteger, testMap.get("BAR"));
+        assertEquals(iMap, testMap);
+    }
 
-@Test
-public void testCloneNull() {
-    final Object test = SerializationUtils.clone(null);
-    assertNull(test);
-}
+    @Test
+    public void testCloneNull() {
+        final Object test = SerializationUtils.clone(null);
+        assertNull(test);
+    }
 
-@Test
-public void testCloneUnserializable() {
-    iMap.put(new Object(), new Object());
-    assertThrows(SerializationException.class, () -> SerializationUtils.clone(iMap));
-}
+    @Test
+    void testCloneSerializableSupplier() {
+        final SerializableSupplier<String> supplier = () -> "test";
+        assertEquals("test", supplier.get());
+        final SerializableSupplier<String> clone = SerializationUtils.clone(supplier);
+        assertEquals("test", clone.get());
+    }
+
+    @Test
+    public void testCloneUnserializable() {
+        iMap.put(new Object(), new Object());
+        assertThrows(SerializationException.class, () -> SerializationUtils.clone(iMap));
+    }
 
     @Test
     public void testConstructor() {
@@ -372,13 +383,6 @@ public void testCloneUnserializable() {
         iMap.put(new Object(), new Object());
         assertThrows(SerializationException.class, () -> SerializationUtils.serialize(iMap, streamTest));
     }
+}
 
 
-@Test
-void testCloneSerializableSupplier() {
-    final SerializableSupplier<String> supplier = () -> "test";
-    assertEquals("test", supplier.get());
-    final SerializableSupplier<String> clone = SerializationUtils.clone(supplier);
-    assertEquals("test", clone.get());
-}
-}

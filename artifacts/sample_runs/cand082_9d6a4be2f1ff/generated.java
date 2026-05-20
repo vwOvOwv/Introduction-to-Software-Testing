@@ -16,6 +16,15 @@
  */
 package org.apache.commons.lang3;
 
+
+
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Comparator;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Locale;
+import java.util.Set;
 import static org.apache.commons.lang3.JavaVersion.JAVA_1_4;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
@@ -25,22 +34,12 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Modifier;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Locale;
-import java.util.Set;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
-
-import java.util.Comparator;
 
 /**
  * Tests for {@link LocaleUtils}.
@@ -201,18 +200,18 @@ public class LocaleUtilsTest extends AbstractLangTest {
     /**
      * Test availableLocaleList() method.
      */
-@Test
-public void testAvailableLocaleList() {
-    final List<Locale> list = LocaleUtils.availableLocaleList();
-    final List<Locale> list2 = LocaleUtils.availableLocaleList();
-    assertNotNull(list);
-    assertSame(list, list2);
-    assertUnmodifiableCollection(list);
+    @Test
+    public void testAvailableLocaleList() {
+        final List<Locale> list = LocaleUtils.availableLocaleList();
+        final List<Locale> list2 = LocaleUtils.availableLocaleList();
+        assertNotNull(list);
+        assertSame(list, list2);
+        assertUnmodifiableCollection(list);
 
-    final Locale[] jdkLocaleArray = Locale.getAvailableLocales();
-    final List<Locale> jdkLocaleList = Arrays.asList(ArraySorter.sort(jdkLocaleArray, Comparator.comparing(Locale::toString)));
-    assertEquals(jdkLocaleList, list);
-}
+        final Locale[] jdkLocaleArray = Locale.getAvailableLocales();
+        final List<Locale> jdkLocaleList = Arrays.asList(ArraySorter.sort(jdkLocaleArray, Comparator.comparing(Locale::toString)));
+        assertEquals(jdkLocaleList, list);
+    }
 
     /**
      * Test availableLocaleSet() method.

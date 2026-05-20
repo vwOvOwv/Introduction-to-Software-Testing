@@ -16,6 +16,8 @@
  */
 package org.apache.commons.lang3.math;
 
+
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertInstanceOf;
@@ -23,7 +25,6 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Modifier;
 import java.math.BigDecimal;
@@ -32,7 +33,6 @@ import java.math.RoundingMode;
 import java.text.NumberFormat;
 import java.text.ParseException;
 import java.util.function.Function;
-
 import org.apache.commons.lang3.AbstractLangTest;
 import org.junit.jupiter.api.Test;
 
@@ -1123,7 +1123,7 @@ public class NumberUtilsTest extends AbstractLangTest {
         assertTrue(Float.isNaN(NumberUtils.max(bF)));
     }
 
-@Test
+    @Test
     public void TestLang747() {
         assertEquals(Integer.valueOf(0x8000), NumberUtils.createNumber("0x8000"));
         assertEquals(Integer.valueOf(0x80000), NumberUtils.createNumber("0x80000"));

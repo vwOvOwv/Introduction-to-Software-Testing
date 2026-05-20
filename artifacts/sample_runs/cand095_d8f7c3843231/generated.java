@@ -17,17 +17,17 @@
 
 package org.apache.commons.lang3;
 
+
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.apache.commons.lang3.LangAssertions.assertIllegalArgumentException;
 import static org.apache.commons.lang3.LangAssertions.assertNullPointerException;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import java.util.Comparator;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -142,16 +142,16 @@ class DoubleRangeTest extends AbstractLangTest {
         assertNotEquals("Ni!", range2);
     }
 
-@Test
-void testFit() {
-    assertEquals(range1.getMinimum(), range1.fit(Double.MIN_VALUE));
-    assertEquals(range1.getMinimum(), range1.fit(range1.getMinimum()));
-    assertEquals(range1.getMaximum(), range1.fit(Double.MAX_VALUE));
-    assertEquals(range1.getMaximum(), range1.fit(range1.getMaximum()));
-    assertEquals(15, range1.fit(15));
-    assertEquals(15, range1.fit(15f));
-    assertEquals(15, range1.fit(15d));
-}
+    @Test
+    void testFit() {
+        assertEquals(range1.getMinimum(), range1.fit(Double.MIN_VALUE));
+        assertEquals(range1.getMinimum(), range1.fit(range1.getMinimum()));
+        assertEquals(range1.getMaximum(), range1.fit(Double.MAX_VALUE));
+        assertEquals(range1.getMaximum(), range1.fit(range1.getMaximum()));
+        assertEquals(15, range1.fit(15));
+        assertEquals(15, range1.fit(15f));
+        assertEquals(15, range1.fit(15d));
+    }
 
     @Test
     void testFitNull() {

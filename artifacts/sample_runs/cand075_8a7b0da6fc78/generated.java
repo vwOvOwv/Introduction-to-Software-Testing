@@ -16,17 +16,24 @@
  */
 package org.apache.commons.lang3.reflect;
 
+
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import java.util.Date;
+import org.apache.commons.lang3.ArrayUtils;
+import org.apache.commons.lang3.mutable.MutableObject;
+import org.apache.commons.lang3.reflect.MethodUtils;
+import org.apache.commons.lang3.tuple.ImmutablePair;
+import org.junit.jupiter.api.Test;
 import static org.apache.commons.lang3.LangAssertions.assertNullPointerException;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNotSame;
-import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertSame;
-import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import java.awt.Color;
 import java.lang.reflect.Method;
 import java.lang.reflect.Type;
@@ -34,27 +41,21 @@ import java.nio.file.Files;
 import java.nio.file.LinkOption;
 import java.nio.file.Path;
 import java.util.Arrays;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-
 import org.apache.commons.lang3.AbstractLangTest;
-import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.ClassUtils;
 import org.apache.commons.lang3.ClassUtils.Interfaces;
 import org.apache.commons.lang3.math.NumberUtils;
 import org.apache.commons.lang3.mutable.Mutable;
-import org.apache.commons.lang3.mutable.MutableObject;
 import org.apache.commons.lang3.reflect.testbed.Annotated;
 import org.apache.commons.lang3.reflect.testbed.GenericConsumer;
 import org.apache.commons.lang3.reflect.testbed.GenericParent;
 import org.apache.commons.lang3.reflect.testbed.PublicChild;
 import org.apache.commons.lang3.reflect.testbed.StringParameterizedChild;
-import org.apache.commons.lang3.tuple.ImmutablePair;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
 
 /**
  * {@link Tests MethodUtils}.
@@ -695,6 +696,14 @@ class MethodUtilsTest extends AbstractLangTest {
         assertEquals(MutableObject.class.getMethod("getValue", ArrayUtils.EMPTY_CLASS_ARRAY),
                 MethodUtils.getMethodObject(MutableObject.class, "getValue", ArrayUtils.EMPTY_CLASS_ARRAY));
         assertNull(MethodUtils.getMethodObject(MutableObject.class, "does not exist, at all", ArrayUtils.EMPTY_CLASS_ARRAY));
+        assertNull(MethodUtils.getMethodObject(null, "does not exist, at all", ArrayUtils.EMPTY_CLASS_ARRAY));
+        assertNull(MethodUtils.getMethodObject(null, null, ArrayUtils.EMPTY_CLASS_ARRAY));
+        assertNull(MethodUtils.getMethodObject(MutableObject.class, null, ArrayUtils.EMPTY_CLASS_ARRAY));
+        // 0 args
+        assertNull(MethodUtils.getMethodObject(MutableObject.class, "getValue", new Class[] { null }));
+        // 1 args
+        assertNull(MethodUtils.getMethodObject(MutableObject.class, "equals", new Class[] { null }));
+        assertNull(MethodUtils.getMethodObject(MutableObject.class, "equals", new Class[] { String.class, null, String.class }));
     }
 
     @Test
@@ -853,7 +862,7 @@ class MethodUtilsTest extends AbstractLangTest {
         assertFalse(expected.hasNext());
     }
 
-@Test
+    @Test
     void testInvokeExactMethod() throws Exception {
         assertEquals("foo()", MethodUtils.invokeExactMethod(testBean, "foo", (Object[]) ArrayUtils.EMPTY_CLASS_ARRAY));
         assertEquals("foo()", MethodUtils.invokeExactMethod(testBean, "foo"));
@@ -939,65 +948,40 @@ class MethodUtilsTest extends AbstractLangTest {
 
     @Test
     void testInvokeMethod() throws Exception {
-        assertEquals("foo()", MethodUtils.invokeMethod(testBean, "foo",
-                (Object[]) ArrayUtils.EMPTY_CLASS_ARRAY));
+        assertEquals("foo()", MethodUtils.invokeMethod(testBean, "foo", (Object[]) ArrayUtils.EMPTY_CLASS_ARRAY));
         assertEquals("foo()", MethodUtils.invokeMethod(testBean, "foo"));
-        assertEquals("foo()", MethodUtils.invokeMethod(testBean, "foo",
-                (Object[]) null));
-        assertEquals("foo()", MethodUtils.invokeMethod(testBean, "foo",
-                null, null));
-        assertEquals("foo(String)", MethodUtils.invokeMethod(testBean, "foo",
-                ""));
-        assertEquals("foo(Object)", MethodUtils.invokeMethod(testBean, "foo",
-                new Object()));
-        assertEquals("foo(Object)", MethodUtils.invokeMethod(testBean, "foo",
-                Boolean.TRUE));
-        assertEquals("foo(Integer)", MethodUtils.invokeMethod(testBean, "foo",
-                NumberUtils.INTEGER_ONE));
-        assertEquals("foo(int)", MethodUtils.invokeMethod(testBean, "foo",
-                NumberUtils.BYTE_ONE));
-        assertEquals("foo(long)", MethodUtils.invokeMethod(testBean, "foo",
-                NumberUtils.LONG_ONE));
-        assertEquals("foo(double)", MethodUtils.invokeMethod(testBean, "foo",
-                NumberUtils.DOUBLE_ONE));
-        assertEquals("foo(String...)", MethodUtils.invokeMethod(testBean, "foo",
-                "a", "b", "c"));
-        assertEquals("foo(String...)", MethodUtils.invokeMethod(testBean, "foo",
-                "a", "b", "c"));
-        assertEquals("foo(int, String...)", MethodUtils.invokeMethod(testBean, "foo",
-                5, "a", "b", "c"));
-        assertEquals("foo(long...)", MethodUtils.invokeMethod(testBean, "foo",
-                1L, 2L));
-
+        assertEquals("foo()", MethodUtils.invokeMethod(testBean, "foo", (Object[]) null));
+        assertEquals("foo()", MethodUtils.invokeMethod(testBean, "foo", null, null));
+        assertEquals("foo(String)", MethodUtils.invokeMethod(testBean, "foo", ""));
+        assertEquals("foo(Object)", MethodUtils.invokeMethod(testBean, "foo", new Object()));
+        assertEquals("foo(Object)", MethodUtils.invokeMethod(testBean, "foo", Boolean.TRUE));
+        assertEquals("foo(Integer)", MethodUtils.invokeMethod(testBean, "foo", NumberUtils.INTEGER_ONE));
+        assertEquals("foo(int)", MethodUtils.invokeMethod(testBean, "foo", NumberUtils.BYTE_ONE));
+        assertEquals("foo(long)", MethodUtils.invokeMethod(testBean, "foo", NumberUtils.LONG_ONE));
+        assertEquals("foo(double)", MethodUtils.invokeMethod(testBean, "foo", NumberUtils.DOUBLE_ONE));
+        assertEquals("foo(String...)", MethodUtils.invokeMethod(testBean, "foo", "a", "b", "c"));
+        assertEquals("foo(String...)", MethodUtils.invokeMethod(testBean, "foo", "a", "b", "c"));
+        assertEquals("foo(int, String...)", MethodUtils.invokeMethod(testBean, "foo", 5, "a", "b", "c"));
+        assertEquals("foo(long...)", MethodUtils.invokeMethod(testBean, "foo", 1L, 2L));
         assertThrows(NoSuchMethodException.class, () -> MethodUtils.invokeMethod(testBean, "foo", 1, 2));
-
-        TestBean.verify(new ImmutablePair<>("String...", new String[]{"x", "y"}),
-                MethodUtils.invokeMethod(testBean, "varOverloadEcho", "x", "y"));
-        TestBean.verify(new ImmutablePair<>("Number...", new Number[]{17, 23, 42}),
-                MethodUtils.invokeMethod(testBean, "varOverloadEcho", 17, 23, 42));
-        TestBean.verify(new ImmutablePair<>("String...", new String[]{"x", "y"}),
-                MethodUtils.invokeMethod(testBean, "varOverloadEcho", "x", "y"));
-        TestBean.verify(new ImmutablePair<>("Number...", new Number[]{17, 23, 42}),
-                MethodUtils.invokeMethod(testBean, "varOverloadEcho", 17, 23, 42));
-
+        TestBean.verify(new ImmutablePair<>("String...", new String[] { "x", "y" }), MethodUtils.invokeMethod(testBean, "varOverloadEcho", "x", "y"));
+        TestBean.verify(new ImmutablePair<>("Number...", new Number[] { 17, 23, 42 }), MethodUtils.invokeMethod(testBean, "varOverloadEcho", 17, 23, 42));
+        TestBean.verify(new ImmutablePair<>("String...", new String[] { "x", "y" }), MethodUtils.invokeMethod(testBean, "varOverloadEcho", "x", "y"));
+        TestBean.verify(new ImmutablePair<>("Number...", new Number[] { 17, 23, 42 }), MethodUtils.invokeMethod(testBean, "varOverloadEcho", 17, 23, 42));
         assertNullPointerException(() -> MethodUtils.invokeMethod(null, "foo", 1, 2));
         assertThrows(NoSuchMethodException.class, () -> MethodUtils.invokeMethod(testBean, null, 1, 2));
     }
 
     @Test
     void testInvokeMethod_VarArgsNotUniqueResolvable() throws Exception {
-      assertEquals("Boolean...", MethodUtils.invokeMethod(testBean, "varOverload",
-                                                         new Object[] {null}));
-      assertEquals("Object...", MethodUtils.invokeMethod(testBean, "varOverload",
-                                                         (Object[]) null));
+        assertEquals("Boolean...", MethodUtils.invokeMethod(testBean, "varOverload", new Object[] { null }));
+        assertEquals("Object...", MethodUtils.invokeMethod(testBean, "varOverload", (Object[]) null));
     }
 
     @Test
     void testInvokeMethod_VarArgsWithNullValues() throws Exception {
-        assertEquals("String...", MethodUtils.invokeMethod(testBean, "varOverload",
-                "a", null, "c"));
-        assertEquals("String...", MethodUtils.invokeMethod(testBean, "varOverload",
-                                                                "a", "b", null));
+        assertEquals("String...", MethodUtils.invokeMethod(testBean, "varOverload", "a", null, "c"));
+        assertEquals("String...", MethodUtils.invokeMethod(testBean, "varOverload", "a", "b", null));
     }
 
     @Test
@@ -1011,11 +995,8 @@ class MethodUtilsTest extends AbstractLangTest {
         assertEquals("privateStringStuff(double)", MethodUtils.invokeMethod(testBean, true, "privateStringStuff", 5.0d));
         assertEquals("privateStringStuff(String)", MethodUtils.invokeMethod(testBean, true, "privateStringStuff", "Hi There"));
         assertEquals("privateStringStuff(Object)", MethodUtils.invokeMethod(testBean, true, "privateStringStuff", new Date()));
-
-        assertNullPointerException(
-                () -> MethodUtils.invokeMethod(null, true, "privateStringStuff", "Hi There"));
-        assertThrows(NoSuchMethodException.class,
-                () -> MethodUtils.invokeMethod(testBean, true, null, "Hi There"));
+        assertNullPointerException(() -> MethodUtils.invokeMethod(null, true, "privateStringStuff", "Hi There"));
+        assertNullPointerException(() -> MethodUtils.invokeMethod(testBean, true, null, "Hi There"));
     }
 
     @Test

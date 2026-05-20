@@ -18,6 +18,8 @@
  */
 package org.apache.commons.lang3;
 
+
+
 import static org.apache.commons.lang3.LangAssertions.assertNullPointerException;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
@@ -25,11 +27,9 @@ import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import java.lang.reflect.Modifier;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
-
 import org.junit.jupiter.api.Test;
 
 /**
@@ -380,16 +380,23 @@ class CharRangeTest extends AbstractLangTest {
         assertEquals(range, SerializationUtils.clone(range));
     }
 
-
+    /**
+     * Tests https://issues.apache.org/jira/browse/LANG-1802
+     */
     @Test
     void testHashCodeLang1802() {
         // case A：hash=99
-        final CharRange a1 = CharRange.isNotIn((char) 1, (char) 2); // 1,2,true → Objects.hash(2, true, 1)
-        final CharRange a2 = CharRange.isIn((char) 2, (char) 2); // 2,2,false → Objects.hash(2, false, 2)
-        assertNotEquals(a1.hashCode(), a2.hashCode()); // No longer a collision
+        final CharRange a1 = CharRange.isNotIn((char) 1, (char) 2); // 1,2,true → 83+1+14+1=99
+        final CharRange a2 = CharRange.isIn((char) 2, (char) 2); // 2,2,false → 83+2+14+0=99
+        assertNotEquals(a1.hashCode(), a2.hashCode()); // Collision
         // case B：hash=123
-        final CharRange b1 = CharRange.isIn((char) 5, (char) 5); // 5,5,false → Objects.hash(5, false, 5)
-        final CharRange b2 = CharRange.isNotIn((char) 4, (char) 5); // 4,5,true → Objects.hash(5, true, 4)
-        assertNotEquals(b1.hashCode(), b2.hashCode()); // No longer a collision
+        final CharRange b1 = CharRange.isIn((char) 5, (char) 5); // 5,5,false →83+5+35+0=123
+        final CharRange b2 = CharRange.isNotIn((char) 4, (char) 5); // 4,5,true →83+4+35+1=123
+        assertNotEquals(b1.hashCode(), b2.hashCode()); // Collision
     }
+
+
+/**
+     * Tests https://issues.apache.org/jira/browse/LANG-1802
+     */
 }

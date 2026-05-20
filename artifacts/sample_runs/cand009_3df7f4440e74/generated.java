@@ -16,17 +16,23 @@
  */
 package org.apache.commons.lang3;
 
+
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import java.util.Locale;
+import org.apache.commons.lang3.LocaleUtils;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.MethodSource;
 import static org.apache.commons.lang3.JavaVersion.JAVA_1_4;
 import static org.apache.commons.lang3.LangAssertions.assertIllegalArgumentException;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertSame;
-import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Modifier;
 import java.util.Arrays;
@@ -34,13 +40,8 @@ import java.util.Collection;
 import java.util.Comparator;
 import java.util.HashSet;
 import java.util.List;
-import java.util.Locale;
 import java.util.Set;
-
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.MethodSource;
 import org.junitpioneer.jupiter.DefaultLocale;
 
 /**
@@ -411,7 +412,7 @@ class LocaleUtilsTest extends AbstractLangTest {
                 LOCALE_EN});
     }
 
-@ParameterizedTest
+    @ParameterizedTest
     @MethodSource("java.util.Locale#getAvailableLocales")
     void testParseAllLocales(final Locale actualLocale) {
         // Check if it's possible to recreate the Locale using just the standard constructor
@@ -555,7 +556,9 @@ class LocaleUtilsTest extends AbstractLangTest {
         assertEquals(actualLocale, LocaleUtils.toLocale(actualLocale));
     }
 
-
+    /**
+     * Special cases from https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Locale.html#special_cases_constructor
+     */
     @Test
     void testSpecialCases() {
         assertValidToLocale("th_TH_TH", "th", "TH", "TH");
@@ -566,9 +569,20 @@ class LocaleUtilsTest extends AbstractLangTest {
         LocaleUtils.localeLookupList(new Locale("ja", "JP", "JP")).forEach(locale -> assertEquals(locale, LocaleUtils.toLocale(locale.toString())));
     }
 
-
+    /**
+     * Tests #LANG-1823
+     */
     @Test
     void testLang1823() {
         assertValidToLocale("th_TH_#Thai", "th", "TH", "#Thai");
     }
+
+
+/**
+     * Tests #LANG-1823
+     */
+
+    /**
+     * Special cases from https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Locale.html#special_cases_constructor
+     */
 }

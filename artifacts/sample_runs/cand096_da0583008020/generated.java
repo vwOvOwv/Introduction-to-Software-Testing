@@ -17,6 +17,8 @@
 
 package org.apache.commons.lang3;
 
+
+
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
@@ -24,17 +26,14 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assumptions.assumeTrue;
-
+import java.nio.file.Paths;
 import java.util.function.Supplier;
-
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.function.ThrowingSupplier;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 import org.junitpioneer.jupiter.SetSystemProperty;
 import org.junitpioneer.jupiter.SetSystemProperty.SetSystemProperties;
-
-import java.nio.file.Paths;
 
 @SetSystemProperties({
     @SetSystemProperty(key = SystemPropertiesTest.KEY_SPACE_1, value = "value1"),
@@ -466,7 +465,6 @@ class SystemPropertiesTest {
         assertDoesNotThrow(SystemProperties::getOsArch);
         assertDoesNotThrow(SystemProperties::getOsName);
         assertDoesNotThrow(SystemProperties::getOsVersion);
-        assertDoesNotThrow(SystemProperties::getPath);
         assertDoesNotThrow(SystemProperties::getPathSeparator);
         assertDoesNotThrow(SystemProperties::getSocksProxyHost);
         assertDoesNotThrow(SystemProperties::getSocksProxyPort);
@@ -843,9 +841,7 @@ class SystemPropertiesTest {
         assertFalse(SystemProperties.isPropertySet(StringUtils.EMPTY));
     }
 
-
-
-@Test
+    @Test
     void testGetPath() {
         assertNull(SystemProperties.getPath(null, null));
         assertNull(SystemProperties.getPath(null, () -> null));

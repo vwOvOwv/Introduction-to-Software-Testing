@@ -17,6 +17,8 @@
 
 package org.apache.commons.lang3;
 
+
+
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
@@ -24,9 +26,10 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assumptions.assumeTrue;
-
+import java.util.function.BooleanSupplier;
+import java.util.function.IntSupplier;
+import java.util.function.LongSupplier;
 import java.util.function.Supplier;
-
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.function.ThrowingSupplier;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -38,7 +41,6 @@ import org.junitpioneer.jupiter.SetSystemProperty.SetSystemProperties;
     @SetSystemProperty(key = SystemPropertiesTest.KEY_SPACE_1, value = "value1"),
     @SetSystemProperty(key = SystemPropertiesTest.KEY_TAB_1, value = "value2") })
 class SystemPropertiesTest {
-
     static final String KEY_SPACE_1 = " ";
     static final String KEY_TAB_1 = "\t";
 
@@ -262,7 +264,7 @@ class SystemPropertiesTest {
         assertDoesNotThrow(SystemProperties::getAwtToolkit);
     }
 
-@Test
+    @Test
     void testGetBoolean() {
         final String key = RandomStringUtils.insecure().next(10);
         final String absentKey = RandomStringUtils.insecure().next(10);
@@ -272,6 +274,7 @@ class SystemPropertiesTest {
             assertEquals(Boolean.TRUE, SystemProperties.getBoolean(key, () -> false));
             assertEquals(Boolean.TRUE, SystemProperties.getBoolean(absentKey, () -> Boolean.TRUE));
             assertFalse(SystemProperties.getBoolean(absentKey, () -> false));
+            assertFalse(SystemProperties.getBoolean(absentKey, null));
         } finally {
             System.clearProperty(key);
         }
@@ -490,6 +493,7 @@ class SystemPropertiesTest {
             assertEquals(Integer.MAX_VALUE, SystemProperties.getInt(key, () -> 0));
             assertEquals(Integer.MAX_VALUE, SystemProperties.getInt(absentKey, () -> Integer.MAX_VALUE));
             assertEquals(0, SystemProperties.getInt(absentKey, () -> 0));
+            assertEquals(0, SystemProperties.getInt(absentKey, null));
         } finally {
             System.clearProperty(key);
         }
@@ -680,6 +684,7 @@ class SystemPropertiesTest {
             assertEquals(Long.MAX_VALUE, SystemProperties.getLong(key, () -> 0));
             assertEquals(Long.MAX_VALUE, SystemProperties.getLong(absentKey, () -> Long.MAX_VALUE));
             assertEquals(0, SystemProperties.getLong(absentKey, () -> 0));
+            assertEquals(0, SystemProperties.getLong(absentKey, null));
         } finally {
             System.clearProperty(key);
         }
@@ -782,8 +787,6 @@ class SystemPropertiesTest {
         assertFalse(SystemProperties.isPropertySet(StringUtils.EMPTY));
     }
 
-
-
     @Test
     void testGetLongClass() {
         final String key = RandomStringUtils.insecure().next(10);
@@ -801,7 +804,6 @@ class SystemPropertiesTest {
             System.clearProperty(keyFull);
         }
     }
-
 
     @Test
     void testGetIntClass() {
@@ -821,7 +823,6 @@ class SystemPropertiesTest {
         }
     }
 
-
     @Test
     void testGetBooleanClass() {
         final String key = RandomStringUtils.insecure().next(10);
@@ -839,4 +840,6 @@ class SystemPropertiesTest {
             System.clearProperty(keyFull);
         }
     }
+
+    private static final String SIMPLE_NAME = SystemPropertiesTest.class.getSimpleName();
 }

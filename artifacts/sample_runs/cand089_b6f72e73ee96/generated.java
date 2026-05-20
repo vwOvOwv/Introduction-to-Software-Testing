@@ -16,31 +16,31 @@
  */
 package org.apache.commons.lang3.concurrent.locks;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertNotSame;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import java.time.Duration;
+
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReadWriteLock;
 import java.util.concurrent.locks.ReentrantLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
+import java.util.concurrent.locks.StampedLock;
 import java.util.function.LongConsumer;
-
 import org.apache.commons.lang3.AbstractLangTest;
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.ThreadUtils;
 import org.apache.commons.lang3.concurrent.locks.LockingVisitors.LockVisitor;
+import org.apache.commons.lang3.concurrent.locks.LockingVisitors.ReadWriteLockVisitor;
+import org.apache.commons.lang3.concurrent.locks.LockingVisitors.ReentrantLockVisitor;
 import org.apache.commons.lang3.concurrent.locks.LockingVisitors.StampedLockVisitor;
 import org.apache.commons.lang3.function.FailableConsumer;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
-
-import java.util.concurrent.locks.StampedLock;
-import org.apache.commons.lang3.concurrent.locks.LockingVisitors.ReadWriteLockVisitor;
-import org.apache.commons.lang3.concurrent.locks.LockingVisitors.ReentrantLockVisitor;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNotSame;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import java.time.Duration;
 
 /**
  * Tests {@link LockingVisitors}.
@@ -175,7 +175,6 @@ class LockingVisitorsTest extends AbstractLangTest {
         runTest(DELAY, false, millis -> assertTrue(millis < TOTAL_DELAY.toMillis()), booleanValues, LockingVisitors.stampedLockVisitor(booleanValues));
     }
 
-
     @Test
     void testBuilderReentrantStampedLockVisitor() {
         final AtomicInteger obj = new AtomicInteger();
@@ -191,7 +190,6 @@ class LockingVisitorsTest extends AbstractLangTest {
         lockVisitor.acceptReadLocked(AtomicInteger::incrementAndGet);
         assertEquals(2, obj.get());
     }
-
 
     @ParameterizedTest
     @ValueSource(booleans = { true, false })
@@ -210,7 +208,6 @@ class LockingVisitorsTest extends AbstractLangTest {
         assertEquals(2, obj.get());
     }
 
-
     @ParameterizedTest
     @ValueSource(booleans = { true, false })
     void testBuilderReentrantLockVisitor(final boolean fair) {
@@ -227,7 +224,6 @@ class LockingVisitorsTest extends AbstractLangTest {
         lockVisitor.acceptReadLocked(AtomicInteger::incrementAndGet);
         assertEquals(2, obj.get());
     }
-
 
     @ParameterizedTest
     @ValueSource(booleans = { true, false })
@@ -246,8 +242,7 @@ class LockingVisitorsTest extends AbstractLangTest {
         assertEquals(2, obj.get());
     }
 
-
-@ParameterizedTest
+    @ParameterizedTest
     @ValueSource(booleans = { true, false })
     void testBuilderLockVisitor(final boolean fair) {
         final AtomicInteger obj = new AtomicInteger();

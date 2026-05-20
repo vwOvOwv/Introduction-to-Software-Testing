@@ -16,16 +16,16 @@
  */
 package org.apache.commons.lang3;
 
-import static org.apache.commons.lang3.LangAssertions.assertIndexOutOfBoundsException;
+
+
 import static org.apache.commons.lang3.LangAssertions.assertIllegalArgumentException;
+import static org.apache.commons.lang3.LangAssertions.assertIndexOutOfBoundsException;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
-
 import java.util.Arrays;
 import java.util.SplittableRandom;
 import java.util.UUID;
-
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
@@ -699,7 +699,7 @@ class ConversionTest extends AbstractLangTest {
     /**
      * Tests {@link Conversion#hexToByte(String, int, byte, int, int)}.
      */
-@Test
+    @Test
     void testHexToByte() {
         final String src = "CDF1F0C10F12345678";
         assertEquals((byte) 0x00, Conversion.hexToByte(src, 0, (byte) 0, 0, 0));
@@ -719,7 +719,7 @@ class ConversionTest extends AbstractLangTest {
         final String src = "CDF1F0C10F12345678";
         assertEquals(0x00000000, Conversion.hexToInt(src, 0, 0, 0, 0));
         assertEquals(0x0000000C, Conversion.hexToInt(src, 0, 0, 0, 1));
-        assertEquals(0x01C0F1DC, Conversion.hexToInt(src, 0, 0, 0, 8));
+        assertEquals(0x1C0F1FDC, Conversion.hexToInt(src, 0, 0, 0, 8));
         assertEquals(0x01C0F1FD, Conversion.hexToInt(src, 1, 0, 0, 8));
         assertEquals(0x12345679, Conversion.hexToInt(src, 0, 0x12345679, 0, 0));
         assertEquals(0x87645679, Conversion.hexToInt(src, 15, 0x12345679, 20, 3));

@@ -16,6 +16,11 @@
  */
 package org.apache.commons.lang3.reflect;
 
+
+
+import java.lang.reflect.Modifier;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 import static org.apache.commons.lang3.LangAssertions.assertNullPointerException;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -26,7 +31,6 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import java.awt.Color;
 import java.lang.reflect.Method;
 import java.lang.reflect.Type;
@@ -39,7 +43,6 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-
 import org.apache.commons.lang3.AbstractLangTest;
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.ClassUtils;
@@ -56,22 +59,19 @@ import org.apache.commons.lang3.tuple.ImmutablePair;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.lang.reflect.Modifier;
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.ValueSource;
-
 /**
  * {@link Tests MethodUtils}.
  */
 class MethodUtilsTest extends AbstractLangTest {
+
     protected abstract static class AbstractGetMatchingMethod implements InterfaceGetMatchingMethod {
         public abstract void testMethod5(Exception exception);
     }
+
     protected abstract static class AbstractGetMatchingMethod2 implements InterfaceGetMatchingMethod {
         @Override
         public void testMethod6() { }
     }
-
     interface ChildInterface {
     }
 
@@ -120,14 +120,15 @@ class MethodUtilsTest extends AbstractLangTest {
         public void testMethod4(final Long aLong, final Long anotherLong) {
         }
     }
+
     private static final class GetMatchingMethodImpl extends AbstractGetMatchingMethod {
         @Override
         public void testMethod5(final Exception exception) {
         }
     }
-
     public static class GrandParentObject {
     }
+
     public static class InheritanceBean {
         public void testOne(final GrandParentObject obj) {
         }
@@ -147,7 +148,6 @@ class MethodUtilsTest extends AbstractLangTest {
         public void testTwo(final Object obj) {
         }
     }
-
     interface InterfaceGetMatchingMethod {
         default void testMethod6() {
         }
@@ -413,7 +413,7 @@ class MethodUtilsTest extends AbstractLangTest {
         }
     }
 
-    private static final class TestMutable implements Mutable<Object> {
+    private static class TestMutable implements Mutable<Object> {
         @Override
         public Object getValue() {
             return null;
@@ -470,7 +470,7 @@ class MethodUtilsTest extends AbstractLangTest {
         distanceMethod.setAccessible(false);
     }
 
-@ParameterizedTest
+    @ParameterizedTest
     @ValueSource(classes = {TestMutable.class, TestMutableSubclass.class})
     void testGetAccessibleInterfaceMethod(final Class<?> clazz) throws Exception {
         final Class<?>[][] p = {ArrayUtils.EMPTY_CLASS_ARRAY, null};
@@ -1090,18 +1090,13 @@ class MethodUtilsTest extends AbstractLangTest {
     }
 
 
-    static class TestBeanSubclass extends TestBean {
+
+    private static final class TestMutableSubclass extends TestMutable {
+
     }
 
 
-    private static class TestMutable implements Mutable<Object> {
-        @Override
-        public Object getValue() {
-            return null;
-        }
 
-        @Override
-        public void setValue(final Object value) {
-        }
+    static class TestBeanSubclass extends TestBean {
     }
 }

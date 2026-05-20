@@ -1,42 +1,53 @@
 {
-  "timestamp": "2026-05-16T11:32:02.889425+00:00",
-  "repo": "D:\\软件测试导论\\final_homework\\commons-lang",
-  "ref": "a01471c196dba90dc1c4cb83ad3aab9f5cf07698",
-  "target_test_path": "src/test/java/org/apache/commons/lang3/SerializationUtilsTest.java",
-  "replacement_test_file": "D:\\软件测试导论\\final_homework\\Introduction-to-Software-Testing\\artifacts\\sample_runs\\cand083_a01471c196db\\generated.java",
-  "test_selector": "SerializationUtilsTest",
-  "maven_args": [
-    "-q"
-  ],
-  "discard_all_tracked_changes": false,
-  "checkout": {
-    "command": [
-      "git",
-      "checkout",
-      "--detach",
-      "a01471c196dba90dc1c4cb83ad3aab9f5cf07698"
-    ],
-    "cwd": "D:\\软件测试导论\\final_homework\\commons-lang",
-    "returncode": 0,
-    "stdout": "",
-    "stderr": "Previous HEAD position was 9d6a4be2f LocaleUtils.availableLocaleSet() uses predictable iteration order\nHEAD is now at a01471c19 [LANG-1759] SerializationUtils.clone(Object) throws ClassCastException when called with a Serializable lambda\n"
-  },
-  "maven": {
-    "command": [
-      "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
-      "-q",
-      "-Dtest=SerializationUtilsTest",
-      "test"
-    ],
-    "cwd": "D:\\软件测试导论\\final_homework\\commons-lang",
-    "returncode": 1,
-    "stdout": "[ERROR] COMPILATION ERROR : \n[ERROR] /D:/�������Ե���/final_homework/commons-lang/src/test/java/org/apache/commons/lang3/SerializationUtilsTest.java:[379,11] �Ҳ�������\n  ����:   �� SerializableSupplier\n  λ��: �� org.apache.commons.lang3.SerializationUtilsTest\n[ERROR] /D:/�������Ե���/final_homework/commons-lang/src/test/java/org/apache/commons/lang3/SerializationUtilsTest.java:[381,11] �Ҳ�������\n  ����:   �� SerializableSupplier\n  λ��: �� org.apache.commons.lang3.SerializationUtilsTest\n[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.13.0:testCompile (default-testCompile) on project commons-lang3: Compilation failure: Compilation failure: \n[ERROR] /D:/�������Ե���/final_homework/commons-lang/src/test/java/org/apache/commons/lang3/SerializationUtilsTest.java:[379,11] �Ҳ�������\n[ERROR]   ����:   �� SerializableSupplier\n[ERROR]   λ��: �� org.apache.commons.lang3.SerializationUtilsTest\n[ERROR] /D:/�������Ե���/final_homework/commons-lang/src/test/java/org/apache/commons/lang3/SerializationUtilsTest.java:[381,11] �Ҳ�������\n[ERROR]   ����:   �� SerializableSupplier\n[ERROR]   λ��: �� org.apache.commons.lang3.SerializationUtilsTest\n[ERROR] -> [Help 1]\n[ERROR] \n[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.\n[ERROR] Re-run Maven using the -X switch to enable full debug logging.\n[ERROR] \n[ERROR] For more information about the errors and possible solutions, please read the following articles:\n[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException\n",
-    "stderr": ""
-  },
-  "restore": [
+  "command_history": [
     {
+      "name": "checkout",
+      "cwd": "./.",
+      "env": {
+        "JAVA_HOME": "/usr/lib/jvm/java-21-openjdk",
+        "PATH": "/usr/lib/jvm/java-21-openjdk/bin:/usr/local/bin:/usr/bin:/bin",
+        "PWD": "./."
+      },
       "command": [
-        "git",
+        "/usr/bin/git",
+        "worktree",
+        "add",
+        "--detach",
+        "${tmp}/run-SerializationUtilsTest-pfntpknf",
+        "a01471c196dba90dc1c4cb83ad3aab9f5cf07698"
+      ],
+      "returncode": 0,
+      "stdout": "HEAD is now at a01471c19 [LANG-1759] SerializationUtils.clone(Object) throws ClassCastException when called with a Serializable lambda\n",
+      "stderr": "Preparing worktree (detached HEAD a01471c19)\n"
+    },
+    {
+      "name": "maven",
+      "cwd": "${tmp}/run-SerializationUtilsTest-pfntpknf",
+      "env": {
+        "JAVA_HOME": "/usr/lib/jvm/java-21-openjdk",
+        "PATH": "/usr/lib/jvm/java-21-openjdk/bin:/usr/local/bin:/usr/bin:/bin",
+        "PWD": "${tmp}/run-SerializationUtilsTest-pfntpknf"
+      },
+      "command": [
+        "/usr/bin/mvn",
+        "-q",
+        "-Dtest=SerializationUtilsTest",
+        "test"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "name": "restore",
+      "cwd": "${tmp}/run-SerializationUtilsTest-pfntpknf",
+      "env": {
+        "JAVA_HOME": "/usr/lib/jvm/java-21-openjdk",
+        "PATH": "/usr/lib/jvm/java-21-openjdk/bin:/usr/local/bin:/usr/bin:/bin",
+        "PWD": "${tmp}/run-SerializationUtilsTest-pfntpknf"
+      },
+      "command": [
+        "/usr/bin/git",
         "restore",
         "--source=HEAD",
         "--staged",
@@ -44,12 +55,28 @@
         "--",
         "src/test/java/org/apache/commons/lang3/SerializationUtilsTest.java"
       ],
-      "cwd": "D:\\软件测试导论\\final_homework\\commons-lang",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "name": "worktree_remove",
+      "cwd": "./.",
+      "env": {
+        "JAVA_HOME": "/usr/lib/jvm/java-21-openjdk",
+        "PATH": "/usr/lib/jvm/java-21-openjdk/bin:/usr/local/bin:/usr/bin:/bin",
+        "PWD": "./."
+      },
+      "command": [
+        "/usr/bin/git",
+        "worktree",
+        "remove",
+        "--force",
+        "${tmp}/run-SerializationUtilsTest-pfntpknf"
+      ],
       "returncode": 0,
       "stdout": "",
       "stderr": ""
     }
-  ],
-  "failure_message": null,
-  "maven_command_shell": "'D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD' -q -Dtest=SerializationUtilsTest test"
+  ]
 }

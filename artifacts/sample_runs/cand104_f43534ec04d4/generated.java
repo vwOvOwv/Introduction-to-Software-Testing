@@ -16,15 +16,15 @@
  */
 package org.apache.commons.lang3;
 
+
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
+import java.util.regex.Pattern;
+import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-
-import java.util.regex.Pattern;
 import java.util.regex.PatternSyntaxException;
-
-import org.junit.jupiter.api.Test;
 
 /**
  * Tests {@link RegExUtils}.
@@ -158,31 +158,6 @@ public class RegExUtilsTest extends AbstractLangTest {
         assertEquals("ABC123", RegExUtils.removePattern("ABCabc123", "[a-z]"));
     }
 
-    @Test
-    public void testReplaceAll_StringPatternString() {
-        assertNull(RegExUtils.replaceAll(null, Pattern.compile(""), ""));
-
-        assertEquals("any", RegExUtils.replaceAll("any", (Pattern) null, ""));
-        assertEquals("any", RegExUtils.replaceAll("any", Pattern.compile(""), null));
-
-        assertEquals("zzz", RegExUtils.replaceAll("", Pattern.compile(""), "zzz"));
-        assertEquals("zzz", RegExUtils.replaceAll("", Pattern.compile(".*"), "zzz"));
-        assertEquals("", RegExUtils.replaceAll("", Pattern.compile(".+"), "zzz"));
-        assertEquals("ZZaZZbZZcZZ", RegExUtils.replaceAll("abc", Pattern.compile(""), "ZZ"));
-
-        assertEquals("z\nz", RegExUtils.replaceAll("<__>\n<__>", Pattern.compile("<.*>"), "z"));
-        assertEquals("z", RegExUtils.replaceAll("<__>\n<__>", Pattern.compile("(?s)<.*>"), "z"));
-
-        assertEquals("z", RegExUtils.replaceAll("<__>\n<__>", Pattern.compile("<.*>", Pattern.DOTALL), "z"));
-        assertEquals("z", RegExUtils.replaceAll("<__>\\n<__>", Pattern.compile("<.*>"), "z"));
-        assertEquals("X", RegExUtils.replaceAll("<A>\nxy\n</A>", Pattern.compile("<A>.*</A>", Pattern.DOTALL), "X"));
-
-        assertEquals("ABC___123", RegExUtils.replaceAll("ABCabc123", Pattern.compile("[a-z]"), "_"));
-        assertEquals("ABC_123", RegExUtils.replaceAll("ABCabc123", Pattern.compile("[^A-Z0-9]+"), "_"));
-        assertEquals("ABC123", RegExUtils.replaceAll("ABCabc123", Pattern.compile("[^A-Z0-9]+"), ""));
-        assertEquals("Lorem_ipsum_dolor_sit",
-                RegExUtils.replaceAll("Lorem ipsum  dolor   sit", Pattern.compile("( +)([a-z]+)"), "_$2"));
-    }
 
     @Test
     public void testReplaceAll_StringStringString() {
@@ -299,8 +274,6 @@ public class RegExUtilsTest extends AbstractLangTest {
         assertEquals("Lorem_ipsum_dolor_sit", RegExUtils.replacePattern("Lorem ipsum  dolor   sit", "( +)([a-z]+)", "_$2"));
     }
 
-
-
     @Test
     public void testReplaceAllDeprecated() {
         assertNull(RegExUtils.replaceAll(null, Pattern.compile(""), ""));
@@ -326,8 +299,7 @@ public class RegExUtilsTest extends AbstractLangTest {
         assertEquals("Lorem_ipsum_dolor_sit", RegExUtils.replaceAll("Lorem ipsum  dolor   sit", Pattern.compile("( +)([a-z]+)"), "_$2"));
     }
 
-
-@Test
+    @Test
     public void testReplaceAll() {
         assertNull(RegExUtils.replaceAll((CharSequence) null, Pattern.compile(""), ""));
 

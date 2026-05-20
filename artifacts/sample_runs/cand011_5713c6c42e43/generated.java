@@ -16,6 +16,8 @@
  */
 package org.apache.commons.lang3;
 
+
+
 import static org.apache.commons.lang3.LangAssertions.assertIllegalArgumentException;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -27,7 +29,6 @@ import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
-
 import java.io.Serializable;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
@@ -42,7 +43,6 @@ import java.util.Objects;
 import java.util.Set;
 import java.util.TreeMap;
 import java.util.function.Function;
-
 import org.apache.commons.lang3.ClassUtils.Interfaces;
 import org.apache.commons.lang3.reflect.testbed.GenericConsumer;
 import org.apache.commons.lang3.reflect.testbed.GenericParent;
@@ -1197,40 +1197,40 @@ class ClassUtilsTest extends AbstractLangTest {
         assertFalse(Modifier.isFinal(ClassUtils.class.getModifiers()));
     }
 
-@ParameterizedTest
-@IntRangeSource(from = 1, to = 255)
-void testGetClassArray(final int dimensions) throws ClassNotFoundException {
-    assertEquals(dimensions,
-            getDimension(ClassUtils.getClass("org.apache.commons.lang3.ClassUtilsTest$Inner.DeeplyNested" + StringUtils.repeat("[]", dimensions))));
-    assertEquals(dimensions, getDimension(ClassUtils.getClass("java.lang.String" + StringUtils.repeat("[]", dimensions))));
-}
+    @ParameterizedTest
+    @IntRangeSource(from = 1, to = 255)
+    void testGetClassArray(final int dimensions) throws ClassNotFoundException {
+        assertEquals(dimensions,
+                getDimension(ClassUtils.getClass("org.apache.commons.lang3.ClassUtilsTest$Inner.DeeplyNested" + StringUtils.repeat("[]", dimensions))));
+        assertEquals(dimensions, getDimension(ClassUtils.getClass("java.lang.String" + StringUtils.repeat("[]", dimensions))));
+    }
 
-@ParameterizedTest
-@IntRangeSource(from = 256, to = 300)
-void testGetClassArrayIllegal(final int dimensions) throws ClassNotFoundException {
-    assertThrows(IllegalArgumentException.class, () -> assertEquals(dimensions,
-            getDimension(ClassUtils.getClass("org.apache.commons.lang3.ClassUtilsTest$Inner.DeeplyNested" + StringUtils.repeat("[]", dimensions)))));
-    assertThrows(IllegalArgumentException.class,
-            () -> assertEquals(dimensions, getDimension(ClassUtils.getClass("java.lang.String" + StringUtils.repeat("[]", dimensions)))));
-}
+    @ParameterizedTest
+    @IntRangeSource(from = 256, to = 300)
+    void testGetClassArrayIllegal(final int dimensions) throws ClassNotFoundException {
+        assertThrows(IllegalArgumentException.class, () -> assertEquals(dimensions,
+                getDimension(ClassUtils.getClass("org.apache.commons.lang3.ClassUtilsTest$Inner.DeeplyNested" + StringUtils.repeat("[]", dimensions)))));
+        assertThrows(IllegalArgumentException.class,
+                () -> assertEquals(dimensions, getDimension(ClassUtils.getClass("java.lang.String" + StringUtils.repeat("[]", dimensions)))));
+    }
 
-@Test
-void testGetClassByNormalNameArrays() throws ClassNotFoundException {
-    assertEquals(int[].class, ClassUtils.getClass("int[]"));
-    assertEquals(long[].class, ClassUtils.getClass("long[]"));
-    assertEquals(short[].class, ClassUtils.getClass("short[]"));
-    assertEquals(byte[].class, ClassUtils.getClass("byte[]"));
-    assertEquals(char[].class, ClassUtils.getClass("char[]"));
-    assertEquals(float[].class, ClassUtils.getClass("float[]"));
-    assertEquals(double[].class, ClassUtils.getClass("double[]"));
-    assertEquals(boolean[].class, ClassUtils.getClass("boolean[]"));
-    assertEquals(String[].class, ClassUtils.getClass("java.lang.String[]"));
-    assertEquals(java.util.Map.Entry[].class, ClassUtils.getClass("java.util.Map.Entry[]"));
-    assertEquals(java.util.Map.Entry[].class, ClassUtils.getClass("java.util.Map$Entry[]"));
-    assertEquals(java.util.Map.Entry[].class, ClassUtils.getClass("[Ljava.util.Map.Entry;"));
-    assertEquals(java.util.Map.Entry[].class, ClassUtils.getClass("[Ljava.util.Map$Entry;"));
-    assertEquals(java.util.Map.Entry[][].class, ClassUtils.getClass("[[Ljava.util.Map$Entry;"));
-}
+    @Test
+    void testGetClassByNormalNameArrays() throws ClassNotFoundException {
+        assertEquals(int[].class, ClassUtils.getClass("int[]"));
+        assertEquals(long[].class, ClassUtils.getClass("long[]"));
+        assertEquals(short[].class, ClassUtils.getClass("short[]"));
+        assertEquals(byte[].class, ClassUtils.getClass("byte[]"));
+        assertEquals(char[].class, ClassUtils.getClass("char[]"));
+        assertEquals(float[].class, ClassUtils.getClass("float[]"));
+        assertEquals(double[].class, ClassUtils.getClass("double[]"));
+        assertEquals(boolean[].class, ClassUtils.getClass("boolean[]"));
+        assertEquals(String[].class, ClassUtils.getClass("java.lang.String[]"));
+        assertEquals(java.util.Map.Entry[].class, ClassUtils.getClass("java.util.Map.Entry[]"));
+        assertEquals(java.util.Map.Entry[].class, ClassUtils.getClass("java.util.Map$Entry[]"));
+        assertEquals(java.util.Map.Entry[].class, ClassUtils.getClass("[Ljava.util.Map.Entry;"));
+        assertEquals(java.util.Map.Entry[].class, ClassUtils.getClass("[Ljava.util.Map$Entry;"));
+        assertEquals(java.util.Map.Entry[][].class, ClassUtils.getClass("[[Ljava.util.Map$Entry;"));
+    }
 
     @Test
     void testGetClassByNormalNameArrays2D() throws ClassNotFoundException {
@@ -1564,25 +1564,25 @@ void testGetClassByNormalNameArrays() throws ClassNotFoundException {
         assertNull(ClassUtils.wrapperToPrimitive(null), "Wrong result for null class");
     }
 
+    @Test
+    void testGetClassLongestCheck() throws ClassNotFoundException {
+        final String maxClassName = StringUtils.repeat("a", 65535);
+        final String maxDimensions = StringUtils.repeat("[]", MAX_ARRAY_DIMENSIONS);
+        final String maxOpens = StringUtils.repeat("[", MAX_ARRAY_DIMENSIONS);
+        assertThrows(ClassNotFoundException.class, () -> ClassUtils.getClass(maxClassName));
+        assertNotNull(ClassUtils.getClass("java.lang.String" + maxDimensions));
+        assertThrows(ClassNotFoundException.class, () -> ClassUtils.getClass(maxClassName + maxDimensions));
+        assertThrows(ClassNotFoundException.class, () -> ClassUtils.getClass(maxOpens + "L" + maxClassName + ";"));
+        // maxOpens + 1
+        assertThrows(IllegalArgumentException.class, () -> ClassUtils.getClass(maxOpens + "[L" + maxClassName + ";"));
+    }
 
-@Test
-void testGetClassLongestCheck() throws ClassNotFoundException {
-    final String maxClassName = StringUtils.repeat("a", 65535);
-    final String maxDimensions = StringUtils.repeat("[]", MAX_ARRAY_DIMENSIONS);
-    final String maxOpens = StringUtils.repeat("[", MAX_ARRAY_DIMENSIONS);
-    assertThrows(ClassNotFoundException.class, () -> ClassUtils.getClass(maxClassName));
-    assertNotNull(ClassUtils.getClass("java.lang.String" + maxDimensions));
-    assertThrows(ClassNotFoundException.class, () -> ClassUtils.getClass(maxClassName + maxDimensions));
-    assertThrows(ClassNotFoundException.class, () -> ClassUtils.getClass(maxOpens + "L" + maxClassName + ";"));
-    // maxOpens + 1
-    assertThrows(IllegalArgumentException.class, () -> ClassUtils.getClass(maxOpens + "[L" + maxClassName + ";"));
-}
+    @ParameterizedTest
+    @IntRangeSource(from = 65536, to = 65555)
+    void testGetClassLengthIllegal(final int classNameLength) throws ClassNotFoundException {
+        assertThrows(IllegalArgumentException.class, () -> ClassUtils.getClass(StringUtils.repeat("a", classNameLength)));
+        assertThrows(IllegalArgumentException.class, () -> assertEquals(classNameLength, ClassUtils.getClass(StringUtils.repeat("a.", classNameLength / 2))));
+    }
 
-
-@ParameterizedTest
-@IntRangeSource(from = 65536, to = 65555)
-void testGetClassLengthIllegal(final int classNameLength) throws ClassNotFoundException {
-    assertThrows(IllegalArgumentException.class, () -> ClassUtils.getClass(StringUtils.repeat("a", classNameLength)));
-    assertThrows(IllegalArgumentException.class, () -> assertEquals(classNameLength, ClassUtils.getClass(StringUtils.repeat("a.", classNameLength / 2))));
-}
+    private static final int MAX_ARRAY_DIMENSIONS = 255;
 }
