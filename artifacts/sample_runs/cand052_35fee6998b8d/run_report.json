@@ -1,0 +1,55 @@
+{
+  "timestamp": "2026-05-16T11:20:17.240658+00:00",
+  "repo": "D:\\软件测试导论\\final_homework\\commons-lang",
+  "ref": "35fee6998b8d92c047f6db82fde825810fc26f4a",
+  "target_test_path": "src/test/java/org/apache/commons/lang3/concurrent/BasicThreadFactoryTest.java",
+  "replacement_test_file": "D:\\软件测试导论\\final_homework\\Introduction-to-Software-Testing\\artifacts\\sample_runs\\cand052_35fee6998b8d\\generated.java",
+  "test_selector": "BasicThreadFactoryTest",
+  "maven_args": [
+    "-q"
+  ],
+  "discard_all_tracked_changes": false,
+  "checkout": {
+    "command": [
+      "git",
+      "checkout",
+      "--detach",
+      "35fee6998b8d92c047f6db82fde825810fc26f4a"
+    ],
+    "cwd": "D:\\软件测试导论\\final_homework\\commons-lang",
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "Previous HEAD position was 35f35e9e1 Add DurationUtils.get(String, TemporalUnit, long)\nHEAD is now at 35fee6998 Add BasicThreadFactory.builder() and deprecate BasicThreadFactory.Builder()\n"
+  },
+  "maven": {
+    "command": [
+      "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+      "-q",
+      "-Dtest=BasicThreadFactoryTest",
+      "test"
+    ],
+    "cwd": "D:\\软件测试导论\\final_homework\\commons-lang",
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "restore": [
+    {
+      "command": [
+        "git",
+        "restore",
+        "--source=HEAD",
+        "--staged",
+        "--worktree",
+        "--",
+        "src/test/java/org/apache/commons/lang3/concurrent/BasicThreadFactoryTest.java"
+      ],
+      "cwd": "D:\\软件测试导论\\final_homework\\commons-lang",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "failure_message": null,
+  "maven_command_shell": "'D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD' -q -Dtest=BasicThreadFactoryTest test"
+}

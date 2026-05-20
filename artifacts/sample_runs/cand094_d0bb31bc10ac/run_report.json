@@ -1,0 +1,55 @@
+{
+  "timestamp": "2026-05-16T11:38:23.430784+00:00",
+  "repo": "D:\\软件测试导论\\final_homework\\commons-lang",
+  "ref": "d0bb31bc10ac0e16f47840550860ca26f01c5595",
+  "target_test_path": "src/test/java/org/apache/commons/lang3/SystemUtilsTest.java",
+  "replacement_test_file": "D:\\软件测试导论\\final_homework\\Introduction-to-Software-Testing\\artifacts\\sample_runs\\cand094_d0bb31bc10ac\\generated.java",
+  "test_selector": "SystemUtilsTest",
+  "maven_args": [
+    "-q"
+  ],
+  "discard_all_tracked_changes": false,
+  "checkout": {
+    "command": [
+      "git",
+      "checkout",
+      "--detach",
+      "d0bb31bc10ac0e16f47840550860ca26f01c5595"
+    ],
+    "cwd": "D:\\软件测试导论\\final_homework\\commons-lang",
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "Previous HEAD position was cd87ec61b [LANG-1789] NullPointerException when generating NoSuchMethodException in MethodUtils\nHEAD is now at d0bb31bc1 Add SystemUtils.IS_OS_ANDROID\n"
+  },
+  "maven": {
+    "command": [
+      "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+      "-q",
+      "-Dtest=SystemUtilsTest",
+      "test"
+    ],
+    "cwd": "D:\\软件测试导论\\final_homework\\commons-lang",
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "restore": [
+    {
+      "command": [
+        "git",
+        "restore",
+        "--source=HEAD",
+        "--staged",
+        "--worktree",
+        "--",
+        "src/test/java/org/apache/commons/lang3/SystemUtilsTest.java"
+      ],
+      "cwd": "D:\\软件测试导论\\final_homework\\commons-lang",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "failure_message": null,
+  "maven_command_shell": "'D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD' -q -Dtest=SystemUtilsTest test"
+}

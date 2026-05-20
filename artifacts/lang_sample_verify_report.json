@@ -1,0 +1,3931 @@
+{
+  "repo": "D:\\软件测试导论\\final_homework\\commons-lang",
+  "input": "D:\\软件测试导论\\final_homework\\Introduction-to-Software-Testing\\artifacts\\lang_sample_candidates_filtered.json",
+  "updated_at": "2026-05-16T08:47:50.472316+00:00",
+  "timeout_sec": 600,
+  "results": {
+    "5914a8e80a547301b76bf8ef691053e4dfc901a7": {
+      "b": "5914a8e80a547301b76bf8ef691053e4dfc901a7",
+      "a": "58ba515e4b083f658ef2087df36284a9cd539b31",
+      "subject": "TimedSemaphore.shutdown() must wake threads blocked in acquire(). (#1639)",
+      "pr_hint": 1639,
+      "primary_main": "src/main/java/org/apache/commons/lang3/concurrent/TimedSemaphore.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/concurrent/TimedSemaphoreTest.java",
+      "test_selector": "TimedSemaphoreTest",
+      "verified_at": "2026-05-16T08:02:03.300742+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was 864dd6ea8 NaN bypass in primitive double range validators. (#1640)\nHEAD is now at 5914a8e80 TimedSemaphore.shutdown() must wake threads blocked in acquire(). (#1639)\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=TimedSemaphoreTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 18.66,
+      "status": "pass"
+    },
+    "07914b39281e4be500d430b2c25e85499748788f": {
+      "b": "07914b39281e4be500d430b2c25e85499748788f",
+      "a": "1a3a12dc7388a177c4ae64f5e3c96a7d462c003d",
+      "subject": "[LANG-1784] Add Failable methods for null-safe mapping and chaining #1435",
+      "pr_hint": 1435,
+      "primary_main": "src/main/java/org/apache/commons/lang3/function/Failable.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/function/FailableTest.java",
+      "test_selector": "FailableTest",
+      "verified_at": "2026-05-16T08:02:57.713862+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was 864dd6ea8 NaN bypass in primitive double range validators. (#1640)\nHEAD is now at 07914b392 [LANG-1784] Add Failable methods for null-safe mapping and chaining #1435\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=FailableTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 47.25,
+      "status": "pass"
+    },
+    "127050d2b54bd6224bc53573228e8774dc7be28b": {
+      "b": "127050d2b54bd6224bc53573228e8774dc7be28b",
+      "a": "f57155b008025e55b7e45b6b34cafa203b0729c4",
+      "subject": "NumberUtils.isCreatable(String) should match NumberUtils.createNumber(String), exactly (#1626)",
+      "pr_hint": 1626,
+      "primary_main": "src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/math/NumberUtilsTest.java",
+      "test_selector": "NumberUtilsTest",
+      "verified_at": "2026-05-16T08:03:44.965107+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was 07914b392 [LANG-1784] Add Failable methods for null-safe mapping and chaining #1435\nHEAD is now at 127050d2b NumberUtils.isCreatable(String) should match NumberUtils.createNumber(String), exactly (#1626)\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=NumberUtilsTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 21.28,
+      "status": "pass"
+    },
+    "1418a770ba436d15693c3bb29a67e501c2008274": {
+      "b": "1418a770ba436d15693c3bb29a67e501c2008274",
+      "a": "3f803b8bf78602c9464b2d01023634e32df1c388",
+      "subject": "[LANG-1452] RecursiveToStringStyle and MultilineRecursiveToStringStyle shouldn't recurse into a java.math.BigDecimal (#1584)",
+      "pr_hint": 1584,
+      "primary_main": "src/main/java/org/apache/commons/lang3/builder/RecursiveToStringStyle.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/builder/RecursiveToStringStyleTest.java",
+      "test_selector": "RecursiveToStringStyleTest",
+      "verified_at": "2026-05-16T08:04:06.252343+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was 127050d2b NumberUtils.isCreatable(String) should match NumberUtils.createNumber(String), exactly (#1626)\nHEAD is now at 1418a770b [LANG-1452] RecursiveToStringStyle and MultilineRecursiveToStringStyle shouldn't recurse into a java.math.BigDecimal (#1584)\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=RecursiveToStringStyleTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 34.58,
+      "status": "pass"
+    },
+    "1521bf3e9f3e2f944fc2331b0ac19c9f5f0fde6d": {
+      "b": "1521bf3e9f3e2f944fc2331b0ac19c9f5f0fde6d",
+      "a": "5e1f169cee3d19f83d9885eec0b4a0f4cd186ca5",
+      "subject": "Instead of throwing a NullPointerException, ArrayUtils.toStringArray(Object[]) should return \"null\" for null elements like ArrayUtils.toStringArray(Object[], String) returns its valueForNullElements.",
+      "pr_hint": null,
+      "primary_main": "src/main/java/org/apache/commons/lang3/ArrayUtils.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/ArrayUtilsTest.java",
+      "test_selector": "ArrayUtilsTest",
+      "verified_at": "2026-05-16T08:05:11.748988+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was 864dd6ea8 NaN bypass in primitive double range validators. (#1640)\nHEAD is now at 1521bf3e9 Instead of throwing a NullPointerException, ArrayUtils.toStringArray(Object[]) should return \"null\" for null elements like ArrayUtils.toStringArray(Object[], String) returns its valueForNullElements.\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=ArrayUtilsTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 35.11,
+      "status": "pass"
+    },
+    "1a3a12dc7388a177c4ae64f5e3c96a7d462c003d": {
+      "b": "1a3a12dc7388a177c4ae64f5e3c96a7d462c003d",
+      "a": "13b9bd612a29ea756f0c7f3cc0b4f900be50e54f",
+      "subject": "[LANG-1784] Add Functions methods for null-safe mapping and chaining #1435",
+      "pr_hint": 1435,
+      "primary_main": "src/main/java/org/apache/commons/lang3/function/Functions.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/function/FunctionsTest.java",
+      "test_selector": "FunctionsTest",
+      "verified_at": "2026-05-16T08:05:46.858732+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was 1521bf3e9 Instead of throwing a NullPointerException, ArrayUtils.toStringArray(Object[]) should return \"null\" for null elements like ArrayUtils.toStringArray(Object[], String) returns its valueForNullElements.\nHEAD is now at 1a3a12dc7 [LANG-1784] Add Functions methods for null-safe mapping and chaining #1435\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=FunctionsTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 13.85,
+      "status": "pass"
+    },
+    "1e455838963a99f7e76e334850c00293262f9573": {
+      "b": "1e455838963a99f7e76e334850c00293262f9573",
+      "a": "3abb3a25509bcf0a6e631e2b7bef1a8f30b299c6",
+      "subject": "LANG-1778 fix by reversing order (#1414)",
+      "pr_hint": 1414,
+      "primary_main": "src/main/java/org/apache/commons/lang3/reflect/MethodUtils.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+      "test_selector": "MethodUtilsTest",
+      "verified_at": "2026-05-16T08:06:00.708551+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was 1a3a12dc7 [LANG-1784] Add Functions methods for null-safe mapping and chaining #1435\nHEAD is now at 1e4558389 LANG-1778 fix by reversing order (#1414)\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=MethodUtilsTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 20.16,
+      "status": "pass"
+    },
+    "26ead6134ad55bf1350e41f05f4d0cbe6d0be4be": {
+      "b": "26ead6134ad55bf1350e41f05f4d0cbe6d0be4be",
+      "a": "87538ebd4de1d3f81aa8cec8af0ace1da1b23f60",
+      "subject": "[LANG-1814] ArrayUtils.subarray(..) may overflow index arithmetic and violate contract for extreme index values #1585",
+      "pr_hint": 1585,
+      "primary_main": "src/main/java/org/apache/commons/lang3/ArrayUtils.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/ArrayUtilsTest.java",
+      "test_selector": "ArrayUtilsTest",
+      "verified_at": "2026-05-16T08:06:20.878225+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was 1e4558389 LANG-1778 fix by reversing order (#1414)\nHEAD is now at 26ead6134 [LANG-1814] ArrayUtils.subarray(..) may overflow index arithmetic and violate contract for extreme index values #1585\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=ArrayUtilsTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 17.21,
+      "status": "pass"
+    },
+    "313d877d57abefdbb1ad0c42781bf719b83d5a35": {
+      "b": "313d877d57abefdbb1ad0c42781bf719b83d5a35",
+      "a": "e63927afd575ba22f41a1d5b23b2d85745e82d24",
+      "subject": "Two fixes in RandomStringUtils.random(int, int, int, boolean, boolean, (#1638)",
+      "pr_hint": 1638,
+      "primary_main": "src/main/java/org/apache/commons/lang3/RandomStringUtils.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/RandomStringUtilsTest.java",
+      "test_selector": "RandomStringUtilsTest",
+      "verified_at": "2026-05-16T08:06:38.084274+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was 26ead6134 [LANG-1814] ArrayUtils.subarray(..) may overflow index arithmetic and violate contract for extreme index values #1585\nHEAD is now at 313d877d5 Two fixes in RandomStringUtils.random(int, int, int, boolean, boolean, (#1638)\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=RandomStringUtilsTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 15.77,
+      "status": "pass"
+    },
+    "3df7f4440e7447bc55e95400ec511323e708c652": {
+      "b": "3df7f4440e7447bc55e95400ec511323e708c652",
+      "a": "0745c26dac9ac76086f10c302d252a71bf4a68c5",
+      "subject": "[LANG-1823] LocaleUtils.toLocale cannot parse valid JDK Locale string containing '#'  (#1630)",
+      "pr_hint": 1630,
+      "primary_main": "src/main/java/org/apache/commons/lang3/LocaleUtils.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/LocaleUtilsTest.java",
+      "test_selector": "LocaleUtilsTest",
+      "verified_at": "2026-05-16T08:06:53.845030+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was 313d877d5 Two fixes in RandomStringUtils.random(int, int, int, boolean, boolean, (#1638)\nHEAD is now at 3df7f4440 [LANG-1823] LocaleUtils.toLocale cannot parse valid JDK Locale string containing '#'  (#1630)\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=LocaleUtilsTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 17.47,
+      "status": "pass"
+    },
+    "52c06bea2f2b6c277c517dc9f5bb0d62d17e073c": {
+      "b": "52c06bea2f2b6c277c517dc9f5bb0d62d17e073c",
+      "a": "9bca5d09c6d16a5524a3cd1d38305687ad7fdca4",
+      "subject": "fix LANG-1816 (#1589)",
+      "pr_hint": 1589,
+      "primary_main": "src/main/java/org/apache/commons/lang3/ArrayUtils.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/ArrayUtilsTest.java",
+      "test_selector": "ArrayUtilsTest",
+      "verified_at": "2026-05-16T08:07:11.317332+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was 3df7f4440 [LANG-1823] LocaleUtils.toLocale cannot parse valid JDK Locale string containing '#'  (#1630)\nHEAD is now at 52c06bea2 fix LANG-1816 (#1589)\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=ArrayUtilsTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 18.04,
+      "status": "pass"
+    },
+    "5713c6c42e43977df17a7a6c0d39a8ff4f4540b6": {
+      "b": "5713c6c42e43977df17a7a6c0d39a8ff4f4540b6",
+      "a": "f8a6bf9500f655c0f772313e8d0098984420299b",
+      "subject": "Bugfix/class utils to canonical name length check (#1495)",
+      "pr_hint": 1495,
+      "primary_main": "src/main/java/org/apache/commons/lang3/ClassUtils.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/ClassUtilsTest.java",
+      "test_selector": "ClassUtilsTest",
+      "verified_at": "2026-05-16T08:07:29.351491+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was 52c06bea2 fix LANG-1816 (#1589)\nHEAD is now at 5713c6c42 Bugfix/class utils to canonical name length check (#1495)\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=ClassUtilsTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 18.46,
+      "status": "pass"
+    },
+    "5904c573ffacaa5d8836ffc2b346f400c8901ed1": {
+      "b": "5904c573ffacaa5d8836ffc2b346f400c8901ed1",
+      "a": "1dd7cb14c233140a8e76ba5441b6360a239a98dc",
+      "subject": "NumberUtils.createNumber(String): Float shortcut can bypass exact (#1635)",
+      "pr_hint": 1635,
+      "primary_main": "src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/math/NumberUtilsTest.java",
+      "test_selector": "NumberUtilsTest",
+      "verified_at": "2026-05-16T08:07:47.823144+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was 5713c6c42 Bugfix/class utils to canonical name length check (#1495)\nHEAD is now at 5904c573f NumberUtils.createNumber(String): Float shortcut can bypass exact (#1635)\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=NumberUtilsTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 16.63,
+      "status": "pass"
+    },
+    "61c2d8f849315e249ddcd0cf8b868595974fc644": {
+      "b": "61c2d8f849315e249ddcd0cf8b868595974fc644",
+      "a": "7b3c1cc627bb62a40499c9d50519c4b2616ae1b5",
+      "subject": "[LANG-1774] Improve handling of ClassUtils.getShortCanonicalName for invalid input data (#1437)",
+      "pr_hint": 1437,
+      "primary_main": "src/main/java/org/apache/commons/lang3/ClassUtils.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/ClassUtilsTest.java",
+      "test_selector": "ClassUtilsTest",
+      "verified_at": "2026-05-16T08:08:04.455289+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was 5904c573f NumberUtils.createNumber(String): Float shortcut can bypass exact (#1635)\nHEAD is now at 61c2d8f84 [LANG-1774] Improve handling of ClassUtils.getShortCanonicalName for invalid input data (#1437)\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=ClassUtilsTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 15.06,
+      "status": "pass"
+    },
+    "65970408668e105fc880cb8e79e645085df7cd3b": {
+      "b": "65970408668e105fc880cb8e79e645085df7cd3b",
+      "a": "37cb5a4901a6e794ec9e5b841e8553f225a8a3cc",
+      "subject": "[LANG-1754] Use getAllSuperclassesAndInterfaces() in getMatchingMethod(). (#1289)",
+      "pr_hint": 1289,
+      "primary_main": "src/main/java/org/apache/commons/lang3/reflect/MethodUtils.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+      "test_selector": "MethodUtilsTest",
+      "verified_at": "2026-05-16T08:08:19.505671+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was 61c2d8f84 [LANG-1774] Improve handling of ClassUtils.getShortCanonicalName for invalid input data (#1437)\nHEAD is now at 659704086 [LANG-1754] Use getAllSuperclassesAndInterfaces() in getMatchingMethod(). (#1289)\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=MethodUtilsTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 34.59,
+      "status": "pass"
+    },
+    "6e78b38f055516bfef2b7b1e2b83e96a7a67f2ec": {
+      "b": "6e78b38f055516bfef2b7b1e2b83e96a7a67f2ec",
+      "a": "cdddb82e12ef7b2cc770125e930bde040b032213",
+      "subject": "Avoid JDK-8015417 in Strings.equals()",
+      "pr_hint": null,
+      "primary_main": "src/main/java/org/apache/commons/lang3/Strings.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/StringsTest.java",
+      "test_selector": "StringsTest",
+      "verified_at": "2026-05-16T08:08:54.100931+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was 659704086 [LANG-1754] Use getAllSuperclassesAndInterfaces() in getMatchingMethod(). (#1289)\nHEAD is now at 6e78b38f0 Avoid JDK-8015417 in Strings.equals()\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=StringsTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 19.32,
+      "status": "pass"
+    },
+    "744a8c30c6e49962b5b0b9fc14a2cccbefdd1cd9": {
+      "b": "744a8c30c6e49962b5b0b9fc14a2cccbefdd1cd9",
+      "a": "f43534ec04d4c4bae666033e2041ecde21c19a56",
+      "subject": "Add RegExUtils methods typed to CharSequence input and deprecate old versions typed to String",
+      "pr_hint": null,
+      "primary_main": "src/main/java/org/apache/commons/lang3/RegExUtils.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/RegExUtilsTest.java",
+      "test_selector": "RegExUtilsTest",
+      "verified_at": "2026-05-16T08:09:13.427296+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was 6e78b38f0 Avoid JDK-8015417 in Strings.equals()\nHEAD is now at 744a8c30c Add RegExUtils methods typed to CharSequence input and deprecate old versions typed to String\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=RegExUtilsTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 15.67,
+      "status": "pass"
+    },
+    "7cc1ac1c30d9ad2b285d11ed26b121e1f794e57e": {
+      "b": "7cc1ac1c30d9ad2b285d11ed26b121e1f794e57e",
+      "a": "162575cc6727316621b3761ade5e51fac0f497dd",
+      "subject": "ClassUtils now throws `IllegalArgumentException` when array is greater than JVM spec limit (255) (#1494)",
+      "pr_hint": 1494,
+      "primary_main": "src/main/java/org/apache/commons/lang3/ClassUtils.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/ClassUtilsTest.java",
+      "test_selector": "ClassUtilsTest",
+      "verified_at": "2026-05-16T08:09:29.098332+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was 744a8c30c Add RegExUtils methods typed to CharSequence input and deprecate old versions typed to String\nHEAD is now at 7cc1ac1c3 ClassUtils now throws `IllegalArgumentException` when array is greater than JVM spec limit (255) (#1494)\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=ClassUtilsTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 18.03,
+      "status": "pass"
+    },
+    "7e0d6dbd2a65d8b36a4c9042565d06af34d489a0": {
+      "b": "7e0d6dbd2a65d8b36a4c9042565d06af34d489a0",
+      "a": "e53ac03299baba72a2cb875efb4a8c1c7d374353",
+      "subject": "Improve container detection by mimicing systemd (#1323)",
+      "pr_hint": 1323,
+      "primary_main": "src/main/java/org/apache/commons/lang3/RuntimeEnvironment.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/RuntimeEnvironmentTest.java",
+      "test_selector": "RuntimeEnvironmentTest",
+      "verified_at": "2026-05-16T08:09:47.124655+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was 7cc1ac1c3 ClassUtils now throws `IllegalArgumentException` when array is greater than JVM spec limit (255) (#1494)\nHEAD is now at 7e0d6dbd2 Improve container detection by mimicing systemd (#1323)\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=RuntimeEnvironmentTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 23.89,
+      "status": "pass"
+    },
+    "8089a0c2d3207ed26531f877352336baf1c6c5bb": {
+      "b": "8089a0c2d3207ed26531f877352336baf1c6c5bb",
+      "a": "ba6cf8e2390f18db484da766db19285255ac3e82",
+      "subject": "[LANG-1806] NumberUtils.isParsable(\"1.f\") should return true (#1560)",
+      "pr_hint": 1560,
+      "primary_main": "src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/math/NumberUtilsTest.java",
+      "test_selector": "NumberUtilsTest",
+      "verified_at": "2026-05-16T08:10:11.027338+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was 7e0d6dbd2 Improve container detection by mimicing systemd (#1323)\nHEAD is now at 8089a0c2d [LANG-1806] NumberUtils.isParsable(\"1.f\") should return true (#1560)\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=NumberUtilsTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": "te(ThrowableCollector.java:73)\n\tat org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:144)\n\tat org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:101)\n\tat org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)\n\tat org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)\n\tat org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)\n\tat org.junit.platform.launcher.core.EngineExecutionOrchestrator.executeEngine(EngineExecutionOrchestrator.java:230)\n\tat org.junit.platform.launcher.core.EngineExecutionOrchestrator.failOrExecuteEngine(EngineExecutionOrchestrator.java:204)\n\tat org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:172)\n\tat org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:101)\n\tat org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:64)\n\tat org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:150)\n\tat org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:63)\n\tat org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:109)\n\tat org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:91)\n\tat org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47)\n\tat org.junit.platform.launcher.core.InterceptingLauncher.lambda$execute$1(InterceptingLauncher.java:39)\n\tat org.junit.platform.launcher.core.ClasspathAlignmentCheckingLauncherInterceptor.intercept(ClasspathAlignmentCheckingLauncherInterceptor.java:25)\n\tat org.junit.platform.launcher.core.InterceptingLauncher.execute(InterceptingLauncher.java:38)\n\tat org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47)\n\tat org.apache.maven.surefire.junitplatform.LauncherAdapter.executeWithoutCancellationToken(LauncherAdapter.java:60)\n\tat org.apache.maven.surefire.junitplatform.LauncherAdapter.execute(LauncherAdapter.java:52)\n\tat org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:203)\n\tat org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:168)\n\tat org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:136)\n\tat org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)\n\tat org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)\n\tat org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)\n\tat org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)\n"
+      },
+      "elapsed_sec": 24.3,
+      "status": "pass"
+    },
+    "8f8cc04e65506fbe79bbc5efa6f7d44d65f0dbf1": {
+      "b": "8f8cc04e65506fbe79bbc5efa6f7d44d65f0dbf1",
+      "a": "71d4f3d17f029c16e0783f39d1fbf1ad88bedacf",
+      "subject": "[LANG-1700] Improve handling of parameterized types and variable unrolling (#1549)",
+      "pr_hint": 1549,
+      "primary_main": "src/main/java/org/apache/commons/lang3/reflect/TypeUtils.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/reflect/TypeUtilsTest.java",
+      "test_selector": "TypeUtilsTest",
+      "verified_at": "2026-05-16T08:10:35.322425+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was 8089a0c2d [LANG-1806] NumberUtils.isParsable(\"1.f\") should return true (#1560)\nHEAD is now at 8f8cc04e6 [LANG-1700] Improve handling of parameterized types and variable unrolling (#1549)\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=TypeUtilsTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 17.1,
+      "status": "pass"
+    },
+    "929df5d5c00a92ce540ff087ead4a6adc7bab366": {
+      "b": "929df5d5c00a92ce540ff087ead4a6adc7bab366",
+      "a": "bf42165b1761c9eea056995e3018b0be516ac631",
+      "subject": "Conversion.hexTo*() methods now throw IllegalArgumentException instead of StringIndexOutOfBoundsException",
+      "pr_hint": null,
+      "primary_main": "src/main/java/org/apache/commons/lang3/Conversion.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/ConversionTest.java",
+      "test_selector": "ConversionTest",
+      "verified_at": "2026-05-16T08:10:52.428472+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was 8f8cc04e6 [LANG-1700] Improve handling of parameterized types and variable unrolling (#1549)\nHEAD is now at 929df5d5c Conversion.hexTo*() methods now throw IllegalArgumentException instead of StringIndexOutOfBoundsException\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=ConversionTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 14.7,
+      "status": "pass"
+    },
+    "972aa7b29a7cb7306b9e0737bac86fa42d6218ac": {
+      "b": "972aa7b29a7cb7306b9e0737bac86fa42d6218ac",
+      "a": "bd25bdcf802194e39ab101c47a8b16f996d47b9e",
+      "subject": "fix: default ttl in recursive replacement (#1297)",
+      "pr_hint": 1297,
+      "primary_main": "src/main/java/org/apache/commons/lang3/StringUtils.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/StringUtilsTest.java",
+      "test_selector": "StringUtilsTest",
+      "verified_at": "2026-05-16T08:11:07.127014+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was 929df5d5c Conversion.hexTo*() methods now throw IllegalArgumentException instead of StringIndexOutOfBoundsException\nHEAD is now at 972aa7b29 fix: default ttl in recursive replacement (#1297)\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=StringUtilsTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 15.4,
+      "status": "pass"
+    },
+    "9828dc73d4f2dbdd03a7a36f5264e5b265673e52": {
+      "b": "9828dc73d4f2dbdd03a7a36f5264e5b265673e52",
+      "a": "0917cde2275fc557a5c912c75ffeec2c50f7c1d2",
+      "subject": "LANG-1695: Allow trailing decimal point in NumberUtils.isParsable (#1531)",
+      "pr_hint": 1531,
+      "primary_main": "src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/math/NumberUtilsTest.java",
+      "test_selector": "NumberUtilsTest",
+      "verified_at": "2026-05-16T08:11:22.529737+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was 972aa7b29 fix: default ttl in recursive replacement (#1297)\nHEAD is now at 9828dc73d LANG-1695: Allow trailing decimal point in NumberUtils.isParsable (#1531)\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=NumberUtilsTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": "te(ThrowableCollector.java:73)\n\tat org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:144)\n\tat org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:101)\n\tat org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)\n\tat org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)\n\tat org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)\n\tat org.junit.platform.launcher.core.EngineExecutionOrchestrator.executeEngine(EngineExecutionOrchestrator.java:230)\n\tat org.junit.platform.launcher.core.EngineExecutionOrchestrator.failOrExecuteEngine(EngineExecutionOrchestrator.java:204)\n\tat org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:172)\n\tat org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:101)\n\tat org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:64)\n\tat org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:150)\n\tat org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:63)\n\tat org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:109)\n\tat org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:91)\n\tat org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47)\n\tat org.junit.platform.launcher.core.InterceptingLauncher.lambda$execute$1(InterceptingLauncher.java:39)\n\tat org.junit.platform.launcher.core.ClasspathAlignmentCheckingLauncherInterceptor.intercept(ClasspathAlignmentCheckingLauncherInterceptor.java:25)\n\tat org.junit.platform.launcher.core.InterceptingLauncher.execute(InterceptingLauncher.java:38)\n\tat org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47)\n\tat org.apache.maven.surefire.junitplatform.LauncherAdapter.executeWithoutCancellationToken(LauncherAdapter.java:60)\n\tat org.apache.maven.surefire.junitplatform.LauncherAdapter.execute(LauncherAdapter.java:52)\n\tat org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:203)\n\tat org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:168)\n\tat org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:136)\n\tat org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)\n\tat org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)\n\tat org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)\n\tat org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)\n"
+      },
+      "elapsed_sec": 18.02,
+      "status": "pass"
+    },
+    "9d5ad944277b0e6f4003953fc33710cae9d95d0b": {
+      "b": "9d5ad944277b0e6f4003953fc33710cae9d95d0b",
+      "a": "73f99230910010c1056bb6c04b36a04261da8b7d",
+      "subject": "Add fill method for boolean arrays in ArrayFill utility class (#1386)",
+      "pr_hint": 1386,
+      "primary_main": "src/main/java/org/apache/commons/lang3/ArrayFill.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/ArrayFillTest.java",
+      "test_selector": "ArrayFillTest",
+      "verified_at": "2026-05-16T08:11:40.545350+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was 9828dc73d LANG-1695: Allow trailing decimal point in NumberUtils.isParsable (#1531)\nHEAD is now at 9d5ad9442 Add fill method for boolean arrays in ArrayFill utility class (#1386)\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=ArrayFillTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 17.61,
+      "status": "pass"
+    },
+    "a9a0dd8a72c51b14f0e5ea4bddfbf228685ff977": {
+      "b": "a9a0dd8a72c51b14f0e5ea4bddfbf228685ff977",
+      "a": "b56c6882fb2d1bb3eb21adea3ae95c3856ea4b5c",
+      "subject": "LANG-771 Fix DateUtils.ceiling increment on exact boundary (#1609)",
+      "pr_hint": 1609,
+      "primary_main": "src/main/java/org/apache/commons/lang3/time/DateUtils.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/time/DateUtilsTest.java",
+      "test_selector": "DateUtilsTest",
+      "verified_at": "2026-05-16T08:11:58.155075+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was 9d5ad9442 Add fill method for boolean arrays in ArrayFill utility class (#1386)\nHEAD is now at a9a0dd8a7 LANG-771 Fix DateUtils.ceiling increment on exact boundary (#1609)\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=DateUtilsTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 18.81,
+      "status": "pass"
+    },
+    "aa47951bd0223d674d2b85d06ccc6f7f1749a682": {
+      "b": "aa47951bd0223d674d2b85d06ccc6f7f1749a682",
+      "a": "185edc4b8594e20d81baad65a199a211e2137616",
+      "subject": "fix: Make stopInstant be in sync with stopTimeNanos for split (#1610)",
+      "pr_hint": 1610,
+      "primary_main": "src/main/java/org/apache/commons/lang3/time/StopWatch.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/time/StopWatchTest.java",
+      "test_selector": "StopWatchTest",
+      "verified_at": "2026-05-16T08:12:16.967087+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was a9a0dd8a7 LANG-771 Fix DateUtils.ceiling increment on exact boundary (#1609)\nHEAD is now at aa47951bd fix: Make stopInstant be in sync with stopTimeNanos for split (#1610)\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=StopWatchTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 18.16,
+      "status": "pass"
+    },
+    "b6224451728562b0a4b33b63e8589753b1e2a57c": {
+      "b": "b6224451728562b0a4b33b63e8589753b1e2a57c",
+      "a": "c4ea2b0113b28b9d861acefc296f277e2eddaf9f",
+      "subject": "Fix ClassNotFoundException message variable (#1577)",
+      "pr_hint": 1577,
+      "primary_main": "src/main/java/org/apache/commons/lang3/ClassUtils.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/ClassUtilsTest.java",
+      "test_selector": "ClassUtilsTest",
+      "verified_at": "2026-05-16T08:12:35.125927+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was aa47951bd fix: Make stopInstant be in sync with stopTimeNanos for split (#1610)\nHEAD is now at b62244517 Fix ClassNotFoundException message variable (#1577)\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=ClassUtilsTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 17.95,
+      "status": "pass"
+    },
+    "b8d382039a850dff10a90c9abfbbf62228fd8fd1": {
+      "b": "b8d382039a850dff10a90c9abfbbf62228fd8fd1",
+      "a": "938587a77f39e03121ba6ca76c613055fd7bf21b",
+      "subject": "[LANG-1804] Fix CharSet#getInstance returns null instead of EMPTY when input setStrs is null (#1530)",
+      "pr_hint": 1530,
+      "primary_main": "src/main/java/org/apache/commons/lang3/CharSet.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/CharSetTest.java",
+      "test_selector": "CharSetTest",
+      "verified_at": "2026-05-16T08:12:53.083599+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was b62244517 Fix ClassNotFoundException message variable (#1577)\nHEAD is now at b8d382039 [LANG-1804] Fix CharSet#getInstance returns null instead of EMPTY when input setStrs is null (#1530)\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=CharSetTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 17.23,
+      "status": "pass"
+    },
+    "bb675e1127adb7f7c8d8687667bc11779d8e75eb": {
+      "b": "bb675e1127adb7f7c8d8687667bc11779d8e75eb",
+      "a": "23a730b8ed392ba424cc275df793dcae88f4cebe",
+      "subject": "Add \"ppc64le\" to ArchUtils (#1625)",
+      "pr_hint": 1625,
+      "primary_main": "src/main/java/org/apache/commons/lang3/ArchUtils.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/ArchUtilsTest.java",
+      "test_selector": "ArchUtilsTest",
+      "verified_at": "2026-05-16T08:13:10.305399+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was b8d382039 [LANG-1804] Fix CharSet#getInstance returns null instead of EMPTY when input setStrs is null (#1530)\nHEAD is now at bb675e112 Add \"ppc64le\" to ArchUtils (#1625)\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=ArchUtilsTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 16.28,
+      "status": "pass"
+    },
+    "bcad40a502cd45b49a5e025938b9711d95c7bde7": {
+      "b": "bcad40a502cd45b49a5e025938b9711d95c7bde7",
+      "a": "5e9736adf2b27f0a65cfa3fff9180cb34fac30c0",
+      "subject": "[LANG-1749] Add stricter type checks for  parameterized types in  method (#1548)",
+      "pr_hint": 1548,
+      "primary_main": "src/main/java/org/apache/commons/lang3/reflect/TypeUtils.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/reflect/TypeUtilsTest.java",
+      "test_selector": "TypeUtilsTest",
+      "verified_at": "2026-05-16T08:13:26.591580+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was bb675e112 Add \"ppc64le\" to ArchUtils (#1625)\nHEAD is now at bcad40a50 [LANG-1749] Add stricter type checks for  parameterized types in  method (#1548)\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=TypeUtilsTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 18.07,
+      "status": "pass"
+    },
+    "be8b654fc02d5d1319734e39c6f1224b7cbbf212": {
+      "b": "be8b654fc02d5d1319734e39c6f1224b7cbbf212",
+      "a": "7833161882d5c98cafda7b3a69ca4693cd155484",
+      "subject": "Conversion.hexTo*() methods now throw IllegalArgumentException instead of StringIndexOutOfBoundsException",
+      "pr_hint": null,
+      "primary_main": "src/main/java/org/apache/commons/lang3/Conversion.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/ConversionTest.java",
+      "test_selector": "ConversionTest",
+      "verified_at": "2026-05-16T08:13:44.663106+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was bcad40a50 [LANG-1749] Add stricter type checks for  parameterized types in  method (#1548)\nHEAD is now at be8b654fc Conversion.hexTo*() methods now throw IllegalArgumentException instead of StringIndexOutOfBoundsException\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=ConversionTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 15.22,
+      "status": "pass"
+    },
+    "ce2ba7b282608da952d97eada2747ff00d13d14f": {
+      "b": "ce2ba7b282608da952d97eada2747ff00d13d14f",
+      "a": "1ac4de078eb54c20c323d7a8ea439d15429cd293",
+      "subject": "LANG-1504 - Adding labels to split StopWatch feature (#1473)",
+      "pr_hint": 1473,
+      "primary_main": "src/main/java/org/apache/commons/lang3/time/StopWatch.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/time/StopWatchTest.java",
+      "test_selector": "StopWatchTest",
+      "verified_at": "2026-05-16T08:13:59.893881+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was be8b654fc Conversion.hexTo*() methods now throw IllegalArgumentException instead of StringIndexOutOfBoundsException\nHEAD is now at ce2ba7b28 LANG-1504 - Adding labels to split StopWatch feature (#1473)\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=StopWatchTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 16.44,
+      "status": "pass"
+    },
+    "d9de2fd5b8c65506b1ab14df631cc26ffcd647dc": {
+      "b": "d9de2fd5b8c65506b1ab14df631cc26ffcd647dc",
+      "a": "037880852770c3124f8d61c2dbf2b31f34a75508",
+      "subject": "[LANG-1810] Deprecate SOFT_MAX_ARRAY_LENGTH in favor of MAX_ARRAY_LENGTH (#1559)",
+      "pr_hint": 1559,
+      "primary_main": "src/main/java/org/apache/commons/lang3/ArrayUtils.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/ArrayUtilsTest.java",
+      "test_selector": "ArrayUtilsTest",
+      "verified_at": "2026-05-16T08:14:16.331839+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was ce2ba7b28 LANG-1504 - Adding labels to split StopWatch feature (#1473)\nHEAD is now at d9de2fd5b [LANG-1810] Deprecate SOFT_MAX_ARRAY_LENGTH in favor of MAX_ARRAY_LENGTH (#1559)\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=ArrayUtilsTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 18.27,
+      "status": "pass"
+    },
+    "ee2041464e60082a601d72be329bac57bc67328f": {
+      "b": "ee2041464e60082a601d72be329bac57bc67328f",
+      "a": "250addd743596599d2d2fd6bed8f04bdd648a3d5",
+      "subject": "Let existing catch clause handle the NPE edge case",
+      "pr_hint": null,
+      "primary_main": "src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/math/NumberUtilsTest.java",
+      "test_selector": "NumberUtilsTest",
+      "verified_at": "2026-05-16T08:14:34.606687+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was d9de2fd5b [LANG-1810] Deprecate SOFT_MAX_ARRAY_LENGTH in favor of MAX_ARRAY_LENGTH (#1559)\nHEAD is now at ee2041464 Let existing catch clause handle the NPE edge case\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=NumberUtilsTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 33.53,
+      "status": "pass"
+    },
+    "f51f015e3deb2d205b2962fbaa253f6ef457f2a3": {
+      "b": "f51f015e3deb2d205b2962fbaa253f6ef457f2a3",
+      "a": "c330b890b9164c6e98658030da3dbabaf90a5218",
+      "subject": "[LANG-1682] Javadoc and test: Use Strings.CI.startsWithAny method instead (#1299)",
+      "pr_hint": 1299,
+      "primary_main": "src/main/java/org/apache/commons/lang3/Strings.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/StringsTest.java",
+      "test_selector": "StringsTest",
+      "verified_at": "2026-05-16T08:15:08.131858+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was ee2041464 Let existing catch clause handle the NPE edge case\nHEAD is now at f51f015e3 [LANG-1682] Javadoc and test: Use Strings.CI.startsWithAny method instead (#1299)\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=StringsTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 13.5,
+      "status": "pass"
+    },
+    "fa59a31596ce37abe09c5f058c6f2e035f7c6677": {
+      "b": "fa59a31596ce37abe09c5f058c6f2e035f7c6677",
+      "a": "2062efa81db088015280fb837fde8c127f18c9bf",
+      "subject": "[LANG-1821] NumberUtils.isCreatable fails for hexadecimal numbers with long type qualifier (#1629)",
+      "pr_hint": 1629,
+      "primary_main": "src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/math/NumberUtilsTest.java",
+      "test_selector": "NumberUtilsTest",
+      "verified_at": "2026-05-16T08:15:21.637502+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was f51f015e3 [LANG-1682] Javadoc and test: Use Strings.CI.startsWithAny method instead (#1299)\nHEAD is now at fa59a3159 [LANG-1821] NumberUtils.isCreatable fails for hexadecimal numbers with long type qualifier (#1629)\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=NumberUtilsTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 16.32,
+      "status": "pass"
+    },
+    "fc3638e0fc8dc82136753c085f90ae4f773c01ba": {
+      "b": "fc3638e0fc8dc82136753c085f90ae4f773c01ba",
+      "a": "d272066e8c1416fd8d2e2eb4c67c4ab56e2d6710",
+      "subject": "Add tests",
+      "pr_hint": null,
+      "primary_main": "src/main/java/org/apache/commons/lang3/tuple/Pair.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/tuple/PairTest.java",
+      "test_selector": "PairTest",
+      "verified_at": "2026-05-16T08:15:37.956984+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was fa59a3159 [LANG-1821] NumberUtils.isCreatable fails for hexadecimal numbers with long type qualifier (#1629)\nHEAD is now at fc3638e0f Add tests\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=PairTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 15.17,
+      "status": "pass"
+    },
+    "fd866a9c2d6c69f9f6462a5e498b58293597d611": {
+      "b": "fd866a9c2d6c69f9f6462a5e498b58293597d611",
+      "a": "d1bf9bfe747d5ad8a14cc1f65e6876a30a1bc866",
+      "subject": "Fix handling of non-ASCII letters & numbers in RandomStringUtils (#1273)",
+      "pr_hint": 1273,
+      "primary_main": "src/main/java/org/apache/commons/lang3/RandomStringUtils.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/RandomStringUtilsTest.java",
+      "test_selector": "RandomStringUtilsTest",
+      "verified_at": "2026-05-16T08:15:53.131292+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was fc3638e0f Add tests\nHEAD is now at fd866a9c2 Fix handling of non-ASCII letters & numbers in RandomStringUtils (#1273)\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=RandomStringUtilsTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 24.43,
+      "status": "pass"
+    },
+    "010c5d26330c4e381e5a598fed700241667ad532": {
+      "b": "010c5d26330c4e381e5a598fed700241667ad532",
+      "a": "992b190584d07802ccd9a02a2b5b3bd5a80799d0",
+      "subject": "Add SystemUtils.IS_OS_MAC_OSX_SEQUOIA",
+      "pr_hint": null,
+      "primary_main": "src/main/java/org/apache/commons/lang3/SystemUtils.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/SystemUtilsTest.java",
+      "test_selector": "SystemUtilsTest",
+      "verified_at": "2026-05-16T08:16:17.562792+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was fd866a9c2 Fix handling of non-ASCII letters & numbers in RandomStringUtils (#1273)\nHEAD is now at 010c5d263 Add SystemUtils.IS_OS_MAC_OSX_SEQUOIA\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=SystemUtilsTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 13.72,
+      "status": "pass"
+    },
+    "03e7c36d2dafca70e1f0e2c27a77ed4816cecf3f": {
+      "b": "03e7c36d2dafca70e1f0e2c27a77ed4816cecf3f",
+      "a": "323a41a913c291f24ff4dd2c0c5a9660864a6717",
+      "subject": "`LocaleUtils.toLocale(String)` for a 2 letter country code now returns a value instead of throwing an `IllegalArgumentException`",
+      "pr_hint": null,
+      "primary_main": "src/main/java/org/apache/commons/lang3/LocaleUtils.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/LocaleUtilsTest.java",
+      "test_selector": "LocaleUtilsTest",
+      "verified_at": "2026-05-16T08:16:31.273653+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was 010c5d263 Add SystemUtils.IS_OS_MAC_OSX_SEQUOIA\nHEAD is now at 03e7c36d2 `LocaleUtils.toLocale(String)` for a 2 letter country code now returns a value instead of throwing an `IllegalArgumentException`\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=LocaleUtilsTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 16.46,
+      "status": "pass"
+    },
+    "0c6a5c10a7a0f0073b6577e5c4898ceb42428b55": {
+      "b": "0c6a5c10a7a0f0073b6577e5c4898ceb42428b55",
+      "a": "70d5058caa22063049c590bf90ec9585915bf6dc",
+      "subject": "Add org.apache.commons.lang3.time.DateUtils.toLocalDateTime(Date[, TimeZone]) #1385",
+      "pr_hint": 1385,
+      "primary_main": "src/main/java/org/apache/commons/lang3/time/DateUtils.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/time/DateUtilsTest.java",
+      "test_selector": "DateUtilsTest",
+      "verified_at": "2026-05-16T08:16:47.736508+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was 03e7c36d2 `LocaleUtils.toLocale(String)` for a 2 letter country code now returns a value instead of throwing an `IllegalArgumentException`\nHEAD is now at 0c6a5c10a Add org.apache.commons.lang3.time.DateUtils.toLocalDateTime(Date[, TimeZone]) #1385\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=DateUtilsTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 15.57,
+      "status": "pass"
+    },
+    "0dffedc822cefbec5151653170ee23faa18d7fac": {
+      "b": "0dffedc822cefbec5151653170ee23faa18d7fac",
+      "a": "106b61a5be740b6e784c3aae4aa10d5b6df832b1",
+      "subject": "Add SystemProperties.JAVA_SECURITY_KERBEROS_CONF",
+      "pr_hint": null,
+      "primary_main": "src/main/java/org/apache/commons/lang3/SystemProperties.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/SystemPropertiesTest.java",
+      "test_selector": "SystemPropertiesTest",
+      "verified_at": "2026-05-16T08:17:03.314008+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was 0c6a5c10a Add org.apache.commons.lang3.time.DateUtils.toLocalDateTime(Date[, TimeZone]) #1385\nHEAD is now at 0dffedc82 Add SystemProperties.JAVA_SECURITY_KERBEROS_CONF\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=SystemPropertiesTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 15.92,
+      "status": "pass"
+    },
+    "0f4dee8451df2ec68a1f201a859f3955a7abd504": {
+      "b": "0f4dee8451df2ec68a1f201a859f3955a7abd504",
+      "a": "8f579b4f3074b79c44771ce6c6dec1d253401f50",
+      "subject": "LocaleUtils.toLocale(String) cannot parse four segments",
+      "pr_hint": null,
+      "primary_main": "src/main/java/org/apache/commons/lang3/LocaleUtils.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/LocaleUtilsTest.java",
+      "test_selector": "LocaleUtilsTest",
+      "verified_at": "2026-05-16T08:17:19.240044+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was 0dffedc82 Add SystemProperties.JAVA_SECURITY_KERBEROS_CONF\nHEAD is now at 0f4dee845 LocaleUtils.toLocale(String) cannot parse four segments\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=LocaleUtilsTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 32.3,
+      "status": "pass"
+    },
+    "106b61a5be740b6e784c3aae4aa10d5b6df832b1": {
+      "b": "106b61a5be740b6e784c3aae4aa10d5b6df832b1",
+      "a": "3b31276cada134cc9e4deba7131d4cd53f59ddfa",
+      "subject": "Add SystemProperties.JAVA_SECURITY_DEBUG",
+      "pr_hint": null,
+      "primary_main": "src/main/java/org/apache/commons/lang3/SystemProperties.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/SystemPropertiesTest.java",
+      "test_selector": "SystemPropertiesTest",
+      "verified_at": "2026-05-16T08:17:51.537390+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was 0f4dee845 LocaleUtils.toLocale(String) cannot parse four segments\nHEAD is now at 106b61a5b Add SystemProperties.JAVA_SECURITY_DEBUG\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=SystemPropertiesTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 14.52,
+      "status": "pass"
+    },
+    "118652d768eb3bb92717dc1520e2cd272f7e068e": {
+      "b": "118652d768eb3bb92717dc1520e2cd272f7e068e",
+      "a": "ce19ec720b68ea2e7cb9cdb8a1f8a2524b301d7a",
+      "subject": "Add LangCollectors.collect(Collector, T...)",
+      "pr_hint": null,
+      "primary_main": "src/main/java/org/apache/commons/lang3/stream/LangCollectors.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/stream/LangCollectorsTest.java",
+      "test_selector": "LangCollectorsTest",
+      "verified_at": "2026-05-16T08:18:06.066239+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was 106b61a5b Add SystemProperties.JAVA_SECURITY_DEBUG\nHEAD is now at 118652d76 Add LangCollectors.collect(Collector, T...)\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=LangCollectorsTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 15.27,
+      "status": "pass"
+    },
+    "17ba8b9da6a87791446917250b3d92b6925cbff0": {
+      "b": "17ba8b9da6a87791446917250b3d92b6925cbff0",
+      "a": "50a4eeab10bc40383b27e74adc1ad9788cd6f3a4",
+      "subject": "Make LangCollectors.collect(...) null-safe",
+      "pr_hint": null,
+      "primary_main": "src/main/java/org/apache/commons/lang3/stream/LangCollectors.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/stream/LangCollectorsTest.java",
+      "test_selector": "LangCollectorsTest",
+      "verified_at": "2026-05-16T08:18:21.335537+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was 118652d76 Add LangCollectors.collect(Collector, T...)\nHEAD is now at 17ba8b9da Make LangCollectors.collect(...) null-safe\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=LangCollectorsTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 16.03,
+      "status": "pass"
+    },
+    "263026823515618b42f9549b491e57065cb69c58": {
+      "b": "263026823515618b42f9549b491e57065cb69c58",
+      "a": "3ebd20002ef35b690ee0314bac254013df3f85c5",
+      "subject": "Add StopWatch.getDuration() and deprecate getTime()",
+      "pr_hint": null,
+      "primary_main": "src/main/java/org/apache/commons/lang3/time/StopWatch.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/time/StopWatchTest.java",
+      "test_selector": "StopWatchTest",
+      "verified_at": "2026-05-16T08:18:37.368672+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was 17ba8b9da Make LangCollectors.collect(...) null-safe\nHEAD is now at 263026823 Add StopWatch.getDuration() and deprecate getTime()\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=StopWatchTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 25.25,
+      "status": "pass"
+    },
+    "2875a65756da4c72e8d188555b9639857e73684a": {
+      "b": "2875a65756da4c72e8d188555b9639857e73684a",
+      "a": "63d9aa48f3646e6b5a366291747a73f7ad49636a",
+      "subject": "Add StopWatch.getSplitDuration() and deprecate getSplitTime()",
+      "pr_hint": null,
+      "primary_main": "src/main/java/org/apache/commons/lang3/time/StopWatch.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/time/StopWatchTest.java",
+      "test_selector": "StopWatchTest",
+      "verified_at": "2026-05-16T08:19:02.618057+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was 263026823 Add StopWatch.getDuration() and deprecate getTime()\nHEAD is now at 2875a6575 Add StopWatch.getSplitDuration() and deprecate getSplitTime()\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=StopWatchTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 22.11,
+      "status": "pass"
+    },
+    "328f2aedfb8643c3e1e74b5aec9e3628c3cbf2e7": {
+      "b": "328f2aedfb8643c3e1e74b5aec9e3628c3cbf2e7",
+      "a": "df4be6cd6e2a8bba13095a4415cfbc80abfbbe5b",
+      "subject": "Add CalendarUtils.toLocalDateTime(Calendar)",
+      "pr_hint": null,
+      "primary_main": "src/main/java/org/apache/commons/lang3/time/CalendarUtils.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/time/CalendarUtilsTest.java",
+      "test_selector": "CalendarUtilsTest",
+      "verified_at": "2026-05-16T08:19:24.727497+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was 2875a6575 Add StopWatch.getSplitDuration() and deprecate getSplitTime()\nHEAD is now at 328f2aedf Add CalendarUtils.toLocalDateTime(Calendar)\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=CalendarUtilsTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 14.05,
+      "status": "pass"
+    },
+    "35f35e9e1cee8b53fd4c562534de79c6213d7aaf": {
+      "b": "35f35e9e1cee8b53fd4c562534de79c6213d7aaf",
+      "a": "f626e5357564a83847f0ccd1d6d0a106208de1fe",
+      "subject": "Add DurationUtils.get(String, TemporalUnit, long)",
+      "pr_hint": null,
+      "primary_main": "src/main/java/org/apache/commons/lang3/time/DurationUtils.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/time/DurationUtilsTest.java",
+      "test_selector": "DurationUtilsTest",
+      "verified_at": "2026-05-16T08:19:38.779020+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was 328f2aedf Add CalendarUtils.toLocalDateTime(Calendar)\nHEAD is now at 35f35e9e1 Add DurationUtils.get(String, TemporalUnit, long)\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=DurationUtilsTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 14.27,
+      "status": "pass"
+    },
+    "35fee6998b8d92c047f6db82fde825810fc26f4a": {
+      "b": "35fee6998b8d92c047f6db82fde825810fc26f4a",
+      "a": "82640281c8259511a40f39c105487f269239a47a",
+      "subject": "Add BasicThreadFactory.builder() and deprecate BasicThreadFactory.Builder()",
+      "pr_hint": null,
+      "primary_main": "src/main/java/org/apache/commons/lang3/concurrent/BasicThreadFactory.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/concurrent/BasicThreadFactoryTest.java",
+      "test_selector": "BasicThreadFactoryTest",
+      "verified_at": "2026-05-16T08:19:53.059047+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was 35f35e9e1 Add DurationUtils.get(String, TemporalUnit, long)\nHEAD is now at 35fee6998 Add BasicThreadFactory.builder() and deprecate BasicThreadFactory.Builder()\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=BasicThreadFactoryTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 16.25,
+      "status": "pass"
+    },
+    "3bd1625859000571b99b4193df1360ab18a33910": {
+      "b": "3bd1625859000571b99b4193df1360ab18a33910",
+      "a": "1196f03e4f0b5de78416771259cb8ab60fb20e0f",
+      "subject": "[LANG-1729] NumberUtils.isParsable() returns true for full width Unicode digits for inputs with a decimal point",
+      "pr_hint": null,
+      "primary_main": "src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/math/NumberUtilsTest.java",
+      "test_selector": "NumberUtilsTest",
+      "verified_at": "2026-05-16T08:20:09.310243+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was 35fee6998 Add BasicThreadFactory.builder() and deprecate BasicThreadFactory.Builder()\nHEAD is now at 3bd162585 [LANG-1729] NumberUtils.isParsable() returns true for full width Unicode digits for inputs with a decimal point\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=NumberUtilsTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 19.19,
+      "status": "pass"
+    },
+    "3ebd20002ef35b690ee0314bac254013df3f85c5": {
+      "b": "3ebd20002ef35b690ee0314bac254013df3f85c5",
+      "a": "f1aed3eacb500f581f0c10074bdb7faaacfa4a49",
+      "subject": "Add StopWatch.getStopInstant() and deprecate getStopTime()",
+      "pr_hint": null,
+      "primary_main": "src/main/java/org/apache/commons/lang3/time/StopWatch.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/time/StopWatchTest.java",
+      "test_selector": "StopWatchTest",
+      "verified_at": "2026-05-16T08:20:28.490591+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was 3bd162585 [LANG-1729] NumberUtils.isParsable() returns true for full width Unicode digits for inputs with a decimal point\nHEAD is now at 3ebd20002 Add StopWatch.getStopInstant() and deprecate getStopTime()\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=StopWatchTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 24.19,
+      "status": "pass"
+    },
+    "421229b42f79a41d1eb7f4e9d9f1dabef56270d3": {
+      "b": "421229b42f79a41d1eb7f4e9d9f1dabef56270d3",
+      "a": "5035fdd788bc8e77bd90b52d49f70903044e7e63",
+      "subject": "Add SystemUtils.getUserDirPath()",
+      "pr_hint": null,
+      "primary_main": "src/main/java/org/apache/commons/lang3/SystemUtils.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/SystemUtilsTest.java",
+      "test_selector": "SystemUtilsTest",
+      "verified_at": "2026-05-16T08:20:52.688835+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was 3ebd20002 Add StopWatch.getStopInstant() and deprecate getStopTime()\nHEAD is now at 421229b42 Add SystemUtils.getUserDirPath()\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=SystemUtilsTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 17.04,
+      "status": "pass"
+    },
+    "4c39aa2ca612e6087f2a7edc90f88e5555b7cb27": {
+      "b": "4c39aa2ca612e6087f2a7edc90f88e5555b7cb27",
+      "a": "5e4050c7ba107b700a93043e50dc5b9a0b49c8db",
+      "subject": "Add org.apache.commons.lang3.SystemUtils.IS_OS_NETWARE",
+      "pr_hint": null,
+      "primary_main": "src/main/java/org/apache/commons/lang3/SystemUtils.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/SystemUtilsTest.java",
+      "test_selector": "SystemUtilsTest",
+      "verified_at": "2026-05-16T08:21:09.732449+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was 421229b42 Add SystemUtils.getUserDirPath()\nHEAD is now at 4c39aa2ca Add org.apache.commons.lang3.SystemUtils.IS_OS_NETWARE\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=SystemUtilsTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 15.49,
+      "status": "pass"
+    },
+    "4e228a53509bd8cb01220939906a538dcd1baa40": {
+      "b": "4e228a53509bd8cb01220939906a538dcd1baa40",
+      "a": "6681a34d25b63a47c2d619ae0466825304ea9b1f",
+      "subject": "Fix StackOverflowError in TypeUtils.typeVariableToString(TypeVariable), TypeUtils.toString(Type)",
+      "pr_hint": null,
+      "primary_main": "src/main/java/org/apache/commons/lang3/reflect/TypeUtils.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/reflect/TypeUtilsTest.java",
+      "test_selector": "TypeUtilsTest",
+      "verified_at": "2026-05-16T08:21:25.227730+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was 4c39aa2ca Add org.apache.commons.lang3.SystemUtils.IS_OS_NETWARE\nHEAD is now at 4e228a535 Fix StackOverflowError in TypeUtils.typeVariableToString(TypeVariable), TypeUtils.toString(Type)\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=TypeUtilsTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 16.15,
+      "status": "pass"
+    },
+    "5035fdd788bc8e77bd90b52d49f70903044e7e63": {
+      "b": "5035fdd788bc8e77bd90b52d49f70903044e7e63",
+      "a": "97fb6a23e02d67cc52506e819363d3781f33c1b3",
+      "subject": "Add SystemUtils.getJavaHomePath()",
+      "pr_hint": null,
+      "primary_main": "src/main/java/org/apache/commons/lang3/SystemUtils.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/SystemUtilsTest.java",
+      "test_selector": "SystemUtilsTest",
+      "verified_at": "2026-05-16T08:21:41.383042+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was 4e228a535 Fix StackOverflowError in TypeUtils.typeVariableToString(TypeVariable), TypeUtils.toString(Type)\nHEAD is now at 5035fdd78 Add SystemUtils.getJavaHomePath()\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=SystemUtilsTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 15.38,
+      "status": "pass"
+    },
+    "5bcedccec3ed93586947a5df0d49775aee7a37c7": {
+      "b": "5bcedccec3ed93586947a5df0d49775aee7a37c7",
+      "a": "2bcca4996df233981d132dfc5c92ae517376fab9",
+      "subject": "Fix NullPointerException in ReflectionDiffBuilder.getExcludeFieldNames() when instance created with ReflectionDiffBuilder.ReflectionDiffBuilder(T, T, ToStringStyle)",
+      "pr_hint": null,
+      "primary_main": "src/main/java/org/apache/commons/lang3/builder/ReflectionDiffBuilder.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/builder/ReflectionDiffBuilderTest.java",
+      "test_selector": "ReflectionDiffBuilderTest",
+      "verified_at": "2026-05-16T08:22:14.960459+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was 58e0095be Add org.apache.commons.lang3.time.DateUtils.toZonedDateTime(Date[, TimeZone])\nHEAD is now at 5bcedccec Fix NullPointerException in ReflectionDiffBuilder.getExcludeFieldNames() when instance created with ReflectionDiffBuilder.ReflectionDiffBuilder(T, T, ToStringStyle)\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=ReflectionDiffBuilderTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 19.22,
+      "status": "pass"
+    },
+    "5d46a39e450f5dd69027329c9bc0542c113a04be": {
+      "b": "5d46a39e450f5dd69027329c9bc0542c113a04be",
+      "a": "e63e9c7902b5c9d0b79de9fdc1fb7f983f3eb4a8",
+      "subject": "RandomStringUtils.random() methods may not return when asked to generate only letters or only numbers while provided with a range that contains neither",
+      "pr_hint": null,
+      "primary_main": "src/main/java/org/apache/commons/lang3/RandomStringUtils.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/RandomStringUtilsTest.java",
+      "test_selector": "RandomStringUtilsTest",
+      "verified_at": "2026-05-16T08:22:34.186331+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was 5bcedccec Fix NullPointerException in ReflectionDiffBuilder.getExcludeFieldNames() when instance created with ReflectionDiffBuilder.ReflectionDiffBuilder(T, T, ToStringStyle)\nHEAD is now at 5d46a39e4 RandomStringUtils.random() methods may not return when asked to generate only letters or only numbers while provided with a range that contains neither\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=RandomStringUtilsTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 19.49,
+      "status": "pass"
+    },
+    "5dd8e33cf68b649b9af0bbbede58d6b5637b4c3e": {
+      "b": "5dd8e33cf68b649b9af0bbbede58d6b5637b4c3e",
+      "a": "e2b349d046ec9945ece518b068ae38bc73b7f83c",
+      "subject": "MethodUtils cannot find or invoke vararg methods of interface types",
+      "pr_hint": null,
+      "primary_main": "src/main/java/org/apache/commons/lang3/reflect/MethodUtils.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+      "test_selector": "MethodUtilsTest",
+      "verified_at": "2026-05-16T08:22:53.677400+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was 5d46a39e4 RandomStringUtils.random() methods may not return when asked to generate only letters or only numbers while provided with a range that contains neither\nHEAD is now at 5dd8e33cf MethodUtils cannot find or invoke vararg methods of interface types\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=MethodUtilsTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 16.03,
+      "status": "pass"
+    },
+    "623235ebca46bea1a6e8cc02b7d7084c1698ab80": {
+      "b": "623235ebca46bea1a6e8cc02b7d7084c1698ab80",
+      "a": "48d6e758f79255da5a1e307a2bbcfa60726ad8a0",
+      "subject": "[LANG-1811] ArrayUtils.shuffle() throws NullPointerException for null array input.",
+      "pr_hint": null,
+      "primary_main": "src/main/java/org/apache/commons/lang3/ArrayUtils.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/ArrayUtilsTest.java",
+      "test_selector": "ArrayUtilsTest",
+      "verified_at": "2026-05-16T08:23:09.711733+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was 5dd8e33cf MethodUtils cannot find or invoke vararg methods of interface types\nHEAD is now at 623235ebc [LANG-1811] ArrayUtils.shuffle() throws NullPointerException for null array input.\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=ArrayUtilsTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 18.59,
+      "status": "pass"
+    },
+    "6622a46857509a8920a3f085dbca007286c703ac": {
+      "b": "6622a46857509a8920a3f085dbca007286c703ac",
+      "a": "7bba7c51aafa49087448d1112eb8f5a59131eea2",
+      "subject": "Fix generics in org.apache.commons.lang3.stream.Streams.toArray(Class) signature",
+      "pr_hint": null,
+      "primary_main": "src/main/java/org/apache/commons/lang3/stream/Streams.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/stream/StreamsTest.java",
+      "test_selector": "StreamsTest",
+      "verified_at": "2026-05-16T08:23:28.308211+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was 623235ebc [LANG-1811] ArrayUtils.shuffle() throws NullPointerException for null array input.\nHEAD is now at 6622a4685 Fix generics in org.apache.commons.lang3.stream.Streams.toArray(Class) signature\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=StreamsTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 15.98,
+      "status": "pass"
+    },
+    "666ad13656c690b310fc2c6487dd60b6ed72a5ed": {
+      "b": "666ad13656c690b310fc2c6487dd60b6ed72a5ed",
+      "a": "328f2aedfb8643c3e1e74b5aec9e3628c3cbf2e7",
+      "subject": "Add CalendarUtils.toZonedDateTime(Calendar)",
+      "pr_hint": null,
+      "primary_main": "src/main/java/org/apache/commons/lang3/time/CalendarUtils.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/time/CalendarUtilsTest.java",
+      "test_selector": "CalendarUtilsTest",
+      "verified_at": "2026-05-16T08:23:44.288842+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was 6622a4685 Fix generics in org.apache.commons.lang3.stream.Streams.toArray(Class) signature\nHEAD is now at 666ad1365 Add CalendarUtils.toZonedDateTime(Calendar)\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=CalendarUtilsTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 16.35,
+      "status": "pass"
+    },
+    "677e57f56bfae93af520637d47a615013c930266": {
+      "b": "677e57f56bfae93af520637d47a615013c930266",
+      "a": "db1352609787ccdbb2e34be9e7d2e647eacc91cc",
+      "subject": "Fix NullPointerException in StopWatch.getStopTime()",
+      "pr_hint": null,
+      "primary_main": "src/main/java/org/apache/commons/lang3/time/StopWatch.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/time/StopWatchTest.java",
+      "test_selector": "StopWatchTest",
+      "verified_at": "2026-05-16T08:24:00.643717+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was 666ad1365 Add CalendarUtils.toZonedDateTime(Calendar)\nHEAD is now at 677e57f56 Fix NullPointerException in StopWatch.getStopTime()\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=StopWatchTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 30.06,
+      "status": "pass"
+    },
+    "6b81f9e6cf42eae235c7ab505d967f60a42d7d66": {
+      "b": "6b81f9e6cf42eae235c7ab505d967f60a42d7d66",
+      "a": "9bc57f7fed72c09468588f2f5ac5d5d503bc845c",
+      "subject": "Add RegExUtils.replacePattern(CharSequence, String, String) and deprecate RegExUtils.replacePattern(String, String, String)",
+      "pr_hint": null,
+      "primary_main": "src/main/java/org/apache/commons/lang3/RegExUtils.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/RegExUtilsTest.java",
+      "test_selector": "RegExUtilsTest",
+      "verified_at": "2026-05-16T08:24:30.711885+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was 677e57f56 Fix NullPointerException in StopWatch.getStopTime()\nHEAD is now at 6b81f9e6c Add RegExUtils.replacePattern(CharSequence, String, String) and deprecate RegExUtils.replacePattern(String, String, String)\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=RegExUtilsTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 40.57,
+      "status": "pass"
+    },
+    "6e2741da4d1ef471c7c552b91409b2deecbfcec9": {
+      "b": "6e2741da4d1ef471c7c552b91409b2deecbfcec9",
+      "a": "a6af715f86ef658ceeff12d3ba65d99d1a1f8f0f",
+      "subject": "[LANG-1727] EventListenerSupport doesn't document ordering of events",
+      "pr_hint": null,
+      "primary_main": "src/main/java/org/apache/commons/lang3/event/EventListenerSupport.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/event/EventListenerSupportTest.java",
+      "test_selector": "EventListenerSupportTest",
+      "verified_at": "2026-05-16T08:25:11.277894+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was 6b81f9e6c Add RegExUtils.replacePattern(CharSequence, String, String) and deprecate RegExUtils.replacePattern(String, String, String)\nHEAD is now at 6e2741da4 [LANG-1727] EventListenerSupport doesn't document ordering of events\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=EventListenerSupportTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 13.81,
+      "status": "pass"
+    },
+    "739d62630092ee517129c703cd9433bd7e1184d4": {
+      "b": "739d62630092ee517129c703cd9433bd7e1184d4",
+      "a": "b08717ff5fd391ad500a557b8ad8b5c3794a0df5",
+      "subject": "[LANG-1657] DiffBuilder: Type constraint for method append(..., DiffResult) too strict #786",
+      "pr_hint": 786,
+      "primary_main": "src/main/java/org/apache/commons/lang3/builder/DiffBuilder.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/builder/DiffBuilderTest.java",
+      "test_selector": "DiffBuilderTest",
+      "verified_at": "2026-05-16T08:25:25.094640+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was 6e2741da4 [LANG-1727] EventListenerSupport doesn't document ordering of events\nHEAD is now at 739d62630 [LANG-1657] DiffBuilder: Type constraint for method append(..., DiffResult) too strict #786\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=DiffBuilderTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 14.51,
+      "status": "pass"
+    },
+    "7489d6e21334673dc56399de7decaaa00f11ebcf": {
+      "b": "7489d6e21334673dc56399de7decaaa00f11ebcf",
+      "a": "b3cd50b19e89792fa587bea3fa7d79709ab46c48",
+      "subject": "CharSet now maintains iteration order",
+      "pr_hint": null,
+      "primary_main": "src/main/java/org/apache/commons/lang3/CharSet.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/CharSetTest.java",
+      "test_selector": "CharSetTest",
+      "verified_at": "2026-05-16T08:25:39.614165+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was 739d62630 [LANG-1657] DiffBuilder: Type constraint for method append(..., DiffResult) too strict #786\nHEAD is now at 7489d6e21 CharSet now maintains iteration order\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=CharSetTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 17.47,
+      "status": "pass"
+    },
+    "76ec155eea3b1b10b5ddd46e31b38782afbff848": {
+      "b": "76ec155eea3b1b10b5ddd46e31b38782afbff848",
+      "a": "834e36ad64e8f66c17632e37bc4c54c2ca3dd012",
+      "subject": "Fix edge-case NullPointerException in org.apache.commons.lang3.EnumUtils.getEnum(Class, String, E)",
+      "pr_hint": null,
+      "primary_main": "src/main/java/org/apache/commons/lang3/EnumUtils.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/EnumUtilsTest.java",
+      "test_selector": "EnumUtilsTest",
+      "verified_at": "2026-05-16T08:25:57.082198+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was 7489d6e21 CharSet now maintains iteration order\nHEAD is now at 76ec155ee Fix edge-case NullPointerException in org.apache.commons.lang3.EnumUtils.getEnum(Class, String, E)\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=EnumUtilsTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 14.83,
+      "status": "pass"
+    },
+    "7833161882d5c98cafda7b3a69ca4693cd155484": {
+      "b": "7833161882d5c98cafda7b3a69ca4693cd155484",
+      "a": "1de1da97b237386f57178deb946067e32a684192",
+      "subject": "Conversion.hexTo*() methods now throw IllegalArgumentException instead of StringIndexOutOfBoundsException",
+      "pr_hint": null,
+      "primary_main": "src/main/java/org/apache/commons/lang3/Conversion.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/ConversionTest.java",
+      "test_selector": "ConversionTest",
+      "verified_at": "2026-05-16T08:26:11.916671+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was 76ec155ee Fix edge-case NullPointerException in org.apache.commons.lang3.EnumUtils.getEnum(Class, String, E)\nHEAD is now at 783316188 Conversion.hexTo*() methods now throw IllegalArgumentException instead of StringIndexOutOfBoundsException\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=ConversionTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 15.33,
+      "status": "pass"
+    },
+    "798caa4e51747dfbfceba0af8db7afa4fe629e36": {
+      "b": "798caa4e51747dfbfceba0af8db7afa4fe629e36",
+      "a": "4830e09b1c1e89212ca6f60fea29acaedfa6ba9e",
+      "subject": "Add LongRange.toLongStream()",
+      "pr_hint": null,
+      "primary_main": "src/main/java/org/apache/commons/lang3/LongRange.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/LongRangeTest.java",
+      "test_selector": "LongRangeTest",
+      "verified_at": "2026-05-16T08:26:27.253402+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was 783316188 Conversion.hexTo*() methods now throw IllegalArgumentException instead of StringIndexOutOfBoundsException\nHEAD is now at 798caa4e5 Add LongRange.toLongStream()\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=LongRangeTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 15.7,
+      "status": "pass"
+    },
+    "7c8d26daac0c08e888249d506e5ef4e655898166": {
+      "b": "7c8d26daac0c08e888249d506e5ef4e655898166",
+      "a": "5bcedccec3ed93586947a5df0d49775aee7a37c7",
+      "subject": "Fail-fast for a null DiffBuilder in ReflectionDiffBuilder.ReflectionDiffBuilder(DiffBuilder, String[]) instead of getting a NullPointerException in ReflectionDiffBuilder instance methods",
+      "pr_hint": null,
+      "primary_main": "src/main/java/org/apache/commons/lang3/builder/ReflectionDiffBuilder.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/builder/ReflectionDiffBuilderTest.java",
+      "test_selector": "ReflectionDiffBuilderTest",
+      "verified_at": "2026-05-16T08:26:42.952792+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was 798caa4e5 Add LongRange.toLongStream()\nHEAD is now at 7c8d26daa Fail-fast for a null DiffBuilder in ReflectionDiffBuilder.ReflectionDiffBuilder(DiffBuilder, String[]) instead of getting a NullPointerException in ReflectionDiffBuilder instance methods\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=ReflectionDiffBuilderTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 18.58,
+      "status": "pass"
+    },
+    "80e6a67649ec10d67f5a574c8e93248615c347ca": {
+      "b": "80e6a67649ec10d67f5a574c8e93248615c347ca",
+      "a": "fa668ef0d929366e78f993ffda70b2dbd436f295",
+      "subject": "Add CalendarUtils.toLocalDate() #725",
+      "pr_hint": 725,
+      "primary_main": "src/main/java/org/apache/commons/lang3/time/CalendarUtils.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/time/CalendarUtilsTest.java",
+      "test_selector": "CalendarUtilsTest",
+      "verified_at": "2026-05-16T08:27:01.530982+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was 7c8d26daa Fail-fast for a null DiffBuilder in ReflectionDiffBuilder.ReflectionDiffBuilder(DiffBuilder, String[]) instead of getting a NullPointerException in ReflectionDiffBuilder instance methods\nHEAD is now at 80e6a6764 Add CalendarUtils.toLocalDate() #725\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=CalendarUtilsTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 16.06,
+      "status": "pass"
+    },
+    "8a7b0da6fc783127f8272d955d9f06f1966949ec": {
+      "b": "8a7b0da6fc783127f8272d955d9f06f1966949ec",
+      "a": "dc9e94626e19615b8970e2ba2532a7d11ea8f5da",
+      "subject": "org.apache.commons.lang3.reflect.MethodUtils.getMethodObject(Class<?>, String, Class<?>...) now returns null instead of throwing a NullPointerException, as it does for other exception types",
+      "pr_hint": null,
+      "primary_main": "src/main/java/org/apache/commons/lang3/reflect/MethodUtils.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+      "test_selector": "MethodUtilsTest",
+      "verified_at": "2026-05-16T08:27:17.592500+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was 80e6a6764 Add CalendarUtils.toLocalDate() #725\nHEAD is now at 8a7b0da6f org.apache.commons.lang3.reflect.MethodUtils.getMethodObject(Class<?>, String, Class<?>...) now returns null instead of throwing a NullPointerException, as it does for other exception types\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=MethodUtilsTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 15.35,
+      "status": "pass"
+    },
+    "8cc6363673bbcbff0777dc20343d207a443eed4a": {
+      "b": "8cc6363673bbcbff0777dc20343d207a443eed4a",
+      "a": "f71459b6bf6c5bf67685c1befc87fc52f9c7e09b",
+      "subject": "Fix NullPointerExceptions in org.apache.commons.lang3.compare.ComparableUtils.ComparableCheckBuilder",
+      "pr_hint": null,
+      "primary_main": "src/main/java/org/apache/commons/lang3/compare/ComparableUtils.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/compare/ComparableUtilsTest.java",
+      "test_selector": "ComparableUtilsTest",
+      "verified_at": "2026-05-16T08:27:32.947554+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was 8a7b0da6f org.apache.commons.lang3.reflect.MethodUtils.getMethodObject(Class<?>, String, Class<?>...) now returns null instead of throwing a NullPointerException, as it does for other exception types\nHEAD is now at 8cc636367 Fix NullPointerExceptions in org.apache.commons.lang3.compare.ComparableUtils.ComparableCheckBuilder\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=ComparableUtilsTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 15.65,
+      "status": "pass"
+    },
+    "8e1f5a9aca4afc662503474fae41434f75d5021b": {
+      "b": "8e1f5a9aca4afc662503474fae41434f75d5021b",
+      "a": "57143123dbc44fa9b9b18a51bf9ac3bfaa5512f7",
+      "subject": "Add EnumSet.stream(Class)",
+      "pr_hint": null,
+      "primary_main": "src/main/java/org/apache/commons/lang3/EnumUtils.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/EnumUtilsTest.java",
+      "test_selector": "EnumUtilsTest",
+      "verified_at": "2026-05-16T08:27:48.595726+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was 8cc636367 Fix NullPointerExceptions in org.apache.commons.lang3.compare.ComparableUtils.ComparableCheckBuilder\nHEAD is now at 8e1f5a9ac Add EnumSet.stream(Class)\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=EnumUtilsTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 15.53,
+      "status": "pass"
+    },
+    "94f612b31fd934c17850b9a1c8f1eded2cbdc842": {
+      "b": "94f612b31fd934c17850b9a1c8f1eded2cbdc842",
+      "a": "7d419b9a6bcaa628b88389b67f9c138187fff3cb",
+      "subject": "[LANG-1764] Several hash collisions in Fraction class",
+      "pr_hint": null,
+      "primary_main": "src/main/java/org/apache/commons/lang3/math/Fraction.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/math/FractionTest.java",
+      "test_selector": "FractionTest",
+      "verified_at": "2026-05-16T08:28:04.134072+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was 8e1f5a9ac Add EnumSet.stream(Class)\nHEAD is now at 94f612b31 [LANG-1764] Several hash collisions in Fraction class\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=FractionTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 15.57,
+      "status": "pass"
+    },
+    "97e572cb7e104b09573bba1881a764d9bac81bc8": {
+      "b": "97e572cb7e104b09573bba1881a764d9bac81bc8",
+      "a": "745a70091f6bc659da2d7f71374859125538b34c",
+      "subject": "[LANG-1802] Fix collision in CharRange.hashCode()",
+      "pr_hint": null,
+      "primary_main": "src/main/java/org/apache/commons/lang3/CharRange.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/CharRangeTest.java",
+      "test_selector": "CharRangeTest",
+      "verified_at": "2026-05-16T08:28:19.701232+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was 94f612b31 [LANG-1764] Several hash collisions in Fraction class\nHEAD is now at 97e572cb7 [LANG-1802] Fix collision in CharRange.hashCode()\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=CharRangeTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 18.58,
+      "status": "pass"
+    },
+    "97fb6a23e02d67cc52506e819363d3781f33c1b3": {
+      "b": "97fb6a23e02d67cc52506e819363d3781f33c1b3",
+      "a": "192e9feb446efcd2c457cdbdcb72397d1a980cc1",
+      "subject": "Add SystemUtils.getJavaIoTmpDirPath()",
+      "pr_hint": null,
+      "primary_main": "src/main/java/org/apache/commons/lang3/SystemUtils.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/SystemUtilsTest.java",
+      "test_selector": "SystemUtilsTest",
+      "verified_at": "2026-05-16T08:28:38.277095+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was 97e572cb7 [LANG-1802] Fix collision in CharRange.hashCode()\nHEAD is now at 97fb6a23e Add SystemUtils.getJavaIoTmpDirPath()\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=SystemUtilsTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 15.39,
+      "status": "pass"
+    },
+    "9bc57f7fed72c09468588f2f5ac5d5d503bc845c": {
+      "b": "9bc57f7fed72c09468588f2f5ac5d5d503bc845c",
+      "a": "1ea3bee71068bcd4edcfe7ea7bf9e1b4e4afe11d",
+      "subject": "Add RegExUtils.dotAllMatcher(String, CharSequence) and deprecate RegExUtils.dotAllMatcher(String, String)",
+      "pr_hint": null,
+      "primary_main": "src/main/java/org/apache/commons/lang3/RegExUtils.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/RegExUtilsTest.java",
+      "test_selector": "RegExUtilsTest",
+      "verified_at": "2026-05-16T08:28:53.674157+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was 97fb6a23e Add SystemUtils.getJavaIoTmpDirPath()\nHEAD is now at 9bc57f7fe Add RegExUtils.dotAllMatcher(String, CharSequence) and deprecate RegExUtils.dotAllMatcher(String, String)\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=RegExUtilsTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 16.37,
+      "status": "pass"
+    },
+    "9d6a4be2f1ff331e51daa807fb5b81473d645f73": {
+      "b": "9d6a4be2f1ff331e51daa807fb5b81473d645f73",
+      "a": "18b7e5e8248cb1db67e495056d5713d330538a5b",
+      "subject": "LocaleUtils.availableLocaleSet() uses predictable iteration order",
+      "pr_hint": null,
+      "primary_main": "src/main/java/org/apache/commons/lang3/LocaleUtils.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/LocaleUtilsTest.java",
+      "test_selector": "LocaleUtilsTest",
+      "verified_at": "2026-05-16T08:29:10.040166+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was 9bc57f7fe Add RegExUtils.dotAllMatcher(String, CharSequence) and deprecate RegExUtils.dotAllMatcher(String, String)\nHEAD is now at 9d6a4be2f LocaleUtils.availableLocaleSet() uses predictable iteration order\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=LocaleUtilsTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 16.16,
+      "status": "pass"
+    },
+    "a01471c196dba90dc1c4cb83ad3aab9f5cf07698": {
+      "b": "a01471c196dba90dc1c4cb83ad3aab9f5cf07698",
+      "a": "94923facf5e545beefa3296c1e49ae01782d5021",
+      "subject": "[LANG-1759] SerializationUtils.clone(Object) throws ClassCastException when called with a Serializable lambda",
+      "pr_hint": null,
+      "primary_main": "src/main/java/org/apache/commons/lang3/SerializationUtils.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/SerializationUtilsTest.java",
+      "test_selector": "SerializationUtilsTest",
+      "verified_at": "2026-05-16T08:29:26.209071+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was 9d6a4be2f LocaleUtils.availableLocaleSet() uses predictable iteration order\nHEAD is now at a01471c19 [LANG-1759] SerializationUtils.clone(Object) throws ClassCastException when called with a Serializable lambda\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=SerializationUtilsTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 15.69,
+      "status": "pass"
+    },
+    "a4ba12e80c1b82b814b0165704934ef182ad069f": {
+      "b": "a4ba12e80c1b82b814b0165704934ef182ad069f",
+      "a": "76ec155eea3b1b10b5ddd46e31b38782afbff848",
+      "subject": "org.apache.commons.lang3.EnumUtils.getFirstEnumIgnoreCase(Class<E>, String, Function<E, String>, E) now returns the given default enum on null enumClass input",
+      "pr_hint": null,
+      "primary_main": "src/main/java/org/apache/commons/lang3/EnumUtils.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/EnumUtilsTest.java",
+      "test_selector": "EnumUtilsTest",
+      "verified_at": "2026-05-16T08:29:41.900228+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was a01471c19 [LANG-1759] SerializationUtils.clone(Object) throws ClassCastException when called with a Serializable lambda\nHEAD is now at a4ba12e80 org.apache.commons.lang3.EnumUtils.getFirstEnumIgnoreCase(Class<E>, String, Function<E, String>, E) now returns the given default enum on null enumClass input\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=EnumUtilsTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 15.59,
+      "status": "pass"
+    },
+    "a5f9a0cc22e4626234a4d7b53bf357d61eb2478b": {
+      "b": "a5f9a0cc22e4626234a4d7b53bf357d61eb2478b",
+      "a": "34bc24ade4ba07e9109b96b3d2582acca821f837",
+      "subject": "org.apache.commons.lang3.ClassUtils.getCanonicalName(String) now throws an IllegalArgumentException for array dimensions greater than 255",
+      "pr_hint": null,
+      "primary_main": "src/main/java/org/apache/commons/lang3/ClassUtils.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/ClassUtilsTest.java",
+      "test_selector": "ClassUtilsTest",
+      "verified_at": "2026-05-16T08:29:57.489442+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was a4ba12e80 org.apache.commons.lang3.EnumUtils.getFirstEnumIgnoreCase(Class<E>, String, Function<E, String>, E) now returns the given default enum on null enumClass input\nHEAD is now at a5f9a0cc2 org.apache.commons.lang3.ClassUtils.getCanonicalName(String) now throws an IllegalArgumentException for array dimensions greater than 255\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=ClassUtilsTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 15.12,
+      "status": "pass"
+    },
+    "ae28edfbddde9ed45fb0501ec6765a2af5c451f0": {
+      "b": "ae28edfbddde9ed45fb0501ec6765a2af5c451f0",
+      "a": "6b079573792690b91f2afd1e0a94f622f0e1dee9",
+      "subject": "Add org.apache.commons.lang3.concurrent.locks.LockingVisitors.reentrantLockVisitor(Object)",
+      "pr_hint": null,
+      "primary_main": "src/main/java/org/apache/commons/lang3/concurrent/locks/LockingVisitors.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/concurrent/locks/LockingVisitorsTest.java",
+      "test_selector": "LockingVisitorsTest",
+      "verified_at": "2026-05-16T08:30:12.608600+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was a5f9a0cc2 org.apache.commons.lang3.ClassUtils.getCanonicalName(String) now throws an IllegalArgumentException for array dimensions greater than 255\nHEAD is now at ae28edfbd Add org.apache.commons.lang3.concurrent.locks.LockingVisitors.reentrantLockVisitor(Object)\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=LockingVisitorsTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 94.57,
+      "status": "pass"
+    },
+    "af1598229fca5808042ed20f50c36a4fe923c915": {
+      "b": "af1598229fca5808042ed20f50c36a4fe923c915",
+      "a": "702c6c29a01cb28254490804d3a46f39c4410c20",
+      "subject": "[LANG-1757] NullPointerException in MethodUtils.getMatchingAccessibleMethod(Class<?>, String, Class<?>...)",
+      "pr_hint": null,
+      "primary_main": "src/main/java/org/apache/commons/lang3/reflect/MethodUtils.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+      "test_selector": "MethodUtilsTest",
+      "verified_at": "2026-05-16T08:31:47.185887+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was ae28edfbd Add org.apache.commons.lang3.concurrent.locks.LockingVisitors.reentrantLockVisitor(Object)\nHEAD is now at af1598229 [LANG-1757] NullPointerException in MethodUtils.getMatchingAccessibleMethod(Class<?>, String, Class<?>...)\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=MethodUtilsTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 14.16,
+      "status": "pass"
+    },
+    "b2e66fe50ba8af3986edc3d06a9dd3c8489cfd36": {
+      "b": "b2e66fe50ba8af3986edc3d06a9dd3c8489cfd36",
+      "a": "03e181b8a059c744f62645eaea22cbe4f16d8355",
+      "subject": "Add EnumUtils.getFirstEnum(Class<E>, int, ToIntFunction<E>, E)",
+      "pr_hint": null,
+      "primary_main": "src/main/java/org/apache/commons/lang3/EnumUtils.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/EnumUtilsTest.java",
+      "test_selector": "EnumUtilsTest",
+      "verified_at": "2026-05-16T08:32:01.341482+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was af1598229 [LANG-1757] NullPointerException in MethodUtils.getMatchingAccessibleMethod(Class<?>, String, Class<?>...)\nHEAD is now at b2e66fe50 Add EnumUtils.getFirstEnum(Class<E>, int, ToIntFunction<E>, E)\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=EnumUtilsTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 14.03,
+      "status": "pass"
+    },
+    "b6f72e73ee96feb63e17096933fd5b7f313fb77b": {
+      "b": "b6f72e73ee96feb63e17096933fd5b7f313fb77b",
+      "a": "da7c755ff431dae5e0c5d2cef211a7de9cda492f",
+      "subject": "Add builders for LockingVisitors implementations",
+      "pr_hint": null,
+      "primary_main": "src/main/java/org/apache/commons/lang3/concurrent/locks/LockingVisitors.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/concurrent/locks/LockingVisitorsTest.java",
+      "test_selector": "LockingVisitorsTest",
+      "verified_at": "2026-05-16T08:32:15.368021+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was b2e66fe50 Add EnumUtils.getFirstEnum(Class<E>, int, ToIntFunction<E>, E)\nHEAD is now at b6f72e73e Add builders for LockingVisitors implementations\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=LockingVisitorsTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 93.28,
+      "status": "pass"
+    },
+    "bfa3c06361fa7bfcf35f8b3136f48a46c2b2c241": {
+      "b": "bfa3c06361fa7bfcf35f8b3136f48a46c2b2c241",
+      "a": "666ad13656c690b310fc2c6487dd60b6ed72a5ed",
+      "subject": "Add CalendarUtils.toOffsetDateTime(Calendar)",
+      "pr_hint": null,
+      "primary_main": "src/main/java/org/apache/commons/lang3/time/CalendarUtils.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/time/CalendarUtilsTest.java",
+      "test_selector": "CalendarUtilsTest",
+      "verified_at": "2026-05-16T08:33:48.647734+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was b6f72e73e Add builders for LockingVisitors implementations\nHEAD is now at bfa3c0636 Add CalendarUtils.toOffsetDateTime(Calendar)\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=CalendarUtilsTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 14.0,
+      "status": "pass"
+    },
+    "c140fc8154e8c680aad63239eaaaac14d85d5683": {
+      "b": "c140fc8154e8c680aad63239eaaaac14d85d5683",
+      "a": "557252762bb29887ddeaf9c99f16572bae19316c",
+      "subject": "Add MutablePair.ofNonNull(Map.Entry)",
+      "pr_hint": null,
+      "primary_main": "src/main/java/org/apache/commons/lang3/tuple/MutablePair.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/tuple/MutablePairTest.java",
+      "test_selector": "MutablePairTest",
+      "verified_at": "2026-05-16T08:34:02.642815+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was bfa3c0636 Add CalendarUtils.toOffsetDateTime(Calendar)\nHEAD is now at c140fc815 Add MutablePair.ofNonNull(Map.Entry)\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=MutablePairTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 14.91,
+      "status": "pass"
+    },
+    "c64cf945161ec9cad47d9b921387645c1a369053": {
+      "b": "c64cf945161ec9cad47d9b921387645c1a369053",
+      "a": "d540452cc5b0c419d8461ddc7a3469040a018f48",
+      "subject": "Add IntegerRange.toIntStream()",
+      "pr_hint": null,
+      "primary_main": "src/main/java/org/apache/commons/lang3/IntegerRange.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/IntegerRangeTest.java",
+      "test_selector": "IntegerRangeTest",
+      "verified_at": "2026-05-16T08:34:17.571992+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was c140fc815 Add MutablePair.ofNonNull(Map.Entry)\nHEAD is now at c64cf9451 Add IntegerRange.toIntStream()\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=IntegerRangeTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 13.96,
+      "status": "pass"
+    },
+    "cd87ec61b8d0b3274d6b348397802b46cd1c0247": {
+      "b": "cd87ec61b8d0b3274d6b348397802b46cd1c0247",
+      "a": "89bb30909bf873d75f5e06d144f9b2e72d74c076",
+      "subject": "[LANG-1789] NullPointerException when generating NoSuchMethodException in MethodUtils",
+      "pr_hint": null,
+      "primary_main": "src/main/java/org/apache/commons/lang3/reflect/MethodUtils.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+      "test_selector": "MethodUtilsTest",
+      "verified_at": "2026-05-16T08:34:31.530527+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was c64cf9451 Add IntegerRange.toIntStream()\nHEAD is now at cd87ec61b [LANG-1789] NullPointerException when generating NoSuchMethodException in MethodUtils\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=MethodUtilsTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 14.14,
+      "status": "pass"
+    },
+    "d0bb31bc10ac0e16f47840550860ca26f01c5595": {
+      "b": "d0bb31bc10ac0e16f47840550860ca26f01c5595",
+      "a": "28e826894c359fcb993b598dce7633dcc593c8a9",
+      "subject": "Add SystemUtils.IS_OS_ANDROID",
+      "pr_hint": null,
+      "primary_main": "src/main/java/org/apache/commons/lang3/SystemUtils.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/SystemUtilsTest.java",
+      "test_selector": "SystemUtilsTest",
+      "verified_at": "2026-05-16T08:34:45.678509+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was cd87ec61b [LANG-1789] NullPointerException when generating NoSuchMethodException in MethodUtils\nHEAD is now at d0bb31bc1 Add SystemUtils.IS_OS_ANDROID\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=SystemUtilsTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 21.9,
+      "status": "pass"
+    },
+    "d8f7c38432313089a198978638fc453ac592b743": {
+      "b": "d8f7c38432313089a198978638fc453ac592b743",
+      "a": "fe43aa478db7008b0c8e76b62e75b111678a8200",
+      "subject": "Add DoubleRange.fit(double)",
+      "pr_hint": null,
+      "primary_main": "src/main/java/org/apache/commons/lang3/DoubleRange.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/DoubleRangeTest.java",
+      "test_selector": "DoubleRangeTest",
+      "verified_at": "2026-05-16T08:35:07.571930+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was d0bb31bc1 Add SystemUtils.IS_OS_ANDROID\nHEAD is now at d8f7c3843 Add DoubleRange.fit(double)\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=DoubleRangeTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 13.95,
+      "status": "pass"
+    },
+    "da0583008020c6a9cd02dca25e8d2fac5c2bbf14": {
+      "b": "da0583008020c6a9cd02dca25e8d2fac5c2bbf14",
+      "a": "28552e87791297fa507d78ab351970f89d559443",
+      "subject": "Add SystemProperties.getPath(String, Supplier<Path>)",
+      "pr_hint": null,
+      "primary_main": "src/main/java/org/apache/commons/lang3/SystemProperties.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/SystemPropertiesTest.java",
+      "test_selector": "SystemPropertiesTest",
+      "verified_at": "2026-05-16T08:35:21.526023+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was d8f7c3843 Add DoubleRange.fit(double)\nHEAD is now at da0583008 Add SystemProperties.getPath(String, Supplier<Path>)\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=SystemPropertiesTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 15.36,
+      "status": "pass"
+    },
+    "df3e2715f41263d8998b7350301d106967748c0e": {
+      "b": "df3e2715f41263d8998b7350301d106967748c0e",
+      "a": "1441ba9f3cd172ccfbd2d0c2ce336f4a9750a0a2",
+      "subject": "Add TimedSemaphore.builder() and Builder",
+      "pr_hint": null,
+      "primary_main": "src/main/java/org/apache/commons/lang3/concurrent/TimedSemaphore.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/concurrent/TimedSemaphoreTest.java",
+      "test_selector": "TimedSemaphoreTest",
+      "verified_at": "2026-05-16T08:35:36.887813+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was da0583008 Add SystemProperties.getPath(String, Supplier<Path>)\nHEAD is now at df3e2715f Add TimedSemaphore.builder() and Builder\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=TimedSemaphoreTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 16.09,
+      "status": "pass"
+    },
+    "e1ffb6ea0b9e21ea71c4540b0fca4db8e4c1dd93": {
+      "b": "e1ffb6ea0b9e21ea71c4540b0fca4db8e4c1dd93",
+      "a": "2cdac973e3d2fa0b9590b4ffb1b02bb4c99c73d7",
+      "subject": "ThreadUtils.sleepQuietly(Duration) now restores the current thread's interrupt flag when catching InterruptedException.",
+      "pr_hint": null,
+      "primary_main": "src/main/java/org/apache/commons/lang3/ThreadUtils.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/ThreadUtilsTest.java",
+      "test_selector": "ThreadUtilsTest",
+      "verified_at": "2026-05-16T08:35:52.977121+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was df3e2715f Add TimedSemaphore.builder() and Builder\nHEAD is now at e1ffb6ea0 ThreadUtils.sleepQuietly(Duration) now restores the current thread's interrupt flag when catching InterruptedException.\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=ThreadUtilsTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 17.45,
+      "status": "pass"
+    },
+    "e7d001f1b77c382f99ee7fe01d8563d8219697df": {
+      "b": "e7d001f1b77c382f99ee7fe01d8563d8219697df",
+      "a": "6e0c4f9cc9df28853afc025d33ca6512b292926f",
+      "subject": "Add RegExUtils.removePattern(CharSequence, String) and deprecate RegExUtils.removePattern(String, String)",
+      "pr_hint": null,
+      "primary_main": "src/main/java/org/apache/commons/lang3/RegExUtils.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/RegExUtilsTest.java",
+      "test_selector": "RegExUtilsTest",
+      "verified_at": "2026-05-16T08:36:10.428571+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was e1ffb6ea0 ThreadUtils.sleepQuietly(Duration) now restores the current thread's interrupt flag when catching InterruptedException.\nHEAD is now at e7d001f1b Add RegExUtils.removePattern(CharSequence, String) and deprecate RegExUtils.removePattern(String, String)\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=RegExUtilsTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 14.77,
+      "status": "pass"
+    },
+    "ee09f69951c0867c0ade41658effb6f48a49eec1": {
+      "b": "ee09f69951c0867c0ade41658effb6f48a49eec1",
+      "a": "089be860f16719aaa4ea8290a8c393de0b7dc7f6",
+      "subject": "MethodUtils cannot find or invoke a vararg method without providing vararg types or values #1427",
+      "pr_hint": 1427,
+      "primary_main": "src/main/java/org/apache/commons/lang3/reflect/MethodUtils.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+      "test_selector": "MethodUtilsTest",
+      "verified_at": "2026-05-16T08:36:40.592383+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was e917dd0df Add org.apache.commons.lang3.time.DateUtils.toOffsetDateTime(Date[, TimeZone]) #1385\nHEAD is now at ee09f6995 MethodUtils cannot find or invoke a vararg method without providing vararg types or values #1427\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=MethodUtilsTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 16.33,
+      "status": "pass"
+    },
+    "ef3d5d93a30ba3934b8f02b88c048451aad8e87a": {
+      "b": "ef3d5d93a30ba3934b8f02b88c048451aad8e87a",
+      "a": "4d77a45601a68a5156c56ca84ae0929665a9350e",
+      "subject": "Add ArrayUtils.startsWith()",
+      "pr_hint": null,
+      "primary_main": "src/main/java/org/apache/commons/lang3/ArrayUtils.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/ArrayUtilsTest.java",
+      "test_selector": "ArrayUtilsTest",
+      "verified_at": "2026-05-16T08:36:56.925435+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was ee09f6995 MethodUtils cannot find or invoke a vararg method without providing vararg types or values #1427\nHEAD is now at ef3d5d93a Add ArrayUtils.startsWith()\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=ArrayUtilsTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 15.82,
+      "status": "pass"
+    },
+    "f1aed3eacb500f581f0c10074bdb7faaacfa4a49": {
+      "b": "f1aed3eacb500f581f0c10074bdb7faaacfa4a49",
+      "a": "2875a65756da4c72e8d188555b9639857e73684a",
+      "subject": "Add StopWatch.getStartInstant() and deprecate getStartTime()",
+      "pr_hint": null,
+      "primary_main": "src/main/java/org/apache/commons/lang3/time/StopWatch.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/time/StopWatchTest.java",
+      "test_selector": "StopWatchTest",
+      "verified_at": "2026-05-16T08:37:12.742816+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was ef3d5d93a Add ArrayUtils.startsWith()\nHEAD is now at f1aed3eac Add StopWatch.getStartInstant() and deprecate getStartTime()\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=StopWatchTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 22.35,
+      "status": "pass"
+    },
+    "f431d2eeb71c1e0cf910cdd4d930153e656379c3": {
+      "b": "f431d2eeb71c1e0cf910cdd4d930153e656379c3",
+      "a": "9d5ad944277b0e6f4003953fc33710cae9d95d0b",
+      "subject": "Add ArrayFill.fill(boolean[], boolean) #1386",
+      "pr_hint": 1386,
+      "primary_main": "src/main/java/org/apache/commons/lang3/ArrayFill.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/ArrayFillTest.java",
+      "test_selector": "ArrayFillTest",
+      "verified_at": "2026-05-16T08:37:35.105152+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was f1aed3eac Add StopWatch.getStartInstant() and deprecate getStartTime()\nHEAD is now at f431d2eeb Add ArrayFill.fill(boolean[], boolean) #1386\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=ArrayFillTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 13.46,
+      "status": "pass"
+    },
+    "f43534ec04d4c4bae666033e2041ecde21c19a56": {
+      "b": "f43534ec04d4c4bae666033e2041ecde21c19a56",
+      "a": "ea47d47ea8ab89a8ab84488cac0d0ce030c28efd",
+      "subject": "Add RegExUtils methods typed to CharSequence input and deprecate old versions typed to String",
+      "pr_hint": null,
+      "primary_main": "src/main/java/org/apache/commons/lang3/RegExUtils.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/RegExUtilsTest.java",
+      "test_selector": "RegExUtilsTest",
+      "verified_at": "2026-05-16T08:37:48.577462+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was f431d2eeb Add ArrayFill.fill(boolean[], boolean) #1386\nHEAD is now at f43534ec0 Add RegExUtils methods typed to CharSequence input and deprecate old versions typed to String\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=RegExUtilsTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 14.36,
+      "status": "pass"
+    },
+    "fb42e80e929334aa393de029dfc47cd309826a19": {
+      "b": "fb42e80e929334aa393de029dfc47cd309826a19",
+      "a": "421229b42f79a41d1eb7f4e9d9f1dabef56270d3",
+      "subject": "Add SystemUtils.getUserHomePath()",
+      "pr_hint": null,
+      "primary_main": "src/main/java/org/apache/commons/lang3/SystemUtils.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/SystemUtilsTest.java",
+      "test_selector": "SystemUtilsTest",
+      "verified_at": "2026-05-16T08:38:02.934568+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was f43534ec0 Add RegExUtils methods typed to CharSequence input and deprecate old versions typed to String\nHEAD is now at fb42e80e9 Add SystemUtils.getUserHomePath()\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=SystemUtilsTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 14.68,
+      "status": "pass"
+    },
+    "fe43aa478db7008b0c8e76b62e75b111678a8200": {
+      "b": "fe43aa478db7008b0c8e76b62e75b111678a8200",
+      "a": "63eae727645c6e90a781a0eb4bc697f81281f81a",
+      "subject": "Add LongRange.fit(long)",
+      "pr_hint": null,
+      "primary_main": "src/main/java/org/apache/commons/lang3/LongRange.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/LongRangeTest.java",
+      "test_selector": "LongRangeTest",
+      "verified_at": "2026-05-16T08:38:17.615613+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was fb42e80e9 Add SystemUtils.getUserHomePath()\nHEAD is now at fe43aa478 Add LongRange.fit(long)\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=LongRangeTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 15.17,
+      "status": "pass"
+    },
+    "ff66cce0ca10046727e594e0beeed7924dfc7a41": {
+      "b": "ff66cce0ca10046727e594e0beeed7924dfc7a41",
+      "a": "d0bb31bc10ac0e16f47840550860ca26f01c5595",
+      "subject": "Add SystemUtils.IS_OS_MAC_OSX_SONOMA",
+      "pr_hint": null,
+      "primary_main": "src/main/java/org/apache/commons/lang3/SystemUtils.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/SystemUtilsTest.java",
+      "test_selector": "SystemUtilsTest",
+      "verified_at": "2026-05-16T08:38:32.774386+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was fe43aa478 Add LongRange.fit(long)\nHEAD is now at ff66cce0c Add SystemUtils.IS_OS_MAC_OSX_SONOMA\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=SystemUtilsTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 14.58,
+      "status": "pass"
+    },
+    "71c905200de7d1d260a2a40a29d96c7e8a976a6e": {
+      "b": "71c905200de7d1d260a2a40a29d96c7e8a976a6e",
+      "a": "766c028c96afbc831e842684c85e90fdad08722c",
+      "subject": "Optimize ObjectToStringComparator.compare() method",
+      "pr_hint": null,
+      "primary_main": "src/main/java/org/apache/commons/lang3/compare/ObjectToStringComparator.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/compare/ObjectToStringComparatorTest.java",
+      "test_selector": "ObjectToStringComparatorTest",
+      "verified_at": "2026-05-16T08:38:47.366339+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was ff66cce0c Add SystemUtils.IS_OS_MAC_OSX_SONOMA\nHEAD is now at 71c905200 Optimize ObjectToStringComparator.compare() method\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=ObjectToStringComparatorTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 15.03,
+      "status": "pass"
+    },
+    "da246244aebf91571b0689e3dee97fce0ad52b23": {
+      "b": "da246244aebf91571b0689e3dee97fce0ad52b23",
+      "a": "31c7c5bde17819783ca84acb78344d2efd5d19fd",
+      "subject": "Add StopWatch.run([Failable]Runnable) and get([Failable]Supplier)",
+      "pr_hint": null,
+      "primary_main": "src/main/java/org/apache/commons/lang3/time/StopWatch.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/time/StopWatchTest.java",
+      "test_selector": "StopWatchTest",
+      "verified_at": "2026-05-16T08:39:02.390041+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was 71c905200 Optimize ObjectToStringComparator.compare() method\nHEAD is now at da246244a Add StopWatch.run([Failable]Runnable) and get([Failable]Supplier)\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=StopWatchTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 15.6,
+      "status": "pass"
+    },
+    "1d5ba7a1109ba6bf5b7948ece6add47d57f9d6c2": {
+      "b": "1d5ba7a1109ba6bf5b7948ece6add47d57f9d6c2",
+      "a": "4c39aa2ca612e6087f2a7edc90f88e5555b7cb27",
+      "subject": "MethodUtils cannot find or invoke a public method on a public class implemented in its package-private superclass",
+      "pr_hint": null,
+      "primary_main": "src/main/java/org/apache/commons/lang3/reflect/MethodUtils.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+      "test_selector": "MethodUtilsTest",
+      "verified_at": "2026-05-16T08:39:17.993637+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was da246244a Add StopWatch.run([Failable]Runnable) and get([Failable]Supplier)\nHEAD is now at 1d5ba7a11 MethodUtils cannot find or invoke a public method on a public class implemented in its package-private superclass\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=MethodUtilsTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 15.23,
+      "status": "pass"
+    },
+    "f2bdb0cb74a08b15439abf18df6ac2b52549394a": {
+      "b": "f2bdb0cb74a08b15439abf18df6ac2b52549394a",
+      "a": "d68bf970beb14fa569e7e629c625ba48c01c2ddc",
+      "subject": "Add long support to `BitField` (#1561)",
+      "pr_hint": 1561,
+      "primary_main": "src/main/java/org/apache/commons/lang3/BitField.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/BitFieldTest.java",
+      "test_selector": "BitFieldTest",
+      "verified_at": "2026-05-16T08:39:33.236439+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was 1d5ba7a11 MethodUtils cannot find or invoke a public method on a public class implemented in its package-private superclass\nHEAD is now at f2bdb0cb7 Add long support to `BitField` (#1561)\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=BitFieldTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 17.79,
+      "status": "pass"
+    },
+    "f382d61a03778ccf838c6c051bd8692e4834dec2": {
+      "b": "f382d61a03778ccf838c6c051bd8692e4834dec2",
+      "a": "78154f0456f8bbf7139bc1524481eef8f6e228f7",
+      "subject": "Reimplement RandomStringUtils on top of SecureRandom#getInstanceStrong() (#1235)",
+      "pr_hint": 1235,
+      "primary_main": "src/main/java/org/apache/commons/lang3/RandomStringUtils.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/RandomStringUtilsTest.java",
+      "test_selector": "RandomStringUtilsTest",
+      "verified_at": "2026-05-16T08:39:51.031656+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was f2bdb0cb7 Add long support to `BitField` (#1561)\nHEAD is now at f382d61a0 Reimplement RandomStringUtils on top of SecureRandom#getInstanceStrong() (#1235)\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=RandomStringUtilsTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 15.56,
+      "status": "pass"
+    },
+    "b046e22faf9cd0a7190bd29cf648c154bab1f42f": {
+      "b": "b046e22faf9cd0a7190bd29cf648c154bab1f42f",
+      "a": "0d46368e15e9fba7eacafc1ce3fec4afb92258f1",
+      "subject": "Add Predicates",
+      "pr_hint": null,
+      "primary_main": "src/main/java/org/apache/commons/lang3/ThreadUtils.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/ThreadUtilsTest.java",
+      "test_selector": "ThreadUtilsTest",
+      "verified_at": "2026-05-16T08:40:06.590754+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was f382d61a0 Reimplement RandomStringUtils on top of SecureRandom#getInstanceStrong() (#1235)\nHEAD is now at b046e22fa Add Predicates\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=ThreadUtilsTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 15.7,
+      "status": "pass"
+    },
+    "00e530042f481d1000be27584cf05be939a42bb0": {
+      "b": "00e530042f481d1000be27584cf05be939a42bb0",
+      "a": "892c9703496079e0b65eccea0252cf52a44c4512",
+      "subject": "[LANG-1745] RandomStringUtils.random() with a negative character index should throw IllegalArgumentException (#1247)",
+      "pr_hint": 1247,
+      "primary_main": "src/main/java/org/apache/commons/lang3/RandomStringUtils.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/RandomStringUtilsTest.java",
+      "test_selector": "RandomStringUtilsTest",
+      "verified_at": "2026-05-16T08:40:22.297030+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was b046e22fa Add Predicates\nHEAD is now at 00e530042 [LANG-1745] RandomStringUtils.random() with a negative character index should throw IllegalArgumentException (#1247)\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=RandomStringUtilsTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 15.34,
+      "status": "pass"
+    },
+    "0f211efaf1228c3371b2a81de095661a94907f5e": {
+      "b": "0f211efaf1228c3371b2a81de095661a94907f5e",
+      "a": "5019152951ad0d9fe65961b5f6e0d1527f876bd5",
+      "subject": "org.apache.commons.lang3.concurrent.AtomicSafeInitializer.get() can spin internally if the FailableSupplier given to org.apache.commons.lang3.concurrent.AbstractConcurrentInitializer.AbstractBuilder.setInitializer(FailableSupplier) throws a RuntimeException",
+      "pr_hint": null,
+      "primary_main": "src/main/java/org/apache/commons/lang3/concurrent/AtomicSafeInitializer.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/concurrent/AtomicSafeInitializerTest.java",
+      "test_selector": "AtomicSafeInitializerTest",
+      "verified_at": "2026-05-16T08:40:37.635887+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was 00e530042 [LANG-1745] RandomStringUtils.random() with a negative character index should throw IllegalArgumentException (#1247)\nHEAD is now at 0f211efaf org.apache.commons.lang3.concurrent.AtomicSafeInitializer.get() can spin internally if the FailableSupplier given to org.apache.commons.lang3.concurrent.AbstractConcurrentInitializer.AbstractBuilder.setInitializer(FailableSupplier) throws a RuntimeException\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=AtomicSafeInitializerTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 15.29,
+      "status": "pass"
+    },
+    "2188eb0e2e15431b7c4a65f7168392c888f0ecd1": {
+      "b": "2188eb0e2e15431b7c4a65f7168392c888f0ecd1",
+      "a": "5ba76850bd009dfb3638a91e0b673d455c173e08",
+      "subject": "Add Validate.isTrue(boolean, Supplier<String>)",
+      "pr_hint": null,
+      "primary_main": "src/main/java/org/apache/commons/lang3/Validate.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/ValidateTest.java",
+      "test_selector": "ValidateTest",
+      "verified_at": "2026-05-16T08:40:52.924603+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was 0f211efaf org.apache.commons.lang3.concurrent.AtomicSafeInitializer.get() can spin internally if the FailableSupplier given to org.apache.commons.lang3.concurrent.AbstractConcurrentInitializer.AbstractBuilder.setInitializer(FailableSupplier) throws a RuntimeException\nHEAD is now at 2188eb0e2 Add Validate.isTrue(boolean, Supplier<String>)\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=ValidateTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 15.34,
+      "status": "pass"
+    },
+    "64d6a28a12d99a02e41cdd746ec0df221c93bcea": {
+      "b": "64d6a28a12d99a02e41cdd746ec0df221c93bcea",
+      "a": "81c9589f4a396fef0616f8be7b6eb673e595d83b",
+      "subject": "Comment: Remove unnecessary Latin acronym",
+      "pr_hint": null,
+      "primary_main": "src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/math/NumberUtilsTest.java",
+      "test_selector": "NumberUtilsTest",
+      "verified_at": "2026-05-16T08:41:08.265803+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was 2188eb0e2 Add Validate.isTrue(boolean, Supplier<String>)\nHEAD is now at 64d6a28a1 Comment: Remove unnecessary Latin acronym\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=NumberUtilsTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 14.99,
+      "status": "pass"
+    },
+    "7e3571e7e2c6d96f8c491b75b876162687d800c9": {
+      "b": "7e3571e7e2c6d96f8c491b75b876162687d800c9",
+      "a": "53dc633eb330bea4335b015a273346553446bb8a",
+      "subject": "Add JavaVersion.JAVA_27",
+      "pr_hint": null,
+      "primary_main": "src/main/java/org/apache/commons/lang3/SystemUtils.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/SystemUtilsTest.java",
+      "test_selector": "SystemUtilsTest",
+      "verified_at": "2026-05-16T08:41:23.270772+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was 64d6a28a1 Comment: Remove unnecessary Latin acronym\nHEAD is now at 7e3571e7e Add JavaVersion.JAVA_27\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=SystemUtilsTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 17.68,
+      "status": "pass"
+    },
+    "8b27dec0340e501fee098278d358d7ddd62ad2ad": {
+      "b": "8b27dec0340e501fee098278d358d7ddd62ad2ad",
+      "a": "9cbf068672d7250b90d21c474ed70bfe271ba14e",
+      "subject": "Add SystemProperties.getBoolean(Class, String, BooleanSupplier)",
+      "pr_hint": null,
+      "primary_main": "src/main/java/org/apache/commons/lang3/SystemProperties.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/SystemPropertiesTest.java",
+      "test_selector": "SystemPropertiesTest",
+      "verified_at": "2026-05-16T08:41:40.942202+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was 7e3571e7e Add JavaVersion.JAVA_27\nHEAD is now at 8b27dec03 Add SystemProperties.getBoolean(Class, String, BooleanSupplier)\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=SystemPropertiesTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 16.32,
+      "status": "pass"
+    },
+    "9b383f3fadccab020874aa5c69704790e03c4f4f": {
+      "b": "9b383f3fadccab020874aa5c69704790e03c4f4f",
+      "a": "39f4ea2311636e2aac7bce7eddff8575270d827f",
+      "subject": "Add org.apache.commons.lang3.SystemProperties.isPropertySet(String)",
+      "pr_hint": null,
+      "primary_main": "src/main/java/org/apache/commons/lang3/SystemProperties.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/SystemPropertiesTest.java",
+      "test_selector": "SystemPropertiesTest",
+      "verified_at": "2026-05-16T08:41:57.273340+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was 8b27dec03 Add SystemProperties.getBoolean(Class, String, BooleanSupplier)\nHEAD is now at 9b383f3fa Add org.apache.commons.lang3.SystemProperties.isPropertySet(String)\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=SystemPropertiesTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 16.04,
+      "status": "pass"
+    },
+    "c2260f094d78c236bb8a2e3e153d422c7d7ad6bf": {
+      "b": "c2260f094d78c236bb8a2e3e153d422c7d7ad6bf",
+      "a": "3f7868e1b22dbcf9442579d7b66f55a9b5b7e22e",
+      "subject": "[LANG-1772] Restrict size of cache to prevent overflow errors (#1379)",
+      "pr_hint": 1379,
+      "primary_main": "src/main/java/org/apache/commons/lang3/RandomStringUtils.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/RandomStringUtilsTest.java",
+      "test_selector": "RandomStringUtilsTest",
+      "verified_at": "2026-05-16T08:42:13.318769+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was 9b383f3fa Add org.apache.commons.lang3.SystemProperties.isPropertySet(String)\nHEAD is now at c2260f094 [LANG-1772] Restrict size of cache to prevent overflow errors (#1379)\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=RandomStringUtilsTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 16.96,
+      "status": "pass"
+    },
+    "dc6ff345793c9c2d2d26919722c3eb79ffbab689": {
+      "b": "dc6ff345793c9c2d2d26919722c3eb79ffbab689",
+      "a": "248ec2e719b35570f2635cde69a00865388fe869",
+      "subject": "Add ArrayFill.fill(T[], FailableIntFunction))",
+      "pr_hint": null,
+      "primary_main": "src/main/java/org/apache/commons/lang3/ArrayFill.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/ArrayFillTest.java",
+      "test_selector": "ArrayFillTest",
+      "verified_at": "2026-05-16T08:42:30.281044+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was c2260f094 [LANG-1772] Restrict size of cache to prevent overflow errors (#1379)\nHEAD is now at dc6ff3457 Add ArrayFill.fill(T[], FailableIntFunction))\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=ArrayFillTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 16.12,
+      "status": "pass"
+    },
+    "f24c027ff83b90beab2ec28696721200abb4f9e9": {
+      "b": "f24c027ff83b90beab2ec28696721200abb4f9e9",
+      "a": "cc5ecf5db64abf0d2a2f59be16f9dc49a520dca9",
+      "subject": "Add JavaVersion.JAVA_26",
+      "pr_hint": null,
+      "primary_main": "src/main/java/org/apache/commons/lang3/SystemUtils.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/SystemUtilsTest.java",
+      "test_selector": "SystemUtilsTest",
+      "verified_at": "2026-05-16T08:42:46.401146+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was dc6ff3457 Add ArrayFill.fill(T[], FailableIntFunction))\nHEAD is now at f24c027ff Add JavaVersion.JAVA_26\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=SystemUtilsTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 15.47,
+      "status": "pass"
+    },
+    "ef5de64ed438be8074ccb017c74c122d47b7195a": {
+      "b": "ef5de64ed438be8074ccb017c74c122d47b7195a",
+      "a": "d8f45fdbfea7d984d6719d8d83f87f73dd623c95",
+      "subject": "Clean caches between tests",
+      "pr_hint": null,
+      "primary_main": "src/main/java/org/apache/commons/lang3/time/FastDateParser.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/time/FastDateParserTest.java",
+      "test_selector": "FastDateParserTest",
+      "verified_at": "2026-05-16T08:43:01.876221+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was f24c027ff Add JavaVersion.JAVA_26\nHEAD is now at ef5de64ed Clean caches between tests\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=FastDateParserTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 28.09,
+      "status": "pass"
+    },
+    "14d34506c993dcefa0860e4a98fa30062d851997": {
+      "b": "14d34506c993dcefa0860e4a98fa30062d851997",
+      "a": "1897e4d7f6cdf129db7a4c8f35f7a3657c712a70",
+      "subject": "MethodUtils cannot find or invoke vararg methods when widening primitive types following the JLS 5.1.2. Widening Primitive Conversion.",
+      "pr_hint": null,
+      "primary_main": "src/main/java/org/apache/commons/lang3/reflect/MethodUtils.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+      "test_selector": "MethodUtilsTest",
+      "verified_at": "2026-05-16T08:43:29.958545+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was ef5de64ed Clean caches between tests\nHEAD is now at 14d34506c MethodUtils cannot find or invoke vararg methods when widening primitive types following the JLS 5.1.2. Widening Primitive Conversion.\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=MethodUtilsTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 15.47,
+      "status": "pass"
+    },
+    "b62fc004d1a60757090ba9a177202eed0db57cc0": {
+      "b": "b62fc004d1a60757090ba9a177202eed0db57cc0",
+      "a": "daa63aa595ea39a69e1b44ac23bc50fdcf2afd62",
+      "subject": "Add some tests that use reflection",
+      "pr_hint": null,
+      "primary_main": "src/main/java/org/apache/commons/lang3/builder/ReflectionDiffBuilder.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/builder/ReflectionDiffBuilderTest.java",
+      "test_selector": "ReflectionDiffBuilderTest",
+      "verified_at": "2026-05-16T08:43:45.446668+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was 14d34506c MethodUtils cannot find or invoke vararg methods when widening primitive types following the JLS 5.1.2. Widening Primitive Conversion.\nHEAD is now at b62fc004d Add some tests that use reflection\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=ReflectionDiffBuilderTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 16.2,
+      "status": "pass"
+    },
+    "177911e47146db0df2e35839d6bd03ad1315916c": {
+      "b": "177911e47146db0df2e35839d6bd03ad1315916c",
+      "a": "5a15ccb62eb88ffa41e6b62ac944066fb121afe8",
+      "subject": "Add ObjectUtils.getIfNull(Object, Object) and deprecate defaultIfNull(Object, Object)",
+      "pr_hint": null,
+      "primary_main": "src/main/java/org/apache/commons/lang3/ObjectUtils.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/ObjectUtilsTest.java",
+      "test_selector": "ObjectUtilsTest",
+      "verified_at": "2026-05-16T08:44:01.648893+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was b62fc004d Add some tests that use reflection\nHEAD is now at 177911e47 Add ObjectUtils.getIfNull(Object, Object) and deprecate defaultIfNull(Object, Object)\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=ObjectUtilsTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 15.19,
+      "status": "pass"
+    },
+    "a511a163b579fdaafa81fb6ca908034d32291871": {
+      "b": "a511a163b579fdaafa81fb6ca908034d32291871",
+      "a": "efab6cb03ed473af6e1fa9b9f06aa49f7ca399e3",
+      "subject": "Normalize parameter names",
+      "pr_hint": null,
+      "primary_main": "src/main/java/org/apache/commons/lang3/Streams.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/StreamsTest.java",
+      "test_selector": "StreamsTest",
+      "verified_at": "2026-05-16T08:44:16.838499+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was 177911e47 Add ObjectUtils.getIfNull(Object, Object) and deprecate defaultIfNull(Object, Object)\nHEAD is now at a511a163b Normalize parameter names\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=StreamsTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 15.23,
+      "status": "pass"
+    },
+    "4c1cbdbb8002074959f3291371b34f4b0ce1f359": {
+      "b": "4c1cbdbb8002074959f3291371b34f4b0ce1f359",
+      "a": "a37e8de046a328c3400ea2f78b51d792152e9569",
+      "subject": "Flip args on new API",
+      "pr_hint": null,
+      "primary_main": "src/main/java/org/apache/commons/lang3/function/Consumers.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/function/ConsumersTest.java",
+      "test_selector": "ConsumersTest",
+      "verified_at": "2026-05-16T08:44:32.076795+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was a511a163b Normalize parameter names\nHEAD is now at 4c1cbdbb8 Flip args on new API\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=ConsumersTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 15.1,
+      "status": "pass"
+    },
+    "c49ed131f71dae68c1856d58918b322aa4ba6017": {
+      "b": "c49ed131f71dae68c1856d58918b322aa4ba6017",
+      "a": "07914b39281e4be500d430b2c25e85499748788f",
+      "subject": "[LANG-1784] Add Functions|Failable methods for null-safe mapping and chaining #1435",
+      "pr_hint": 1435,
+      "primary_main": "src/main/java/org/apache/commons/lang3/function/Failable.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/function/FailableTest.java",
+      "test_selector": "FailableTest",
+      "verified_at": "2026-05-16T08:44:47.178100+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was 4c1cbdbb8 Flip args on new API\nHEAD is now at c49ed131f [LANG-1784] Add Functions|Failable methods for null-safe mapping and chaining #1435\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=FailableTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 16.17,
+      "status": "pass"
+    },
+    "c95ee37dffd44b01d2b816e0d943013bc7bd866c": {
+      "b": "c95ee37dffd44b01d2b816e0d943013bc7bd866c",
+      "a": "12c71a019faf874e22be3890b5687d757864755f",
+      "subject": "Feature/randomutils secure() and insecure() (#1250)",
+      "pr_hint": 1250,
+      "primary_main": "src/main/java/org/apache/commons/lang3/RandomStringUtils.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/RandomStringUtilsTest.java",
+      "test_selector": "RandomStringUtilsTest",
+      "verified_at": "2026-05-16T08:45:03.348550+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was c49ed131f [LANG-1784] Add Functions|Failable methods for null-safe mapping and chaining #1435\nHEAD is now at c95ee37df Feature/randomutils secure() and insecure() (#1250)\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=RandomStringUtilsTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 15.31,
+      "status": "pass"
+    },
+    "70fa706916dc59209281699477575e4d5292b936": {
+      "b": "70fa706916dc59209281699477575e4d5292b936",
+      "a": "14a23988e2aae5aa0aa8366fcd5cf9bad151531a",
+      "subject": "Add JavaVersion.JAVA_25",
+      "pr_hint": null,
+      "primary_main": "src/main/java/org/apache/commons/lang3/JavaVersion.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/JavaVersionTest.java",
+      "test_selector": "JavaVersionTest",
+      "verified_at": "2026-05-16T08:45:18.659863+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was c95ee37df Feature/randomutils secure() and insecure() (#1250)\nHEAD is now at 70fa70691 Add JavaVersion.JAVA_25\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=JavaVersionTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 15.38,
+      "status": "pass"
+    },
+    "85f91f4208903bb7ca608d51c941214b667d3c06": {
+      "b": "85f91f4208903bb7ca608d51c941214b667d3c06",
+      "a": "62b5acac4c8bdfe3801e2f0ffe8fd6e889b79e08",
+      "subject": "Add ArrayUtils.containsAny(int[], int...)",
+      "pr_hint": null,
+      "primary_main": "src/main/java/org/apache/commons/lang3/ArrayUtils.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/ArrayUtilsTest.java",
+      "test_selector": "ArrayUtilsTest",
+      "verified_at": "2026-05-16T08:45:34.047432+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was 70fa70691 Add JavaVersion.JAVA_25\nHEAD is now at 85f91f420 Add ArrayUtils.containsAny(int[], int...)\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=ArrayUtilsTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 16.0,
+      "status": "pass"
+    },
+    "e7437aa445b31dc17eab30ece032d736e33f3761": {
+      "b": "e7437aa445b31dc17eab30ece032d736e33f3761",
+      "a": "e3883c0d693b2bf523f652fb610698e73b7784de",
+      "subject": "Add SystemUtils.IS_JAVA_23",
+      "pr_hint": null,
+      "primary_main": "src/main/java/org/apache/commons/lang3/JavaVersion.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/JavaVersionTest.java",
+      "test_selector": "JavaVersionTest",
+      "verified_at": "2026-05-16T08:45:50.050287+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was 85f91f420 Add ArrayUtils.containsAny(int[], int...)\nHEAD is now at e7437aa44 Add SystemUtils.IS_JAVA_23\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=JavaVersionTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 17.87,
+      "status": "pass"
+    },
+    "f664abb5e255e734860ab11778d982491f317f14": {
+      "b": "f664abb5e255e734860ab11778d982491f317f14",
+      "a": "bf0ea77dbfb6877d8a3385baf9eb470b51a31f47",
+      "subject": "Add JavaVersion.JAVA_24",
+      "pr_hint": null,
+      "primary_main": "src/main/java/org/apache/commons/lang3/JavaVersion.java",
+      "primary_test": "src/test/java/org/apache/commons/lang3/JavaVersionTest.java",
+      "test_selector": "JavaVersionTest",
+      "verified_at": "2026-05-16T08:46:07.922614+00:00",
+      "git_checkout": {
+        "returncode": 0,
+        "timed_out": false,
+        "stderr_tail": "Previous HEAD position was e7437aa44 Add SystemUtils.IS_JAVA_23\nHEAD is now at f664abb5e Add JavaVersion.JAVA_24\n"
+      },
+      "maven": {
+        "command": [
+          "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+          "-q",
+          "test",
+          "-Dtest=JavaVersionTest"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      },
+      "elapsed_sec": 14.89,
+      "status": "pass"
+    }
+  },
+  "count_total": 135,
+  "count_pass": 135,
+  "count_removed_fail": 2,
+  "removed_b_hashes": [
+    "58e0095be780bcb7fdb8d51cfbd6cf56b2f99696",
+    "e917dd0df3cd38b8ee7e7bbf3ba75fa6f8f06e40"
+  ],
+  "note": "已剔除 status!=pass 的条目"
+}

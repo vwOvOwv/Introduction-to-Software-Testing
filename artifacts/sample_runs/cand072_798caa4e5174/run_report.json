@@ -1,0 +1,55 @@
+{
+  "timestamp": "2026-05-16T11:28:04.603241+00:00",
+  "repo": "D:\\软件测试导论\\final_homework\\commons-lang",
+  "ref": "798caa4e51747dfbfceba0af8db7afa4fe629e36",
+  "target_test_path": "src/test/java/org/apache/commons/lang3/LongRangeTest.java",
+  "replacement_test_file": "D:\\软件测试导论\\final_homework\\Introduction-to-Software-Testing\\artifacts\\sample_runs\\cand072_798caa4e5174\\generated.java",
+  "test_selector": "LongRangeTest",
+  "maven_args": [
+    "-q"
+  ],
+  "discard_all_tracked_changes": false,
+  "checkout": {
+    "command": [
+      "git",
+      "checkout",
+      "--detach",
+      "798caa4e51747dfbfceba0af8db7afa4fe629e36"
+    ],
+    "cwd": "D:\\软件测试导论\\final_homework\\commons-lang",
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "Previous HEAD position was 783316188 Conversion.hexTo*() methods now throw IllegalArgumentException instead of StringIndexOutOfBoundsException\nHEAD is now at 798caa4e5 Add LongRange.toLongStream()\n"
+  },
+  "maven": {
+    "command": [
+      "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+      "-q",
+      "-Dtest=LongRangeTest",
+      "test"
+    ],
+    "cwd": "D:\\软件测试导论\\final_homework\\commons-lang",
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "restore": [
+    {
+      "command": [
+        "git",
+        "restore",
+        "--source=HEAD",
+        "--staged",
+        "--worktree",
+        "--",
+        "src/test/java/org/apache/commons/lang3/LongRangeTest.java"
+      ],
+      "cwd": "D:\\软件测试导论\\final_homework\\commons-lang",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "failure_message": null,
+  "maven_command_shell": "'D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD' -q -Dtest=LongRangeTest test"
+}

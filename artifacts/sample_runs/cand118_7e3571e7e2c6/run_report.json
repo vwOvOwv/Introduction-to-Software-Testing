@@ -1,0 +1,55 @@
+{
+  "timestamp": "2026-05-16T11:50:48.482139+00:00",
+  "repo": "D:\\软件测试导论\\final_homework\\commons-lang",
+  "ref": "7e3571e7e2c6d96f8c491b75b876162687d800c9",
+  "target_test_path": "src/test/java/org/apache/commons/lang3/SystemUtilsTest.java",
+  "replacement_test_file": "D:\\软件测试导论\\final_homework\\Introduction-to-Software-Testing\\artifacts\\sample_runs\\cand118_7e3571e7e2c6\\generated.java",
+  "test_selector": "SystemUtilsTest",
+  "maven_args": [
+    "-q"
+  ],
+  "discard_all_tracked_changes": false,
+  "checkout": {
+    "command": [
+      "git",
+      "checkout",
+      "--detach",
+      "7e3571e7e2c6d96f8c491b75b876162687d800c9"
+    ],
+    "cwd": "D:\\软件测试导论\\final_homework\\commons-lang",
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "Previous HEAD position was 64d6a28a1 Comment: Remove unnecessary Latin acronym\nHEAD is now at 7e3571e7e Add JavaVersion.JAVA_27\n"
+  },
+  "maven": {
+    "command": [
+      "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+      "-q",
+      "-Dtest=SystemUtilsTest",
+      "test"
+    ],
+    "cwd": "D:\\软件测试导论\\final_homework\\commons-lang",
+    "returncode": 1,
+    "stdout": "[ERROR] COMPILATION ERROR : \n[ERROR] /D:/�������Ե���/final_homework/commons-lang/src/test/java/org/apache/commons/lang3/SystemUtilsTest.java:[378,33] ��Ҫ';'\n[ERROR] /D:/�������Ե���/final_homework/commons-lang/src/test/java/org/apache/commons/lang3/SystemUtilsTest.java:[896,29] ��Ҫ';'\n[ERROR] /D:/�������Ե���/final_homework/commons-lang/src/test/java/org/apache/commons/lang3/SystemUtilsTest.java:[909,32] ��Ҫ';'\n[ERROR] /D:/�������Ե���/final_homework/commons-lang/src/test/java/org/apache/commons/lang3/SystemUtilsTest.java:[1534,27] ��Ҫ';'\n[ERROR] /D:/�������Ե���/final_homework/commons-lang/src/test/java/org/apache/commons/lang3/SystemUtilsTest.java:[1548,37] ��Ҫ';'\n[ERROR] /D:/�������Ե���/final_homework/commons-lang/src/test/java/org/apache/commons/lang3/SystemUtilsTest.java:[1573,30] ��Ҫ';'\n[ERROR] /D:/�������Ե���/final_homework/commons-lang/src/test/java/org/apache/commons/lang3/SystemUtilsTest.java:[1604,2] �����﷨����ʱ�ѵ����ļ���β\n[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.14.1:testCompile (default-testCompile) on project commons-lang3: Compilation failure: Compilation failure: \n[ERROR] /D:/�������Ե���/final_homework/commons-lang/src/test/java/org/apache/commons/lang3/SystemUtilsTest.java:[378,33] ��Ҫ';'\n[ERROR] /D:/�������Ե���/final_homework/commons-lang/src/test/java/org/apache/commons/lang3/SystemUtilsTest.java:[896,29] ��Ҫ';'\n[ERROR] /D:/�������Ե���/final_homework/commons-lang/src/test/java/org/apache/commons/lang3/SystemUtilsTest.java:[909,32] ��Ҫ';'\n[ERROR] /D:/�������Ե���/final_homework/commons-lang/src/test/java/org/apache/commons/lang3/SystemUtilsTest.java:[1534,27] ��Ҫ';'\n[ERROR] /D:/�������Ե���/final_homework/commons-lang/src/test/java/org/apache/commons/lang3/SystemUtilsTest.java:[1548,37] ��Ҫ';'\n[ERROR] /D:/�������Ե���/final_homework/commons-lang/src/test/java/org/apache/commons/lang3/SystemUtilsTest.java:[1573,30] ��Ҫ';'\n[ERROR] /D:/�������Ե���/final_homework/commons-lang/src/test/java/org/apache/commons/lang3/SystemUtilsTest.java:[1604,2] �����﷨����ʱ�ѵ����ļ���β\n[ERROR] -> [Help 1]\n[ERROR] \n[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.\n[ERROR] Re-run Maven using the -X switch to enable full debug logging.\n[ERROR] \n[ERROR] For more information about the errors and possible solutions, please read the following articles:\n[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException\n",
+    "stderr": ""
+  },
+  "restore": [
+    {
+      "command": [
+        "git",
+        "restore",
+        "--source=HEAD",
+        "--staged",
+        "--worktree",
+        "--",
+        "src/test/java/org/apache/commons/lang3/SystemUtilsTest.java"
+      ],
+      "cwd": "D:\\软件测试导论\\final_homework\\commons-lang",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "failure_message": null,
+  "maven_command_shell": "'D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD' -q -Dtest=SystemUtilsTest test"
+}

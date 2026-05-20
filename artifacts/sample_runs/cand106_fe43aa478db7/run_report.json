@@ -1,0 +1,55 @@
+{
+  "timestamp": "2026-05-16T11:43:21.974704+00:00",
+  "repo": "D:\\软件测试导论\\final_homework\\commons-lang",
+  "ref": "fe43aa478db7008b0c8e76b62e75b111678a8200",
+  "target_test_path": "src/test/java/org/apache/commons/lang3/LongRangeTest.java",
+  "replacement_test_file": "D:\\软件测试导论\\final_homework\\Introduction-to-Software-Testing\\artifacts\\sample_runs\\cand106_fe43aa478db7\\generated.java",
+  "test_selector": "LongRangeTest",
+  "maven_args": [
+    "-q"
+  ],
+  "discard_all_tracked_changes": false,
+  "checkout": {
+    "command": [
+      "git",
+      "checkout",
+      "--detach",
+      "fe43aa478db7008b0c8e76b62e75b111678a8200"
+    ],
+    "cwd": "D:\\软件测试导论\\final_homework\\commons-lang",
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "Previous HEAD position was fb42e80e9 Add SystemUtils.getUserHomePath()\nHEAD is now at fe43aa478 Add LongRange.fit(long)\n"
+  },
+  "maven": {
+    "command": [
+      "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+      "-q",
+      "-Dtest=LongRangeTest",
+      "test"
+    ],
+    "cwd": "D:\\软件测试导论\\final_homework\\commons-lang",
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "restore": [
+    {
+      "command": [
+        "git",
+        "restore",
+        "--source=HEAD",
+        "--staged",
+        "--worktree",
+        "--",
+        "src/test/java/org/apache/commons/lang3/LongRangeTest.java"
+      ],
+      "cwd": "D:\\软件测试导论\\final_homework\\commons-lang",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "failure_message": null,
+  "maven_command_shell": "'D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD' -q -Dtest=LongRangeTest test"
+}

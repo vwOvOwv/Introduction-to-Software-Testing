@@ -1,0 +1,55 @@
+{
+  "timestamp": "2026-05-16T11:25:49.586979+00:00",
+  "repo": "D:\\软件测试导论\\final_homework\\commons-lang",
+  "ref": "6b81f9e6cf42eae235c7ab505d967f60a42d7d66",
+  "target_test_path": "src/test/java/org/apache/commons/lang3/RegExUtilsTest.java",
+  "replacement_test_file": "D:\\软件测试导论\\final_homework\\Introduction-to-Software-Testing\\artifacts\\sample_runs\\cand066_6b81f9e6cf42\\generated.java",
+  "test_selector": "RegExUtilsTest",
+  "maven_args": [
+    "-q"
+  ],
+  "discard_all_tracked_changes": false,
+  "checkout": {
+    "command": [
+      "git",
+      "checkout",
+      "--detach",
+      "6b81f9e6cf42eae235c7ab505d967f60a42d7d66"
+    ],
+    "cwd": "D:\\软件测试导论\\final_homework\\commons-lang",
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "Previous HEAD position was 677e57f56 Fix NullPointerException in StopWatch.getStopTime()\nHEAD is now at 6b81f9e6c Add RegExUtils.replacePattern(CharSequence, String, String) and deprecate RegExUtils.replacePattern(String, String, String)\n"
+  },
+  "maven": {
+    "command": [
+      "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+      "-q",
+      "-Dtest=RegExUtilsTest",
+      "test"
+    ],
+    "cwd": "D:\\软件测试导论\\final_homework\\commons-lang",
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "restore": [
+    {
+      "command": [
+        "git",
+        "restore",
+        "--source=HEAD",
+        "--staged",
+        "--worktree",
+        "--",
+        "src/test/java/org/apache/commons/lang3/RegExUtilsTest.java"
+      ],
+      "cwd": "D:\\软件测试导论\\final_homework\\commons-lang",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "failure_message": null,
+  "maven_command_shell": "'D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD' -q -Dtest=RegExUtilsTest test"
+}

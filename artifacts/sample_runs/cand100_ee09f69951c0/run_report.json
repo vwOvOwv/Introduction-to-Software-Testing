@@ -1,0 +1,55 @@
+{
+  "timestamp": "2026-05-16T11:41:09.687512+00:00",
+  "repo": "D:\\软件测试导论\\final_homework\\commons-lang",
+  "ref": "ee09f69951c0867c0ade41658effb6f48a49eec1",
+  "target_test_path": "src/test/java/org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+  "replacement_test_file": "D:\\软件测试导论\\final_homework\\Introduction-to-Software-Testing\\artifacts\\sample_runs\\cand100_ee09f69951c0\\generated.java",
+  "test_selector": "MethodUtilsTest",
+  "maven_args": [
+    "-q"
+  ],
+  "discard_all_tracked_changes": false,
+  "checkout": {
+    "command": [
+      "git",
+      "checkout",
+      "--detach",
+      "ee09f69951c0867c0ade41658effb6f48a49eec1"
+    ],
+    "cwd": "D:\\软件测试导论\\final_homework\\commons-lang",
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "Previous HEAD position was e7d001f1b Add RegExUtils.removePattern(CharSequence, String) and deprecate RegExUtils.removePattern(String, String)\nHEAD is now at ee09f6995 MethodUtils cannot find or invoke a vararg method without providing vararg types or values #1427\n"
+  },
+  "maven": {
+    "command": [
+      "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+      "-q",
+      "-Dtest=MethodUtilsTest",
+      "test"
+    ],
+    "cwd": "D:\\软件测试导论\\final_homework\\commons-lang",
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "restore": [
+    {
+      "command": [
+        "git",
+        "restore",
+        "--source=HEAD",
+        "--staged",
+        "--worktree",
+        "--",
+        "src/test/java/org/apache/commons/lang3/reflect/MethodUtilsTest.java"
+      ],
+      "cwd": "D:\\软件测试导论\\final_homework\\commons-lang",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "failure_message": null,
+  "maven_command_shell": "'D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD' -q -Dtest=MethodUtilsTest test"
+}

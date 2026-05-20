@@ -1,0 +1,55 @@
+{
+  "timestamp": "2026-05-16T11:07:48.581257+00:00",
+  "repo": "D:\\软件测试导论\\final_homework\\commons-lang",
+  "ref": "929df5d5c00a92ce540ff087ead4a6adc7bab366",
+  "target_test_path": "src/test/java/org/apache/commons/lang3/ConversionTest.java",
+  "replacement_test_file": "D:\\软件测试导论\\final_homework\\Introduction-to-Software-Testing\\artifacts\\sample_runs\\cand022_929df5d5c00a\\generated.java",
+  "test_selector": "ConversionTest",
+  "maven_args": [
+    "-q"
+  ],
+  "discard_all_tracked_changes": false,
+  "checkout": {
+    "command": [
+      "git",
+      "checkout",
+      "--detach",
+      "929df5d5c00a92ce540ff087ead4a6adc7bab366"
+    ],
+    "cwd": "D:\\软件测试导论\\final_homework\\commons-lang",
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "Previous HEAD position was 8f8cc04e6 [LANG-1700] Improve handling of parameterized types and variable unrolling (#1549)\nHEAD is now at 929df5d5c Conversion.hexTo*() methods now throw IllegalArgumentException instead of StringIndexOutOfBoundsException\n"
+  },
+  "maven": {
+    "command": [
+      "D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD",
+      "-q",
+      "-Dtest=ConversionTest",
+      "test"
+    ],
+    "cwd": "D:\\软件测试导论\\final_homework\\commons-lang",
+    "returncode": 1,
+    "stdout": "[ERROR] Tests run: 46, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.157 s <<< FAILURE! -- in org.apache.commons.lang3.ConversionTest\n[ERROR] org.apache.commons.lang3.ConversionTest.testHexToInt -- Time elapsed: 0 s <<< FAILURE!\norg.opentest4j.AssertionFailedError: expected: <29422044> but was: <470753244>\n\tat org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)\n\tat org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)\n\tat org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)\n\tat org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:150)\n\tat org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:145)\n\tat org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:531)\n\tat org.apache.commons.lang3.ConversionTest.testHexToInt(ConversionTest.java:722)\n\tat java.base/java.lang.reflect.Method.invoke(Method.java:580)\n\tat java.base/java.util.ArrayList.forEach(ArrayList.java:1596)\n\tat java.base/java.util.ArrayList.forEach(ArrayList.java:1596)\n\n[ERROR] Failures: \n[ERROR]   ConversionTest.testHexToInt:722 expected: <29422044> but was: <470753244>\n[ERROR] Tests run: 49, Failures: 1, Errors: 0, Skipped: 0\n[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:3.5.3:test (default-test) on project commons-lang3: There are test failures.\n[ERROR] \n[ERROR] See D:\\�������Ե���\\final_homework\\commons-lang\\target\\surefire-reports for the individual test results.\n[ERROR] See dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.\n[ERROR] -> [Help 1]\n[ERROR] \n[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.\n[ERROR] Re-run Maven using the -X switch to enable full debug logging.\n[ERROR] \n[ERROR] For more information about the errors and possible solutions, please read the following articles:\n[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException\n",
+    "stderr": ""
+  },
+  "restore": [
+    {
+      "command": [
+        "git",
+        "restore",
+        "--source=HEAD",
+        "--staged",
+        "--worktree",
+        "--",
+        "src/test/java/org/apache/commons/lang3/ConversionTest.java"
+      ],
+      "cwd": "D:\\软件测试导论\\final_homework\\commons-lang",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "failure_message": null,
+  "maven_command_shell": "'D:\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.CMD' -q -Dtest=ConversionTest test"
+}
