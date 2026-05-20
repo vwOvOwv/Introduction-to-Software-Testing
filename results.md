@@ -1,12 +1,12 @@
 # commons-lang 样本测试结果（135 条）
 
-执行时间：2026-05-16（批量实验完成）
+执行时间：2026-05-20 23:01:21（批量实验完成）
 
 说明：
 
 - 样本池：`artifacts/lang_sample_candidates_filtered.json`，共 **135** 条。
 - 流水线：`run_sample_experiment.py` → `update_tests_deepseek.py`（DeepSeek）→ 合并进 A 底本并 **从 B 同步 import / 嵌套类** → `run_single_maven_test.py` 在 **B** 上执行 `mvn -q -Dtest=<TestClass> test`。
-- 机器可读汇总：`artifacts/sample_runs/summary.json`（若仅含尾部批次，以各 `candNNN_*/run_report.json` 为准）。
+- 结果来源：逐个扫描 `artifacts/sample_runs/candNNN_*/run_report.json` 和生成产物目录。
 - **「通过」** 指 `maven.returncode=0`（该测试类在 B 上可编译且测试全绿），不表示与 PR 金标准 diff 完全一致。
 
 ## 总体统计
@@ -16,15 +16,15 @@
 | 样本总数 | 135 | 100% |
 | DeepSeek 有输出（`raw.md` / `deepseek_output.md`） | 135 | 100.0% |
 | **Maven 通过**（`returncode=0`） | **132** | **97.8%** |
-| 编译失败（`COMPILATION ERROR`） | 0 | 0.0% |
+| 编译失败（`COMPILATION ERROR`） | 3 | 2.2% |
 | 测试失败（已编译，`Tests run` 失败） | 0 | 0.0% |
-| 合并失败（无 `@Test` 可合并） | 3 | 2.2% |
+| 合并失败（无 `@Test` 可合并） | 0 | 0.0% |
 | 其它 Maven 非 0 | 0 | 0.0% |
 
 ## 结论摘要
 
 - 在「A 底本 + 模型只改 `@Test` + 从 B 补 import/一层嵌套类」设定下，**约 98%** 样本能在 B 上跑通聚焦测试类。
-- 主要失败形态：**编译失败**（缺符号/import/深层嵌套类，约 0 条）> **测试失败**（逻辑/断言未对齐，约 0 条）> **合并失败**（模型未输出可解析 `@Test`，3 条：cand124、cand128）。
+- 主要失败形态：**编译失败**（缺符号/import/深层嵌套类，约 3 条）> **测试失败**（逻辑/断言未对齐，约 0 条）> **合并失败**（模型未输出可解析 `@Test`，0 条：cand124、cand128）。
 - 与早期仅 8 条、未做 B 同步时相比，前 8 条在 `--resync-generated` 后由 2/8 提升至 **7/8** Maven 通过（cand006 仍为深层嵌套类编译失败）。
 
 ## 全量结果表
@@ -92,7 +92,7 @@
 | cand059 | 通过 | 成功 | `ReflectionDiffBuilderTest` 通过 | Fix NullPointerException in ReflectionDiffBuilder.getExclude。`artifacts/sample_runs/cand059_5bcedccec3ed/` |
 | cand060 | 通过 | 成功 | `RandomStringUtilsTest` 通过 | RandomStringUtils.random() methods may not return when asked。`artifacts/sample_runs/cand060_5d46a39e450f/` |
 | cand061 | 通过 | 成功 | `MethodUtilsTest` 通过 | MethodUtils cannot find or invoke vararg methods of interfac。`artifacts/sample_runs/cand061_5dd8e33cf68b/` |
-| cand062 | 失败 | 成功 | 未执行（合并失败） | ValueError: 找不到匹配的大括号；[LANG-1811] ArrayUtils.shuffle() throws NullPointerException。`artifacts/sample_runs/cand062_623235ebca46/` |
+| cand062 | 失败 | 成功 | `ArrayUtilsTest` 编译失败 | [LANG-1811] ArrayUtils.shuffle() throws NullPointerException；合并后 testCompile 失败。`artifacts/sample_runs/cand062_623235ebca46/` |
 | cand063 | 通过 | 成功 | `StreamsTest` 通过 | Fix generics in org.apache.commons.lang3.stream.Streams.toAr。`artifacts/sample_runs/cand063_6622a4685750/` |
 | cand064 | 通过 | 成功 | `CalendarUtilsTest` 通过 | Add CalendarUtils.toZonedDateTime(Calendar)。`artifacts/sample_runs/cand064_666ad13656c6/` |
 | cand065 | 通过 | 成功 | `StopWatchTest` 通过 | Fix NullPointerException in StopWatch.getStopTime()。`artifacts/sample_runs/cand065_677e57f56bfa/` |
@@ -148,12 +148,12 @@
 | cand115 | 通过 | 成功 | `AtomicSafeInitializerTest` 通过 | org.apache.commons.lang3.concurrent.AtomicSafeInitializer.ge。`artifacts/sample_runs/cand115_0f211efaf122/` |
 | cand116 | 通过 | 成功 | `ValidateTest` 通过 | Add Validate.isTrue(boolean, Supplier<String>)。`artifacts/sample_runs/cand116_2188eb0e2e15/` |
 | cand117 | 通过 | 成功 | `NumberUtilsTest` 通过 | Comment: Remove unnecessary Latin acronym。`artifacts/sample_runs/cand117_64d6a28a12d9/` |
-| cand118 | 失败 | 成功 | 未执行（合并失败） | ValueError: 找不到匹配的大括号；Add JavaVersion.JAVA_27。`artifacts/sample_runs/cand118_7e3571e7e2c6/` |
+| cand118 | 失败 | 成功 | `SystemUtilsTest` 编译失败 | Add JavaVersion.JAVA_27；合并后 testCompile 失败。`artifacts/sample_runs/cand118_7e3571e7e2c6/` |
 | cand119 | 通过 | 成功 | `SystemPropertiesTest` 通过 | Add SystemProperties.getBoolean(Class, String, BooleanSuppli。`artifacts/sample_runs/cand119_8b27dec0340e/` |
 | cand120 | 通过 | 成功 | `SystemPropertiesTest` 通过 | Add org.apache.commons.lang3.SystemProperties.isPropertySet(。`artifacts/sample_runs/cand120_9b383f3fadcc/` |
 | cand121 | 通过 | 成功 | `RandomStringUtilsTest` 通过 | PR#1379 [LANG-1772] Restrict size of cache to prevent overflow error。`artifacts/sample_runs/cand121_c2260f094d78/` |
 | cand122 | 通过 | 成功 | `ArrayFillTest` 通过 | Add ArrayFill.fill(T[], FailableIntFunction))。`artifacts/sample_runs/cand122_dc6ff345793c/` |
-| cand123 | 失败 | 成功 | 未执行（合并失败） | ValueError: 找不到匹配的大括号；Add JavaVersion.JAVA_26。`artifacts/sample_runs/cand123_f24c027ff83b/` |
+| cand123 | 失败 | 成功 | `SystemUtilsTest` 编译失败 | Add JavaVersion.JAVA_26；合并后 testCompile 失败。`artifacts/sample_runs/cand123_f24c027ff83b/` |
 | cand124 | 通过 | 成功 | `FastDateParserTest` 通过 | Clean caches between tests。`artifacts/sample_runs/cand124_ef5de64ed438/` |
 | cand125 | 通过 | 成功 | `MethodUtilsTest` 通过 | MethodUtils cannot find or invoke vararg methods when wideni。`artifacts/sample_runs/cand125_14d34506c993/` |
 | cand126 | 通过 | 成功 | `ReflectionDiffBuilderTest` 通过 | Add some tests that use reflection。`artifacts/sample_runs/cand126_b62fc004d1a6/` |
@@ -169,21 +169,19 @@
 
 ## 失败样本索引（便于查阅）
 
-### 合并失败（2）
+### 合并失败（0）
 
-- **cand124** `FastDateParserTest`：补丁中未识别到 `@Test` 方法。
-- **cand128** `StreamsTest`：同上。
+- 无
 
-### Maven 通过但测试失败（8）
+### Maven 通过但测试失败（0）
 
-cand015、cand016、cand022、cand042、cand053、cand057、cand075、cand131（详见上表 `测试失败` 行）。
+无（详见上表 `测试失败` 行）。
 
-### 编译失败（26）
+### 编译失败（3）
 
-cand006、cand011、cand018、cand019、cand021、cand026、cand030、cand033、cand043、cand046、cand047、cand050、cand059、cand060、cand062、cand083、cand088、cand096、cand110、cand111、cand118、cand119、cand120、cand121、cand123、cand130 等（详见上表）。
+cand062、cand118、cand123（详见上表）。
 
 ## 主要产物路径
 
-- 汇总：`artifacts/sample_runs/summary.json`
 - 单条：`artifacts/sample_runs/candNNN_<B前12位>/`（`deepseek_output.md`、`generated.java`、`run_report.json`）
 - 候选列表：`artifacts/lang_sample_candidates_filtered.json`

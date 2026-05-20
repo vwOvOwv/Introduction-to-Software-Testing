@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
-"""从 artifacts/sample_runs 汇总并生成 results.md 表格片段。"""
+"""扫描 artifacts/sample_runs 下各 cand 目录并生成 results.md 表格片段。"""
 from __future__ import annotations
 
+import datetime
 import json
 import re
 from pathlib import Path
@@ -45,14 +46,6 @@ def classify(maven_rc: int | None, stdout: str, has_gen: bool, has_md: bool) -> 
 
 def main() -> None:
     cands: list[dict] = json.loads(CANDIDATES.read_text(encoding="utf-8"))["candidates"]
-    proc_errors: dict[int, str] = {}
-    summ_path = RUNS / "summary.json"
-    if summ_path.is_file():
-        summ = json.loads(summ_path.read_text(encoding="utf-8"))
-        if isinstance(summ, list):
-            for e in summ:
-                if e.get("processing_error"):
-                    proc_errors[int(e["id"])] = str(e["processing_error"])
 
     rows: list[dict] = []
     stats: dict[str, int] = {}
@@ -70,8 +63,6 @@ def main() -> None:
             maven_rc = maven.get("returncode")
             stdout = maven.get("stdout") or ""
         status = classify(maven_rc, stdout, has_gen, has_md)
-        if i in proc_errors:
-            status = "merge_error"
         stats[status] = stats.get(status, 0) + 1
         selector = Path(c["primary_test"]).stem
         rows.append(
@@ -114,7 +105,7 @@ def main() -> None:
         subj = (c.get("subject") or "")[:60]
         note = f"{pr} {subj}".strip() if st == "pass" else f"{pr} {subj}".strip()
         if st == "merge_error":
-            note = (proc_errors.get(i) or "模型输出无法合并为 @Test") + (f"；{note}" if note else "")
+            note = ("模型输出无法合并为 @Test") + (f"；{note}" if note else "")
         elif st == "compile_fail":
             note = (note + "；合并后 testCompile 失败") if note else "合并后 testCompile 失败"
         elif st == "test_fail":
@@ -129,15 +120,52 @@ def main() -> None:
     n = len(rows)
     n_pass = stats.get("pass", 0)
     n_deepseek = sum(1 for r in rows if r["has_md"])
+    failure_groups: dict[str, list[int]] = {}
+    for r in rows:
+        if r["status"] != "pass":
+            failure_groups.setdefault(r["status"], []).append(r["id"])
+
+    def format_candidates(ids: list[int]) -> str:
+        return "、".join(f"cand{i:03d}" for i in ids) if ids else "无"
+
+    def failure_details(status: str) -> str:
+        ids = failure_groups.get(status, [])
+        if not ids:
+            return "- 无"
+
+        lines: list[str] = []
+        for cand_id in ids:
+            cand = cands[cand_id - 1]
+            selector = Path(cand["primary_test"]).stem
+            subject = (cand.get("subject") or "").strip()
+            if status == "merge_error":
+                reason = "补丁中未识别到 `@Test` 方法"
+            elif status == "test_fail":
+                reason = "编译通过但测试失败"
+            else:
+                reason = "合并后 testCompile 失败"
+
+            pr = f" PR#{cand['pr_hint']}" if cand.get("pr_hint") else ""
+            line = f"- **cand{cand_id:03d}** `{selector}`{pr}：{reason}"
+            if subject:
+                line += f"；{subject[:60]}"
+            line += f"。`artifacts/sample_runs/{rows[cand_id - 1]['dir']}/`"
+            lines.append(line)
+        return "\n".join(lines)
+
+    merge_ids = failure_groups.get("merge_error", [])
+    test_ids = failure_groups.get("test_fail", [])
+    compile_ids = failure_groups.get("compile_fail", [])
+
     body = f"""# commons-lang 样本测试结果（135 条）
 
-执行时间：2026-05-16（批量实验完成）
+执行时间：{datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")}（批量实验完成）
 
 说明：
 
 - 样本池：`artifacts/lang_sample_candidates_filtered.json`，共 **135** 条。
 - 流水线：`run_sample_experiment.py` → `update_tests_deepseek.py`（DeepSeek）→ 合并进 A 底本并 **从 B 同步 import / 嵌套类** → `run_single_maven_test.py` 在 **B** 上执行 `mvn -q -Dtest=<TestClass> test`。
-- 机器可读汇总：`artifacts/sample_runs/summary.json`（若仅含尾部批次，以各 `candNNN_*/run_report.json` 为准）。
+- 结果来源：逐个扫描 `artifacts/sample_runs/candNNN_*/run_report.json` 和生成产物目录。
 - **「通过」** 指 `maven.returncode=0`（该测试类在 B 上可编译且测试全绿），不表示与 PR 金标准 diff 完全一致。
 
 ## 总体统计
@@ -164,26 +192,24 @@ def main() -> None:
 | --- | --- | --- | --- | --- |
 """
     body += "\n".join(table_lines)
-    body += """
+    body += f"""
 
 ## 失败样本索引（便于查阅）
 
-### 合并失败（2）
+### 合并失败（{len(merge_ids)}）
 
-- **cand124** `FastDateParserTest`：补丁中未识别到 `@Test` 方法。
-- **cand128** `StreamsTest`：同上。
+{failure_details('merge_error')}
 
-### Maven 通过但测试失败（8）
+### Maven 通过但测试失败（{len(test_ids)}）
 
-cand015、cand016、cand022、cand042、cand053、cand057、cand075、cand131（详见上表 `测试失败` 行）。
+{format_candidates(test_ids)}（详见上表 `测试失败` 行）。
 
-### 编译失败（26）
+### 编译失败（{len(compile_ids)}）
 
-cand006、cand011、cand018、cand019、cand021、cand026、cand030、cand033、cand043、cand046、cand047、cand050、cand059、cand060、cand062、cand083、cand088、cand096、cand110、cand111、cand118、cand119、cand120、cand121、cand123、cand130 等（详见上表）。
+{format_candidates(compile_ids)}（详见上表）。
 
 ## 主要产物路径
 
-- 汇总：`artifacts/sample_runs/summary.json`
 - 单条：`artifacts/sample_runs/candNNN_<B前12位>/`（`deepseek_output.md`、`generated.java`、`run_report.json`）
 - 候选列表：`artifacts/lang_sample_candidates_filtered.json`
 """

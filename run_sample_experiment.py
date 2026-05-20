@@ -384,12 +384,6 @@ def main() -> int:
         help="用已有 raw.md 按当前规则重生成 generated.java 并重跑 Maven（不调 API）",
     )
     parser.add_argument("--skip-maven", action="store_true", help="只调 DeepSeek，不跑 Maven")
-    parser.add_argument(
-        "--output-summary",
-        type=Path,
-        default=ARTIFACTS / "summary.json",
-        help="汇总 JSON 路径",
-    )
     args = parser.parse_args()
 
     if not args.candidates.is_file():
@@ -411,14 +405,7 @@ def main() -> int:
 
     ARTIFACTS.mkdir(parents=True, exist_ok=True)
     summary: list[dict[str, object]] = []
-    args.output_summary.parent.mkdir(parents=True, exist_ok=True)
     n_errors = 0
-
-    def write_summary() -> None:
-        args.output_summary.write_text(
-            json.dumps(summary, ensure_ascii=False, indent=2) + "\n",
-            encoding="utf-8",
-        )
 
     for i, sample in enumerate(samples, 1):
         pr = f" PR#{sample['pr_hint']}" if sample.get("pr_hint") else ""
@@ -442,12 +429,10 @@ def main() -> int:
             entry["processing_error"] = f"{type(exc).__name__}: {exc}"
             print(f"  本条异常（已跳过，继续下一条）: {exc}", file=sys.stderr, flush=True)
         summary.append(entry)
-        write_summary()
 
     print_summary(summary)
     if n_errors:
         print(f"  处理异常条数: {n_errors}", file=sys.stderr)
-    print(args.output_summary, file=sys.stdout)
     return 1 if n_errors else 0
 
 

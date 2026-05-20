@@ -13,7 +13,7 @@
         "worktree",
         "add",
         "--detach",
-        "${tmp}/run-FailableTest-irykilit",
+        "${tmp}/run-FailableTest-7l71vbz5",
         "07914b39281e4be500d430b2c25e85499748788f"
       ],
       "returncode": 0,
@@ -22,11 +22,11 @@
     },
     {
       "name": "maven",
-      "cwd": "${tmp}/run-FailableTest-irykilit",
+      "cwd": "${tmp}/run-FailableTest-7l71vbz5",
       "env": {
         "JAVA_HOME": "/usr/lib/jvm/java-21-openjdk",
         "PATH": "/usr/lib/jvm/java-21-openjdk/bin:/usr/local/bin:/usr/bin:/bin",
-        "PWD": "${tmp}/run-FailableTest-irykilit"
+        "PWD": "${tmp}/run-FailableTest-7l71vbz5"
       },
       "command": [
         "/usr/bin/mvn",
@@ -40,11 +40,11 @@
     },
     {
       "name": "restore",
-      "cwd": "${tmp}/run-FailableTest-irykilit",
+      "cwd": "${tmp}/run-FailableTest-7l71vbz5",
       "env": {
         "JAVA_HOME": "/usr/lib/jvm/java-21-openjdk",
         "PATH": "/usr/lib/jvm/java-21-openjdk/bin:/usr/local/bin:/usr/bin:/bin",
-        "PWD": "${tmp}/run-FailableTest-irykilit"
+        "PWD": "${tmp}/run-FailableTest-7l71vbz5"
       },
       "command": [
         "/usr/bin/git",
@@ -72,7 +72,7 @@
         "worktree",
         "remove",
         "--force",
-        "${tmp}/run-FailableTest-irykilit"
+        "${tmp}/run-FailableTest-7l71vbz5"
       ],
       "returncode": 0,
       "stdout": "",

@@ -87,7 +87,7 @@ python scripts/build_results_md.py
    - 从 **B** 补齐缺失的 `import`；
    - 若代码引用了某嵌套类型，用 **B** 上同名 `static class` 等定义**替换或插入**（一层嵌套；深层嵌套如 cand006 仍可能编译失败）。
 3. **验证**：`run_single_maven_test.py` 在 **B** 上执行 `mvn -q -Dtest=<TestClass> test`；Windows 下通过 `shutil.which("mvn")` 解析 `mvn.cmd` 完整路径。
-4. **容错**：单条合并/Maven 异常会写入 `summary.json` 的 `processing_error` 并**继续下一条**；每处理一条即刷新 `summary.json`。
+4. **容错**：单条合并/Maven 异常会记录在对应 `run_report.json` 中并**继续下一条**；每处理一条即刷新该条结果文件。
 
 「通过」= `maven.returncode == 0`，**不**保证与 PR 金标准测试 diff 完全一致（见 `results.md` 结论）。
 
@@ -97,7 +97,7 @@ python scripts/build_results_md.py
 
 ### `run_sample_experiment.py`（主入口）
 
-- **功能**：读取 `lang_sample_candidates_filtered.json`，对每条候选调用 `update_tests_deepseek.py` → 合并为 `generated.java` → `run_single_maven_test.py`，汇总 `artifacts/sample_runs/summary.json`。
+- **功能**：读取 `lang_sample_candidates_filtered.json`，对每条候选调用 `update_tests_deepseek.py` → 合并为 `generated.java` → `run_single_maven_test.py`，逐个写入 `artifacts/sample_runs/candNNN_*/run_report.json`。
 - **产物目录**：`artifacts/sample_runs/cand001_07914b39281e/`（`NNN` 为 filtered 列表序号，`07914b39281e` 为 B 的 hash 前 12 位）。
 - **常用参数**：`--limit`、`--start`、`--resume`、`--resync-generated`、`--skip-maven`、`--only-verified-pass`。
 
@@ -146,7 +146,7 @@ python scripts/build_results_md.py
 
 - 模型默认只输出 `@Test` / `@ParameterizedTest` **方法**；大改测试结构（重命名内部辅助方法、大量新增嵌套类）时，即使补 import 也可能编译或语义失败。
 - `extract_test_methods` / 嵌套类同步均为启发式，复杂 Java 格式可能边界识别错误。
-- `summary.json` 若只跑了部分 `--start`/`--limit` 批次，可能只含该批次条目；全量统计请以各 `candNNN_*/run_report.json` 或运行 `build_results_md.py` 为准。
+- 若只跑了部分 `--start`/`--limit` 批次，全量统计请以各 `candNNN_*/run_report.json` 或运行 `build_results_md.py` 为准。
 - Maven 依赖本机 `~/.m2` 与网络；未配置私服镜像时首次构建较慢。
 
 ---
@@ -157,4 +157,4 @@ python scripts/build_results_md.py
 | --- | --- |
 | `results.md` | 135 条实验汇总表与结论 |
 | `artifacts/lang_sample_candidates_filtered.json` | 当前实验样本池 |
-| `artifacts/sample_runs/summary.json` | 最近一次批量运行的机器可读汇总 |
+| `artifacts/sample_runs/candNNN_*/run_report.json` | 最近一次批量运行的机器可读单条结果 |
