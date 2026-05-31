@@ -3,10 +3,10 @@
 """
 对 filter 后的候选样本，在 commons-lang 的 B 提交上跑聚焦 Maven 测试（第五层快速验证）。
 
-  python verify_lang_candidates.py
-  python verify_lang_candidates.py --limit 5          # 先试 5 条
-  python verify_lang_candidates.py --resume           # 跳过已验证条目
-  python verify_lang_candidates.py --index 3          # 只验 JSON 里第 3 条（1-based）
+  python 3_verify.py
+  python 3_verify.py --limit 5          # 先试 5 条
+  python 3_verify.py --resume           # 跳过已验证条目
+  python 3_verify.py --index 3          # 只验 JSON 里第 3 条（1-based）
 
 输出：artifacts/lang_sample_verify_report.json
 """
@@ -100,7 +100,7 @@ def verify_one(
     }
 
     co_rc, co_out, co_err, co_to = run(
-        [git_exe, "checkout", "--detach", b],
+        [git_exe, "checkout", "--force", "--detach", b],
         cwd=repo,
         timeout=120,
     )
@@ -114,7 +114,7 @@ def verify_one(
         entry["elapsed_sec"] = round(time.perf_counter() - t0, 2)
         return entry
 
-    mvn_cmd = [mvn_exe, "test", f"-Dtest={selector}"]
+    mvn_cmd = [mvn_exe, "clean", "test", f"-Dtest={selector}"]
     if maven_quiet:
         mvn_cmd.insert(1, "-q")
 

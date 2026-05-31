@@ -268,6 +268,7 @@ def main() -> int:
     restore_results: list[CommandResult] = []
     worktree_remove_result: CommandResult | None = None
     worktree_path: Path | None = None
+    setup_error: str | None = None
     active_repo = repo
     active_destination_test_file = destination_test_file
     command_history: list[dict[str, object]] = []
@@ -296,6 +297,7 @@ def main() -> int:
         maven_result = run_command(maven_command, cwd=active_repo, repo=repo)
         return 0 if maven_result.returncode == 0 else maven_result.returncode
     except Exception as exc:  # noqa: BLE001
+        setup_error = f"{type(exc).__name__}: {exc}"
         return 1
     finally:
         restore_target = None if args.discard_all_tracked_changes else target_test_path
@@ -315,6 +317,8 @@ def main() -> int:
             command_history.append(command_history_entry("worktree_remove", worktree_remove_result, repo, worktree_root))
 
         payload = {"command_history": command_history}
+        if setup_error:
+            payload["setup_error"] = setup_error
         write_report(report_file, payload)
 
 

@@ -3,7 +3,7 @@
 """
 在 commons-lang 历史中批量扫描「适合做 LLM 改测试实验」的提交对 (A=B~1, B)。
 
-硬性条件（与 update_tests_deepseek / 实验设计一致）：
+硬性条件（与实验设计一致）：
   - 至少 1 个 src/main/java 下 .java 为 M（修改）
   - 至少 1 个 src/test/java 下 *Test.java 为 M（修改，非 A 新增）
   - 该测试文件在 A 的 tree 中存在（git cat-file -e A:path）
@@ -11,12 +11,12 @@
 
 用法：
   cd Introduction-to-Software-Testing
-  python scan_lang_samples.py
+  python 1_scan.py
 
   或在 final_homework 根目录：
-  python scan_lang_samples.py
-  python Introduction-to-Software-Testing\\scan_lang_samples.py --repo ..\\commons-lang
-  python scan_lang_samples.py --merges-only --max-files 10 --min-test-methods 1
+  python 1_scan.py
+  python Introduction-to-Software-Testing\\1_scan.py --repo ..\\commons-lang
+  python 1_scan.py --merges-only --max-files 10 --min-test-methods 1
 
 依赖：Python 3.9+ 标准库 + 本机 git。
 """

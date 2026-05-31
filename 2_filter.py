@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-按两层规则清洗 scan_lang_samples.py 生成的 JSON。
+按两层规则清洗 1_scan.py 生成的 JSON。
 
 第一层（subject）剔除：
   - Revert
@@ -14,8 +14,8 @@
   - 拒绝「仅 1 main + 1 test 但类名不对应」的凑对
 
 用法：
-  python filter_lang_candidates.py
-  python filter_lang_candidates.py -i artifacts/lang_sample_candidates.json -o artifacts/lang_sample_candidates_filtered.json
+  python 2_filter.py
+  python 2_filter.py -i artifacts/lang_sample_candidates.json -o artifacts/lang_sample_candidates_filtered.json
 """
 
 from __future__ import annotations
