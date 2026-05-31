@@ -2,3 +2,4 @@ __pycache__
 .github
 commons-lang/
 key.py
+artifacts/
