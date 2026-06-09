@@ -1,0 +1,19 @@
+{
+  "id": 551,
+  "b_short": "2288b0ff2cce",
+  "a": "d21a59baa559f57ead53a5bab22d60333dc46041",
+  "b": "2288b0ff2cce401f510ae9e208fcf1698f4bce79",
+  "prod": "src/main/java/org/apache/commons/lang3/time/DateUtils.java",
+  "target_test": "src/test/java/org/apache/commons/lang3/time/DateUtilsTest.java",
+  "input_test": "src/test/java/org/apache/commons/lang3/time/DateUtilsTest.java",
+  "selector": "DateUtilsTest",
+  "pr_hint": null,
+  "subject": "Use HTTPS to access Apache resources.",
+  "sample_dir": "/home/lpy/workspace/misc/course/Introduction-to-Software-Testing/artifacts/sample_runs/deepseek-v4-pro/cand551_2288b0ff2cce",
+  "old_test_extracted": true,
+  "old_test_path": "/home/lpy/workspace/misc/course/Introduction-to-Software-Testing/artifacts/sample_runs/deepseek-v4-pro/cand551_2288b0ff2cce/old_test.java",
+  "update_exit_code": 1,
+  "update_stdout_tail": "",
+  "update_stderr_tail": "已加载候选 614 条 ← lang_sample_candidates_filtered_full_verified_pass.json\n调用模型: model=deepseek-v4-pro user_chars=45581 old_test_mode=methods (cand551 Use HTTPS to access Apache resources.)\n\n[失败] cand551 Use HTTPS to access Apache resources.\nRuntimeError: HTTP 402: {\"error\":{\"message\":\"Insufficient Balance\",\"type\":\"unknown_error\",\"param\":null,\"code\":\"invalid_request_error\"}}\nRuntimeError: HTTP 402: {\"error\":{\"message\":\"Insufficient Balance\",\"type\":\"unknown_error\",\"param\":null,\"code\":\"invalid_request_error\"}}\n",
+  "generated": false
+}

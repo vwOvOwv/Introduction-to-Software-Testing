@@ -1,0 +1,4519 @@
+{
+  "count": 281,
+  "rejected": [
+    {
+      "b": "00c8096cbf6ca89b17685488eddb5d0782fa18e4",
+      "a": "9273b557b7d30cf52ebd09a98aa0f9e221d5b502",
+      "subject": "[LANG-1568] Complete FailableFunction.",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/function/FailableFunction.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/function/FailableFunctionsTest.java"
+      ],
+      "total_changed": 2,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (FailableFunction.java vs FailableFunctionsTest.java)"
+    },
+    {
+      "b": "01175ec91173a4741c721bc6a9e7e298750ff29f",
+      "a": "e182888fb7897c9c21740aa6eeb471a57eb2e6da",
+      "subject": "Use final.",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/reflect/MethodUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/exception/ExceptionUtilsTest.java"
+      ],
+      "total_changed": 2,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (MethodUtils.java vs ExceptionUtilsTest.java)"
+    },
+    {
+      "b": "07ec8ad2dd862c8669b2557b995ec5180663d73f",
+      "a": "448ec93f006939eefacec32aca65dfb622d2c352",
+      "subject": "Variable names should follow naming conventions",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/builder/ToStringStyle.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/builder/JsonToStringStyleTest.java"
+      ],
+      "total_changed": 2,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (ToStringStyle.java vs JsonToStringStyleTest.java)"
+    },
+    {
+      "b": "094ee7ecbd9f4d127b8bd3775a63f7b9857ed5df",
+      "a": "5f2bf30edee6ba2c5c9d27b58fe8b032073fb991",
+      "subject": "Merge pull request #425 from shenqioa/master",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/RandomUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/RandomUtilsTest.java"
+      ],
+      "total_changed": 2,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer1:merge_pull_noise"
+    },
+    {
+      "b": "0bca64d75e1a54b64b91917bdbeebde56ac177fb",
+      "a": "a36c903d4f1065bc59f5e6d2bb0f9d92a5e71d83",
+      "subject": "Merge branch 'LANG-1402' of https://github.com/MarkDacek/commons-lang",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/ArrayUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/ArrayUtilsTest.java"
+      ],
+      "total_changed": 2,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer1:merge_branch"
+    },
+    {
+      "b": "12e597a78cbf9d82414b944a5b285d81a2e27e51",
+      "a": "66f8569ecc8173d61b7d182f4da0223ae7dbda38",
+      "subject": "LANG-1300: fixed CharSequenceUtils indexOf for Supplementary chars",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/CharSequenceUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/StringUtilsEqualsIndexOfTest.java"
+      ],
+      "total_changed": 2,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (CharSequenceUtils.java vs StringUtilsEqualsIndexOfTest.java)"
+    },
+    {
+      "b": "143518b64a6c02f2e89f342e34919fba806b82ef",
+      "a": "9be39c4a7aa7a9a0e3e9cbf29c85884623a9fa4f",
+      "subject": "Sort members",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/concurrent/MultiBackgroundInitializer.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/stream/StreamsTest.java"
+      ],
+      "total_changed": 2,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer1:sort_members"
+    },
+    {
+      "b": "14deed1bff705a46c485733451f462f549ac528d",
+      "a": "1aa5352287f581b628c48c6f61e38866d4a2f64a",
+      "subject": "NumericEntityUnescaper.translate() for entity values out of range passed (#1673)",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/text/translate/NumericEntityUnescaper.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/text/translate/NumericEntityEscaperTest.java"
+      ],
+      "total_changed": 2,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (NumericEntityUnescaper.java vs NumericEntityEscaperTest.java)"
+    },
+    {
+      "b": "14efcf4e7c072e993a2b30791a199c12f0499104",
+      "a": "c2783da968d192e2f7df0d128743a841d22ca499",
+      "subject": "Moving lastIndexOf, contains, containsWhitespace, indexOfAny, containsAny, indexOfAnyBut, containsOnly, containsNone and substring over to using CharSequences for parameters. LANG-687",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/StringUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/StringUtilsEqualsIndexOfTest.java"
+      ],
+      "total_changed": 2,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (StringUtils.java vs StringUtilsEqualsIndexOfTest.java)"
+    },
+    {
+      "b": "152e5d48eac990bb3e08b2409816738020ba9a01",
+      "a": "9ea0063bc93cf0d5b45f95bcc6b9f225da94b951",
+      "subject": "LANG-1392: Methods for getting first non empty or non blank value (closes #325)",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/StringUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/StringUtilsEmptyBlankTest.java"
+      ],
+      "total_changed": 2,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (StringUtils.java vs StringUtilsEmptyBlankTest.java)"
+    },
+    {
+      "b": "15d5503215a4cd1efc1ae6659d82194a22ebee9b",
+      "a": "d848328a7aa54f73117b8f13ce6e67049dc9502e",
+      "subject": "Checkstyle: Remove trailing white spaces on all lines.",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/time/FastDateParser.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/text/ExtendedMessageFormatTest.java"
+      ],
+      "total_changed": 2,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (FastDateParser.java vs ExtendedMessageFormatTest.java)"
+    },
+    {
+      "b": "18979f30e963081e5e0f018448dd3aadc429f51e",
+      "a": "13c99492bf695b8ca378d0976919fcea10010c7f",
+      "subject": "StrBuilder.deleteImpl(int, int, int) doesn't clear its unused bytes. (#1654)",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/text/StrBuilder.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/text/StrBuilderClearTest.java"
+      ],
+      "total_changed": 2,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (StrBuilder.java vs StrBuilderClearTest.java)"
+    },
+    {
+      "b": "1926e35e3e1e94a43c64cb4d65f51d115fae02cd",
+      "a": "454255f0bb55f845f0585858496b0ec3ba7f722c",
+      "subject": "Fixed NPE getting Stack Trace if Throwable is null (#733)",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/exception/ExceptionUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/exception/ContextedExceptionTest.java"
+      ],
+      "total_changed": 2,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (ExceptionUtils.java vs ContextedExceptionTest.java)"
+    },
+    {
+      "b": "196067da9716e4ae4078743c0c56540ee64892f4",
+      "a": "e5b0844c4f49d5913f54bb5982284f5e7b76240a",
+      "subject": "Removing CharSequenceUtils in favour of putting the code in StringUtils",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/StringUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/StringUtilsSubstringTest.java"
+      ],
+      "total_changed": 2,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (StringUtils.java vs StringUtilsSubstringTest.java)"
+    },
+    {
+      "b": "1a89cca97e397feaf3c18924b86e74e2b5cda2ac",
+      "a": "41f68e6f9b036bdc634a7d55397d2722a1203cab",
+      "subject": "Replace 2x empty lines with a single one",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/StringUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/StringUtilsEqualsIndexOfTest.java"
+      ],
+      "total_changed": 2,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer1:empty_lines"
+    },
+    {
+      "b": "1c00d14d376475332c8b401cedb9a8c30663a5a4",
+      "a": "773f276c2332f3a79fb1c225e723d02dcfbbcb3e",
+      "subject": "Merge branch 'master' of https://gitbox.apache.org/repos/asf/commons-lang.git",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/reflect/MethodUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/compare/ObjectToStringComparatorTest.java"
+      ],
+      "total_changed": 2,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer1:merge_branch"
+    },
+    {
+      "b": "1ced894df70d66f3a786c2c8cd6e23e0d4263d91",
+      "a": "8a8859cb88a49a8b967217bfc1daafe0805e7c86",
+      "subject": "https://issues.apache.org/jira/browse/LANG-607 StringUtils.containsAny methods incorrectly matches Unicode 2.0+ supplementary characters.",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/StringUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/StringUtilsEqualsIndexOfTest.java"
+      ],
+      "total_changed": 2,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (StringUtils.java vs StringUtilsEqualsIndexOfTest.java)"
+    },
+    {
+      "b": "1e2b9eb078efbe3de0ca29ff2f0b3e2a625cbfaf",
+      "a": "30c4689bca9a9332b384e7d4729e67e68560e637",
+      "subject": "Javadoc and clarify null handling",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/EnumUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/EnumUtilsTest.java"
+      ],
+      "total_changed": 2,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer1:javadoc_only"
+    },
+    {
+      "b": "225d1c8058f39e7bf42f2b77f75a8b88dae4e037",
+      "a": "d476e7c1a7271adfd758a64a62e301c4512aacd6",
+      "subject": "Merge branch 'master' of https://garydgregory@github.com/apache/commons-lang.git",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/text/WordUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/text/WordUtilsTest.java"
+      ],
+      "total_changed": 2,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer1:merge_branch"
+    },
+    {
+      "b": "23108b1bd90de315aed37fa3fc1f38f8a56ab9ba",
+      "a": "89afbb0c3eaa2d074dc1ef46d09675f24da0e120",
+      "subject": "LANG-1279: Update Java requirement from Java 6 to 7",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/reflect/MethodUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/StringUtilsTest.java"
+      ],
+      "total_changed": 2,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (MethodUtils.java vs StringUtilsTest.java)"
+    },
+    {
+      "b": "24f66b175fdbc37c02ac234f1f3d7b2a5f13cc57",
+      "a": "102a6d75650b7578e31bf18b840e0b613e83e439",
+      "subject": "Merge pull request #447 from kinow/fix-checkstyles-1",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/Functions.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/FunctionsTest.java"
+      ],
+      "total_changed": 2,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer1:merge_pull_noise"
+    },
+    {
+      "b": "28656559d2fc67193a84d5cbc48d378b2016f74a",
+      "a": "07ec8ad2dd862c8669b2557b995ec5180663d73f",
+      "subject": "Format source code",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/builder/ToStringStyle.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/builder/JsonToStringStyleTest.java"
+      ],
+      "total_changed": 2,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (ToStringStyle.java vs JsonToStringStyleTest.java)"
+    },
+    {
+      "b": "28bee777663fe47959465a7c1b91f6dbb5154fd9",
+      "a": "62f2412f14b500b10eb8619edec69198a98c7b84",
+      "subject": "Tabs and trailing spaces",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/StringUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/text/StrSubstitutorTest.java"
+      ],
+      "total_changed": 2,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (StringUtils.java vs StrSubstitutorTest.java)"
+    },
+    {
+      "b": "28c2fcbb73e2247ec1a3846e4e55f0ed4986b9c9",
+      "a": "dd2028bd6c583b8c6aab4e1b43d8b4b72fbdec65",
+      "subject": "Range.readObject() does not null-check comparator, minimum, or maximum. (#1675)",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/Range.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/RangeReadObjectTest.java"
+      ],
+      "total_changed": 2,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (Range.java vs RangeReadObjectTest.java)"
+    },
+    {
+      "b": "2c1b5be146585dc8b27aedebca959f92da19094e",
+      "a": "8a3e8603455c6dbfc595ab7a7e4a32f171a8b245",
+      "subject": "[LANG-720] StringEscapeUtils.escapeXml(input) outputs wrong results when an input contains characters in Supplementary Planes.  ALSO rewrite method to avoid modification of counter variable in for loop",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/text/translate/CharSequenceTranslator.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/StringEscapeUtilsTest.java"
+      ],
+      "total_changed": 2,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (CharSequenceTranslator.java vs StringEscapeUtilsTest.java)"
+    },
+    {
+      "b": "2c68a657e19b8412fa1fe090b72d4910896fecc4",
+      "a": "47deaf1e86f7ad910291358d5f26047ff47df9a6",
+      "subject": "Merge branch 'master' of https://garydgregory@github.com/apache/commons-lang.git",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/ClassUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/ClassUtilsTest.java"
+      ],
+      "total_changed": 2,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer1:merge_branch"
+    },
+    {
+      "b": "2c7e5e4b29c80d5475e971232458d3481bbe7136",
+      "a": "c0d0d4f3ea898398d1bac7316084ef03b8de6433",
+      "subject": "[LANG-1545] CharSequenceUtils.regionMatches is wrong dealing with Georgian. (#529)",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/CharSequenceUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/StringUtilsTest.java"
+      ],
+      "total_changed": 2,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (CharSequenceUtils.java vs StringUtilsTest.java)"
+    },
+    {
+      "b": "2f07d02fca0a66144b7106298fd9eb207783fecc",
+      "a": "52b1a3a8f3d1b11a8c2e30f058e97e28e470be37",
+      "subject": "'abbreviate' contract violations (#1490)",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/StringUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/StringUtilsAbbreviateTest.java"
+      ],
+      "total_changed": 2,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (StringUtils.java vs StringUtilsAbbreviateTest.java)"
+    },
+    {
+      "b": "3014a0f2c9b4f34625995bbbf16aca1ff445b8cf",
+      "a": "3bd1625859000571b99b4193df1360ab18a33910",
+      "subject": "Fix incorrect method invocation and javadoc reference in ObjectUtilsTest and RandomStringUtils (#1528)",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/RandomStringUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/ObjectUtilsTest.java"
+      ],
+      "total_changed": 2,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (RandomStringUtils.java vs ObjectUtilsTest.java)"
+    },
+    {
+      "b": "30c4689bca9a9332b384e7d4729e67e68560e637",
+      "a": "e4671b466d24511650599145757961306bdfad2d",
+      "subject": "Javadoc and add toString()",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/JavaVersion.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/JavaVersionTest.java"
+      ],
+      "total_changed": 2,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer1:javadoc_only"
+    },
+    {
+      "b": "30c85ad05363767deeefee577063c2c432b971d4",
+      "a": "ce1bd5785d05d3df324e1169aab4abd45f4281f7",
+      "subject": "Use StringBuilders instead of StringBuffers",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/RandomStringUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/ArrayUtilsTest.java"
+      ],
+      "total_changed": 2,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (RandomStringUtils.java vs ArrayUtilsTest.java)"
+    },
+    {
+      "b": "341b578b4fc2a85e107e7b2166cac8447cabbabf",
+      "a": "5cf676b5b96f03b4ee270e13903f640768d6154e",
+      "subject": "Reuse constant",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/time/FastDatePrinter.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/concurrent/EventCountCircuitBreakerTest.java"
+      ],
+      "total_changed": 2,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (FastDatePrinter.java vs EventCountCircuitBreakerTest.java)"
+    },
+    {
+      "b": "363d1f2704f20496b806cff5035b73059ad26998",
+      "a": "fede6b1ecc300e97dba1b51b78e9aee0613a62ce",
+      "subject": "Moving indexOf(String, int) and indexOf(String, int, int) over to CharSequence. LANG-687. This, plus the same happening for the String, String, int variant will open up a lot of methods.",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/StringUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/StringUtilsEqualsIndexOfTest.java"
+      ],
+      "total_changed": 2,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (StringUtils.java vs StringUtilsEqualsIndexOfTest.java)"
+    },
+    {
+      "b": "36423bda1ef885b8dce23ecbf0589786f7fa38f2",
+      "a": "ab108a10121b418a173a8e3c85e52fccbee1fa31",
+      "subject": "Use expression",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/ClassUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/ClassUtilsTest.java"
+      ],
+      "total_changed": 2,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer1:use_expression"
+    },
+    {
+      "b": "38140a5d8dffec88f7c88da73ce3989770e086e6",
+      "a": "5acf310d08b2bc5182cf936616ef70938cb2c499",
+      "subject": "LANG-1271: StringUtils#isAnyEmpty and #isAnyBlank should return false for an empty array (closes #193)",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/StringUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/StringUtilsEmptyBlankTest.java"
+      ],
+      "total_changed": 2,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (StringUtils.java vs StringUtilsEmptyBlankTest.java)"
+    },
+    {
+      "b": "3a68fe8b7e2aecaf75535415d2a7c8268345cd26",
+      "a": "47c186298927e373b31fe26444b9dbc313cccce6",
+      "subject": "LANG-1169 Added equalsAny() and equalsAnyIgnoreCase() methods to StringUtils.",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/StringUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/StringUtilsEqualsIndexOfTest.java"
+      ],
+      "total_changed": 2,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (StringUtils.java vs StringUtilsEqualsIndexOfTest.java)"
+    },
+    {
+      "b": "3ac961a31479db54aa89c883e2a26314ffe24e3e",
+      "a": "c7f93ca3093cb43c5d9cce2cdb784c2437b845e8",
+      "subject": "[LANG-492] Revert deletion of ArrayUtils.hashCode()",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/ArrayUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/ArrayUtilsTest.java"
+      ],
+      "total_changed": 2,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer1:revert"
+    },
+    {
+      "b": "3c104346310b8d7273de0ea520c016a70c9df6e2",
+      "a": "345b4836f6e34ba29564dbead73ede2f2309aa74",
+      "subject": "Tab and trailing space removal",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/StringUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/text/StrSubstitutorTest.java"
+      ],
+      "total_changed": 2,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (StringUtils.java vs StrSubstitutorTest.java)"
+    },
+    {
+      "b": "405bde36c42e591bde85d6bca1ccb1910a33a962",
+      "a": "636a5148405f567310b9fcd4dec131fa1936130c",
+      "subject": "Clarify behavior for chars in the input char array which are not next to each other in the CharSequence to search",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/StringUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/StringUtilsEqualsIndexOfTest.java"
+      ],
+      "total_changed": 2,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (StringUtils.java vs StringUtilsEqualsIndexOfTest.java)"
+    },
+    {
+      "b": "42fef8bdbdaa0956b1dd5140ee3d511de4f62eb4",
+      "a": "9456a9a3192cd7a726381f1816674d02b67ed129",
+      "subject": "Better Javadoc and exception messages",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/Conversion.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/ConversionTest.java"
+      ],
+      "total_changed": 2,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer1:javadoc_only"
+    },
+    {
+      "b": "43a2736e22c1fde877387ace28ced0aade1f7069",
+      "a": "17910d3cc76cb2a7babe674b03fc81132d305732",
+      "subject": "LANG-839 Add tests to compare extractIndices+removeAll with direct use of BitSet in new version of removeAll",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/ArrayUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/HashSetvBitSetTest.java"
+      ],
+      "total_changed": 2,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (ArrayUtils.java vs HashSetvBitSetTest.java)"
+    },
+    {
+      "b": "43badd4dfa44b5e0c2fe65cbc20c7766298b5960",
+      "a": "ef1480a5058477af5bf7d45fcccfe8de8508d644",
+      "subject": "Merge remote-tracking branch 'origin/pr/403'",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/Functions.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/FunctionsTest.java"
+      ],
+      "total_changed": 2,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer1:merge_remote"
+    },
+    {
+      "b": "44e32205a6f98f50af95e3940a48aa72971e9483",
+      "a": "c2bd8be86230f35cf521c4112f67ede2df0f527b",
+      "subject": "Merge branch 'LANG-1411'",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/ObjectUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/ObjectUtilsTest.java"
+      ],
+      "total_changed": 2,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer1:merge_branch"
+    },
+    {
+      "b": "4870fd13a29741b18dd428cf3d43192db5799416",
+      "a": "fc3a096305559940f9c18b697cc7ccda5cc77e54",
+      "subject": "Adding Shashi Kant Sharma's implementation of endsWithAny - LANG-614",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/StringUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/StringUtilsStartsEndsWithTest.java"
+      ],
+      "total_changed": 2,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (StringUtils.java vs StringUtilsStartsEndsWithTest.java)"
+    },
+    {
+      "b": "4a5ef8ed29f0c135627f43b58c7ab7b6defe37b7",
+      "a": "67f50236bf337e20c6daa987d4d42c4fedb482ce",
+      "subject": "Fix handling of null marker in StringUtils.abbreviate(String, String, int, int)  (#1571)",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/StringUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/StringUtilsAbbreviateTest.java"
+      ],
+      "total_changed": 2,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (StringUtils.java vs StringUtilsAbbreviateTest.java)"
+    },
+    {
+      "b": "4a6a98432f57e6286ba48777268a26b68dfd9547",
+      "a": "e23f95374d89c828562c788b8373609d46dd5b07",
+      "subject": "StringUtils.abbreviate(String, String, int) contract violations (#1572)",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/StringUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/StringUtilsAbbreviateTest.java"
+      ],
+      "total_changed": 2,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (StringUtils.java vs StringUtilsAbbreviateTest.java)"
+    },
+    {
+      "b": "4b08ed57a0ff654d56783f9e9bda22097b30fedd",
+      "a": "e7bf2055567cd4506e26736719af357d243a76b6",
+      "subject": "Rename internal method to remove type casts",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/ArrayUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/HashSetvBitSetTest.java"
+      ],
+      "total_changed": 2,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer1:rename_internal"
+    },
+    {
+      "b": "540ec09e25a3ec60fbe0a77dfc491475229caba7",
+      "a": "d88f70e8ff3e73981809ddc530c19288c1f092c5",
+      "subject": "Sort members.",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/Functions.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/FunctionsTest.java"
+      ],
+      "total_changed": 2,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer1:sort_members"
+    },
+    {
+      "b": "5556026ed1dc17e70946a4a030842ade3a33baeb",
+      "a": "56907c9a96a50af44415111fcea3e76ce4d1890f",
+      "subject": "Fix NullPointerException in FastDateParser$TimeZoneStrategy",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/time/FastDateParser.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/time/FastDateParser_TimeZoneStrategyTest.java"
+      ],
+      "total_changed": 2,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (FastDateParser.java vs FastDateParser_TimeZoneStrategyTest.java)"
+    },
+    {
+      "b": "5acf310d08b2bc5182cf936616ef70938cb2c499",
+      "a": "8592cfe496e204ce8540441047d578026b5e0a5c",
+      "subject": "LANG-1270: Add StringUtils#isAnyNotEmpty and #isAnyNotBlank (closes #193)",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/StringUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/StringUtilsEmptyBlankTest.java"
+      ],
+      "total_changed": 2,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (StringUtils.java vs StringUtilsEmptyBlankTest.java)"
+    },
+    {
+      "b": "5afe35c02481b6bb3553708b027705590d99c22a",
+      "a": "c70e05ae41b4990a9d1e5f442219411abc6b2afb",
+      "subject": "LANG-1422: Add null-safe StringUtils.valueOf(char[]) to delegate to String.valueOf(char[])",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/StringUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/StringUtilsValueOfTest.java"
+      ],
+      "total_changed": 2,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (StringUtils.java vs StringUtilsValueOfTest.java)"
+    },
+    {
+      "b": "627a699bd0525fc1018887748c5d6b71047c1d62",
+      "a": "5c6de5a7a0226b96e839381cc4ff96eb66fd5295",
+      "subject": "Use Stream.of().",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/reflect/MethodUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/time/FastDatePrinterTimeZonesTest.java"
+      ],
+      "total_changed": 2,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (MethodUtils.java vs FastDatePrinterTimeZonesTest.java)"
+    },
+    {
+      "b": "636a5148405f567310b9fcd4dec131fa1936130c",
+      "a": "adc6bc4104514063b3e8ebe7a301d5dd4bce36d3",
+      "subject": "Clarify behavior for chars that are not next to each other in the supplied search CharSequence",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/StringUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/StringUtilsEqualsIndexOfTest.java"
+      ],
+      "total_changed": 2,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (StringUtils.java vs StringUtilsEqualsIndexOfTest.java)"
+    },
+    {
+      "b": "665f047e552ad71c189582af15a0b697133fff0b",
+      "a": "1f83019d1541f444a87bb902999c641c3eb2a385",
+      "subject": "[StringUtils::indexOfAnyBut] redesign due to inconsistent/faulty behaviour regarding UTF-16 surrogates (#1327)",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/StringUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/StringUtilsEqualsIndexOfTest.java"
+      ],
+      "total_changed": 2,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (StringUtils.java vs StringUtilsEqualsIndexOfTest.java)"
+    },
+    {
+      "b": "67f50236bf337e20c6daa987d4d42c4fedb482ce",
+      "a": "2f07d02fca0a66144b7106298fd9eb207783fecc",
+      "subject": "Revert \"'abbreviate' contract violations (#1490)\"",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/StringUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/StringUtilsAbbreviateTest.java"
+      ],
+      "total_changed": 2,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer1:revert"
+    },
+    {
+      "b": "68c33330820f94f1f335e16eeb201988ad8c1edd",
+      "a": "108aa571c1d6a79773d9c92bd1ee0eb10b165528",
+      "subject": "FastDatePrinter WeekYear rule calls Calendar.getWeekYear() without checking isWeekDateSupported() (#1659)",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/time/FastDatePrinter.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/time/FastDateFormatTest.java"
+      ],
+      "total_changed": 2,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (FastDatePrinter.java vs FastDateFormatTest.java)"
+    },
+    {
+      "b": "6b9c3315885f8f9e4be19db9ef05257035b97bca",
+      "a": "31a9fa0cce769c976d74cdcb6e6ce8831793db7b",
+      "subject": "LANG-1293: Add StringUtils#isAllEmpty and #isAllBlank methods",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/StringUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/StringUtilsEmptyBlankTest.java"
+      ],
+      "total_changed": 2,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (StringUtils.java vs StringUtilsEmptyBlankTest.java)"
+    },
+    {
+      "b": "6dfc599a236ef9b617c4ecb02180294b3abc29e0",
+      "a": "3a0c152c22b6e96fc809fdee2d6ea5b816a139e6",
+      "subject": "Replacing some of the older code. When performing a mutation operation (even if it's on an immutable by returning a new instance), String should go in and String should come out. When performing a non-mutation operation, CharSequence should be passed in. LANG-687",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/StringUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/StringUtilsEqualsIndexOfTest.java"
+      ],
+      "total_changed": 2,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (StringUtils.java vs StringUtilsEqualsIndexOfTest.java)"
+    },
+    {
+      "b": "7651124bec8a74366fcc70af41ccaa2e441dec3b",
+      "a": "2d21e19f063733a12add17f9933cd9270eb246d1",
+      "subject": "[LANG-1561] use List.sort instead of Collection.sort (#546)",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/reflect/MethodUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/compare/ObjectToStringComparatorTest.java"
+      ],
+      "total_changed": 2,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (MethodUtils.java vs ObjectToStringComparatorTest.java)"
+    },
+    {
+      "b": "7a2b1c1c3fbbb5e109b998e68a00f5d053571769",
+      "a": "d864bbfb8f82fb64b2fb0d345bb653d7d0cccbfe",
+      "subject": "Merge branch 'better-contains-javadoc'",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/StringUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/StringUtilsEqualsIndexOfTest.java"
+      ],
+      "total_changed": 2,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer1:merge_branch"
+    },
+    {
+      "b": "7cb24c31092e719790a0fd1ab7f29cb3c9bb6366",
+      "a": "85476e754b9793dcdf9c743fa61f46c936d6cc16",
+      "subject": "Add more tests for LocaleUtils.toLocale(String)",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/LocaleUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/LocaleUtilsTest.java"
+      ],
+      "total_changed": 2,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer1:add_more_tests"
+    },
+    {
+      "b": "7e6b6fce8d8f26c984b70465b6c94bd2d4a54582",
+      "a": "3933e63c7c38ab549cd52815fbe0a4b49cffacdd",
+      "subject": "Remove Formattable from Pair",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/tuple/Pair.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/text/FormattableUtilsTest.java"
+      ],
+      "total_changed": 2,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (Pair.java vs FormattableUtilsTest.java)"
+    },
+    {
+      "b": "7fd021d82ff431fb31f42bc6c5c44a3b979cb426",
+      "a": "f08c4f6ae9f8190bcaf0a8bbb82530233bf51bf9",
+      "subject": "LANG-1241 StringUtils.ordinalIndexOf broken",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/StringUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/StringUtilsEqualsIndexOfTest.java"
+      ],
+      "total_changed": 2,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (StringUtils.java vs StringUtilsEqualsIndexOfTest.java)"
+    },
+    {
+      "b": "80a39fba9b1df6b208e57f4dea84c0f24e311a82",
+      "a": "71de1b3e140266192637f5ee19680bc441795acf",
+      "subject": "Fixing the javadoc for indexOfAnyBut(CharSequence, char[]) per Dirk Starke's report",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/StringUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/StringUtilsEqualsIndexOfTest.java"
+      ],
+      "total_changed": 2,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (StringUtils.java vs StringUtilsEqualsIndexOfTest.java)"
+    },
+    {
+      "b": "833885c29d3f037b8985e7822f714fbc484d0378",
+      "a": "ff902c15612f2d771483ce6bb06e55609247c34e",
+      "subject": "Applied Javadoc patch and added new test per https://github.com/apache/commons-lang/pull/115",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/StringUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/StringUtilsEqualsIndexOfTest.java"
+      ],
+      "total_changed": 2,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (StringUtils.java vs StringUtilsEqualsIndexOfTest.java)"
+    },
+    {
+      "b": "851de661c657300b54165238f990d339fbf8c754",
+      "a": "f50a4df11cd56984f251b51765fe55ce30d71266",
+      "subject": "strip accents \"\\u0111\" and \"\\u0110\" (#1216)",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/StringUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/StringUtilsTrimStripTest.java"
+      ],
+      "total_changed": 2,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (StringUtils.java vs StringUtilsTrimStripTest.java)"
+    },
+    {
+      "b": "859224ffadb79147088840732236c1fad341d842",
+      "a": "0446364ffa1c476dfdd95df5be94444f847973f3",
+      "subject": "LANG-1167: Add null filter to ReflectionToStringBuilder",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/builder/ReflectionToStringBuilder.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/builder/ReflectionToStringBuilderExcludeNullValuesTest.java"
+      ],
+      "total_changed": 2,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (ReflectionToStringBuilder.java vs ReflectionToStringBuilderExcludeNullValuesTest.java)"
+    },
+    {
+      "b": "880b85da4a13cbf4cd74febea270f710419e75e5",
+      "a": "56e66879a83e7f9607edb44a4df7998afdb51579",
+      "subject": "FastDateParser fails to parse some local \"z\" formatted strings",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/time/FastDateParser.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/time/FastDateParser_TimeZoneStrategyTest.java"
+      ],
+      "total_changed": 2,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (FastDateParser.java vs FastDateParser_TimeZoneStrategyTest.java)"
+    },
+    {
+      "b": "8a5ea521fd60990d6612a62f539a0ca6abdef54e",
+      "a": "42fef8bdbdaa0956b1dd5140ee3d511de4f62eb4",
+      "subject": "Use JRE constants",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/Conversion.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/ConversionTest.java"
+      ],
+      "total_changed": 2,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer1:use_jre_constants"
+    },
+    {
+      "b": "8b31797ce94e565116cef5a46a65cf02fe5bb83f",
+      "a": "2d5af6e206aa400cc3c1d8ed050615a6e1bd68a5",
+      "subject": "Sort members",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/ArrayUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/time/FastDateParserTest.java"
+      ],
+      "total_changed": 2,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer1:sort_members"
+    },
+    {
+      "b": "8bbf8a9e2fb3e495be67202cc037c2993f9a9575",
+      "a": "49685a41569daf04d8b8ac1e09658e485307b901",
+      "subject": "LANG-839 ArrayUtils removeElements methods use unnecessary HashSet Eliminate conversion of BitSet to int[]",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/ArrayUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/HashSetvBitSetTest.java"
+      ],
+      "total_changed": 2,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (ArrayUtils.java vs HashSetvBitSetTest.java)"
+    },
+    {
+      "b": "8f73bd15d485e5b9347abe1b2ac71d2d956f16a5",
+      "a": "fdb6e394b8b0bba1988c3262d90c232cb1a4b575",
+      "subject": "Use Java 8 API to manage thread local",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/builder/ToStringStyle.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/AbstractLangTest.java"
+      ],
+      "total_changed": 2,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (ToStringStyle.java vs AbstractLangTest.java)"
+    },
+    {
+      "b": "94ec5a11122b2e60fbffcc35373c978c839bf8ae",
+      "a": "00fafe772ceb91c9f26d79f5a2f6c3695a141115",
+      "subject": "LANG-1171 Add null safe compare methods in StringUtils :   - StringUtils.compare(String str1, String str2);   - StringUtils.compare(String str1, String str2, boolean nullIsLess);   - StringUtils.compareIgnoreCase(String str1, String str2);   - StringUtils.compareIgnoreCase(String str1, String str2, boolean nullIsLess);",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/StringUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/StringUtilsEqualsIndexOfTest.java"
+      ],
+      "total_changed": 2,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (StringUtils.java vs StringUtilsEqualsIndexOfTest.java)"
+    },
+    {
+      "b": "954ade4c1ae2adc0aaac3a1dbe800495c519520c",
+      "a": "1661e5519c4836a5a940b13b7797263443156fc9",
+      "subject": "(doc) Use the full alphabet for the well-known example text.",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/text/StrSubstitutor.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/StringUtilsTest.java"
+      ],
+      "total_changed": 2,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (StrSubstitutor.java vs StringUtilsTest.java)"
+    },
+    {
+      "b": "98eda5181730b8f844c8b9321aa8369fdfc41584",
+      "a": "494a4db395718d2cd9880ee02144ebff7c57ad27",
+      "subject": "Merge branch 'master' of https://gitbox.apache.org/repos/asf/commons-lang.git",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/JavaVersion.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/JavaVersionTest.java"
+      ],
+      "total_changed": 2,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer1:merge_branch"
+    },
+    {
+      "b": "9946140913f0426e78e676db461eb7dc9bdeaac7",
+      "a": "f5a6dc28f567e15999aec20a3ed4b67d3eae317c",
+      "subject": "Rolling StringUtils and test code back to r1082046. The move to CharSequence is theoretically desirable, but there are no common immutable CharSequence subclasses other than String, making this a complex and useless change. Instead StrBuilder should be enhanced. LANG-687",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/StringUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/StringUtilsEqualsIndexOfTest.java"
+      ],
+      "total_changed": 2,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (StringUtils.java vs StringUtilsEqualsIndexOfTest.java)"
+    },
+    {
+      "b": "9fa1d734f66f1ad236cafea54bfcc94a1ba8fd1a",
+      "a": "45bec219d2e039e85e71711e01d4543a85c1756b",
+      "subject": "LANG-1631 - Check if the char to be searched is defined (#682)",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/CharSequenceUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/StringUtilsEqualsIndexOfTest.java"
+      ],
+      "total_changed": 2,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (CharSequenceUtils.java vs StringUtilsEqualsIndexOfTest.java)"
+    },
+    {
+      "b": "a06f83a7621f323012ddc69836cda1294a5e2114",
+      "a": "3a68fe8b7e2aecaf75535415d2a7c8268345cd26",
+      "subject": "LANG-1169 Add some other unit tests",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/StringUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/StringUtilsEqualsIndexOfTest.java"
+      ],
+      "total_changed": 2,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (StringUtils.java vs StringUtilsEqualsIndexOfTest.java)"
+    },
+    {
+      "b": "a0b798c27a0312df2a110073bd7888993e56d05c",
+      "a": "dd5a0e6e1e3edb41afb4b40e4ec2c99e5932e73c",
+      "subject": "LANG-1120: StringUtils.stripAccents should remove accents from \"Ł\" and \"ł\" (closes #105).",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/StringUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/StringUtilsTrimEmptyTest.java"
+      ],
+      "total_changed": 2,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (StringUtils.java vs StringUtilsTrimEmptyTest.java)"
+    },
+    {
+      "b": "a2bb711aee6621b21cdd22e6d7e4bff2f7236235",
+      "a": "5c3ec55e15922c58bb2f39145de9fe641840bb50",
+      "subject": "[LANG-586] part 2: refactor ToStringStyle and ToStringBuilderTest to verify that we are unsetting the registry when no longer needed",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/builder/ToStringStyle.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/builder/ToStringBuilderTest.java"
+      ],
+      "total_changed": 2,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (ToStringStyle.java vs ToStringBuilderTest.java)"
+    },
+    {
+      "b": "ad1ea0b07dc001211b38a72be01b33572ac5163c",
+      "a": "b2408bf91fbd119679781359c484f650347b5324",
+      "subject": "Javadoc",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/text/ExtendedMessageFormat.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/reflect/FieldUtilsTest.java"
+      ],
+      "total_changed": 2,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer1:javadoc_only"
+    },
+    {
+      "b": "adc6bc4104514063b3e8ebe7a301d5dd4bce36d3",
+      "a": "d864bbfb8f82fb64b2fb0d345bb653d7d0cccbfe",
+      "subject": "Clarify behavior of containsAny for null entries in the supplied CharSequence array",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/StringUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/StringUtilsEqualsIndexOfTest.java"
+      ],
+      "total_changed": 2,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (StringUtils.java vs StringUtilsEqualsIndexOfTest.java)"
+    },
+    {
+      "b": "ae8ba316cfaa3102e1ea7067646c0f107d1b30ca",
+      "a": "22d2664b62a1af1a6ea2b66a1038f0ecf8ac7546",
+      "subject": "Revert to the released behavior and update tests",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/Conversion.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/ConversionTest.java"
+      ],
+      "total_changed": 2,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer1:revert"
+    },
+    {
+      "b": "b45435c950e6f6864671bdffde29e26cdc8ce15b",
+      "a": "12e597a78cbf9d82414b944a5b285d81a2e27e51",
+      "subject": "LANG-1300: changed CharSequence lastIndexOf for Supplementary Characters",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/CharSequenceUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/StringUtilsEqualsIndexOfTest.java"
+      ],
+      "total_changed": 2,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (CharSequenceUtils.java vs StringUtilsEqualsIndexOfTest.java)"
+    },
+    {
+      "b": "b521820b23c45fd068618d10955eceed48801eff",
+      "a": "0e1b328e5697196d944b9e85356020743066ff3b",
+      "subject": "LANG-1300: Merged Rob's javadoc comments and updated to use code units instead of code points",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/CharSequenceUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/StringUtilsEqualsIndexOfTest.java"
+      ],
+      "total_changed": 2,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (CharSequenceUtils.java vs StringUtilsEqualsIndexOfTest.java)"
+    },
+    {
+      "b": "b6253688d3cd7d4d8c2ba14c2150bc446f0aa6a6",
+      "a": "ca3574f08bc258f82c5f5d72b580452b53fd2672",
+      "subject": "Merge branch 'master' of https://gitbox.apache.org/repos/asf/commons-lang.git",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/time/CalendarUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/time/CalendarUtilsTest.java"
+      ],
+      "total_changed": 2,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer1:merge_branch"
+    },
+    {
+      "b": "bc52782cd84f4356d2984e1aa01806f81754eb08",
+      "a": "79f7a7ef529ae656a80f7e331f75e79999cef7ea",
+      "subject": "https://issues.apache.org/jira/browse/LANG-607 StringUtils methods do not handle Unicode 2.0+ supplementary characters correctly.",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/StringUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/StringUtilsEqualsIndexOfTest.java"
+      ],
+      "total_changed": 2,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (StringUtils.java vs StringUtilsEqualsIndexOfTest.java)"
+    },
+    {
+      "b": "bda6a4fc838384fa1a40be20e14bada2bbeb8d2c",
+      "a": "e6eba6e9acbd646e9a28546b14ae1d663dc6751a",
+      "subject": "Sort members.",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/Range.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/RangeTest.java"
+      ],
+      "total_changed": 2,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer1:sort_members"
+    },
+    {
+      "b": "be1536fe56c4d5898c1cf828011aabb9496360a7",
+      "a": "b26198d2e97d5a6681ba36ed11791b15db4544c2",
+      "subject": "Merge branch 'master' of https://gitbox.apache.org/repos/asf/commons-lang.git",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/EnumUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/EnumUtilsTest.java"
+      ],
+      "total_changed": 2,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer1:merge_branch"
+    },
+    {
+      "b": "bfcdeeaf441feffba724f03602cec2cf7b181a86",
+      "a": "a5ad80d75408c19e4500e2f34ee40e5676e3a82c",
+      "subject": "More Javadoc and tests",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/StringUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/StringUtilsEqualsIndexOfTest.java"
+      ],
+      "total_changed": 2,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (StringUtils.java vs StringUtilsEqualsIndexOfTest.java)"
+    },
+    {
+      "b": "c04469163d86bdd10f4aa409c1a694c87c467d2a",
+      "a": "1e3629c6ef9d4dd1d96327254bb88e62fd2f4aac",
+      "subject": "Javadoc",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/time/AbstractFormatCache.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/time/FastDateFormatTest.java"
+      ],
+      "total_changed": 2,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer1:javadoc_only"
+    },
+    {
+      "b": "c07bc828f0e208455b3f44345f69414eddf00b2f",
+      "a": "8538458e7aeb1455a5942f60fe0b4930da6c5d68",
+      "subject": "Fix typo in SystemProperties.JDK_XML_ENTITY_REPLACEMENT_LIMIT (#1631)",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/SystemProperties.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/SystemPropertiesTest.java"
+      ],
+      "total_changed": 2,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer1:typos_format"
+    },
+    {
+      "b": "c55d1f3ccb0a3631eecff63743c936ed9b8505a1",
+      "a": "a661870ab333174d27ebcba6f243378607296ce5",
+      "subject": "Merge branch 'master' of https://garydgregory@github.com/apache/commons-lang.git",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/ClassUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/ClassUtilsTest.java"
+      ],
+      "total_changed": 2,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer1:merge_branch"
+    },
+    {
+      "b": "cf8b7edbe16a840478f81abc93d45ca68a48d80d",
+      "a": "60884907a7965fcbc09af5b04d1e265015e6664b",
+      "subject": "Merge branch 'master' of https://gitbox.apache.org/repos/asf/commons-lang.git",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/time/DurationUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/time/DurationUtilsTest.java"
+      ],
+      "total_changed": 2,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer1:merge_branch"
+    },
+    {
+      "b": "db0f2304bd7c3ced65cbdfe9e17e80fe0774c13c",
+      "a": "3051264e1bc1d41a29c9dae7935c090568f64af4",
+      "subject": "Suppressed two unchecked warnings.",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/SerializationUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/exception/AbstractExceptionContextTest.java"
+      ],
+      "total_changed": 2,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (SerializationUtils.java vs AbstractExceptionContextTest.java)"
+    },
+    {
+      "b": "e8138eafe70f279427dbcecaef564613ad27aa90",
+      "a": "ea623e575eb48564459e840a3ec130d65e370339",
+      "subject": "BEANUTILS-381 getMatchingAccessibleMethod does not correctly handle inheritance and method overloading - thanks to Todd Nine for the patch",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/reflect/MemberUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/reflect/MethodUtilsTest.java"
+      ],
+      "total_changed": 2,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (MemberUtils.java vs MethodUtilsTest.java)"
+    },
+    {
+      "b": "e9610ccf30f657e247997242af68e113cc4ba231",
+      "a": "6700d58fd6538f531d282b98e4d31fadd35e87da",
+      "subject": "Merge branch 'Lang1300CharSequenceUtilsChange' of https://github.com/MarkDacek/commons-lang",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/CharSequenceUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/StringUtilsEqualsIndexOfTest.java"
+      ],
+      "total_changed": 2,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer1:merge_branch"
+    },
+    {
+      "b": "eef3ffe0e2e938f72bdf227eb6df493c12a8fb6b",
+      "a": "363d1f2704f20496b806cff5035b73059ad26998",
+      "subject": "Moving indexOf(String, String) and indexOf(String, String, int) over to CharSequence. LANG-687",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/StringUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/StringUtilsEqualsIndexOfTest.java"
+      ],
+      "total_changed": 2,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (StringUtils.java vs StringUtilsEqualsIndexOfTest.java)"
+    },
+    {
+      "b": "ef39bc92712d47c100af3b243a8bfcd84a45f116",
+      "a": "60e07f154ecaa0a30d4d0ce30fe27da9f43528ad",
+      "subject": "StrBuilder.replaceImpl shrink-branch leaves residual chars in buffer (#1672)",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/text/StrBuilder.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/text/StrBuilderClearTest.java"
+      ],
+      "total_changed": 2,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (StrBuilder.java vs StrBuilderClearTest.java)"
+    },
+    {
+      "b": "f68ca3cadd5766f579f4020868ea6febfada1db2",
+      "a": "7e0d6dbd2a65d8b36a4c9042565d06af34d489a0",
+      "subject": "Sort members",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/RuntimeEnvironment.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/RuntimeEnvironmentTest.java"
+      ],
+      "total_changed": 2,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer1:sort_members"
+    },
+    {
+      "b": "f9acb40b9996a848056f51dc8ea9e786ef80a135",
+      "a": "cc7fa1ea05002da97e187245c57e61f5b077adc6",
+      "subject": "Adding Dmitry Katsubo's patch from LANG-846, providing CharSequenceUtils.regionMatches with a proper green implementation instead of inefficiently converting to Strings",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/CharSequenceUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/StringUtilsStartsEndsWithTest.java"
+      ],
+      "total_changed": 2,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (CharSequenceUtils.java vs StringUtilsStartsEndsWithTest.java)"
+    },
+    {
+      "b": "fb2d228380eba79585099e4c5737b3e764864d0b",
+      "a": "a9be3ec55bb764f02acf5bb438aee7e1ab660942",
+      "subject": "simplify_if (#543)",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/builder/ToStringStyle.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/StringUtilsEqualsIndexOfTest.java"
+      ],
+      "total_changed": 2,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (ToStringStyle.java vs StringUtilsEqualsIndexOfTest.java)"
+    },
+    {
+      "b": "fc014c23fe4441b9a31f261468072d04433670a5",
+      "a": "03abd8fab00f881c7e3a4eb145d5e29462be98ba",
+      "subject": "StringUtils.stripAccents() should handle ligatures, UTF32 math blocks, etc. (#1201)",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/StringUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/StringUtilsTrimStripTest.java"
+      ],
+      "total_changed": 2,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (StringUtils.java vs StringUtilsTrimStripTest.java)"
+    },
+    {
+      "b": "006d1d1df98ffe95e32d5965f75ca5bac3961bc4",
+      "a": "0b00e8de26e4760d0c15a7ead8e9f1020379c82b",
+      "subject": "StringUtils.stripAccents(String) doesn't handle I with bar",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/StringUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/StringUtilsTrimStripTest.java"
+      ],
+      "total_changed": 3,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (StringUtils.java vs StringUtilsTrimStripTest.java)"
+    },
+    {
+      "b": "01514294a5867c420c11d8f71015591e77496ff7",
+      "a": "ac1070e84e42acf3c2ada36e4727c2d99b0fc48e",
+      "subject": "Merge branch 'master' into release",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/concurrent/locks/LockingVisitors.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/concurrent/locks/LockingVisitorsTest.java"
+      ],
+      "total_changed": 3,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer1:merge_branch"
+    },
+    {
+      "b": "01ee7028e6940dbd074f3a76bb28f3a78b5d5b21",
+      "a": "72b9613ddbd8e079184e2ef0207fe1c733bcbcbc",
+      "subject": "[LANG-825] Create StrBuilder APIs similar to String.format(String, Object...)",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/text/StrBuilder.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/text/StrBuilderAppendInsertTest.java"
+      ],
+      "total_changed": 3,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (StrBuilder.java vs StrBuilderAppendInsertTest.java)"
+    },
+    {
+      "b": "062bc6fe7d48d4eb4cdf3abec09e7547a0a9aed7",
+      "a": "75fa90e96c3ea16f92e1a178b257534990ac1616",
+      "subject": "Add Add org.apache.commons.lang3.StringUtils.substringAfterLast(String, int).",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/StringUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/StringUtilsSubstringTest.java"
+      ],
+      "total_changed": 3,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (StringUtils.java vs StringUtilsSubstringTest.java)"
+    },
+    {
+      "b": "0799f01df18c8f2d5695390cfc6db807fe019b18",
+      "a": "8e7df02eda7a1aac56a884e3d52c6d72073028b5",
+      "subject": "Merge branch 'fix-LANG-1118'",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/StringUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/StringUtilsTest.java"
+      ],
+      "total_changed": 3,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer1:merge_branch"
+    },
+    {
+      "b": "0942ef04f1fa911d382b79a92dca1dd4b3eb88e6",
+      "a": "8252b04a45722648ce2225853de9882b3b0de034",
+      "subject": "LANG-951: Fragments are wrong by 1 day when using fragment YEAR or MONTH - applying patch provided by Sebastian Götz, several tests now fail because of wrong assertions, will fix them in a separate commit",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/time/DateUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/time/DateUtilsFragmentTest.java"
+      ],
+      "total_changed": 3,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (DateUtils.java vs DateUtilsFragmentTest.java)"
+    },
+    {
+      "b": "09686fad46d49016057bae8f02dc79f409b7bd10",
+      "a": "64d820bffae723b9c8669301b246ae199db61b5c",
+      "subject": "Revert parts of LANG-1134 to polish the API after 3.5",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/Validate.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/ValidateTest.java"
+      ],
+      "total_changed": 3,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer1:revert"
+    },
+    {
+      "b": "096b05e89f55eacf574b3214c2dfe3692123afb9",
+      "a": "064de49517c1cd0abd0c59b1e434fc1b5c7480ce",
+      "subject": "Make Failable.run(FailableRunnable) null-safe",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/function/Failable.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/function/FailableFunctionsTest.java"
+      ],
+      "total_changed": 3,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (Failable.java vs FailableFunctionsTest.java)"
+    },
+    {
+      "b": "102a6d75650b7578e31bf18b840e0b613e83e439",
+      "a": "e610367507d69947c752cf2659162afbde4ec7e8",
+      "subject": "Merge branch 'pr-441'",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/StringUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/StringUtilsTest.java"
+      ],
+      "total_changed": 3,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer1:merge_branch"
+    },
+    {
+      "b": "102b75cd923c30fb81047211ea1eb0b12cfe1a43",
+      "a": "0799f01df18c8f2d5695390cfc6db807fe019b18",
+      "subject": "Merge branch 'fix-LANG-1119' of https://github.com/rikles/commons-lang This closes #71.",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/StringUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/StringUtilsTest.java"
+      ],
+      "total_changed": 3,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer1:merge_branch"
+    },
+    {
+      "b": "1384457a3982588b458f4b9c3040b0458ee99749",
+      "a": "a67075b7830e77063056d0a7e89fb9d4e0744abb",
+      "subject": "[LANG-1033] Add StringUtils.countMatches(CharSequence, char)",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/StringUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/StringUtilsSubstringTest.java"
+      ],
+      "total_changed": 3,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (StringUtils.java vs StringUtilsSubstringTest.java)"
+    },
+    {
+      "b": "17ceb435edca4cc0ebb9acbaa27408222db09243",
+      "a": "006d1d1df98ffe95e32d5965f75ca5bac3961bc4",
+      "subject": "StringUtils.stripAccents(String) doesn't handle U with bar",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/StringUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/StringUtilsTrimStripTest.java"
+      ],
+      "total_changed": 3,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (StringUtils.java vs StringUtilsTrimStripTest.java)"
+    },
+    {
+      "b": "19dace1b8a2ce1734872c683bc881c420c23a1a3",
+      "a": "61bec859ac3ee087a69edeed8b65ec39a6646f18",
+      "subject": "Merge branch 'LANG-1137'",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/event/EventListenerSupport.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/event/EventListenerSupportTest.java"
+      ],
+      "total_changed": 3,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer1:merge_branch"
+    },
+    {
+      "b": "1dddec8ba867bc31233ba194f0753ea35818cbfd",
+      "a": "deb5f817af5a310512660d0b9f5fcf1d55f088a5",
+      "subject": "[LANG-1542] ToStringBuilder.reflectionToString - Wrong JSON format when object has a List/Array of Enum.",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/builder/ToStringStyle.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/builder/JsonToStringStyleTest.java"
+      ],
+      "total_changed": 3,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (ToStringStyle.java vs JsonToStringStyleTest.java)"
+    },
+    {
+      "b": "3051264e1bc1d41a29c9dae7935c090568f64af4",
+      "a": "20c733229df741e57b8ac205788ece2d563b2f3d",
+      "subject": "Implements LANG-1074: Add a method to ArrayUtils for removing all occurrences of a given element. Thanks to Haiyang Li.",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/ArrayUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/ArrayUtilsRemoveTest.java"
+      ],
+      "total_changed": 3,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (ArrayUtils.java vs ArrayUtilsRemoveTest.java)"
+    },
+    {
+      "b": "33bb9fe25b9200e75cc4bf2483b17a35df960034",
+      "a": "86a59601b570585dcb7a1ce3d1ccc8e16008f53a",
+      "subject": "Merge branch 'LANG-1255'",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/time/DateUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/time/DateUtilsTest.java"
+      ],
+      "total_changed": 3,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer1:merge_branch"
+    },
+    {
+      "b": "37de491eb3d99a79a8644d5287b5286e953f0af7",
+      "a": "3276da82f0b592741088ff0181c0c89df7d279cc",
+      "subject": "Merge branch 'master' of https://gitbox.apache.org/repos/asf/commons-lang.git",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/RandomUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/RandomUtilsTest.java"
+      ],
+      "total_changed": 3,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer1:merge_branch"
+    },
+    {
+      "b": "38a9209456be83a4ec65e7c69993ddb8748145be",
+      "a": "0054e51500f1f39135bd691a7d80a76f32a9f3fb",
+      "subject": "LANG-1606 StringUtils.countMatches - fix Javadoc",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/StringUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/StringUtilsSubstringTest.java"
+      ],
+      "total_changed": 3,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (StringUtils.java vs StringUtilsSubstringTest.java)"
+    },
+    {
+      "b": "3af7d0dace7bee3f42b88abcaca853765cee3557",
+      "a": "04a5d83aecc325f87696c83b1a5dba45584ddaa7",
+      "subject": "[LANG-1191] Incorrect Javadoc StringUtils.containsAny(CharSequence, CharSequence...).",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/StringUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/StringUtilsEqualsIndexOfTest.java"
+      ],
+      "total_changed": 3,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (StringUtils.java vs StringUtilsEqualsIndexOfTest.java)"
+    },
+    {
+      "b": "3c92830ec51fb6b6e9a7ca2fb8fda324cd33e48a",
+      "a": "38bafd283f2e5fed8ca33dcf1aac8e4bdf54450e",
+      "subject": "LANG-1219: FastDateFormat doesn't respect summer daylight in some localized strings",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/time/FastDateParser.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/time/FastDateParser_TimeZoneStrategyTest.java"
+      ],
+      "total_changed": 3,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (FastDateParser.java vs FastDateParser_TimeZoneStrategyTest.java)"
+    },
+    {
+      "b": "3ce7f9eecfacbf3de716a8338ad4929371a66ca2",
+      "a": "6b9c3315885f8f9e4be19db9ef05257035b97bca",
+      "subject": "revert \"LANG-1270: Add StringUtils#isAnyNotEmpty and #isAnyNotBlank\" and add \"LANG-1293: Add StringUtils#isAllEmpty and #isAllBlank methods\" instead",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/StringUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/StringUtilsEmptyBlankTest.java"
+      ],
+      "total_changed": 3,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer1:revert"
+    },
+    {
+      "b": "3fadfdd69f4682f05563ce53e55743f55813f488",
+      "a": "e7d16c27629722a93a9d36a0b5e0a3a793850544",
+      "subject": "LANG-1396 - JsonToStringStyle does not escape string names",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/builder/ToStringStyle.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/builder/JsonToStringStyleTest.java"
+      ],
+      "total_changed": 3,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (ToStringStyle.java vs JsonToStringStyleTest.java)"
+    },
+    {
+      "b": "4063df71c300b399fac4b2dced18ec0beb4556f7",
+      "a": "062bc6fe7d48d4eb4cdf3abec09e7547a0a9aed7",
+      "subject": "[LANG-1543] [JSON string for maps] ToStringBuilder.reflectionToString doesnt render nested maps correctly.",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/builder/ToStringStyle.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/builder/JsonToStringStyleTest.java"
+      ],
+      "total_changed": 3,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (ToStringStyle.java vs JsonToStringStyleTest.java)"
+    },
+    {
+      "b": "46a081d69c27f0c57ee633489baa62b01d9b3cc2",
+      "a": "d18fb1abdfaed0671a33753c7341d80b64a2c7bf",
+      "subject": "Javadocs, imports.",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/function/package-info.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/concurrent/lock/LocksTest.java"
+      ],
+      "total_changed": 3,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (package-info.java vs LocksTest.java)"
+    },
+    {
+      "b": "481137553f878e2f69ce05129d4aecbf016a1756",
+      "a": "a5650a16717962d88f037d15aa52fe62d6943901",
+      "subject": "Merge branch 'fix-LANG-1169'",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/StringUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/StringUtilsEqualsIndexOfTest.java"
+      ],
+      "total_changed": 3,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer1:merge_branch"
+    },
+    {
+      "b": "4a882e76d9c9940ac561e8f17ede77c85e3dbeda",
+      "a": "1cf8af4b235eff25b9ddae22c477c5bdfba9dc67",
+      "subject": "Merge branch 'branch-3.4-fix-json-style-rebase'",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/builder/ToStringStyle.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/builder/JsonToStringStyleTest.java"
+      ],
+      "total_changed": 3,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer1:merge_branch"
+    },
+    {
+      "b": "4a8aa9e7243e7df4e5ebca91b85209bd69c875fb",
+      "a": "9e4a50d4e4d5a8819cf0f2686b9d21d608948943",
+      "subject": "Merge branch 'master' of https://gitbox.apache.org/repos/asf/commons-lang.git",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/Strings.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/text/StrBuilderTest.java"
+      ],
+      "total_changed": 3,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer1:merge_branch"
+    },
+    {
+      "b": "4ae84a33c0b031b835a60a804ab69be2ca060fb9",
+      "a": "feb980a6398012627bf6dfb7fddb92be3fe76ed4",
+      "subject": "LANG-813 StringUtils.equalsIgnoreCase doesn't check string reference equality Also check lengths.",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/StringUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/StringUtilsEqualsIndexOfTest.java"
+      ],
+      "total_changed": 3,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (StringUtils.java vs StringUtilsEqualsIndexOfTest.java)"
+    },
+    {
+      "b": "4f85c164a1a4eeb8813b61cf46132fb91971b323",
+      "a": "92529ed9038e21866c2c1783c02a126b6615a8f5",
+      "subject": "Add StringUtils.substringBefore(String, int).",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/StringUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/StringUtilsSubstringTest.java"
+      ],
+      "total_changed": 3,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (StringUtils.java vs StringUtilsSubstringTest.java)"
+    },
+    {
+      "b": "5019152951ad0d9fe65961b5f6e0d1527f876bd5",
+      "a": "d385969c523508ac5de9503f600ae1998e42224b",
+      "subject": "Add org.apache.commons.lang3.concurrent.ConcurrentException.ConcurrentException(String)",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/concurrent/ConcurrentException.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/concurrent/ConcurrentUtilsTest.java"
+      ],
+      "total_changed": 3,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (ConcurrentException.java vs ConcurrentUtilsTest.java)"
+    },
+    {
+      "b": "52b46e74dd29eb3eb65a593a872fd57694bc154c",
+      "a": "40134ecdb327d1b82936f7ee3fa925b7b181c726",
+      "subject": "LANG-1152 StringIndexOutOfBoundsException or field over-write for large year fields in FastDateParser",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/time/FastDatePrinter.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/time/FastDateFormatTest.java"
+      ],
+      "total_changed": 3,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (FastDatePrinter.java vs FastDateFormatTest.java)"
+    },
+    {
+      "b": "52bcd9b8e82d4d1d287b0d75df1e161aff8c65ab",
+      "a": "f5a83bb90cf7b318ac72823e6b99d01d060abe41",
+      "subject": "[LANG-857] StringIndexOutOfBoundsException in CharSequenceTranslator.",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/text/translate/CharSequenceTranslator.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/StringUtilsTest.java"
+      ],
+      "total_changed": 3,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (CharSequenceTranslator.java vs StringUtilsTest.java)"
+    },
+    {
+      "b": "54c0f6ba9e6555146d0dad51bcb5c4ec581e21da",
+      "a": "a5dc7f1e68f735d0f989a10c521bbc0f6c1ef3ae",
+      "subject": "LANG-571 ArrayUtils.add(T[] array[, offset], T element) can create unexpected ClassCastException",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/ArrayUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/ArrayUtilsAddTest.java"
+      ],
+      "total_changed": 3,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (ArrayUtils.java vs ArrayUtilsAddTest.java)"
+    },
+    {
+      "b": "59c28bb25fff0fc667d1319b13a3358bd44e81d5",
+      "a": "242e1f5498c9e02f64643ef1c5a9e939e642514d",
+      "subject": "Merge branch '124-branch'",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/text/StrSubstitutor.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/text/StrSubstitutorTest.java"
+      ],
+      "total_changed": 3,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer1:merge_branch"
+    },
+    {
+      "b": "613e988c80025b6238a9c8b7b7835791cf10407f",
+      "a": "6a82ecae175651cc8cd80e2751702b8f02efd8ec",
+      "subject": "Revert changes from r1166233: [LANG-750] Add MethodUtil APIs to call methods without parameters.",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/reflect/MethodUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/reflect/MethodUtilsTest.java"
+      ],
+      "total_changed": 3,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer1:revert"
+    },
+    {
+      "b": "640953167adf3580a2c21077d78e7e7ce84ead03",
+      "a": "6965455f8a90474c656e68031c780e9531cea21f",
+      "subject": "Merge branch 'bug/LANG-1114-TypeUtils.Wildcard.equals.bug'",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/reflect/TypeUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/reflect/TypeUtilsTest.java"
+      ],
+      "total_changed": 3,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer1:merge_branch"
+    },
+    {
+      "b": "6849dfc8a660bf8c95354520a2fa1283c9b3aa43",
+      "a": "fad946a1d79486c5118a596e8ac67ef7d5189070",
+      "subject": "LANG-1162 StringUtils#equals fails with Index OOBE on non-Strings with identical leading prefix",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/StringUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/StringUtilsEqualsIndexOfTest.java"
+      ],
+      "total_changed": 3,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (StringUtils.java vs StringUtilsEqualsIndexOfTest.java)"
+    },
+    {
+      "b": "6eac3468d4569e64f18757225aa8f7fd6f2a5241",
+      "a": "89c8519238523873277e76ea87422aebaf17898c",
+      "subject": "LANG-1083: Add (T) casts to get unit tests to pass in old JDK. This fixes #42 from github. Thanks to Jonathan Baker.",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/SerializationUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/exception/AbstractExceptionContextTest.java"
+      ],
+      "total_changed": 3,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (SerializationUtils.java vs AbstractExceptionContextTest.java)"
+    },
+    {
+      "b": "71d7c3264239c55b6e2daf89c44c5685085f26dd",
+      "a": "a9a73a7b2df1455646a7e0207712be6d4412e817",
+      "subject": "LANG-1133 FastDateParser_TimeZoneStrategyTest#testTimeZoneStrategyPattern fails on Windows with German Locale reimplementing LANG-1107",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/time/FastDateParser.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/time/FastDateParser_TimeZoneStrategyTest.java"
+      ],
+      "total_changed": 3,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (FastDateParser.java vs FastDateParser_TimeZoneStrategyTest.java)"
+    },
+    {
+      "b": "7c51e696d59fafe3c6f6e422fd7062ae9654bf50",
+      "a": "17ceb435edca4cc0ebb9acbaa27408222db09243",
+      "subject": "StringUtils.stripAccents(String) doesn't handle T with stroke",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/StringUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/StringUtilsTrimStripTest.java"
+      ],
+      "total_changed": 3,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (StringUtils.java vs StringUtilsTrimStripTest.java)"
+    },
+    {
+      "b": "7c8443f66c1a1852d31a4f3b9f096e5eecef5eb5",
+      "a": "6ec90c452fb1af67ede5720822d4503600522ff4",
+      "subject": "LANG-1089 FastDateParser does not handle excess hours as per SimpleDateFormat",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/time/FastDateParser.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/time/FastDateParserSDFTest.java"
+      ],
+      "total_changed": 3,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (FastDateParser.java vs FastDateParserSDFTest.java)"
+    },
+    {
+      "b": "7eda9463c1c650b38813321211561e315f12d1bc",
+      "a": "a929004b21ff46dcfafaf249ac69e89723710cf2",
+      "subject": "[LANG-170] Add ArrayUtils.addFirst() methods.",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/ArrayUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/ArrayUtilsAddTest.java"
+      ],
+      "total_changed": 3,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (ArrayUtils.java vs ArrayUtilsAddTest.java)"
+    },
+    {
+      "b": "7fae5b0b17dbfa46236243cc53f0ea853ed89f5c",
+      "a": "98220ad03e4b620a98ca355317c9da6c6ac765d1",
+      "subject": "Merge branch 'LANG-701'",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/StringUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/StringUtilsTest.java"
+      ],
+      "total_changed": 3,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer1:merge_branch"
+    },
+    {
+      "b": "80bd3fdb42a5d816ded9d9111c7dac3ce57c3101",
+      "a": "66a37174a0398d76ff95904c22e77bc65890eec0",
+      "subject": "LANG-987: DateUtils.getFragmentInDays(Date, Calendar.MONTH) returns wrong days, reported by Jay Xu.",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/time/DateUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/time/DateUtilsFragmentTest.java"
+      ],
+      "total_changed": 3,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (DateUtils.java vs DateUtilsFragmentTest.java)"
+    },
+    {
+      "b": "8b5ce4070f285322e31d4f211497255f31f023f6",
+      "a": "7be4557a8ee61b19547d4a9a807bd61b4ae4f3d6",
+      "subject": "Use Checkstyle to validate import order",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/ObjectUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/builder/ReflectionToStringBuilderCustomImplementationTest.java"
+      ],
+      "total_changed": 3,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (ObjectUtils.java vs ReflectionToStringBuilderCustomImplementationTest.java)"
+    },
+    {
+      "b": "8b89b0ea93873a7e8815827b986949ba6df1fb3a",
+      "a": "0c9622b749f3d49798059c74ad66a51f3c782b5a",
+      "subject": "<action issue=\"LANG-835\" type=\"add\">StrBuilder should support StringBuilder as an input parameter</action>",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/text/StrBuilder.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/text/StrBuilderAppendInsertTest.java"
+      ],
+      "total_changed": 3,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (StrBuilder.java vs StrBuilderAppendInsertTest.java)"
+    },
+    {
+      "b": "8d36cab7c456e3db1e903931523f7abe00207805",
+      "a": "3e994821b4e3ceed87d32a7b332bf1323802b063",
+      "subject": "Add org.apache.commons.lang3.StringUtils.indexOfAny(CharSequence, int, char...)",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/StringUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/StringUtilsEqualsIndexOfTest.java"
+      ],
+      "total_changed": 3,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (StringUtils.java vs StringUtilsEqualsIndexOfTest.java)"
+    },
+    {
+      "b": "931101dd6528f23deadb71d21a4a06f0e8653fe4",
+      "a": "e15a2db16717b621dee4659a38b38ddd22056079",
+      "subject": "[LANG-1510] Add org.apache.commons.lang3.arch.Processor.Arch.getLabel().",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/arch/Processor.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/ArchUtilsTest.java"
+      ],
+      "total_changed": 3,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (Processor.java vs ArchUtilsTest.java)"
+    },
+    {
+      "b": "9bc992b133f7169288f1fa6b53a04f74c1549947",
+      "a": "2244ed9d63e037a85e1ab2ab2bc9b98f12a833dd",
+      "subject": "LANG-901: StringUtils#startsWithAny/endsWithAny is case sensitive - documented as case insensitive (closes #149)",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/StringUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/StringUtilsStartsEndsWithTest.java"
+      ],
+      "total_changed": 3,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (StringUtils.java vs StringUtilsStartsEndsWithTest.java)"
+    },
+    {
+      "b": "9e0f645e8ee2ac6141d3bf359cf29384cbd30b3c",
+      "a": "eb79f7c6f37d0d9c4d9252b1020bc19a617a4d23",
+      "subject": "Adding containsWhitespace method per LANG-625. Code comes from the Spring framework, so I've added such to the NOTICE file. License is Apache License 2.0. Unit test is original.",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/StringUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/StringUtilsEqualsIndexOfTest.java"
+      ],
+      "total_changed": 3,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (StringUtils.java vs StringUtilsEqualsIndexOfTest.java)"
+    },
+    {
+      "b": "9e26c7b6e9278e412178adcf6e54a20b2f7c7c70",
+      "a": "23d55b0b9cef1063f892623a5a4664d5706eba21",
+      "subject": "LANG-883: Add StringUtils.containsAny(CharSequence, CharSequence...) method. Thanks to Daniel Stewart.",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/StringUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/StringUtilsEqualsIndexOfTest.java"
+      ],
+      "total_changed": 3,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (StringUtils.java vs StringUtilsEqualsIndexOfTest.java)"
+    },
+    {
+      "b": "a3b74d9c230a85df8ebeef3169fc1cd0439c9a87",
+      "a": "cac7a60abf0a4451a5c80ef57343a14ea1ba443f",
+      "subject": "Merge branch 'LANG-1023'",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/text/WordUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/text/WordUtilsTest.java"
+      ],
+      "total_changed": 3,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer1:merge_branch"
+    },
+    {
+      "b": "a6addf94e5774f4e8fd71edbec68ff339c26e19f",
+      "a": "849578d3a8ef50eea1c5bfcd63f78779d30c1550",
+      "subject": "Merge branch 'fix-LANG-1139'",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/StringUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/StringUtilsTest.java"
+      ],
+      "total_changed": 3,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer1:merge_branch"
+    },
+    {
+      "b": "b9c7da0a8ccff15ef78f906c11590d9e983fcbd6",
+      "a": "c9c1e222b81b8487a963c33ecd03ed2560891a2a",
+      "subject": "Add Streams.failableStream(T), non-varargs variant",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/stream/Streams.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/stream/FailableStreamTest.java"
+      ],
+      "total_changed": 3,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (Streams.java vs FailableStreamTest.java)"
+    },
+    {
+      "b": "c614fbcc79615f93d2c60a153db6e82d7474c425",
+      "a": "f5a9effebd7209f3fa5385f18a5e59e8a09122f2",
+      "subject": "LANG-1374: fix logic in isJsonArray method of JsonToStringStyle",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/builder/ToStringStyle.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/builder/JsonToStringStyleTest.java"
+      ],
+      "total_changed": 3,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (ToStringStyle.java vs JsonToStringStyleTest.java)"
+    },
+    {
+      "b": "c8cc65165143ead3df00f05c9eedaf23ad095bf9",
+      "a": "1002c9e243883654f9c1e6beae643fb4e72fc172",
+      "subject": "Merge branch 'master' of https://github.com/NickManley/commons-lang This closes #117 LANG-1186 Fix NullPointerException in FastDateParser$TimeZoneStrategy",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/time/FastDateParser.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/time/FastDateParser_TimeZoneStrategyTest.java"
+      ],
+      "total_changed": 3,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer1:merge_branch"
+    },
+    {
+      "b": "c9cae602ec96ac1fb0b738801d919705db60f03e",
+      "a": "881c5fa3d2253234157076056970ed70289b87c6",
+      "subject": "Merge branch 'LANG-1174'",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/RandomUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/RandomUtilsTest.java"
+      ],
+      "total_changed": 3,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer1:merge_branch"
+    },
+    {
+      "b": "cac7a60abf0a4451a5c80ef57343a14ea1ba443f",
+      "a": "db6f7c1d74ba64211221a69cfa9fe7171a9199e8",
+      "subject": "Merge branch 'LANG-787'",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/StringUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/StringUtilsTest.java"
+      ],
+      "total_changed": 3,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer1:merge_branch"
+    },
+    {
+      "b": "cc94767e7eabdfcf9d1cab1d8d1d8556864394c6",
+      "a": "05d9518038ae8d2ac9f11b91b731f47b909a9bad",
+      "subject": "[LANG-1350] ConstructorUtils.invokeConstructor(Class, Object...) regression",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/reflect/MemberUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/reflect/ConstructorUtilsTest.java"
+      ],
+      "total_changed": 3,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (MemberUtils.java vs ConstructorUtilsTest.java)"
+    },
+    {
+      "b": "ce7f4ed073b5a7b326871bd2339e355dbe9468fa",
+      "a": "8db46b1d09c52ad32fd9360a1f0d627784523f8c",
+      "subject": "LANG-1090 FastDateParser does not set error indication in ParsePosition",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/time/FastDateParser.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/time/FastDateParserSDFTest.java"
+      ],
+      "total_changed": 3,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (FastDateParser.java vs FastDateParserSDFTest.java)"
+    },
+    {
+      "b": "d68a7a4189be8032045f952952c1aa9c764a3b9a",
+      "a": "1621a23d2bd99df845abae0beea0add84135a49d",
+      "subject": "Add org.apache.commons.lang3.StringUtils.substringAfter(String, int).",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/StringUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/StringUtilsSubstringTest.java"
+      ],
+      "total_changed": 3,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (StringUtils.java vs StringUtilsSubstringTest.java)"
+    },
+    {
+      "b": "d75fe46b8f1b0d5c27887052ee4714d6a9c7ea4b",
+      "a": "15e1ea2f4e5affe377fc303c1f637a73e3fbe625",
+      "subject": "LANG-1193 ordinalIndexOf(\"abc\", \"ab\", 1) gives incorrect answer of -1 (correct answer should be 0) Revert LANG-1077",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/StringUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/StringUtilsEqualsIndexOfTest.java"
+      ],
+      "total_changed": 3,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer1:revert"
+    },
+    {
+      "b": "d96586563cc2e943320393fcd84633083270363e",
+      "a": "8f9a427dc67e99929021a21f064061a507ee2ee4",
+      "subject": "LANG-1017: Use non-ASCII digits in Javadoc examples for StringUtils.isNumeric. Thanks to Christoph Schneegans.",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/StringUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/StringUtilsIsTest.java"
+      ],
+      "total_changed": 3,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (StringUtils.java vs StringUtilsIsTest.java)"
+    },
+    {
+      "b": "dfa6882a3b9ae6d17c386312ad5e5902d852fb4e",
+      "a": "a31570673477b8d8f4f0f2429002ec219e83369f",
+      "subject": "[LANG-786] StringUtils equals() relies on undefined behavior; thanks to Daniel Trebbien",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/StringUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/StringUtilsEqualsIndexOfTest.java"
+      ],
+      "total_changed": 3,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (StringUtils.java vs StringUtilsEqualsIndexOfTest.java)"
+    },
+    {
+      "b": "e5a3039f7a1e727fca40db7357a9191b6a7cf41d",
+      "a": "05763470e5a067eb153533d47baa73174ad9bd46",
+      "subject": "LANG-1077 StringUtils.ordinalIndexOf(\"aaaaaa\", \"aa\", 2) != 3 in StringUtils",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/StringUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/StringUtilsEqualsIndexOfTest.java"
+      ],
+      "total_changed": 3,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (StringUtils.java vs StringUtilsEqualsIndexOfTest.java)"
+    },
+    {
+      "b": "e7d16c27629722a93a9d36a0b5e0a3a793850544",
+      "a": "362dd935f84ef80b13cced13a74339e42c775809",
+      "subject": "LANG-1395 - JsonToStringStyle does not escape double quote in a string value",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/builder/ToStringStyle.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/builder/JsonToStringStyleTest.java"
+      ],
+      "total_changed": 3,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (ToStringStyle.java vs JsonToStringStyleTest.java)"
+    },
+    {
+      "b": "f068cb71b59a8183ad5724fcfe4c2c3f4b9ccb13",
+      "a": "0490f1c291981b1d577a64ed61ee2c19eef8addf",
+      "subject": "Tab police",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/time/FastDateParser.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/StringUtilsTest.java"
+      ],
+      "total_changed": 3,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (FastDateParser.java vs StringUtilsTest.java)"
+    },
+    {
+      "b": "f4ee399e31eb61741f5f2167d6af8f49c0e991b6",
+      "a": "844cd4298e46027ba1201df4eceb2dcaa5c1bb26",
+      "subject": "Revert \"LANG-1269: Wrong name or result of StringUtils#getJaroWinklerDistance (closes #198)\"",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/StringUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/StringUtilsTest.java"
+      ],
+      "total_changed": 3,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer1:revert"
+    },
+    {
+      "b": "f8df864f4cde9d8c6a21ba04ecfe9abd286de71d",
+      "a": "e92dafdc3b3d841ec95fe3df17722a5bdec3658a",
+      "subject": "Add ThreadUtils.sleepQuietly(Duration)",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/ThreadUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/time/StopWatchTest.java"
+      ],
+      "total_changed": 3,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (ThreadUtils.java vs StopWatchTest.java)"
+    },
+    {
+      "b": "fa392404994e3e505317f2babf78560363da2330",
+      "a": "3a055bac2363392bb2f3323b13d2716010d0b989",
+      "subject": "[LANG-1817] UncheckedFutureImpl clears thread interrupt status when wrapping InterruptedException.",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/concurrent/UncheckedFutureImpl.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/concurrent/UncheckedFutureTest.java"
+      ],
+      "total_changed": 3,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (UncheckedFutureImpl.java vs UncheckedFutureTest.java)"
+    },
+    {
+      "b": "fd680a65117e15f814a390253113ac51b165886f",
+      "a": "63d8a025e6f38ddfc966c4104ac783bcb59031e0",
+      "subject": "Merge branch 'array-utils'",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/ArrayUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/ArrayUtilsTest.java"
+      ],
+      "total_changed": 3,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer1:merge_branch"
+    },
+    {
+      "b": "13d7ce9fb65e8f05014daf4ee6cebc76f4781e6c",
+      "a": "48d142dc3bf2ef6d9a27c4138f9f1f9c7afd70ed",
+      "subject": "Merge branch 'LANG-1122'",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/ArrayUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/ArrayUtilsTest.java"
+      ],
+      "total_changed": 4,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer1:merge_branch"
+    },
+    {
+      "b": "3c4f60d71bc4bee0158d713be93c2151411d2e98",
+      "a": "15d50cf864c13468d81c7b2370ac5c8a7dc26d16",
+      "subject": "Resolving LANG-428 - Changing StringUtils.isAlpha, isAlphanumeric and isNumeric to return false when passed an empty String. Documenting this in the changes report and in the upgrade article. Also fixing a Javadoc c+p error in isNumericSpace and isAlphanumericSpace.",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/StringUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/StringUtilsIsTest.java"
+      ],
+      "total_changed": 4,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (StringUtils.java vs StringUtilsIsTest.java)"
+    },
+    {
+      "b": "45bec219d2e039e85e71711e01d4543a85c1756b",
+      "a": "b5bb3e6d3a4ea3b6908e858bbbfbe30931ff3583",
+      "subject": "Add FailableShortSupplier, handy for JDBC APIs.",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/function/Failable.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/function/FailableFunctionsTest.java"
+      ],
+      "total_changed": 4,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (Failable.java vs FailableFunctionsTest.java)"
+    },
+    {
+      "b": "5f2bf30edee6ba2c5c9d27b58fe8b032073fb991",
+      "a": "ea123dd82e67b443a761165a22cfce606e604a14",
+      "subject": "Merge branch 'master' of https://gitbox.apache.org/repos/asf/commons-lang.git",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/Functions.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/FunctionsTest.java"
+      ],
+      "total_changed": 4,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer1:merge_branch"
+    },
+    {
+      "b": "93d520a3e1781d99f99711df7016f474b36fbf82",
+      "a": "6a991d841301c30214255984535a1fe7f78248c7",
+      "subject": "Add StringUtils.containsAnyIgnoreCase(CharSequence, CharSequence...).",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/StringUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/StringUtilsContainsTest.java"
+      ],
+      "total_changed": 4,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer2:no_strict_pair (StringUtils.java vs StringUtilsContainsTest.java)"
+    },
+    {
+      "b": "838d7ebefb0e2e5e70bdb84c1282a69b99a9bb7d",
+      "a": "8b378885152075b44c5710d6dbcb8df4a5fb3223",
+      "subject": "Merge branch 'master' of github.com:apache/commons-lang into 3.9",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/reflect/FieldUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/reflect/FieldUtilsTest.java"
+      ],
+      "total_changed": 5,
+      "added_tests": [],
+      "score": 16,
+      "reject_reason": "layer1:merge_branch"
+    },
+    {
+      "b": "166ceb75286894fab753e29fdce3af4d33d1439a",
+      "a": "b1a659af124023b87729c967a4ea577331035872",
+      "subject": "Harden Range.readObject() to reject bad cached hash code (#1633)",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/Range.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/SerializationUtilsTest.java"
+      ],
+      "total_changed": 3,
+      "added_tests": [
+        "src/test/java/org/apache/commons/lang3/RangeReadObjectTest.java"
+      ],
+      "score": 14,
+      "reject_reason": "layer2:no_strict_pair (Range.java vs SerializationUtilsTest.java)"
+    },
+    {
+      "b": "13839dae6ef46f46023b3c489830fc25c0075aaf",
+      "a": "9aad0f421fda08da8cd9416a9532434d94785b9a",
+      "subject": "Add FailableSupplieSuppliersr.nul()",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/function/FailableSupplier.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/function/ObjectsTest.java"
+      ],
+      "total_changed": 4,
+      "added_tests": [
+        "src/test/java/org/apache/commons/lang3/function/FailableSupplierTest.java"
+      ],
+      "score": 14,
+      "reject_reason": "layer2:no_strict_pair (FailableSupplier.java vs ObjectsTest.java)"
+    },
+    {
+      "b": "2541a62def1c6e106ab4f4e0c72c45872dffca00",
+      "a": "e5763ff6f0bb41135e1c11606f3be8a2f9e80b4c",
+      "subject": "Moving the CharSequence specific methods out of StringUtils and reintroducing the CharSequenceUtils class",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/StringUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/StringUtilsSubstringTest.java"
+      ],
+      "total_changed": 4,
+      "added_tests": [
+        "src/test/java/org/apache/commons/lang3/CharSequenceUtilsTest.java"
+      ],
+      "score": 14,
+      "reject_reason": "layer2:no_strict_pair (StringUtils.java vs StringUtilsSubstringTest.java)"
+    },
+    {
+      "b": "dee94449e6abb1b999213a0e8efbe937bcff693b",
+      "a": "0e96d84e230628229d7f84c8f21936a3c975eda4",
+      "subject": "Merge branch 'LANG-1132'",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/builder/ReflectionToStringBuilder.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/builder/ToStringBuilderTest.java"
+      ],
+      "total_changed": 4,
+      "added_tests": [
+        "src/test/java/org/apache/commons/lang3/builder/ReflectionToStringBuilderTest.java"
+      ],
+      "score": 14,
+      "reject_reason": "layer1:merge_branch"
+    },
+    {
+      "b": "38f7109f4214300ae6eaf4bd76f5a7f1b2a10dc1",
+      "a": "8c4deb83471987bd4e8a489e4c423ed911610d5a",
+      "subject": "Merge branch 'master' of https://garydgregory@github.com/apache/commons-lang.git",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/time/TimeZones.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/time/TimeZonesTest.java"
+      ],
+      "total_changed": 5,
+      "added_tests": [
+        "src/test/java/org/apache/commons/lang3/time/ImmutableTimeZoneTest.java",
+        "src/test/java/org/apache/commons/lang3/time/TimeZonesGmtTest.java"
+      ],
+      "score": 14,
+      "reject_reason": "layer1:merge_branch"
+    },
+    {
+      "b": "0ede42bbdcf93560679a43ad1ac694fc6c05be59",
+      "a": "0995b83bed507eb15cc215c92ce0cf02d9b76edb",
+      "subject": "Add Functions#from(Function)",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/function/FailableFunction.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/function/FailableFunctionsTest.java"
+      ],
+      "total_changed": 6,
+      "added_tests": [
+        "src/test/java/org/apache/commons/lang3/function/FunctionsTest.java"
+      ],
+      "score": 14,
+      "reject_reason": "layer2:no_strict_pair (FailableFunction.java vs FailableFunctionsTest.java)"
+    },
+    {
+      "b": "494dfc9e6beb58b599ff54b924f544a887446ee1",
+      "a": "0babc7a071af536ef76fb8ecad4ae32b02fad608",
+      "subject": "Merge branch 'master' of https://gitbox.apache.org/repos/asf/commons-lang.git",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/LocaleUtils.java",
+        "src/main/java/org/apache/commons/lang3/reflect/MethodUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/LocaleUtilsTest.java"
+      ],
+      "total_changed": 3,
+      "added_tests": [],
+      "score": 13,
+      "reject_reason": "layer1:merge_branch"
+    },
+    {
+      "b": "b155e6461adb72087b6f575f4e01f8ca1e624a30",
+      "a": "3415c02e7b6669f7fc3ca563dcfedf832815d192",
+      "subject": "Merge branch 'fix/non-critical-typos'",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/ArrayUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/ArrayUtilsTest.java",
+        "src/test/java/org/apache/commons/lang3/concurrent/BasicThreadFactoryTest.java"
+      ],
+      "total_changed": 3,
+      "added_tests": [],
+      "score": 13,
+      "reject_reason": "layer1:merge_branch"
+    },
+    {
+      "b": "db12f89ad2e153d8494a92ee3a50a23faeb14912",
+      "a": "3415c02e7b6669f7fc3ca563dcfedf832815d192",
+      "subject": "fix typos in comments and javadoc.",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/ArrayUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/ArrayUtilsTest.java",
+        "src/test/java/org/apache/commons/lang3/concurrent/BasicThreadFactoryTest.java"
+      ],
+      "total_changed": 3,
+      "added_tests": [],
+      "score": 13,
+      "reject_reason": "layer1:typos_format"
+    },
+    {
+      "b": "25000a62f4eae00b5d48dda427340937a912cd7d",
+      "a": "247cae4896c282f50570374dc41b62269223ee36",
+      "subject": "Merge branch 'master' of https://gitbox.apache.org/repos/asf/commons-lang.git",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/Conversion.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/CharSequenceUtilsTest.java",
+        "src/test/java/org/apache/commons/lang3/ConversionTest.java"
+      ],
+      "total_changed": 4,
+      "added_tests": [],
+      "score": 13,
+      "reject_reason": "layer1:merge_branch"
+    },
+    {
+      "b": "429c847b24d2c4adb0b9768d1e38bf05e5bafb7b",
+      "a": "09c52410e62b0e1e221d413d7ab18feefcca6bf7",
+      "subject": "Merge branch 'master' of https://git-wip-us.apache.org/repos/asf/commons-lang.git",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/RandomStringUtils.java",
+        "src/main/java/org/apache/commons/lang3/StringUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/RandomStringUtilsTest.java"
+      ],
+      "total_changed": 4,
+      "added_tests": [],
+      "score": 13,
+      "reject_reason": "layer1:merge_branch"
+    },
+    {
+      "b": "849578d3a8ef50eea1c5bfcd63f78779d30c1550",
+      "a": "ae865193eaed848e72351c11f0543cfe385c8eaa",
+      "subject": "Merge branch 'fix-LANG-1171'",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/StringUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/StringUtilsEqualsIndexOfTest.java",
+        "src/test/java/org/apache/commons/lang3/StringUtilsTest.java"
+      ],
+      "total_changed": 4,
+      "added_tests": [],
+      "score": 13,
+      "reject_reason": "layer1:merge_branch"
+    },
+    {
+      "b": "8f579b4f3074b79c44771ce6c6dec1d253401f50",
+      "a": "e79f81f746db910d231733dbdee03728547aed0f",
+      "subject": "Merge branch 'master' of https://gitbox.apache.org/repos/asf/commons-lang.git",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/RandomStringUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/RandomStringUtilsTest.java",
+        "src/test/java/org/apache/commons/lang3/time/FastDateFormatTest.java"
+      ],
+      "total_changed": 4,
+      "added_tests": [],
+      "score": 13,
+      "reject_reason": "layer1:merge_branch"
+    },
+    {
+      "b": "9604c853069562e8c4219ae27eaa4b2bad59eabc",
+      "a": "dee94449e6abb1b999213a0e8efbe937bcff693b",
+      "subject": "Merge branch 'LANG-1135'",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/StringUtils.java",
+        "src/main/java/org/apache/commons/lang3/text/WordUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/text/WordUtilsTest.java"
+      ],
+      "total_changed": 4,
+      "added_tests": [],
+      "score": 13,
+      "reject_reason": "layer1:merge_branch"
+    },
+    {
+      "b": "a01e0621dcc7d88ec226044778881055949cef9b",
+      "a": "064971c7feaeaa3286fab614921171a8fa8a4e92",
+      "subject": "Merge branch 'master' of https://garydgregory@github.com/apache/commons-lang.git",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/ArrayUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/ArrayUtilsTest.java",
+        "src/test/java/org/apache/commons/lang3/concurrent/AtomicInitializerNonObjectTest.java"
+      ],
+      "total_changed": 5,
+      "added_tests": [],
+      "score": 13,
+      "reject_reason": "layer1:merge_branch"
+    },
+    {
+      "b": "c9d3c58e44738bf38c3974f054daeab1d7bf0f89",
+      "a": "76cc69c3f08cbf31efd56f631504496307ab7a5c",
+      "subject": "revert muddled commit",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/time/FastDateParser.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/reflect/FieldUtilsTest.java",
+        "src/test/java/org/apache/commons/lang3/time/FastDateParserSDFTest.java",
+        "src/test/java/org/apache/commons/lang3/time/FastDateParserTest.java"
+      ],
+      "total_changed": 5,
+      "added_tests": [],
+      "score": 11,
+      "reject_reason": "layer1:revert"
+    },
+    {
+      "b": "ec92ddd1c605bce0700eace96fb84331ad06c1dd",
+      "a": "7f9f0375a5c3c04860896f9e05c4c5185a7e8018",
+      "subject": "Merge branch 'master' of https://gitbox.apache.org/repos/asf/commons-lang.git",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/builder/DiffBuilder.java",
+        "src/main/java/org/apache/commons/lang3/builder/DiffResult.java",
+        "src/main/java/org/apache/commons/lang3/builder/Diffable.java",
+        "src/main/java/org/apache/commons/lang3/builder/ReflectionDiffBuilder.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/builder/DiffBuilderTest.java"
+      ],
+      "total_changed": 6,
+      "added_tests": [],
+      "score": 11,
+      "reject_reason": "layer1:merge_branch"
+    },
+    {
+      "b": "29c94abc083e7de44c1fdb83679ed32181d9884e",
+      "a": "b1b409ae4096664a33787bf52be32d9d2eb0cb31",
+      "subject": "Javadoc",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/ArrayUtils.java",
+        "src/main/java/org/apache/commons/lang3/Range.java",
+        "src/main/java/org/apache/commons/lang3/builder/CompareToBuilder.java",
+        "src/main/java/org/apache/commons/lang3/builder/DiffBuilder.java",
+        "src/main/java/org/apache/commons/lang3/builder/DiffResult.java",
+        "src/main/java/org/apache/commons/lang3/builder/EqualsBuilder.java",
+        "src/main/java/org/apache/commons/lang3/text/StrBuilder.java",
+        "src/main/java/org/apache/commons/lang3/time/DurationFormatUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/builder/EqualsBuilderTest.java"
+      ],
+      "total_changed": 9,
+      "added_tests": [],
+      "score": 11,
+      "reject_reason": "layer1:javadoc_only"
+    },
+    {
+      "b": "1fc15b43d4b243262d6383d2e5a554a2158aa57f",
+      "a": "9dbabe249449aa7feef2375768d3472f75944db3",
+      "subject": "Merge branch 'master' of https://gitbox.apache.org/repos/asf/commons-lang.git",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/CharUtils.java",
+        "src/main/java/org/apache/commons/lang3/SerializationUtils.java",
+        "src/main/java/org/apache/commons/lang3/builder/DiffBuilder.java",
+        "src/main/java/org/apache/commons/lang3/builder/DiffResult.java",
+        "src/main/java/org/apache/commons/lang3/math/Fraction.java",
+        "src/main/java/org/apache/commons/lang3/math/IEEE754rUtils.java",
+        "src/main/java/org/apache/commons/lang3/reflect/FieldUtils.java",
+        "src/main/java/org/apache/commons/lang3/reflect/MethodUtils.java",
+        "src/main/java/org/apache/commons/lang3/time/DateUtils.java",
+        "src/main/java/org/apache/commons/lang3/time/FormatCache.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/reflect/MethodUtilsTest.java"
+      ],
+      "total_changed": 11,
+      "added_tests": [],
+      "score": 11,
+      "reject_reason": "layer1:merge_branch"
+    },
+    {
+      "b": "066b9d3047a7429b0e1888f1931f72327641809b",
+      "a": "4bc3fb504e166aadd14db0dffd25eb631e78e79d",
+      "subject": "Sort members",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/reflect/TypeUtils.java",
+        "src/main/java/org/apache/commons/lang3/time/DurationFormatUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/builder/DiffBuilderTest.java",
+        "src/test/java/org/apache/commons/lang3/time/DurationFormatUtilsTest.java"
+      ],
+      "total_changed": 4,
+      "added_tests": [],
+      "score": 10,
+      "reject_reason": "layer1:sort_members"
+    },
+    {
+      "b": "19adcd792fb514e741cabdeda87e41f405fed268",
+      "a": "8edc751f623ec14d60113a71585ac82e3a0b9f17",
+      "subject": "Sort members",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/ClassUtils.java",
+        "src/main/java/org/apache/commons/lang3/time/StopWatch.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/ClassUtilsTest.java",
+        "src/test/java/org/apache/commons/lang3/time/StopWatchTest.java"
+      ],
+      "total_changed": 4,
+      "added_tests": [],
+      "score": 10,
+      "reject_reason": "layer1:sort_members"
+    },
+    {
+      "b": "ad1b72b7ece0166c5fbe0c6136213589eeed9945",
+      "a": "9c506279188a90dbbe124386cc52016682d17b5c",
+      "subject": "Merge branch 'LANG-1197'",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/JavaVersion.java",
+        "src/main/java/org/apache/commons/lang3/SystemUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/JavaVersionTest.java",
+        "src/test/java/org/apache/commons/lang3/SystemUtilsTest.java"
+      ],
+      "total_changed": 5,
+      "added_tests": [],
+      "score": 10,
+      "reject_reason": "layer1:merge_branch"
+    },
+    {
+      "b": "47fb7767924e95157488d0816599e5d7c9cf40a9",
+      "a": "c7aea90a7a6e27d7159034cfbea64f796c6846af",
+      "subject": "[LANG-1568] org.apache.commons.lang3.function.FailableConsumer.andThen(FailableConsumer<? super T, E>)",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/function/FailableBiFunction.java",
+        "src/main/java/org/apache/commons/lang3/function/FailableConsumer.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/function/FailableFunctionsTest.java"
+      ],
+      "total_changed": 3,
+      "added_tests": [],
+      "score": 9,
+      "reject_reason": "layer2:no_strict_pair (FailableBiFunction.java, FailableConsumer.java vs FailableFunctionsTest.java)"
+    },
+    {
+      "b": "5509c425b4609582be11f67d7d43db15119923f0",
+      "a": "465e6becd8beda9569fbdc9ff44fac7dc3c5d1c6",
+      "subject": "Remove trailing white spaces on all lines.",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/Charsets.java",
+        "src/main/java/org/apache/commons/lang3/reflect/ConstructorUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/StringUtilsTest.java"
+      ],
+      "total_changed": 3,
+      "added_tests": [],
+      "score": 9,
+      "reject_reason": "layer2:no_strict_pair (Charsets.java, ConstructorUtils.java vs StringUtilsTest.java)"
+    },
+    {
+      "b": "73e0dfc49445976c681f30e6e849c5f3d101fd7e",
+      "a": "9e0b31180dcfd9d39ca24d266cf785488a5aa3f2",
+      "subject": "No need to embedded if test.",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/reflect/TypeUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/StreamsTest.java",
+        "src/test/java/org/apache/commons/lang3/stream/StreamsTest.java"
+      ],
+      "total_changed": 3,
+      "added_tests": [],
+      "score": 9,
+      "reject_reason": "layer2:no_strict_pair (TypeUtils.java vs StreamsTest.java, StreamsTest.java)"
+    },
+    {
+      "b": "78ef8313bd0c9702a51a3a040bf42f83b8d8ea45",
+      "a": "8b89b0ea93873a7e8815827b986949ba6df1fb3a",
+      "subject": "Imports",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/StringEscapeUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/StringUtilsTest.java",
+        "src/test/java/org/apache/commons/lang3/event/EventListenerSupportTest.java"
+      ],
+      "total_changed": 3,
+      "added_tests": [],
+      "score": 9,
+      "reject_reason": "layer2:no_strict_pair (StringEscapeUtils.java vs StringUtilsTest.java, EventListenerSupportTest.java)"
+    },
+    {
+      "b": "91731736990da48ebb60554eeaf4e22146eafc32",
+      "a": "4cf50486a3b50d632686039a1701e3584fe19377",
+      "subject": "[LANG-1568] org.apache.commons.lang3.function.FailableBiConsumer.andThen(FailableBiConsumer<? super T, ? super U, E>)",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/function/FailableBiConsumer.java",
+        "src/main/java/org/apache/commons/lang3/function/package-info.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/function/FailableFunctionsTest.java"
+      ],
+      "total_changed": 3,
+      "added_tests": [],
+      "score": 9,
+      "reject_reason": "layer2:no_strict_pair (FailableBiConsumer.java, package-info.java vs FailableFunctionsTest.java)"
+    },
+    {
+      "b": "a89879a67d1371b86a7f1aa5f4210c49402289bc",
+      "a": "c867eed0f4c98f43fa185d8289ac3731872fc803",
+      "subject": "Clean caches between tests",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/time/AbstractFormatCache.java",
+        "src/main/java/org/apache/commons/lang3/time/FastDateFormat.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/time/FastDateParserTest.java"
+      ],
+      "total_changed": 3,
+      "added_tests": [],
+      "score": 9,
+      "reject_reason": "layer2:no_strict_pair (AbstractFormatCache.java, FastDateFormat.java vs FastDateParserTest.java)"
+    },
+    {
+      "b": "b8286523defe897679c18a3e85be227e9ec2956a",
+      "a": "79652312f85d600cff532f7736a7d4d7310cfad9",
+      "subject": "Sort members",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/time/TimeZones.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/ArrayUtilsTest.java",
+        "src/test/java/org/apache/commons/lang3/reflect/TypeUtilsTest.java"
+      ],
+      "total_changed": 3,
+      "added_tests": [],
+      "score": 9,
+      "reject_reason": "layer1:sort_members"
+    },
+    {
+      "b": "dddd8c4e26f1d254c55749e4b44ae7c6cce5001d",
+      "a": "c7c74e936db04afeef3af431a597b16f923f6f03",
+      "subject": "Use isEmpty().",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/StringUtils.java",
+        "src/main/java/org/apache/commons/lang3/text/StrBuilder.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/ThreadUtilsTest.java"
+      ],
+      "total_changed": 3,
+      "added_tests": [],
+      "score": 9,
+      "reject_reason": "layer2:no_strict_pair (StringUtils.java, StrBuilder.java vs ThreadUtilsTest.java)"
+    },
+    {
+      "b": "ee2c9cf804364844ff8c064bd133630aef5b3b3a",
+      "a": "e6796a0ec6105f8c87e5330b51c8c9ee75df353f",
+      "subject": "Better internal class name",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/time/FastDateFormat.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/time/FastDateParserTest.java",
+        "src/test/java/org/apache/commons/lang3/time/FastDatePrinterTest.java"
+      ],
+      "total_changed": 3,
+      "added_tests": [],
+      "score": 9,
+      "reject_reason": "layer2:no_strict_pair (FastDateFormat.java vs FastDateParserTest.java, FastDatePrinterTest.java)"
+    },
+    {
+      "b": "f2d376ae01d59cf89a87f0114e21f9a5d4bc4885",
+      "a": "386c1e2f37f77aedbfb624800bab51319bf3a9fd",
+      "subject": "[LANG-1564] use Collections.singletonList insteadof Arrays.asList when there be only one element. (#549)",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/text/translate/NumericEntityUnescaper.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/ObjectUtilsTest.java",
+        "src/test/java/org/apache/commons/lang3/reflect/TypeUtilsTest.java"
+      ],
+      "total_changed": 3,
+      "added_tests": [],
+      "score": 9,
+      "reject_reason": "layer2:no_strict_pair (NumericEntityUnescaper.java vs ObjectUtilsTest.java, TypeUtilsTest.java)"
+    },
+    {
+      "b": "fb90d0bd85bf500611e904da67531ee360249049",
+      "a": "0659831ad49a41244337eb9c60e6b6fe921756c2",
+      "subject": "Reuse own API",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/StringUtils.java",
+        "src/main/java/org/apache/commons/lang3/text/StrBuilder.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/LocaleUtilsTest.java"
+      ],
+      "total_changed": 3,
+      "added_tests": [],
+      "score": 9,
+      "reject_reason": "layer2:no_strict_pair (StringUtils.java, StrBuilder.java vs LocaleUtilsTest.java)"
+    },
+    {
+      "b": "19c1b7bb1e92e3da937ffd86ff7dd05d5c3075d4",
+      "a": "3ae3b126d8e57096e1a9b1bb61d43845590fb495",
+      "subject": "Add Checkstyle UnnecessaryParentheses",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/StringUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/StreamsTest.java",
+        "src/test/java/org/apache/commons/lang3/stream/StreamsTest.java"
+      ],
+      "total_changed": 4,
+      "added_tests": [],
+      "score": 9,
+      "reject_reason": "layer2:no_strict_pair (StringUtils.java vs StreamsTest.java, StreamsTest.java)"
+    },
+    {
+      "b": "1c05980f3d73efa1829b00f54b87eae520e65097",
+      "a": "fd154dec975049e4dd22126194518245f4935692",
+      "subject": "Make test Java15BugFastDateParserTest more lenient on Java 26-ea",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/SystemUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/time/FastDateParserTest.java",
+        "src/test/java/org/apache/commons/lang3/time/Java15BugFastDateParserTest.java"
+      ],
+      "total_changed": 4,
+      "added_tests": [],
+      "score": 9,
+      "reject_reason": "layer2:no_strict_pair (SystemUtils.java vs FastDateParserTest.java, Java15BugFastDateParserTest.java)"
+    },
+    {
+      "b": "385df6f9f82745e65d4d188c6446de72d27fad6e",
+      "a": "0bf7b5380f29dbbb7b6876fd62755a69944f0cb7",
+      "subject": "Merge branch 'master' of https://gitbox.apache.org/repos/asf/commons-lang.git",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/time/CalendarUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/builder/MultilineRecursiveToStringStyleTest.java",
+        "src/test/java/org/apache/commons/lang3/compare/ComparableUtilsTest.java"
+      ],
+      "total_changed": 4,
+      "added_tests": [],
+      "score": 9,
+      "reject_reason": "layer1:merge_branch"
+    },
+    {
+      "b": "47d0046742cb747053c34374cf99a6469df2f370",
+      "a": "f7fedbfc543f7592a4fe66f2a971e35d4090a62c",
+      "subject": "Add and use ThreadUtils.sleepQuietly(long).",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/ThreadUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/concurrent/TimedSemaphoreTest.java",
+        "src/test/java/org/apache/commons/lang3/time/StopWatchTest.java"
+      ],
+      "total_changed": 4,
+      "added_tests": [],
+      "score": 9,
+      "reject_reason": "layer2:no_strict_pair (ThreadUtils.java vs TimedSemaphoreTest.java, StopWatchTest.java)"
+    },
+    {
+      "b": "5cdac9cfd5a74b0a52ebde32798b973c6edbaa79",
+      "a": "07f537120f6a9220c8cc8216b22f9f5744f619b1",
+      "subject": "Make whitespace use around generic tokens consistent and add a checkstyle rule to enforce it.",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/ClassUtils.java",
+        "src/main/java/org/apache/commons/lang3/exception/ExceptionUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/reflect/TypeUtilsTest.java"
+      ],
+      "total_changed": 4,
+      "added_tests": [],
+      "score": 9,
+      "reject_reason": "layer2:no_strict_pair (ClassUtils.java, ExceptionUtils.java vs TypeUtilsTest.java)"
+    },
+    {
+      "b": "bea1ae92aa52a985f8c171c6e17ff7fc4aa61fe4",
+      "a": "cb83f7cb31e50f265e098c5380b3f0051e257f46",
+      "subject": "LANG-1116: DateUtilsTest.testLang530 fails for some timezones",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/time/DateUtils.java",
+        "src/main/java/org/apache/commons/lang3/time/FastDateParser.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/time/DateFormatUtilsTest.java"
+      ],
+      "total_changed": 4,
+      "added_tests": [],
+      "score": 9,
+      "reject_reason": "layer2:no_strict_pair (DateUtils.java, FastDateParser.java vs DateFormatUtilsTest.java)"
+    },
+    {
+      "b": "d4ebf9abcccdb0347a94172e1da97aa692e20336",
+      "a": "8b5ce4070f285322e31d4f211497255f31f023f6",
+      "subject": "Fix Checkstyle",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/StringUtils.java",
+        "src/main/java/org/apache/commons/lang3/time/FastDatePrinter.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/time/FastDateFormatTest.java"
+      ],
+      "total_changed": 4,
+      "added_tests": [],
+      "score": 9,
+      "reject_reason": "layer2:no_strict_pair (StringUtils.java, FastDatePrinter.java vs FastDateFormatTest.java)"
+    },
+    {
+      "b": "eea85f25e583b379afe5ba506a1519cc3704186f",
+      "a": "c267e39091472338378898ef60c601460aaef757",
+      "subject": "Add and use TimeZones.GMT.",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/time/TimeZones.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/time/FastDateParserTest.java",
+        "src/test/java/org/apache/commons/lang3/time/FastDatePrinterTest.java"
+      ],
+      "total_changed": 4,
+      "added_tests": [],
+      "score": 9,
+      "reject_reason": "layer2:no_strict_pair (TimeZones.java vs FastDateParserTest.java, FastDatePrinterTest.java)"
+    },
+    {
+      "b": "f66f39f817585a422692bdc01213790102d0e652",
+      "a": "85f90523a08ab99867857095597e03616d6daba9",
+      "subject": "Merge branch 'master' of https://garydgregory@github.com/apache/commons-lang.git",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/RuntimeEnvironment.java",
+        "src/main/java/org/apache/commons/lang3/StringUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/StringUtilsEqualsIndexOfTest.java"
+      ],
+      "total_changed": 4,
+      "added_tests": [],
+      "score": 9,
+      "reject_reason": "layer1:merge_branch"
+    },
+    {
+      "b": "0c9622b749f3d49798059c74ad66a51f3c782b5a",
+      "a": "e5a1ea6a765cb060104736d64f39a5b2a120896c",
+      "subject": "<action issue=\"LANG-858\" type=\"fix\">StringEscapeUtils.escapeJava() and escapeEcmaScript() do not output the escaped surrogate pairs that are Java parsable</action>",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/StringEscapeUtils.java",
+        "src/main/java/org/apache/commons/lang3/text/translate/UnicodeEscaper.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/StringUtilsTest.java"
+      ],
+      "total_changed": 5,
+      "added_tests": [],
+      "score": 9,
+      "reject_reason": "layer2:no_strict_pair (StringEscapeUtils.java, UnicodeEscaper.java vs StringUtilsTest.java)"
+    },
+    {
+      "b": "69e3ba4188ae857eeb05a36a5e7b30fac344c905",
+      "a": "32c93eb7283f3d1285b5a2fd74e94c03689b6ee8",
+      "subject": "Merge branch 'master' of https://gitbox.apache.org/repos/asf/commons-lang.git",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/LocaleUtils.java",
+        "src/main/java/org/apache/commons/lang3/RandomStringUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/LocaleUtilsTest.java",
+        "src/test/java/org/apache/commons/lang3/RandomStringUtilsTest.java",
+        "src/test/java/org/apache/commons/lang3/time/FastDateFormatTest.java"
+      ],
+      "total_changed": 8,
+      "added_tests": [],
+      "score": 8,
+      "reject_reason": "layer1:merge_branch"
+    },
+    {
+      "b": "80644cdab9a77db0a52d09d9ebb1f406912997d1",
+      "a": "305d5eb8969285dbec10d888186c6f2ee447c142",
+      "subject": "Merge branch 'master' of https://git-wip-us.apache.org/repos/asf/commons-lang",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/EnumUtils.java",
+        "src/main/java/org/apache/commons/lang3/StringUtils.java",
+        "src/main/java/org/apache/commons/lang3/text/WordUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/EnumUtilsTest.java",
+        "src/test/java/org/apache/commons/lang3/StringUtilsTest.java",
+        "src/test/java/org/apache/commons/lang3/text/WordUtilsTest.java",
+        "src/test/java/org/apache/commons/lang3/time/FastDateParser_TimeZoneStrategyTest.java"
+      ],
+      "total_changed": 8,
+      "added_tests": [],
+      "score": 8,
+      "reject_reason": "layer1:merge_branch"
+    },
+    {
+      "b": "a37e8de046a328c3400ea2f78b51d792152e9569",
+      "a": "4b99af5ebf9fb973c18ba73aef8a3516fb61d8a0",
+      "subject": "Sort members",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/JavaVersion.java",
+        "src/main/java/org/apache/commons/lang3/SystemProperties.java",
+        "src/main/java/org/apache/commons/lang3/function/Consumers.java",
+        "src/main/java/org/apache/commons/lang3/function/Functions.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/StringUtilsTrimStripTest.java",
+        "src/test/java/org/apache/commons/lang3/function/ConsumersTest.java",
+        "src/test/java/org/apache/commons/lang3/function/FunctionsTest.java",
+        "src/test/java/org/apache/commons/lang3/math/NumberUtilsTest.java"
+      ],
+      "total_changed": 8,
+      "added_tests": [],
+      "score": 8,
+      "reject_reason": "layer1:sort_members"
+    },
+    {
+      "b": "ad6890f9e63a5c08866725d65d3b216a82aeb5cc",
+      "a": "4ec9b8e392dbcede3ce6926442e933950c29ce9d",
+      "subject": "Merge branch 'master' of https://gitbox.apache.org/repos/asf/commons-lang.git",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/StringUtils.java",
+        "src/main/java/org/apache/commons/lang3/reflect/MethodUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/StringUtilsTest.java",
+        "src/test/java/org/apache/commons/lang3/builder/ReflectionDiffBuilderTest.java",
+        "src/test/java/org/apache/commons/lang3/reflect/MethodUtilsTest.java"
+      ],
+      "total_changed": 9,
+      "added_tests": [],
+      "score": 8,
+      "reject_reason": "layer1:merge_branch"
+    },
+    {
+      "b": "6681a34d25b63a47c2d619ae0466825304ea9b1f",
+      "a": "af1598229fca5808042ed20f50c36a4fe923c915",
+      "subject": "Merge branch 'master' of https://gitbox.apache.org/repos/asf/commons-lang.git",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/ArrayUtils.java",
+        "src/main/java/org/apache/commons/lang3/stream/IntStreams.java",
+        "src/main/java/org/apache/commons/lang3/time/FastDateParser.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/ArrayUtilsTest.java",
+        "src/test/java/org/apache/commons/lang3/stream/IntStreamsTest.java"
+      ],
+      "total_changed": 10,
+      "added_tests": [],
+      "score": 8,
+      "reject_reason": "layer1:merge_branch"
+    },
+    {
+      "b": "b1deb442d1a938da8c733fa5d74de5fb120ffe45",
+      "a": "487b1a7ec47c624ddada222de8ef92777068117e",
+      "subject": "Merge branch 'remove-type-parameters'",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/CharSet.java",
+        "src/main/java/org/apache/commons/lang3/ClassUtils.java",
+        "src/main/java/org/apache/commons/lang3/reflect/MethodUtils.java",
+        "src/main/java/org/apache/commons/lang3/reflect/TypeUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/ObjectUtilsTest.java",
+        "src/test/java/org/apache/commons/lang3/builder/EqualsBuilderTest.java",
+        "src/test/java/org/apache/commons/lang3/builder/ReflectionToStringBuilderConcurrencyTest.java",
+        "src/test/java/org/apache/commons/lang3/builder/ReflectionToStringBuilderExcludeTest.java",
+        "src/test/java/org/apache/commons/lang3/builder/ToStringStyleConcurrencyTest.java",
+        "src/test/java/org/apache/commons/lang3/concurrent/ConcurrentUtilsTest.java",
+        "src/test/java/org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+        "src/test/java/org/apache/commons/lang3/reflect/TypeUtilsTest.java"
+      ],
+      "total_changed": 12,
+      "added_tests": [],
+      "score": 8,
+      "reject_reason": "layer1:merge_branch"
+    },
+    {
+      "b": "0b135af5a0553d9882efef13e60a464986e6af36",
+      "a": "dddd8c4e26f1d254c55749e4b44ae7c6cce5001d",
+      "subject": "Make private elements final where possible.",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/time/FormatCache.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/builder/CompareToBuilderTest.java",
+        "src/test/java/org/apache/commons/lang3/builder/EqualsBuilderTest.java",
+        "src/test/java/org/apache/commons/lang3/builder/ToStringBuilderTest.java"
+      ],
+      "total_changed": 4,
+      "added_tests": [],
+      "score": 7,
+      "reject_reason": "layer2:no_strict_pair (FormatCache.java vs CompareToBuilderTest.java, EqualsBuilderTest.java, ToStringBuilderTest.java)"
+    },
+    {
+      "b": "1dabf262c90d76958175e98f7ac9d0189fd7fbf2",
+      "a": "182b2506b304463f8f1a9ad765c6db0420fa356f",
+      "subject": "sort fields in ReflectionToStringBuilder for deterministic order (#481)",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/builder/ReflectionToStringBuilder.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/builder/MultilineRecursiveToStringStyleTest.java",
+        "src/test/java/org/apache/commons/lang3/builder/RecursiveToStringStyleTest.java",
+        "src/test/java/org/apache/commons/lang3/builder/ToStringBuilderTest.java"
+      ],
+      "total_changed": 4,
+      "added_tests": [],
+      "score": 7,
+      "reject_reason": "layer2:no_strict_pair (ReflectionToStringBuilder.java vs MultilineRecursiveToStringStyleTest.java, RecursiveToStringStyleTest.java, ToStringBuilderTest.java)"
+    },
+    {
+      "b": "3b180e56c3db23a5984d00d88a83367794d4fabb",
+      "a": "473359a5cc15b0f24987eb738bb61b6a6396bc71",
+      "subject": "Moving N.B. to NOTE: to standardize that tag",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/ArrayUtils.java",
+        "src/main/java/org/apache/commons/lang3/builder/EqualsBuilder.java",
+        "src/main/java/org/apache/commons/lang3/builder/HashCodeBuilder.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/text/ExtendedMessageFormatTest.java"
+      ],
+      "total_changed": 4,
+      "added_tests": [],
+      "score": 7,
+      "reject_reason": "layer2:no_strict_pair (ArrayUtils.java, EqualsBuilder.java, HashCodeBuilder.java vs ExtendedMessageFormatTest.java)"
+    },
+    {
+      "b": "c267e39091472338378898ef60c601460aaef757",
+      "a": "f8e225cf464e8499997f3cf2368467a6e2941022",
+      "subject": "Reuse constant TimeZones.GMT_ID.",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/time/GmtTimeZone.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/time/FastDateParserTest.java",
+        "src/test/java/org/apache/commons/lang3/time/FastDatePrinterTest.java",
+        "src/test/java/org/apache/commons/lang3/time/FastTimeZoneTest.java"
+      ],
+      "total_changed": 4,
+      "added_tests": [],
+      "score": 7,
+      "reject_reason": "layer2:no_strict_pair (GmtTimeZone.java vs FastDateParserTest.java, FastDatePrinterTest.java, FastTimeZoneTest.java)"
+    },
+    {
+      "b": "c7aea90a7a6e27d7159034cfbea64f796c6846af",
+      "a": "4badcde7f7cfb7a295103b5b89d1e58a868e196b",
+      "subject": "[LANG-1568] org.apache.commons.lang3.function.FailableBiFunction.andThen(FailableFunction<? super R, ? extends V, E>)",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/function/FailableBiConsumer.java",
+        "src/main/java/org/apache/commons/lang3/function/FailableBiFunction.java",
+        "src/main/java/org/apache/commons/lang3/function/FailableFunction.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/function/FailableFunctionsTest.java"
+      ],
+      "total_changed": 4,
+      "added_tests": [],
+      "score": 7,
+      "reject_reason": "layer2:no_strict_pair (FailableBiConsumer.java, FailableBiFunction.java, FailableFunction.java vs FailableFunctionsTest.java)"
+    },
+    {
+      "b": "f6e237d4eebe8bbd7dc33234127224d077187f9b",
+      "a": "67c6450b6179e027ff253cec31b6ebec882acfba",
+      "subject": "Avoid underscores in local variable names",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/ArrayUtils.java",
+        "src/main/java/org/apache/commons/lang3/RandomStringUtils.java",
+        "src/main/java/org/apache/commons/lang3/StringUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/builder/EqualsBuilderTest.java"
+      ],
+      "total_changed": 4,
+      "added_tests": [],
+      "score": 7,
+      "reject_reason": "layer2:no_strict_pair (ArrayUtils.java, RandomStringUtils.java, StringUtils.java vs EqualsBuilderTest.java)"
+    },
+    {
+      "b": "20de433aa24957e40d974b87aba54ae0688500ed",
+      "a": "425d8085cfcaab5a78bf0632f9ae77b7e9127cf8",
+      "subject": "Remove unnecessary testing comments (closes #305)",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/math/Fraction.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/StringUtilsTest.java",
+        "src/test/java/org/apache/commons/lang3/text/ExtendedMessageFormatTest.java",
+        "src/test/java/org/apache/commons/lang3/time/DateFormatUtilsTest.java"
+      ],
+      "total_changed": 5,
+      "added_tests": [],
+      "score": 7,
+      "reject_reason": "layer2:no_strict_pair (Fraction.java vs StringUtilsTest.java, ExtendedMessageFormatTest.java, DateFormatUtilsTest.java)"
+    },
+    {
+      "b": "23c706ff915c4be7d371d3098fc8de2cc3aa2b67",
+      "a": "c9a5e54a7c0b4c0be46940d136677a2c9f052ed7",
+      "subject": "Add missing '@Override' annotations.",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/concurrent/AbstractCircuitBreaker.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/ArrayUtilsTest.java",
+        "src/test/java/org/apache/commons/lang3/CharSequenceUtilsTest.java",
+        "src/test/java/org/apache/commons/lang3/builder/JsonToStringStyleTest.java",
+        "src/test/java/org/apache/commons/lang3/concurrent/EventCountCircuitBreakerTest.java"
+      ],
+      "total_changed": 5,
+      "added_tests": [],
+      "score": 7,
+      "reject_reason": "layer2:no_strict_pair (AbstractCircuitBreaker.java vs ArrayUtilsTest.java, CharSequenceUtilsTest.java, JsonToStringStyleTest.java, EventCountCircuitBreakerTest.java)"
+    },
+    {
+      "b": "34a85e74360f32dcfd7938e3a3c606a4869ca7e7",
+      "a": "c28b2e4e717a13527aded2625bbf431506674e9f",
+      "subject": "Refactorings; reuse UncheckedFuture.",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/concurrent/UncheckedFutureImpl.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/builder/ReflectionToStringBuilderConcurrencyTest.java",
+        "src/test/java/org/apache/commons/lang3/builder/ToStringStyleConcurrencyTest.java",
+        "src/test/java/org/apache/commons/lang3/concurrent/UncheckedFutureTest.java"
+      ],
+      "total_changed": 5,
+      "added_tests": [],
+      "score": 7,
+      "reject_reason": "layer2:no_strict_pair (UncheckedFutureImpl.java vs ReflectionToStringBuilderConcurrencyTest.java, ToStringStyleConcurrencyTest.java, UncheckedFutureTest.java)"
+    },
+    {
+      "b": "44dd43eb5c7a41350d0947080a9d16e65b7581d7",
+      "a": "8899ebe032e1888ca8933ed7b9e46361a1c12816",
+      "subject": "Add Checkstyle MultipleVariableDeclarations",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/math/Fraction.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/StringUtilsEqualsIndexOfTest.java",
+        "src/test/java/org/apache/commons/lang3/time/DateUtilsRoundingTest.java",
+        "src/test/java/org/apache/commons/lang3/util/FluentBitSetTest.java"
+      ],
+      "total_changed": 5,
+      "added_tests": [],
+      "score": 7,
+      "reject_reason": "layer2:no_strict_pair (Fraction.java vs StringUtilsEqualsIndexOfTest.java, DateUtilsRoundingTest.java, FluentBitSetTest.java)"
+    },
+    {
+      "b": "4daaeabaad5ea11d25c0079fea40b7f9d0fe83a3",
+      "a": "aeb6f86bcdec061ee9c6be96066fa19c56523490",
+      "subject": "Remove author",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/builder/EqualsExclude.java",
+        "src/main/java/org/apache/commons/lang3/builder/HashCodeExclude.java",
+        "src/main/java/org/apache/commons/lang3/builder/ToStringExclude.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/builder/ReflectionToStringBuilderExcludeWithAnnotationTest.java"
+      ],
+      "total_changed": 5,
+      "added_tests": [],
+      "score": 7,
+      "reject_reason": "layer2:no_strict_pair (EqualsExclude.java, HashCodeExclude.java, ToStringExclude.java vs ReflectionToStringBuilderExcludeWithAnnotationTest.java)"
+    },
+    {
+      "b": "8b34dab449dbe5eb99475262adea3de28b8c8d1e",
+      "a": "bc4eeca21b2f917a623da5fe5283dfc852b6e818",
+      "subject": "Add LazyInitializer.isInitialized()",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/concurrent/LazyInitializer.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/concurrent/LazyInitializerAnonClassTest.java",
+        "src/test/java/org/apache/commons/lang3/concurrent/LazyInitializerSimpleTest.java",
+        "src/test/java/org/apache/commons/lang3/concurrent/LazyInitializerSingleInstanceTest.java"
+      ],
+      "total_changed": 5,
+      "added_tests": [],
+      "score": 7,
+      "reject_reason": "layer2:no_strict_pair (LazyInitializer.java vs LazyInitializerAnonClassTest.java, LazyInitializerSimpleTest.java, LazyInitializerSingleInstanceTest.java)"
+    },
+    {
+      "b": "8c29c67486cc56d9a01ed238a4b81651e442e42b",
+      "a": "806e256feda3f1121948a043b73ac73b8dcde629",
+      "subject": "[LANG-798] Use generics in SerializationUtils",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/SerializationUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/exception/AbstractExceptionContextTest.java",
+        "src/test/java/org/apache/commons/lang3/time/FastDateParserTest.java",
+        "src/test/java/org/apache/commons/lang3/time/FastDatePrinterTest.java"
+      ],
+      "total_changed": 5,
+      "added_tests": [],
+      "score": 7,
+      "reject_reason": "layer2:no_strict_pair (SerializationUtils.java vs AbstractExceptionContextTest.java, FastDateParserTest.java, FastDatePrinterTest.java)"
+    },
+    {
+      "b": "9b2f986f31c1c4b2842881e7caeea4e11264754a",
+      "a": "99859f358cbf3dc56667afef747fe5da77b89fd3",
+      "subject": "Javadoc",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/DoubleRange.java",
+        "src/main/java/org/apache/commons/lang3/IntegerRange.java",
+        "src/main/java/org/apache/commons/lang3/LongRange.java",
+        "src/main/java/org/apache/commons/lang3/ObjectUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/CharRangeTest.java"
+      ],
+      "total_changed": 5,
+      "added_tests": [],
+      "score": 7,
+      "reject_reason": "layer1:javadoc_only"
+    },
+    {
+      "b": "a0148b0e201dcc4c12fcd2fab6fddc3bf47d34bd",
+      "a": "f9837a072875856325c3c2e9ec41b3a05bd86152",
+      "subject": "Explicit boxing",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/time/FormatCache.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/builder/ReflectionToStringBuilderConcurrencyTest.java",
+        "src/test/java/org/apache/commons/lang3/builder/ToStringStyleConcurrencyTest.java",
+        "src/test/java/org/apache/commons/lang3/concurrent/BackgroundInitializerTest.java",
+        "src/test/java/org/apache/commons/lang3/concurrent/MultiBackgroundInitializerTest.java"
+      ],
+      "total_changed": 5,
+      "added_tests": [],
+      "score": 7,
+      "reject_reason": "layer2:no_strict_pair (FormatCache.java vs ReflectionToStringBuilderConcurrencyTest.java, ToStringStyleConcurrencyTest.java, BackgroundInitializerTest.java, MultiBackgroundInitializerTest.java)"
+    },
+    {
+      "b": "d385969c523508ac5de9503f600ae1998e42224b",
+      "a": "d8aeb514ed993c7fefa17ecd0e2f490c39122422",
+      "subject": "Javadoc",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/concurrent/AtomicInitializer.java",
+        "src/main/java/org/apache/commons/lang3/concurrent/CallableBackgroundInitializer.java",
+        "src/main/java/org/apache/commons/lang3/concurrent/LazyInitializer.java",
+        "src/main/java/org/apache/commons/lang3/concurrent/MultiBackgroundInitializer.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/concurrent/BackgroundInitializerTest.java"
+      ],
+      "total_changed": 5,
+      "added_tests": [],
+      "score": 7,
+      "reject_reason": "layer1:javadoc_only"
+    },
+    {
+      "b": "f7bebfaccabbcd8431b4d21e4bd8182c0e70923a",
+      "a": "1275959be9c3e63654e535630b615cb7e1916964",
+      "subject": "Remove add and set methods of ExceptionContext types taking a pair. Format entries with index. Improve Javadoc. Add serialization test.",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/exception/ContextedException.java",
+        "src/main/java/org/apache/commons/lang3/exception/ContextedRuntimeException.java",
+        "src/main/java/org/apache/commons/lang3/exception/DefaultExceptionContext.java",
+        "src/main/java/org/apache/commons/lang3/exception/ExceptionContext.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/exception/AbstractExceptionContextTest.java"
+      ],
+      "total_changed": 5,
+      "added_tests": [],
+      "score": 7,
+      "reject_reason": "layer2:no_strict_pair (ContextedException.java, ContextedRuntimeException.java, DefaultExceptionContext.java, ExceptionContext.java vs AbstractExceptionContextTest.java)"
+    },
+    {
+      "b": "fa668ef0d929366e78f993ffda70b2dbd436f295",
+      "a": "f878fba9cff86126eff1c38d1e10901e84bb353a",
+      "subject": "Use preferred spelling for \"cannot\"",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/JavaVersion.java",
+        "src/main/java/org/apache/commons/lang3/LocaleUtils.java",
+        "src/main/java/org/apache/commons/lang3/Validate.java",
+        "src/main/java/org/apache/commons/lang3/math/Fraction.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/concurrent/TimedSemaphoreTest.java"
+      ],
+      "total_changed": 5,
+      "added_tests": [],
+      "score": 7,
+      "reject_reason": "layer2:no_strict_pair (JavaVersion.java, LocaleUtils.java, Validate.java, Fraction.java vs TimedSemaphoreTest.java)"
+    },
+    {
+      "b": "fa91c1b28647bd4217b0c325249aff9638fbeb6a",
+      "a": "f21c32a05920a678a094ad3b245f8663a8f7b747",
+      "subject": "Make sure files end with a new line",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/arch/package-info.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/concurrent/CircuitBreakingExceptionTest.java",
+        "src/test/java/org/apache/commons/lang3/concurrent/EventCountCircuitBreakerTest.java",
+        "src/test/java/org/apache/commons/lang3/exception/CloneFailedExceptionTest.java"
+      ],
+      "total_changed": 5,
+      "added_tests": [],
+      "score": 7,
+      "reject_reason": "layer2:no_strict_pair (package-info.java vs CircuitBreakingExceptionTest.java, EventCountCircuitBreakerTest.java, CloneFailedExceptionTest.java)"
+    },
+    {
+      "b": "180d948d7f0cf73fd9a657ecbcb382b2e9b22cb7",
+      "a": "c7d709b22074a4f5f952cc2b71f9053a5a38b138",
+      "subject": "[LANG-1568] Predicate add.",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/function/FailableBiPredicate.java",
+        "src/main/java/org/apache/commons/lang3/function/FailableDoublePredicate.java",
+        "src/main/java/org/apache/commons/lang3/function/FailableIntPredicate.java",
+        "src/main/java/org/apache/commons/lang3/function/FailableLongPredicate.java",
+        "src/main/java/org/apache/commons/lang3/function/FailablePredicate.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/function/FailableFunctionsTest.java"
+      ],
+      "total_changed": 6,
+      "added_tests": [],
+      "score": 7,
+      "reject_reason": "layer2:no_strict_pair (FailableBiPredicate.java, FailableDoublePredicate.java, FailableIntPredicate.java, FailableLongPredicate.java, FailablePredicate.java vs FailableFunctionsTest.java)"
+    },
+    {
+      "b": "1e94c922c0d9fc30349208e6fda91bbf0065ebdf",
+      "a": "e01ac3b3863d59bcd6b699999204499a9f16e3ae",
+      "subject": "chmod -x",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/builder/DiffExclude.java",
+        "src/main/java/org/apache/commons/lang3/builder/EqualsExclude.java",
+        "src/main/java/org/apache/commons/lang3/builder/HashCodeExclude.java",
+        "src/main/java/org/apache/commons/lang3/builder/ToStringExclude.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/function/ObjectsTest.java"
+      ],
+      "total_changed": 6,
+      "added_tests": [],
+      "score": 7,
+      "reject_reason": "layer2:no_strict_pair (DiffExclude.java, EqualsExclude.java, HashCodeExclude.java, ToStringExclude.java vs ObjectsTest.java)"
+    },
+    {
+      "b": "268d4936d4136ce35af688617bbd6874b0854f4c",
+      "a": "180d948d7f0cf73fd9a657ecbcb382b2e9b22cb7",
+      "subject": "[LANG-1568] Predicate or.",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/function/FailableBiPredicate.java",
+        "src/main/java/org/apache/commons/lang3/function/FailableDoublePredicate.java",
+        "src/main/java/org/apache/commons/lang3/function/FailableIntPredicate.java",
+        "src/main/java/org/apache/commons/lang3/function/FailableLongPredicate.java",
+        "src/main/java/org/apache/commons/lang3/function/FailablePredicate.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/function/FailableFunctionsTest.java"
+      ],
+      "total_changed": 6,
+      "added_tests": [],
+      "score": 7,
+      "reject_reason": "layer2:no_strict_pair (FailableBiPredicate.java, FailableDoublePredicate.java, FailableIntPredicate.java, FailableLongPredicate.java, FailablePredicate.java vs FailableFunctionsTest.java)"
+    },
+    {
+      "b": "3b204c071fbfc2fb72c5c651bee8e30d700680f6",
+      "a": "3af7d0dace7bee3f42b88abcaca853765cee3557",
+      "subject": "CRLF -> LF",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/ArrayUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/builder/ReflectionToStringBuilderConcurrencyTest.java",
+        "src/test/java/org/apache/commons/lang3/builder/ReflectionToStringBuilderMutateInspectConcurrencyTest.java",
+        "src/test/java/org/apache/commons/lang3/builder/ToStringStyleConcurrencyTest.java"
+      ],
+      "total_changed": 6,
+      "added_tests": [],
+      "score": 7,
+      "reject_reason": "layer2:no_strict_pair (ArrayUtils.java vs ReflectionToStringBuilderConcurrencyTest.java, ReflectionToStringBuilderMutateInspectConcurrencyTest.java, ToStringStyleConcurrencyTest.java)"
+    },
+    {
+      "b": "4c050914d980efc55562f8322d2f6e4f8ec863af",
+      "a": "fc3638e0fc8dc82136753c085f90ae4f773c01ba",
+      "subject": "Merge branch 'master' of https://garydgregory@github.com/apache/commons-lang.git",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/AnnotationUtils.java",
+        "src/main/java/org/apache/commons/lang3/RegExUtils.java",
+        "src/main/java/org/apache/commons/lang3/StringUtils.java",
+        "src/main/java/org/apache/commons/lang3/exception/ExceptionUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/StringUtilsEqualsIndexOfTest.java"
+      ],
+      "total_changed": 6,
+      "added_tests": [],
+      "score": 7,
+      "reject_reason": "layer1:merge_branch"
+    },
+    {
+      "b": "8efbb7df05d879dec15433e87a51392810936da5",
+      "a": "5a580fb9cbb669f87f124c455e56194b8f83da49",
+      "subject": "No leading underscores in private names.",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/BitField.java",
+        "src/main/java/org/apache/commons/lang3/StringUtils.java",
+        "src/main/java/org/apache/commons/lang3/builder/IDKey.java",
+        "src/main/java/org/apache/commons/lang3/text/FormattableUtils.java",
+        "src/main/java/org/apache/commons/lang3/text/translate/LookupTranslator.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/reflect/MethodUtilsTest.java"
+      ],
+      "total_changed": 6,
+      "added_tests": [],
+      "score": 7,
+      "reject_reason": "layer2:no_strict_pair (BitField.java, StringUtils.java, IDKey.java, FormattableUtils.java, LookupTranslator.java vs MethodUtilsTest.java)"
+    },
+    {
+      "b": "fbf996cb7e637fe2f7ec81cc546452c5d0e2d8e5",
+      "a": "3b69ed8d34e9d8391a207c643375945202c02c7e",
+      "subject": "Fixing urls to point to new oracle pages and not old, sometimes broken, sun urls",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/CharEncoding.java",
+        "src/main/java/org/apache/commons/lang3/ClassUtils.java",
+        "src/main/java/org/apache/commons/lang3/Validate.java",
+        "src/main/java/org/apache/commons/lang3/builder/EqualsBuilder.java",
+        "src/main/java/org/apache/commons/lang3/builder/HashCodeBuilder.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/StringUtilsEqualsIndexOfTest.java"
+      ],
+      "total_changed": 6,
+      "added_tests": [],
+      "score": 7,
+      "reject_reason": "layer2:no_strict_pair (CharEncoding.java, ClassUtils.java, Validate.java, EqualsBuilder.java, HashCodeBuilder.java vs StringUtilsEqualsIndexOfTest.java)"
+    },
+    {
+      "b": "9c966b496ec339972818b1d265964fa3927e5793",
+      "a": "16a826adc69484e8610d35bd0295f0328c349501",
+      "subject": "Better Javadoc",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/ClassUtils.java",
+        "src/main/java/org/apache/commons/lang3/SystemUtils.java",
+        "src/main/java/org/apache/commons/lang3/ThreadUtils.java",
+        "src/main/java/org/apache/commons/lang3/builder/HashCodeBuilder.java",
+        "src/main/java/org/apache/commons/lang3/builder/ReflectionToStringBuilder.java",
+        "src/main/java/org/apache/commons/lang3/concurrent/BasicThreadFactory.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/builder/ToStringBuilderTest.java"
+      ],
+      "total_changed": 7,
+      "added_tests": [],
+      "score": 7,
+      "reject_reason": "layer1:javadoc_only"
+    },
+    {
+      "b": "d2b1e522bffbfd983ea0061f1d5408fc98ebd8a5",
+      "a": "60b32953a968e5623f82a6b27d6c679bc17c48e5",
+      "subject": "Merge branch 'LANG-1031-cleanup'",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/builder/EqualsBuilder.java",
+        "src/main/java/org/apache/commons/lang3/builder/EqualsExclude.java",
+        "src/main/java/org/apache/commons/lang3/builder/HashCodeBuilder.java",
+        "src/main/java/org/apache/commons/lang3/builder/HashCodeExclude.java",
+        "src/main/java/org/apache/commons/lang3/builder/ReflectionToStringBuilder.java",
+        "src/main/java/org/apache/commons/lang3/builder/ToStringExclude.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/builder/ReflectionToStringBuilderExcludeWithAnnotationTest.java"
+      ],
+      "total_changed": 7,
+      "added_tests": [],
+      "score": 7,
+      "reject_reason": "layer1:merge_branch"
+    },
+    {
+      "b": "409733cf944495826ed3c1d2bb6039353d5e46b4",
+      "a": "012f3a9fe103c4f81ab68aadf520efc772701b4d",
+      "subject": "Merge some string literals",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/reflect/TypeUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/StringEscapeUtilsTest.java",
+        "src/test/java/org/apache/commons/lang3/StringUtilsAbbreviateTest.java",
+        "src/test/java/org/apache/commons/lang3/builder/JsonToStringStyleTest.java",
+        "src/test/java/org/apache/commons/lang3/builder/ToStringBuilderTest.java",
+        "src/test/java/org/apache/commons/lang3/text/StrTokenizerTest.java",
+        "src/test/java/org/apache/commons/lang3/tuple/PairTest.java",
+        "src/test/java/org/apache/commons/lang3/tuple/TripleTest.java"
+      ],
+      "total_changed": 8,
+      "added_tests": [],
+      "score": 7,
+      "reject_reason": "layer2:no_strict_pair (TypeUtils.java vs StringEscapeUtilsTest.java, StringUtilsAbbreviateTest.java, JsonToStringStyleTest.java, ToStringBuilderTest.java, StrTokenizerTest.java, PairTest.java, TripleTest.java)"
+    },
+    {
+      "b": "772f97c4378613d241ecacc2076fdda20d59e982",
+      "a": "47f96a3c95fa24c42ad842f49768f6c9529430fe",
+      "subject": "[LANG-1600] Restore handling of collections for non-JSON ToStringStyle (#610)",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/builder/ToStringStyle.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/builder/DefaultToStringStyleTest.java",
+        "src/test/java/org/apache/commons/lang3/builder/MultiLineToStringStyleTest.java",
+        "src/test/java/org/apache/commons/lang3/builder/NoClassNameToStringStyleTest.java",
+        "src/test/java/org/apache/commons/lang3/builder/NoFieldNamesToStringStyleTest.java",
+        "src/test/java/org/apache/commons/lang3/builder/ShortPrefixToStringStyleTest.java",
+        "src/test/java/org/apache/commons/lang3/builder/SimpleToStringStyleTest.java",
+        "src/test/java/org/apache/commons/lang3/builder/StandardToStringStyleTest.java"
+      ],
+      "total_changed": 8,
+      "added_tests": [],
+      "score": 7,
+      "reject_reason": "layer2:no_strict_pair (ToStringStyle.java vs DefaultToStringStyleTest.java, MultiLineToStringStyleTest.java, NoClassNameToStringStyleTest.java, NoFieldNamesToStringStyleTest.java, ShortPrefixToStringStyleTest.java, SimpleToStringStyleTest.java, StandardToStringStyleTest.java)"
+    },
+    {
+      "b": "84668a2d980316a580030fd64764cb072b520b09",
+      "a": "fe44a99852719ff842ff5ce08b5a37d9b0a0d7fb",
+      "subject": "Use Collection#toArray(new T[0]) instead of a presized array as it is faster on modern JVMs.",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/CharSet.java",
+        "src/main/java/org/apache/commons/lang3/StringUtils.java",
+        "src/main/java/org/apache/commons/lang3/exception/ExceptionUtils.java",
+        "src/main/java/org/apache/commons/lang3/reflect/FieldUtils.java",
+        "src/main/java/org/apache/commons/lang3/reflect/MethodUtils.java",
+        "src/main/java/org/apache/commons/lang3/reflect/TypeUtils.java",
+        "src/main/java/org/apache/commons/lang3/text/StrTokenizer.java",
+        "src/main/java/org/apache/commons/lang3/time/DurationFormatUtils.java",
+        "src/main/java/org/apache/commons/lang3/time/FastDatePrinter.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/concurrent/EventCountCircuitBreakerTest.java"
+      ],
+      "total_changed": 10,
+      "added_tests": [],
+      "score": 7,
+      "reject_reason": "layer2:no_strict_pair (CharSet.java, StringUtils.java, ExceptionUtils.java, FieldUtils.java, MethodUtils.java, TypeUtils.java, StrTokenizer.java, DurationFormatUtils.java, FastDatePrinter.java vs EventCountCircuitBreakerTest.java)"
+    },
+    {
+      "b": "1e70575586107b419f40feba6ab31635ca6b5919",
+      "a": "7bbbdd2477305992e4d809db5288d6f62718124b",
+      "subject": "Remove unnecessary array creation for varargs.",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/text/translate/NumericEntityUnescaper.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/CharSetUtilsTest.java",
+        "src/test/java/org/apache/commons/lang3/ClassUtilsTest.java",
+        "src/test/java/org/apache/commons/lang3/ObjectUtilsTest.java",
+        "src/test/java/org/apache/commons/lang3/StringUtilsEmptyBlankTest.java",
+        "src/test/java/org/apache/commons/lang3/StringUtilsStartsEndsWithTest.java",
+        "src/test/java/org/apache/commons/lang3/StringUtilsTest.java",
+        "src/test/java/org/apache/commons/lang3/math/IEEE754rUtilsTest.java",
+        "src/test/java/org/apache/commons/lang3/math/NumberUtilsTest.java",
+        "src/test/java/org/apache/commons/lang3/reflect/TypeUtilsTest.java",
+        "src/test/java/org/apache/commons/lang3/text/StrBuilderAppendInsertTest.java",
+        "src/test/java/org/apache/commons/lang3/text/WordUtilsTest.java"
+      ],
+      "total_changed": 12,
+      "added_tests": [],
+      "score": 7,
+      "reject_reason": "layer2:no_strict_pair (NumericEntityUnescaper.java vs CharSetUtilsTest.java, ClassUtilsTest.java, ObjectUtilsTest.java, StringUtilsEmptyBlankTest.java, StringUtilsStartsEndsWithTest.java, StringUtilsTest.java, IEEE754rUtilsTest.java, NumberUtilsTest.java, TypeUtilsTest.java, StrBuilderAppendInsertTest.java, WordUtilsTest.java)"
+    },
+    {
+      "b": "adfcc014bd6fd24ae76425f203ae5cc1888ee33f",
+      "a": "53646c1c9835ca1a681871e0ec59feb685cd907d",
+      "subject": "Add final modifier to private fields.",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/SerializationUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/StringUtilsEqualsIndexOfTest.java",
+        "src/test/java/org/apache/commons/lang3/builder/EqualsBuilderTest.java",
+        "src/test/java/org/apache/commons/lang3/builder/ReflectionToStringBuilderExcludeTest.java",
+        "src/test/java/org/apache/commons/lang3/builder/ReflectionToStringBuilderMutateInspectConcurrencyTest.java",
+        "src/test/java/org/apache/commons/lang3/builder/ToStringBuilderTest.java",
+        "src/test/java/org/apache/commons/lang3/event/EventUtilsTest.java",
+        "src/test/java/org/apache/commons/lang3/reflect/ConstructorUtilsTest.java",
+        "src/test/java/org/apache/commons/lang3/reflect/FieldUtilsTest.java",
+        "src/test/java/org/apache/commons/lang3/reflect/MethodUtilsTest.java"
+      ],
+      "total_changed": 12,
+      "added_tests": [],
+      "score": 7,
+      "reject_reason": "layer2:no_strict_pair (SerializationUtils.java vs StringUtilsEqualsIndexOfTest.java, EqualsBuilderTest.java, ReflectionToStringBuilderExcludeTest.java, ReflectionToStringBuilderMutateInspectConcurrencyTest.java, ToStringBuilderTest.java, EventUtilsTest.java, ConstructorUtilsTest.java, FieldUtilsTest.java, MethodUtilsTest.java)"
+    },
+    {
+      "b": "47aea5993d289b82c7febdbf9b05ffaad31b6ec9",
+      "a": "865a0297c3d96a247b35a7fed7895e1bfe2025aa",
+      "subject": "Sort the available TimeZone IDs once.",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/time/FastDateParser.java",
+        "src/main/java/org/apache/commons/lang3/time/TimeZones.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/time/FastDateParser_TimeZoneStrategyTest.java",
+        "src/test/java/org/apache/commons/lang3/time/FastDatePrinterTimeZonesTest.java"
+      ],
+      "total_changed": 4,
+      "added_tests": [],
+      "score": 6,
+      "reject_reason": "layer2:no_strict_pair (FastDateParser.java, TimeZones.java vs FastDateParser_TimeZoneStrategyTest.java, FastDatePrinterTimeZonesTest.java)"
+    },
+    {
+      "b": "514f226b7d7b18aba8474cb3a92593ef1ee70bfc",
+      "a": "dc35ebc48c00fbe45c1a2c4d4ba31fab8cf197a4",
+      "subject": "Merge branch 'master' of https://gitbox.apache.org/repos/asf/commons-lang.git",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/SystemUtils.java",
+        "src/main/java/org/apache/commons/lang3/reflect/MethodUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/StringEscapeUtilsTest.java",
+        "src/test/java/org/apache/commons/lang3/time/DateUtilsRoundingTest.java"
+      ],
+      "total_changed": 4,
+      "added_tests": [],
+      "score": 6,
+      "reject_reason": "layer1:merge_branch"
+    },
+    {
+      "b": "6dc61ad800695b6d2f682d6914b376a2d08c60e3",
+      "a": "563bf489649ab3ab2a1b374a9b4530afc8faf038",
+      "subject": "Make private class final",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/concurrent/BackgroundInitializer.java",
+        "src/main/java/org/apache/commons/lang3/time/FastDateParser.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/ArrayUtilsTest.java",
+        "src/test/java/org/apache/commons/lang3/ClassUtilsTest.java"
+      ],
+      "total_changed": 4,
+      "added_tests": [],
+      "score": 6,
+      "reject_reason": "layer2:no_strict_pair (BackgroundInitializer.java, FastDateParser.java vs ArrayUtilsTest.java, ClassUtilsTest.java)"
+    },
+    {
+      "b": "8e61b090ceaaf7b108f0df175e9edbeae8d37642",
+      "a": "a21cdb512100349b4021effc9cdb65690c5d1684",
+      "subject": "fix javadoc (#545)",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/SystemUtils.java",
+        "src/main/java/org/apache/commons/lang3/reflect/MethodUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/StringEscapeUtilsTest.java",
+        "src/test/java/org/apache/commons/lang3/time/DateUtilsRoundingTest.java"
+      ],
+      "total_changed": 4,
+      "added_tests": [],
+      "score": 6,
+      "reject_reason": "layer2:no_strict_pair (SystemUtils.java, MethodUtils.java vs StringEscapeUtilsTest.java, DateUtilsRoundingTest.java)"
+    },
+    {
+      "b": "07f537120f6a9220c8cc8216b22f9f5744f619b1",
+      "a": "89cbfa54b041541077b8158b667ee3830a8abe5c",
+      "subject": "Make whitespace use before tokens consistent and add a checkstyle rule to enforce it.",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/StringUtils.java",
+        "src/main/java/org/apache/commons/lang3/math/NumberUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/reflect/TypeUtilsTest.java",
+        "src/test/java/org/apache/commons/lang3/time/FastDateParserTest.java"
+      ],
+      "total_changed": 5,
+      "added_tests": [],
+      "score": 6,
+      "reject_reason": "layer2:no_strict_pair (StringUtils.java, NumberUtils.java vs TypeUtilsTest.java, FastDateParserTest.java)"
+    },
+    {
+      "b": "8548b12d8f697667593ab78a3ecf3628c21db7f8",
+      "a": "8e7ea70a33ecb8db5207849ea6371b4a5a8ffd26",
+      "subject": "Merge branch 'LANG-1031'",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/builder/EqualsBuilder.java",
+        "src/main/java/org/apache/commons/lang3/builder/HashCodeBuilder.java",
+        "src/main/java/org/apache/commons/lang3/builder/ReflectionToStringBuilder.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/builder/EqualsBuilderTest.java",
+        "src/test/java/org/apache/commons/lang3/builder/HashCodeBuilderTest.java"
+      ],
+      "total_changed": 11,
+      "added_tests": [
+        "src/test/java/org/apache/commons/lang3/builder/ReflectionToStringBuilderExcludeWithAnnotationTest.java"
+      ],
+      "score": 6,
+      "reject_reason": "layer1:merge_branch"
+    },
+    {
+      "b": "23a730b8ed392ba424cc275df793dcae88f4cebe",
+      "a": "7138b8c001b9c60176598a21c0d15db43f8d8a1f",
+      "subject": "No need to end exception messages with an exclamation!",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/concurrent/BackgroundInitializer.java",
+        "src/main/java/org/apache/commons/lang3/concurrent/MultiBackgroundInitializer.java",
+        "src/main/java/org/apache/commons/lang3/concurrent/TimedSemaphore.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/StringUtilsAbbreviateTest.java",
+        "src/test/java/org/apache/commons/lang3/text/StrSubstitutorTest.java"
+      ],
+      "total_changed": 5,
+      "added_tests": [],
+      "score": 4,
+      "reject_reason": "layer2:no_strict_pair (BackgroundInitializer.java, MultiBackgroundInitializer.java, TimedSemaphore.java vs StringUtilsAbbreviateTest.java, StrSubstitutorTest.java)"
+    },
+    {
+      "b": "607e3447c92754d871a3f2eb8c472e45afed6c1c",
+      "a": "4f82195afdc4279c05826fc20f8642bfdaaafec3",
+      "subject": "Add final modifier to private fields.",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/builder/MultilineRecursiveToStringStyle.java",
+        "src/main/java/org/apache/commons/lang3/builder/ToStringStyle.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/builder/EqualsBuilderTest.java",
+        "src/test/java/org/apache/commons/lang3/builder/HashCodeBuilderTest.java",
+        "src/test/java/org/apache/commons/lang3/time/FastDatePrinterTimeZonesTest.java"
+      ],
+      "total_changed": 5,
+      "added_tests": [],
+      "score": 4,
+      "reject_reason": "layer2:no_strict_pair (MultilineRecursiveToStringStyle.java, ToStringStyle.java vs EqualsBuilderTest.java, HashCodeBuilderTest.java, FastDatePrinterTimeZonesTest.java)"
+    },
+    {
+      "b": "c10bb4d052b31761329d8c064583175b73687e78",
+      "a": "204346f7544640a8c4b97677aca0d00ccd79b12e",
+      "subject": "Organize imports.",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/EnumUtils.java",
+        "src/main/java/org/apache/commons/lang3/StringUtils.java",
+        "src/main/java/org/apache/commons/lang3/time/DateParser.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/StringEscapeUtilsTest.java",
+        "src/test/java/org/apache/commons/lang3/StringUtilsEqualsIndexOfTest.java"
+      ],
+      "total_changed": 5,
+      "added_tests": [],
+      "score": 4,
+      "reject_reason": "layer2:no_strict_pair (EnumUtils.java, StringUtils.java, DateParser.java vs StringEscapeUtilsTest.java, StringUtilsEqualsIndexOfTest.java)"
+    },
+    {
+      "b": "d72c88a082fa939ddf5a4aa2cf7d1742a9086f35",
+      "a": "8ae6a3925ab3bcfa0450b9aa92f4d00693b4c8d2",
+      "subject": "Remove unused imports and reorg others.",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/Streams.java",
+        "src/main/java/org/apache/commons/lang3/event/EventListenerSupport.java",
+        "src/main/java/org/apache/commons/lang3/reflect/MethodUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/StringUtilsTest.java",
+        "src/test/java/org/apache/commons/lang3/builder/JsonToStringStyleTest.java"
+      ],
+      "total_changed": 5,
+      "added_tests": [],
+      "score": 4,
+      "reject_reason": "layer2:no_strict_pair (Streams.java, EventListenerSupport.java, MethodUtils.java vs StringUtilsTest.java, JsonToStringStyleTest.java)"
+    },
+    {
+      "b": "eb560776a3430a600dacce67239e69420a607501",
+      "a": "23f7b31ca61982d71ad1f87d90feac8c1082dda7",
+      "subject": "A serialized Fraction can't store a bad cached hashCode. (#1634)",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/Range.java",
+        "src/main/java/org/apache/commons/lang3/math/Fraction.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/RangeReadObjectTest.java",
+        "src/test/java/org/apache/commons/lang3/SerializationUtilsTest.java"
+      ],
+      "total_changed": 5,
+      "added_tests": [
+        "src/test/java/org/apache/commons/lang3/math/FractionReadObjectTest.java"
+      ],
+      "score": 4,
+      "reject_reason": "layer2:no_strict_pair (Range.java, Fraction.java vs RangeReadObjectTest.java, SerializationUtilsTest.java)"
+    },
+    {
+      "b": "163731256b63f03cd2b676baac88fe7ad61b2a6f",
+      "a": "2e03203d40688de678f1cf2bc338c9da3ad443cd",
+      "subject": "Changing @since 3.0.2 to @since 3.1",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/ClassUtils.java",
+        "src/main/java/org/apache/commons/lang3/SystemUtils.java",
+        "src/main/java/org/apache/commons/lang3/math/NumberUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/builder/ReflectionToStringBuilderConcurrencyTest.java",
+        "src/test/java/org/apache/commons/lang3/builder/ReflectionToStringBuilderMutateInspectConcurrencyTest.java",
+        "src/test/java/org/apache/commons/lang3/builder/ToStringStyleConcurrencyTest.java"
+      ],
+      "total_changed": 6,
+      "added_tests": [],
+      "score": 4,
+      "reject_reason": "layer2:no_strict_pair (ClassUtils.java, SystemUtils.java, NumberUtils.java vs ReflectionToStringBuilderConcurrencyTest.java, ReflectionToStringBuilderMutateInspectConcurrencyTest.java, ToStringStyleConcurrencyTest.java)"
+    },
+    {
+      "b": "cc1aed9bdf196403c673a886bbf723101171a9bf",
+      "a": "fb7784fa1472b4c55d329aacae672f416e11a703",
+      "subject": "LANG-1057 Micro optimization: Replace StringBuilder with String concatenation so that the compiler can better optimize the code",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/ClassPathUtils.java",
+        "src/main/java/org/apache/commons/lang3/Range.java",
+        "src/main/java/org/apache/commons/lang3/math/Fraction.java",
+        "src/main/java/org/apache/commons/lang3/tuple/Triple.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/BooleanUtilsTest.java",
+        "src/test/java/org/apache/commons/lang3/StringEscapeUtilsTest.java"
+      ],
+      "total_changed": 7,
+      "added_tests": [],
+      "score": 4,
+      "reject_reason": "layer2:no_strict_pair (ClassPathUtils.java, Range.java, Fraction.java, Triple.java vs BooleanUtilsTest.java, StringEscapeUtilsTest.java)"
+    },
+    {
+      "b": "0e17c1e93c5a5e5adf930d945a3235cc09361d7c",
+      "a": "7f3b3562a787c36263c01c1840aeaef96fdc0580",
+      "subject": "fix_typos (#539)",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/ClassLoaderUtils.java",
+        "src/main/java/org/apache/commons/lang3/Locks.java",
+        "src/main/java/org/apache/commons/lang3/reflect/MemberUtils.java",
+        "src/main/java/org/apache/commons/lang3/time/DateUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/EnumUtilsTest.java",
+        "src/test/java/org/apache/commons/lang3/event/EventUtilsTest.java",
+        "src/test/java/org/apache/commons/lang3/text/ExtendedMessageFormatTest.java",
+        "src/test/java/org/apache/commons/lang3/time/FastDateParserTest.java"
+      ],
+      "total_changed": 8,
+      "added_tests": [],
+      "score": 4,
+      "reject_reason": "layer2:no_strict_pair (ClassLoaderUtils.java, Locks.java, MemberUtils.java, DateUtils.java vs EnumUtilsTest.java, EventUtilsTest.java, ExtendedMessageFormatTest.java, FastDateParserTest.java)"
+    },
+    {
+      "b": "797d550a92d7df12ebc83e3c5e3fafa61a2a8ce3",
+      "a": "78c1c7f9ab79cbdb8fe4469e41858a9308257cda",
+      "subject": "[LANG-1556] Use Java 8 lambdas and Map operations. (#541)",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/Streams.java",
+        "src/main/java/org/apache/commons/lang3/concurrent/TimedSemaphore.java",
+        "src/main/java/org/apache/commons/lang3/exception/DefaultExceptionContext.java",
+        "src/main/java/org/apache/commons/lang3/reflect/MethodUtils.java",
+        "src/main/java/org/apache/commons/lang3/reflect/TypeUtils.java",
+        "src/main/java/org/apache/commons/lang3/time/FastDateParser.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/ArrayUtilsTest.java",
+        "src/test/java/org/apache/commons/lang3/FunctionsTest.java"
+      ],
+      "total_changed": 8,
+      "added_tests": [],
+      "score": 4,
+      "reject_reason": "layer2:no_strict_pair (Streams.java, TimedSemaphore.java, DefaultExceptionContext.java, MethodUtils.java, TypeUtils.java, FastDateParser.java vs ArrayUtilsTest.java, FunctionsTest.java)"
+    },
+    {
+      "b": "1703c21006ccfc9af64ba31547373b5563705c02",
+      "a": "b8e98d14ed1bdea0d09797347d13fdeb6ef3dd57",
+      "subject": "Sort members",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/CachedRandomBits.java",
+        "src/main/java/org/apache/commons/lang3/ClassUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/EnumUtilsTest.java",
+        "src/test/java/org/apache/commons/lang3/RandomStringUtilsTest.java",
+        "src/test/java/org/apache/commons/lang3/RegExUtilsTest.java",
+        "src/test/java/org/apache/commons/lang3/StringUtilsAbbreviateTest.java",
+        "src/test/java/org/apache/commons/lang3/ValidateTest.java",
+        "src/test/java/org/apache/commons/lang3/builder/ReflectionDiffBuilderTest.java",
+        "src/test/java/org/apache/commons/lang3/time/FastDateParserTest.java",
+        "src/test/java/org/apache/commons/lang3/time/FastDateParser_TimeZoneStrategyTest.java"
+      ],
+      "total_changed": 10,
+      "added_tests": [],
+      "score": 4,
+      "reject_reason": "layer1:sort_members"
+    },
+    {
+      "b": "d69c9f3769e8714d20aee1e6c07f0fe2c633b519",
+      "a": "20d3ad53479f4e1a0008ebab6dbf184608407122",
+      "subject": "Merge branch 'master' of https://gitbox.apache.org/repos/asf/commons-lang.git",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/builder/AbstractSupplier.java",
+        "src/main/java/org/apache/commons/lang3/concurrent/AbstractConcurrentInitializer.java",
+        "src/main/java/org/apache/commons/lang3/concurrent/AtomicInitializer.java",
+        "src/main/java/org/apache/commons/lang3/concurrent/AtomicSafeInitializer.java",
+        "src/main/java/org/apache/commons/lang3/concurrent/BackgroundInitializer.java",
+        "src/main/java/org/apache/commons/lang3/concurrent/LazyInitializer.java",
+        "src/main/java/org/apache/commons/lang3/function/FailableSupplier.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/ArrayUtilsTest.java",
+        "src/test/java/org/apache/commons/lang3/StringsTest.java",
+        "src/test/java/org/apache/commons/lang3/reflect/MethodUtilsTest.java"
+      ],
+      "total_changed": 10,
+      "added_tests": [],
+      "score": 4,
+      "reject_reason": "layer1:merge_branch"
+    },
+    {
+      "b": "eb62fccc1cbedd7f27c817593cbd7708828627c4",
+      "a": "9bb09244e6a5ecaa2a2cf6bd5de6801af5d9897f",
+      "subject": "No need to use the java.lang package name in Javadoc references.",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/ClassPathUtils.java",
+        "src/main/java/org/apache/commons/lang3/StringUtils.java",
+        "src/main/java/org/apache/commons/lang3/time/DurationFormatUtils.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/concurrent/AbstractConcurrentInitializerTest.java",
+        "src/test/java/org/apache/commons/lang3/concurrent/AtomicSafeInitializerTest.java",
+        "src/test/java/org/apache/commons/lang3/concurrent/BackgroundInitializerTest.java",
+        "src/test/java/org/apache/commons/lang3/concurrent/CallableBackgroundInitializerTest.java",
+        "src/test/java/org/apache/commons/lang3/concurrent/ConcurrentUtilsTest.java",
+        "src/test/java/org/apache/commons/lang3/concurrent/TimedSemaphoreTest.java",
+        "src/test/java/org/apache/commons/lang3/time/DateUtilsTest.java"
+      ],
+      "total_changed": 10,
+      "added_tests": [],
+      "score": 4,
+      "reject_reason": "layer2:no_strict_pair (ClassPathUtils.java, StringUtils.java, DurationFormatUtils.java vs AbstractConcurrentInitializerTest.java, AtomicSafeInitializerTest.java, BackgroundInitializerTest.java, CallableBackgroundInitializerTest.java, ConcurrentUtilsTest.java, TimedSemaphoreTest.java, DateUtilsTest.java)"
+    },
+    {
+      "b": "8a8b8ec8d244b18eeaf651d0ea6e84db579e7d92",
+      "a": "d0650d1a2f24957aa032d65909ca74e879ac4557",
+      "subject": "Make sure modifiers are in JLS order",
+      "main_files": [
+        "src/main/java/org/apache/commons/lang3/ThreadUtils.java",
+        "src/main/java/org/apache/commons/lang3/concurrent/BackgroundInitializer.java",
+        "src/main/java/org/apache/commons/lang3/concurrent/ThresholdCircuitBreaker.java",
+        "src/main/java/org/apache/commons/lang3/time/FastDateParser.java",
+        "src/main/java/org/apache/commons/lang3/time/FormatCache.java"
+      ],
+      "test_files": [
+        "src/test/java/org/apache/commons/lang3/CharSequenceUtilsTest.java",
+        "src/test/java/org/apache/commons/lang3/StringEscapeUtilsTest.java",
+        "src/test/java/org/apache/commons/lang3/builder/HashCodeBuilderTest.java",
+        "src/test/java/org/apache/commons/lang3/builder/ReflectionToStringBuilderMutateInspectConcurrencyTest.java",
+        "src/test/java/org/apache/commons/lang3/time/FastDateFormatTest.java"
+      ],
+      "total_changed": 12,
+      "added_tests": [],
+      "score": 4,
+      "reject_reason": "layer2:no_strict_pair (ThreadUtils.java, BackgroundInitializer.java, ThresholdCircuitBreaker.java, FastDateParser.java, FormatCache.java vs CharSequenceUtilsTest.java, StringEscapeUtilsTest.java, HashCodeBuilderTest.java, ReflectionToStringBuilderMutateInspectConcurrencyTest.java, FastDateFormatTest.java)"
+    }
+  ]
+}

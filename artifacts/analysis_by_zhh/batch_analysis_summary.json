@@ -1,0 +1,18 @@
+{
+  "total_samples": 26,
+  "merge_ok": 26,
+  "human_added_gt0": 24,
+  "perfect_count_match": 19,
+  "plan_a_gte_human": 22,
+  "still_zero_added": [
+    147
+  ],
+  "partial_added": [
+    [
+      122,
+      3,
+      5
+    ]
+  ],
+  "avg_added_name_jaccard": 0.8699
+}

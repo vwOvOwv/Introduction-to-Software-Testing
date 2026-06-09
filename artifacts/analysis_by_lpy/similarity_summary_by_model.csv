@@ -1,0 +1,3 @@
+model,total_rows,comparable_rows,added_applicable_rows,deleted_applicable_rows,modified_applicable_rows,mean_method_name_jaccard,mean_added_test_name_jaccard,mean_deleted_test_name_jaccard,mean_modified_test_name_jaccard,mean_assert_count_ratio,mean_assert_type_jaccard,mean_exception_assert_count_llm,mean_exception_assert_count_human
+deepseek-v4-pro,561,561,319,41,242,0.9953,0.9210,0.9512,1.0000,0.9958,0.9994,11.6791,11.7701
+gpt-5.5,560,560,323,43,254,0.9965,0.9538,0.9767,1.0000,0.9977,1.0000,11.9786,12.0286

@@ -1,0 +1,27 @@
+cand_id,human_added,plan_a_added,baseline_added,added_name_jaccard,merge_ok,subject
+9,0,0,0,1.0,True,[LANG-1784] Add Failable methods for null-safe mapping and c
+14,8,8,0,1.0,True,LANG-1352: EnumUtils.getEnumIgnoreCase and isValidEnumIgnore
+58,3,3,0,1.0,True,[LANG-1568] More failable functional interfaces to match JRE
+72,2,2,0,1.0,True,LANG-1495 Update EnumUtils.java (#475)
+122,5,3,0,0.6,True,[LANG-1568] More failable functional interfaces to match JRE
+127,7,7,0,1.0,True,Syntax for optional tokens in DurationFormatUtils (#1062)
+147,2,0,0,0.0,True,Code refactor to simplify Functions and new tests (#463)
+148,56,72,0,0.7778,True,swap and shift for arrays
+182,1,1,0,1.0,True,LANG-1348 - StackOverflowError on TypeUtils.toString(...) fo
+194,1,1,0,1.0,True,LANG-1371: Fix TypeUtils.parameterize to work correctly with
+201,1,1,0,1.0,True,"#LAN-1114 fixes bug in TypeUtils.equals(WildcardType, Type) "
+223,1,1,0,1.0,True,LANG-1223: Add StopWatch#getTime(TimeUnit) (closes #152)
+247,1,1,0,1.0,True,LANG-1190: TypeUtils.isAssignable throws NullPointerExceptio
+248,1,1,0,1.0,True,LANG-1311: TypeUtils.toString() doesn't handle primitive and
+312,1,1,0,1.0,True,EnumUtils.getEnumSystemProperty(...).
+329,9,9,0,1.0,True,"[LANG-926] Add ArrayUtils.reverse(array, from, to) methods."
+374,1,1,0,1.0,True,"<action issue=""LANG-962"" type=""add"" dev=""ggregory"">Add Seria"
+386,1,2,0,0.5,True,"Add EnumUtils.getFirstEnum(Class<E>, int, ToIntFunction<E>, "
+417,5,5,0,1.0,True,"[LANG-1568] FailableBooleanSupplier, FailableIntSupplier, Fa"
+430,2,2,0,1.0,True,Add BooleanUtils.values() and forEach().
+462,6,6,0,1.0,True,LANG-341: Please add number to byte[] methods. Suggested by 
+470,0,0,0,1.0,True,MethodUtils cannot find or invoke a public method on a publi
+503,1,1,0,1.0,True,Add Processor.Type.getLabel() and Processor.toString()
+508,2,3,0,0.0,True,Add ReflectionDiffBuilder.Builder
+580,8,8,0,1.0,True,LANG-1021: Provide methods to retrieve all fields/methods an
+597,1,1,0,1.0,True,"LANG-1115: Add support for varargs in ConstructorUtils, Memb"

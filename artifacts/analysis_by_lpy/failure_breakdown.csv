@@ -1,0 +1,16 @@
+model,failure_category,count,rate
+deepseek-v4-pro,compile_cannot_find_symbol,10,0.0163
+deepseek-v4-pro,compile_error,17,0.0277
+deepseek-v4-pro,compile_incompatible_types,1,0.0016
+deepseek-v4-pro,compile_missing_package,2,0.0033
+deepseek-v4-pro,maven_other_failure,8,0.0130
+deepseek-v4-pro,merge_incomplete,11,0.0179
+deepseek-v4-pro,rat_license_check,2,0.0033
+deepseek-v4-pro,test_failure,2,0.0033
+gpt-5.5,compile_cannot_find_symbol,12,0.0195
+gpt-5.5,compile_error,16,0.0261
+gpt-5.5,compile_incompatible_types,1,0.0016
+gpt-5.5,maven_other_failure,8,0.0130
+gpt-5.5,merge_incomplete,14,0.0228
+gpt-5.5,rat_license_check,1,0.0016
+gpt-5.5,test_failure,2,0.0033

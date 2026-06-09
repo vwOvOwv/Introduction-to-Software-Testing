@@ -1,0 +1,19 @@
+{
+  "id": 402,
+  "b_short": "c37a911d3a15",
+  "a": "a40b2a907a69e51675d7d0502b2608833c4da343",
+  "b": "c37a911d3a1541adc25c8d76f717015b2266d123",
+  "prod": "src/main/java/org/apache/commons/lang3/StringUtils.java",
+  "target_test": "src/test/java/org/apache/commons/lang3/StringUtilsTest.java",
+  "input_test": "src/test/java/org/apache/commons/lang3/StringUtilsTest.java",
+  "selector": "StringUtilsTest",
+  "pr_hint": 195,
+  "subject": "LANG-1160: StringUtils#abbreviate should support 'custom ellipses' parameter (closes #195)",
+  "sample_dir": "/home/lpy/workspace/misc/course/Introduction-to-Software-Testing/artifacts/sample_runs/deepseek-v4-pro/cand402_c37a911d3a15",
+  "old_test_extracted": true,
+  "old_test_path": "/home/lpy/workspace/misc/course/Introduction-to-Software-Testing/artifacts/sample_runs/deepseek-v4-pro/cand402_c37a911d3a15/old_test.java",
+  "update_exit_code": 1,
+  "update_stdout_tail": "",
+  "update_stderr_tail": "已加载候选 614 条 ← lang_sample_candidates_filtered_full_verified_pass.json\n调用模型: model=deepseek-v4-pro user_chars=19733 old_test_mode=methods (cand402 #195 LANG-1160: StringUtils#abbreviate should support 'custom ellipses' par)\n\n[失败] cand402 #195 LANG-1160: StringUtils#abbreviate should support 'custom ellipses' par\nURLError: <urlopen error [Errno 104] Connection reset by peer>\nURLError: <urlopen error [Errno 104] Connection reset by peer>\n",
+  "generated": false
+}

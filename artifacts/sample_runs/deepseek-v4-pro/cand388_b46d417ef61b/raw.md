@@ -1,0 +1,31 @@
+# 模型输出
+
+- repo: `/home/lpy/workspace/misc/course/commons-lang`
+- A: `f9535b52a5e242e0e3332381c70bba84ba4cf612`
+- B: `b46d417ef61b69f2e4562e596d55466907d6933d`
+- test: `src/test/java/org/apache/commons/lang3/SystemUtilsTest.java`
+- prod: `['src/main/java/org/apache/commons/lang3/SystemUtils.java']`
+- old_test_mode: `full_class_fallback`
+- user_chars: `42322`
+- input_truncated: `{'prod_diff': False, 'prod_methods_b': False, 'test_diff': False, 'old_test': False}`
+- api_base: `https://api.deepseek.com`
+- model: `deepseek-v4-pro`
+- max_output_tokens: `8192`
+- finish_reason: `stop`
+- usage: `{'prompt_tokens': 11017, 'completion_tokens': 503, 'total_tokens': 11520, 'prompt_tokens_details': {'cached_tokens': 384}, 'completion_tokens_details': {'reasoning_tokens': 373}, 'prompt_cache_hit_tokens': 384, 'prompt_cache_miss_tokens': 10633}`
+
+---
+
+- 新增 `testGetUserName()` 测试方法，对应生产代码新增的 `getUserName()` 和 `getUserName(String)` 方法以及常量 `USER_NAME_KEY`，用于验证新方法的正确性。
+
+```java
+    /**
+     * Assumes no security manager exists.
+     */
+    @Test
+    public void testGetUserName() {
+        assertEquals(System.getProperty("user.name"), SystemUtils.getUserName());
+        // Don't overwrite the system property in this test in case something goes awfully wrong.
+        assertEquals(System.getProperty("user.name", "foo"), SystemUtils.getUserName("foo"));
+    }
+```

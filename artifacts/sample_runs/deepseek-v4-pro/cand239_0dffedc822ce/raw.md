@@ -1,0 +1,218 @@
+# 模型输出
+
+- repo: `/home/lpy/workspace/misc/course/commons-lang`
+- A: `106b61a5be740b6e784c3aae4aa10d5b6df832b1`
+- B: `0dffedc822cefbec5151653170ee23faa18d7fac`
+- test: `src/test/java/org/apache/commons/lang3/SystemPropertiesTest.java`
+- prod: `['src/main/java/org/apache/commons/lang3/SystemProperties.java']`
+- old_test_mode: `full_class_fallback`
+- user_chars: `41295`
+- input_truncated: `{'prod_diff': False, 'prod_methods_b': False, 'test_diff': False, 'old_test': False}`
+- api_base: `https://api.deepseek.com`
+- model: `deepseek-v4-pro`
+- max_output_tokens: `8192`
+- finish_reason: `stop`
+- usage: `{'prompt_tokens': 10083, 'completion_tokens': 4312, 'total_tokens': 14395, 'prompt_tokens_details': {'cached_tokens': 384}, 'completion_tokens_details': {'reasoning_tokens': 834}, 'prompt_cache_hit_tokens': 384, 'prompt_cache_miss_tokens': 9699}`
+
+---
+
+- 在 `testActualKeys` 方法中新增三行 `basicKeyCheck` 调用，覆盖新增的三个 `SystemProperties` 常量（`JAVA_SECURITY_KERBEROS_CONF`、`JAVA_SECURITY_KERBEROS_KDC`、`JAVA_SECURITY_KERBEROS_REALM`），使其与生产代码新增常量及测试 diff 一致，无需修改 import 或其他方法。
+
+```java
+@Test
+public void testActualKeys() {
+    basicKeyCheck(SystemProperties.APPLE_AWT_ENABLE_TEMPLATE_IMAGES);
+    basicKeyCheck(SystemProperties.AWT_TOOLKIT);
+    basicKeyCheck(SystemProperties.COM_SUN_JNDI_LDAP_OBJECT_TRUST_SERIAL_DATA);
+    basicKeyCheck(SystemProperties.COM_SUN_NET_HTTP_SERVER_HTTP_SERVER_PROVIDER);
+    basicKeyCheck(SystemProperties.FILE_ENCODING);
+    basicKeyCheck(SystemProperties.FILE_SEPARATOR);
+    basicKeyCheck(SystemProperties.FTP_NON_PROXY_HOST);
+    basicKeyCheck(SystemProperties.FTP_PROXY_HOST);
+    basicKeyCheck(SystemProperties.FTP_PROXY_PORT);
+    basicKeyCheck(SystemProperties.HTTP_AGENT);
+    basicKeyCheck(SystemProperties.HTTP_AUTH_DIGEST_CNONCE_REPEAT);
+    basicKeyCheck(SystemProperties.HTTP_AUTH_DIGEST_RE_ENABLED_ALGORITHMS);
+    basicKeyCheck(SystemProperties.HTTP_AUTH_DIGEST_VALIDATE_PROXY);
+    basicKeyCheck(SystemProperties.HTTP_AUTH_DIGEST_VALIDATE_SERVER);
+    basicKeyCheck(SystemProperties.HTTP_AUTH_NTLM_DOMAIN);
+    basicKeyCheck(SystemProperties.HTTP_KEEP_ALIVE);
+    basicKeyCheck(SystemProperties.HTTP_KEEP_ALIVE_TIME_PROXY);
+    basicKeyCheck(SystemProperties.HTTP_KEEP_ALIVE_TIME_SERVER);
+    basicKeyCheck(SystemProperties.HTTP_MAX_CONNECTIONS);
+    basicKeyCheck(SystemProperties.HTTP_MAX_REDIRECTS);
+    basicKeyCheck(SystemProperties.HTTP_NON_PROXY_HOSTS);
+    basicKeyCheck(SystemProperties.HTTP_PROXY_HOST);
+    basicKeyCheck(SystemProperties.HTTP_PROXY_PORT);
+    basicKeyCheck(SystemProperties.HTTPS_PROXY_HOST);
+    basicKeyCheck(SystemProperties.HTTPS_PROXY_PORT);
+    basicKeyCheck(SystemProperties.JAVA_AWT_FONTS);
+    basicKeyCheck(SystemProperties.JAVA_AWT_GRAPHICSENV);
+    basicKeyCheck(SystemProperties.JAVA_AWT_HEADLESS);
+    basicKeyCheck(SystemProperties.JAVA_AWT_PRINTERJOB);
+    basicKeyCheck(SystemProperties.JAVA_CLASS_PATH);
+    basicKeyCheck(SystemProperties.JAVA_CLASS_VERSION);
+    basicKeyCheck(SystemProperties.JAVA_COMPILER);
+    basicKeyCheck(SystemProperties.JAVA_CONTENT_HANDLER_PKGS);
+    basicKeyCheck(SystemProperties.JAVA_ENDORSED_DIRS);
+    basicKeyCheck(SystemProperties.JAVA_EXT_DIRS);
+    basicKeyCheck(SystemProperties.JAVA_HOME);
+    basicKeyCheck(SystemProperties.JAVA_IO_TMPDIR);
+    basicKeyCheck(SystemProperties.JAVA_LIBRARY_PATH);
+    basicKeyCheck(SystemProperties.JAVA_LOCALE_PROVIDERS);
+    basicKeyCheck(SystemProperties.JAVA_LOCALE_USE_OLD_ISO_CODES);
+    basicKeyCheck(SystemProperties.JAVA_NET_PREFER_IPV4_STACK);
+    basicKeyCheck(SystemProperties.JAVA_NET_PREFER_IPV6_ADDRESSES);
+    basicKeyCheck(SystemProperties.JAVA_NET_SOCKS_PASSWORD);
+    basicKeyCheck(SystemProperties.JAVA_NET_SOCKS_USER_NAME);
+    basicKeyCheck(SystemProperties.JAVA_NET_USE_SYSTEM_PROXIES);
+    basicKeyCheck(SystemProperties.JAVA_NIO_CHANNELS_DEFAULT_THREAD_POOL_INITIAL_SIZE);
+    basicKeyCheck(SystemProperties.JAVA_NIO_CHANNELS_DEFAULT_THREAD_POOL_THREAD_FACTORY);
+    basicKeyCheck(SystemProperties.JAVA_NIO_CHANNELS_SPI_ASYNCHRONOUS_CHANNEL_PROVIDER);
+    basicKeyCheck(SystemProperties.JAVA_NIO_CHANNELS_SPI_SELECTOR_PROVIDER);
+    basicKeyCheck(SystemProperties.JAVA_NIO_FILE_SPI_DEFAULT_FILE_SYSTEM_PROVIDER);
+    basicKeyCheck(SystemProperties.JAVA_PROPERTIES_DATE);
+    basicKeyCheck(SystemProperties.JAVA_PROTOCOL_HANDLER_PKGS);
+    basicKeyCheck(SystemProperties.JAVA_RMI_SERVER_CODEBASE);
+    basicKeyCheck(SystemProperties.JAVA_RMI_SERVER_HOST_NAME);
+    basicKeyCheck(SystemProperties.JAVA_RMI_SERVER_RANDOM_IDS);
+    basicKeyCheck(SystemProperties.JAVA_RMI_SERVER_RMI_CLASS_LOADER_SPI);
+    basicKeyCheck(SystemProperties.JAVA_RUNTIME_NAME);
+    basicKeyCheck(SystemProperties.JAVA_RUNTIME_VERSION);
+    basicKeyCheck(SystemProperties.JAVA_SECURITY_AUTH_LOGIN_CONFIG);
+    basicKeyCheck(SystemProperties.JAVA_SECURITY_KERBEROS_CONF);
+    basicKeyCheck(SystemProperties.JAVA_SECURITY_KERBEROS_KDC);
+    basicKeyCheck(SystemProperties.JAVA_SECURITY_KERBEROS_REALM);
+    basicKeyCheck(SystemProperties.JAVA_SECURITY_DEBUG);
+    basicKeyCheck(SystemProperties.JAVA_SECURITY_MANAGER);
+    basicKeyCheck(SystemProperties.JAVA_SPECIFICATION_MAINTENANCE_VERSION);
+    basicKeyCheck(SystemProperties.JAVA_SPECIFICATION_NAME);
+    basicKeyCheck(SystemProperties.JAVA_SPECIFICATION_VENDOR);
+    basicKeyCheck(SystemProperties.JAVA_SPECIFICATION_VERSION);
+    basicKeyCheck(SystemProperties.JAVA_SYSTEM_CLASS_LOADER);
+    basicKeyCheck(SystemProperties.JAVA_TIME_ZONE_DEFAULT_ZONE_RULES_PROVIDER);
+    basicKeyCheck(SystemProperties.JAVA_UTIL_CONCURRENT_FORK_JOIN_POOL_COMMON_EXCEPTION_HANDLER);
+    basicKeyCheck(SystemProperties.JAVA_UTIL_CONCURRENT_FORK_JOIN_POOL_COMMON_MAXIMUM_SPARES);
+    basicKeyCheck(SystemProperties.JAVA_UTIL_CONCURRENT_FORK_JOIN_POOL_COMMON_PARALLELISM);
+    basicKeyCheck(SystemProperties.JAVA_UTIL_CONCURRENT_FORK_JOIN_POOL_COMMON_THREAD_FACTORY);
+    basicKeyCheck(SystemProperties.JAVA_UTIL_CURRENCY_DATA);
+    basicKeyCheck(SystemProperties.JAVA_UTIL_LOGGING_CONFIG_CLASS);
+    basicKeyCheck(SystemProperties.JAVA_UTIL_LOGGING_CONFIG_FILE);
+    basicKeyCheck(SystemProperties.JAVA_UTIL_LOGGING_SIMPLE_FORMATTER_FORMAT);
+    basicKeyCheck(SystemProperties.JAVA_UTIL_PREFS_PREFERENCES_FACTORY);
+    basicKeyCheck(SystemProperties.JAVA_UTIL_PROPERTY_RESOURCE_BUNDLE_ENCODING);
+    basicKeyCheck(SystemProperties.JAVA_VENDOR);
+    basicKeyCheck(SystemProperties.JAVA_VENDOR_URL);
+    basicKeyCheck(SystemProperties.JAVA_VENDOR_VERSION);
+    basicKeyCheck(SystemProperties.JAVA_VERSION);
+    basicKeyCheck(SystemProperties.JAVA_VERSION_DATE);
+    basicKeyCheck(SystemProperties.JAVA_VM_INFO);
+    basicKeyCheck(SystemProperties.JAVA_VM_NAME);
+    basicKeyCheck(SystemProperties.JAVA_VM_SPECIFICATION_NAME);
+    basicKeyCheck(SystemProperties.JAVA_VM_SPECIFICATION_VENDOR);
+    basicKeyCheck(SystemProperties.JAVA_VM_SPECIFICATION_VERSION);
+    basicKeyCheck(SystemProperties.JAVA_VM_VENDOR);
+    basicKeyCheck(SystemProperties.JAVA_VM_VERSION);
+    basicKeyCheck(SystemProperties.JAVA_XML_CONFIG_FILE);
+    basicKeyCheck(SystemProperties.JAVAX_ACCESSIBILITY_ASSISTIVE_TECHNOLOGIES);
+    basicKeyCheck(SystemProperties.JAVAX_NET_SSL_SESSION_CACHE_SIZE);
+    basicKeyCheck(SystemProperties.JAVAX_RMI_SSL_CLIENT_ENABLED_CIPHER_SUITES);
+    basicKeyCheck(SystemProperties.JAVAX_RMI_SSL_CLIENT_ENABLED_PROTOCOLS);
+    basicKeyCheck(SystemProperties.JAVAX_SECURITY_AUTH_USE_SUBJECT_CREDS_ONLY);
+    basicKeyCheck(SystemProperties.JAVAX_SMART_CARD_IO_TERMINAL_FACTORY_DEFAULT_TYPE);
+    basicKeyCheck(SystemProperties.JDBC_DRIVERS);
+    basicKeyCheck(SystemProperties.JDK_HTTP_AUTH_PROXYING_DISABLED_SCHEMES);
+    basicKeyCheck(SystemProperties.JDK_HTTP_AUTH_TUNNELING_DISABLED_SCHEMES);
+    basicKeyCheck(SystemProperties.JDK_HTTP_CLIENT_ALLOW_RESTRICTED_HEADERS);
+    basicKeyCheck(SystemProperties.JDK_HTTP_CLIENT_AUTH_RETRY_LIMIT);
+    basicKeyCheck(SystemProperties.JDK_HTTP_CLIENT_BUF_SIZE);
+    basicKeyCheck(SystemProperties.JDK_HTTP_CLIENT_CONNECTION_POOL_SIZE);
+    basicKeyCheck(SystemProperties.JDK_HTTP_CLIENT_CONNECTION_WINDOW_SIZE);
+    basicKeyCheck(SystemProperties.JDK_HTTP_CLIENT_DISABLE_RETRY_CONNECT);
+    basicKeyCheck(SystemProperties.JDK_HTTP_CLIENT_ENABLE_ALL_METHOD_RETRY);
+    basicKeyCheck(SystemProperties.JDK_HTTP_CLIENT_ENABLE_PUSH);
+    basicKeyCheck(SystemProperties.JDK_HTTP_CLIENT_HPACK_MAX_HEADER_TABLE_SIZE);
+    basicKeyCheck(SystemProperties.JDK_HTTP_CLIENT_HTTP_CLIENT_LOG);
+    basicKeyCheck(SystemProperties.JDK_HTTP_CLIENT_KEEP_ALIVE_TIMEOUT);
+    basicKeyCheck(SystemProperties.JDK_HTTP_CLIENT_KEEP_ALIVE_TIMEOUT_H2);
+    basicKeyCheck(SystemProperties.JDK_HTTP_CLIENT_MAX_FRAME_SIZE);
+    basicKeyCheck(SystemProperties.JDK_HTTP_CLIENT_MAX_STREAMS);
+    basicKeyCheck(SystemProperties.JDK_HTTP_CLIENT_RECEIVE_BUFFER_SIZE);
+    basicKeyCheck(SystemProperties.JDK_HTTP_CLIENT_REDIRECTS_RETRY_LIMIT);
+    basicKeyCheck(SystemProperties.JDK_HTTP_CLIENT_SEND_BUFFER_SIZE);
+    basicKeyCheck(SystemProperties.JDK_HTTP_CLIENT_WEB_SOCKET_WRITE_BUFFER_SIZE);
+    basicKeyCheck(SystemProperties.JDK_HTTP_CLIENT_WINDOW_SIZE);
+    basicKeyCheck(SystemProperties.JDK_HTTPS_NEGOTIATE_CBT);
+    basicKeyCheck(SystemProperties.JDK_HTTP_SERVER_MAX_CONNECTIONS);
+    basicKeyCheck(SystemProperties.JDK_INCLUDE_IN_EXCEPTIONS);
+    basicKeyCheck(SystemProperties.JDK_INTERNAL_HTTP_CLIENT_DISABLE_HOST_NAME_VERIFICATION);
+    basicKeyCheck(SystemProperties.JDK_IO_PERMISSIONS_USE_CANONICAL_PATH);
+    basicKeyCheck(SystemProperties.JDK_JNDI_LDAP_OBJECT_FACTORIES_FILTER);
+    basicKeyCheck(SystemProperties.JDK_JNDI_OBJECT_FACTORIES_FILTER);
+    basicKeyCheck(SystemProperties.JDK_JNDI_RMI_OBJECT_FACTORIES_FILTER);
+    basicKeyCheck(SystemProperties.JDK_MODULE_MAIN);
+    basicKeyCheck(SystemProperties.JDK_MODULE_MAIN_CLASS);
+    basicKeyCheck(SystemProperties.JDK_MODULE_PATH);
+    basicKeyCheck(SystemProperties.JDK_MODULE_UPGRADE_PATH);
+    basicKeyCheck(SystemProperties.JDK_NET_UNIX_DOMAIN_TMPDIR);
+    basicKeyCheck(SystemProperties.JDK_NET_URL_CLASS_PATH_SHOW_IGNORED_CLASS_PATH_ENTRIES);
+    basicKeyCheck(SystemProperties.JDK_SERIAL_FILTER);
+    basicKeyCheck(SystemProperties.JDK_SERIAL_FILTER_FACTORY);
+    basicKeyCheck(SystemProperties.JDK_TLS_CLIENT_SIGNATURE_SCHEMES);
+    basicKeyCheck(SystemProperties.JDK_TLS_NAMED_GROUPS);
+    basicKeyCheck(SystemProperties.JDK_TLS_SERVER_SIGNATURE_SCHEMES);
+    basicKeyCheck(SystemProperties.JDK_VIRTUAL_THREAD_SCHEDULER_MAXPOOLSIZE);
+    basicKeyCheck(SystemProperties.JDK_VIRTUAL_THREAD_SCHEDULER_PARALLELISM);
+    basicKeyCheck(SystemProperties.JDK_XML_CDATA_CHUNK_SIZE);
+    basicKeyCheck(SystemProperties.JDK_XML_DTD_SUPPORT);
+    basicKeyCheck(SystemProperties.JDK_XML_ELEMENT_ATTRIBUTE_LIMIT);
+    basicKeyCheck(SystemProperties.JDK_XML_ENABLE_EXTENSION_FUNCTIONS);
+    basicKeyCheck(SystemProperties.JDK_XML_ENTITY_EXPANSION_LIMIT);
+    basicKeyCheck(SystemProperties.JDK_XML_ENTITY_REPLACEMENT_LIMIT);
+    basicKeyCheck(SystemProperties.JDK_XML_IS_STANDALONE);
+    basicKeyCheck(SystemProperties.JDK_XML_JDK_CATALOG_RESOLVE);
+    basicKeyCheck(SystemProperties.JDK_XML_MAX_ELEMENT_DEPTH);
+    basicKeyCheck(SystemProperties.JDK_XML_MAX_GENERAL_ENTITY_SIZE_LIMIT);
+    basicKeyCheck(SystemProperties.JDK_XML_MAX_OCCUR_LIMIT);
+    basicKeyCheck(SystemProperties.JDK_XML_MAX_PARAMETER_ENTITY_SIZE_LIMIT);
+    basicKeyCheck(SystemProperties.JDK_XML_MAX_XML_NAME_LIMIT);
+    basicKeyCheck(SystemProperties.JDK_XML_OVERRIDE_DEFAULT_PARSER);
+    basicKeyCheck(SystemProperties.JDK_XML_RESET_SYMBOL_TABLE);
+    basicKeyCheck(SystemProperties.JDK_XML_TOTAL_ENTITY_SIZE_LIMIT);
+    basicKeyCheck(SystemProperties.JDK_XML_XSLTC_IS_STANDALONE);
+    basicKeyCheck(SystemProperties.LINE_SEPARATOR);
+    basicKeyCheck(SystemProperties.NATIVE_ENCODING);
+    basicKeyCheck(SystemProperties.NETWORK_ADDRESS_CACHE_NEGATIVE_TTL);
+    basicKeyCheck(SystemProperties.NETWORK_ADDRESS_CACHE_STALE_TTL);
+    basicKeyCheck(SystemProperties.NETWORK_ADDRESS_CACHE_TTL);
+    basicKeyCheck(SystemProperties.ORG_JCP_XML_DSIG_SECURE_VALIDATION);
+    basicKeyCheck(SystemProperties.ORG_OPENJDK_JAVA_UTIL_STREAM_TRIPWIRE);
+    basicKeyCheck(SystemProperties.OS_ARCH);
+    basicKeyCheck(SystemProperties.OS_NAME);
+    basicKeyCheck(SystemProperties.OS_VERSION);
+    basicKeyCheck(SystemProperties.PATH_SEPARATOR);
+    basicKeyCheck(SystemProperties.SOCKS_PROXY_HOST);
+    basicKeyCheck(SystemProperties.SOCKS_PROXY_PORT);
+    basicKeyCheck(SystemProperties.SOCKS_PROXY_VERSION);
+    basicKeyCheck(SystemProperties.STDERR_ENCODING);
+    basicKeyCheck(SystemProperties.STDOUT_ENCODING);
+    basicKeyCheck(SystemProperties.SUN_NET_HTTP_SERVER_DRAIN_AMOUNT);
+    basicKeyCheck(SystemProperties.SUN_NET_HTTP_SERVER_IDLE_INTERVAL);
+    basicKeyCheck(SystemProperties.SUN_NET_HTTP_SERVER_MAX_IDLE_CONNECTIONS);
+    basicKeyCheck(SystemProperties.SUN_NET_HTTP_SERVER_MAX_REQ_HEADERS);
+    basicKeyCheck(SystemProperties.SUN_NET_HTTP_SERVER_MAX_REQ_TIME);
+    basicKeyCheck(SystemProperties.SUN_NET_HTTP_SERVER_MAX_RSP_TIME);
+    basicKeyCheck(SystemProperties.SUN_NET_HTTP_SERVER_NO_DELAY);
+    basicKeyCheck(SystemProperties.SUN_SECURITY_KRB5_PRINCIPAL);
+    basicKeyCheck(SystemProperties.USER_COUNTRY);
+    basicKeyCheck(SystemProperties.USER_DIR);
+    basicKeyCheck(SystemProperties.USER_EXTENSIONS);
+    basicKeyCheck(SystemProperties.USER_HOME);
+    basicKeyCheck(SystemProperties.USER_LANGUAGE);
+    basicKeyCheck(SystemProperties.USER_NAME);
+    basicKeyCheck(SystemProperties.USER_REGION);
+    basicKeyCheck(SystemProperties.USER_SCRIPT);
+    basicKeyCheck(SystemProperties.USER_TIMEZONE);
+    basicKeyCheck(SystemProperties.USER_VARIANT);
+}
+```

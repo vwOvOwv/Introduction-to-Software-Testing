@@ -1,0 +1,19 @@
+{
+  "id": 511,
+  "b_short": "7e3571e7e2c6",
+  "a": "53dc633eb330bea4335b015a273346553446bb8a",
+  "b": "7e3571e7e2c6d96f8c491b75b876162687d800c9",
+  "prod": "src/main/java/org/apache/commons/lang3/SystemUtils.java",
+  "target_test": "src/test/java/org/apache/commons/lang3/SystemUtilsTest.java",
+  "input_test": "src/test/java/org/apache/commons/lang3/SystemUtilsTest.java",
+  "selector": "SystemUtilsTest",
+  "pr_hint": null,
+  "subject": "Add JavaVersion.JAVA_27",
+  "sample_dir": "/home/lpy/workspace/misc/course/Introduction-to-Software-Testing/artifacts/sample_runs/deepseek-v4-pro/cand511_7e3571e7e2c6",
+  "old_test_extracted": true,
+  "old_test_path": "/home/lpy/workspace/misc/course/Introduction-to-Software-Testing/artifacts/sample_runs/deepseek-v4-pro/cand511_7e3571e7e2c6/old_test.java",
+  "update_exit_code": 1,
+  "update_stdout_tail": "",
+  "update_stderr_tail": "已加载候选 614 条 ← lang_sample_candidates_filtered_full_verified_pass.json\n调用模型: model=deepseek-v4-pro user_chars=169892 old_test_mode=full_class_fallback (cand511 Add JavaVersion.JAVA_27)\n\n[失败] cand511 Add JavaVersion.JAVA_27\nRuntimeError: HTTP 402: {\"error\":{\"message\":\"Insufficient Balance\",\"type\":\"unknown_error\",\"param\":null,\"code\":\"invalid_request_error\"}}\nRuntimeError: HTTP 402: {\"error\":{\"message\":\"Insufficient Balance\",\"type\":\"unknown_error\",\"param\":null,\"code\":\"invalid_request_error\"}}\n",
+  "generated": false
+}

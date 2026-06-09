@@ -1,0 +1,19 @@
+{
+  "id": 198,
+  "b_short": "daa4193fb289",
+  "a": "f6923510352fc3fbfad68bc6c5ac5258a34671b7",
+  "b": "daa4193fb289e57bd15e10555378f97f90d79dcd",
+  "prod": "src/main/java/org/apache/commons/lang3/ArrayUtils.java",
+  "target_test": "src/test/java/org/apache/commons/lang3/ArrayUtilsTest.java",
+  "input_test": "src/test/java/org/apache/commons/lang3/ArrayUtilsTest.java",
+  "selector": "ArrayUtilsTest",
+  "pr_hint": 430,
+  "subject": "Add ArrayUtils.isSameLength() to compare more array types #430.",
+  "sample_dir": "/home/lpy/workspace/misc/course/Introduction-to-Software-Testing/artifacts/sample_runs/deepseek-v4-pro/cand198_daa4193fb289",
+  "old_test_extracted": true,
+  "old_test_path": "/home/lpy/workspace/misc/course/Introduction-to-Software-Testing/artifacts/sample_runs/deepseek-v4-pro/cand198_daa4193fb289/old_test.java",
+  "update_exit_code": 1,
+  "update_stdout_tail": "",
+  "update_stderr_tail": "已加载候选 614 条 ← lang_sample_candidates_filtered_full_verified_pass.json\n警告：估算输入约 101810 tokens（可能接近上下文上限）；old_test_mode=full_class_fallback truncated={'prod_diff': False, 'prod_methods_b': False, 'test_diff': False, 'old_test': False}\n调用模型: model=deepseek-v4-pro user_chars=304705 old_test_mode=full_class_fallback (cand198 #430 Add ArrayUtils.isSameLength() to compare more array types #430.)\n\n[失败] cand198 #430 Add ArrayUtils.isSameLength() to compare more array types #430.\nRuntimeError: HTTP 402: {\"error\":{\"message\":\"Insufficient Balance\",\"type\":\"unknown_error\",\"param\":null,\"code\":\"invalid_request_error\"}}\nRuntimeError: HTTP 402: {\"error\":{\"message\":\"Insufficient Balance\",\"type\":\"unknown_error\",\"param\":null,\"code\":\"invalid_request_error\"}}\n",
+  "generated": false
+}

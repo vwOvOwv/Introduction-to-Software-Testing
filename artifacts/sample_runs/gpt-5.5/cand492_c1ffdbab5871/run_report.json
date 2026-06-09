@@ -1,0 +1,19 @@
+{
+  "id": 492,
+  "b_short": "c1ffdbab5871",
+  "a": "0e20d158200e35a893c734f3ba268a1f5d3c48d0",
+  "b": "c1ffdbab58712cca8463b3edc88f9d5a09b0ca9c",
+  "prod": "src/main/java/org/apache/commons/lang3/ClassUtils.java",
+  "target_test": "src/test/java/org/apache/commons/lang3/ClassUtilsTest.java",
+  "input_test": "src/test/java/org/apache/commons/lang3/ClassUtilsTest.java",
+  "selector": "ClassUtilsTest",
+  "pr_hint": null,
+  "subject": "fix checkstyle violations",
+  "sample_dir": "/home/lpy/workspace/misc/course/Introduction-to-Software-Testing/artifacts/sample_runs/gpt-5.5/cand492_c1ffdbab5871",
+  "old_test_extracted": true,
+  "old_test_path": "/home/lpy/workspace/misc/course/Introduction-to-Software-Testing/artifacts/sample_runs/gpt-5.5/cand492_c1ffdbab5871/old_test.java",
+  "update_exit_code": 1,
+  "update_stdout_tail": "",
+  "update_stderr_tail": "已加载候选 614 条 ← lang_sample_candidates_filtered_full_verified_pass.json\n调用模型: model=gpt-5.5 user_chars=14844 old_test_mode=methods (cand492 fix checkstyle violations)\n\n[失败] cand492 fix checkstyle violations\nURLError: <urlopen error [Errno 104] Connection reset by peer>\nURLError: <urlopen error [Errno 104] Connection reset by peer>\n",
+  "generated": false
+}

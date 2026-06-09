@@ -1,0 +1,19 @@
+{
+  "id": 582,
+  "b_short": "b4456352bcbe",
+  "a": "c9e825e823e30c5b1e3ddc9de5e8fd0094d52ee5",
+  "b": "b4456352bcbe3672afba526ea143fca7a53f7843",
+  "prod": "src/main/java/org/apache/commons/lang3/ArrayUtils.java",
+  "target_test": "src/test/java/org/apache/commons/lang3/ArrayUtilsTest.java",
+  "input_test": "src/test/java/org/apache/commons/lang3/ArrayUtilsTest.java",
+  "selector": "ArrayUtilsTest",
+  "pr_hint": null,
+  "subject": "Move new sort methods to a new class and add primitive versions.",
+  "sample_dir": "/home/lpy/workspace/misc/course/Introduction-to-Software-Testing/artifacts/sample_runs/gpt-5.5/cand582_b4456352bcbe",
+  "old_test_extracted": true,
+  "old_test_path": "/home/lpy/workspace/misc/course/Introduction-to-Software-Testing/artifacts/sample_runs/gpt-5.5/cand582_b4456352bcbe/old_test.java",
+  "update_exit_code": 1,
+  "update_stdout_tail": "",
+  "update_stderr_tail": "已加载候选 614 条 ← lang_sample_candidates_filtered_full_verified_pass.json\n调用模型: model=gpt-5.5 user_chars=5243 old_test_mode=methods (cand582 Move new sort methods to a new class and add primitive versions.)\n\n[失败] cand582 Move new sort methods to a new class and add primitive versions.\nURLError: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1000)>\nURLError: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1000)>\n",
+  "generated": false
+}
