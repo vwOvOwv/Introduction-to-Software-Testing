@@ -1,62 +1,25 @@
-## 项目组织
+# Introduction to Software Testing 小组作业
 
-这个仓库按实验步骤组织。根目录只放主流程脚本，工具脚本统一放在 `misc/`。
+本项目研究大语言模型在软件演化过程中自动维护单元测试的能力。我们以 Apache Commons Lang 的真实历史提交为对象，寻找那些同时修改了生产代码和测试代码的提交，并把它们整理成“提交前版本 A”和“提交后版本 B”的样本对。
 
-### 主流程
+对每个样本，实验只向模型提供 A 版本的测试文件、相关生产代码变更等信息，要求模型生成更新后的测试。随后，我们将模型生成的测试合并回真实项目中运行 Maven 测试，判断它是否能通过编译和测试；同时再把模型结果与 B 版本中人类开发者实际提交的测试进行比较。
 
-1. `1_scan.py`  
-   扫描 `commons-lang` 历史，找出可能适合做实验的 A/B commit 对。
+## 项目做了什么
 
-2. `2_filter.py`  
-   清洗候选，去掉噪音提交，只保留更像 `Foo.java` / `FooTest.java` 配对的样本。
+本项目主要完成了三件事。
 
-3. `3_verify.py`  
-   在 B 提交上跑原始测试，确认候选本身能被 Maven 正常验证。
+第一，构建实验样本集。我们从 commons-lang 的 Git 历史中批量扫描候选提交，过滤合并提交、纯格式改动、仅测试改动等噪声，并尽量保留生产类与测试类严格对应的样本，例如 `Foo.java` 与 `FooTest.java`。
 
-4. `4_run.py`  
-   批量执行完整实验：生成测试、合并成 `generated.java`，再调用 Maven 验证。
+第二，运行模型生成实验。项目调用 OpenAI 兼容接口，让不同模型根据旧测试和代码变化生成新的测试文件；再通过自动合并与 Maven 验证，记录每个样本是否成功生成、是否能通过测试，以及失败原因。
 
-### 工具脚本
+第三，评估模型测试质量。除了统计 Maven 通过率外，项目还比较了模型测试与人类测试在测试方法名、测试方法增删改、断言数量、断言类型、覆盖率和变异测试分数等方面的差异。
 
-- `misc/update_tests_utils.py`  
-  prompt 构造、Java 测试方法抽取、模型输出合并、OpenAI 兼容接口请求。
+## 当前结果
 
-- `misc/update_tests.py`  
-  单独调用模型生成测试输出，主要用于 dry-run 和调试；正式实验由 `4_run.py` 自动调用。
+已有实验比较了 `deepseek-v4-pro` 和 `gpt-5.5` 两个模型，各处理 614 个样本。两个模型的整体表现接近：Maven 通过率约为 91%，在成功生成测试的样本中，通过率约为 93%。失败样本主要集中在编译错误、符号缺失，以及少量模型输出无法正确合并的情况。
 
-- `misc/run_single_maven_test.py`  
-  切换到指定 B commit，覆盖测试文件，运行 `mvn -Dtest=... test`，写 JSON 报告。
+从相似度和质量指标看，模型生成的测试在很多样本中与人类提交的测试非常接近。通过 Maven 的样本里，测试方法结构、断言类型、覆盖率和变异测试结果都与人类版本保持较高一致性。这说明在明确代码变更和已有测试上下文的条件下，模型已经能够完成相当一部分测试维护任务。
 
-- `misc/merge_verified_pass.py`  
-  合并 JDK 8 / JDK 17 等多份验证报告中的 pass 样本。
+## 仓库内容
 
-- `misc/build_results_md.py`  
-  扫描实验产物，生成 `results.md`。
-
-## 常用命令
-
-```bash
-python 1_scan.py
-python 2_filter.py
-python 3_verify.py --limit 5
-python 4_run.py --limit 5 --skip-maven
-```
-
-模型调用需要设置：
-
-```bash
-export MODEL_API_BASE="https://..."
-export MODEL_NAME="..."
-export MODEL_API_KEY="..."
-```
-
-## 主要产物
-
-- `artifacts/lang_sample_candidates*.json`：候选样本
-- `artifacts/lang_sample_verify_report*.json`：候选验证结果
-- `artifacts/model_tests/<model>/`：模型原始输出
-- `artifacts/sample_runs/cand*/`：完整实验的单条产物
-
-## 路径约定
-
-默认被测仓库路径是 `../commons-lang`。如果放在其他位置，请通过对应脚本的 `--repo` 参数指定。
+仓库根目录中的编号脚本对应完整实验流程：样本扫描、过滤、验证、模型生成、结果统计、相似度分析和质量评估。`artifacts/analysis_by_lpy/` 中保存了整理后的实验报告，包括整体结果、相似度分析和覆盖率/变异测试分析。
